@@ -1,0 +1,121 @@
+dataframe, low and columns with abals..
+series is a one deminsionl label array
+
+import pandas as pd *install panda*
+import numpy as np
+
+series = pd.Series([1,2,3,4,5,6,np.nan,8,9,10])
+
+ 
+np.nan betekent geen zijder(NaN)
+
+dates = pd.date_range('20200301', periods=10) (yyymmdd)
+#gives back the dates from input to 10 days later in a list(array) 2020-03-01
+
+dataframe = pd.DataFrame(np.random.randn(10,4),index=dates,columns = ['A','B','C','D'])
+np.random.rand(1) geeft een array met 1 element met een getal tussen -1 en 1
+dus array([0.874]) 
+np.random.rand(2) geeft een array met 2 elementen met getallen tussen -1 en 1
+array([0.874, 0.538]) 
+np.random.rand(2, 3) geeft een 2D array(matrix) Dus
+array([[0.145,-0.101, 0.234],
+       [-1.123, 0.654, -0.785]])
+np.random.randn(..) is weer iets anders. omdat het dan een normaalverdeeling(n) is dus
+dan kan je hogere en lagere getallen krijgen dan -1 en 1
+columns gaan van links naar rechts, index van boven naar beneden
+
+dataframe = pd.DataFrame
+({'A':[1,2,3,4], 
+'B':pd.Timestamp('20200301'), #geeft een datum 2020-03-01  
+'C':pd.Series(1,index=list(range(4)),dtype='float32'),
+'D':np.array([5]*4,dtype='int32'), 
+'E':pd.Categorical(['true','false','true','False']),
+'F: 'Edureka'})
+# dit geeft een tabel met abcfed in de kolom en 1234 in de rij. omdat je bij A,C,D,E allemaal al 4 dingen hebben 
+gaat B,F dat ook krijgen
+
+dataframe.dtypes geeft de type data per kolom object is string
+
+// READ DATA
+df = pd.read_csv('jouwdata.csv')
+print(df.head(3)) #geeft de top 3
+print(df.tail(3)) #geeft laatste 3
+excel kan ook, ook .txt. 
+dus 
+df_xslx = pd.read_excel('data.xlsx')
+df = pd.read_cvs('data.txt', delimiter= '\t') dit betekent scheid met tab per column!/rij?
+print(df.columns) geeft alle colummen
+print(df['name'][0:5]) dan krijg je alles van column naam. 0:5 betekent eerste 5 waarbij de eerste index 0 heeft en je dus tot index 4 pakt
+print(df[['name'], ['Type 1'], ['HP']]) krijg je 3 columns
+
+print(df.iloc[1]) geeft alle colummen van rij met index 1 (dus 2de rij)
+print(df.iloc[1:4]) van index 1 tot 3
+want [a:b] betekent [a,b-1]
+  
+bij colummen en rijen begint het met 0 dus 0 1
+                                          0
+                                          1
+ print(df.iloc[2,1]) hiermee kan je specefiek iets uit eeerst ui een rij dna een clumn een waarde pakken
+for index, row in df.iterrows():
+print(index,row)
+dit geeft elke index dan row
+for index, row in df.iterrows():
+print(index,row['name']) van elke index(rij) alleen de naam
+df.loc() wordt gebruikt om specifieke data te vinden die te maken heeft met nummers? texture?
+df.loc[df['type 1'] == "Fire"] dit geeft dus alle rijden die in column type 1 Fire hebben
+df.describe() geeft voor alle collumns met nummers informatie, zoals aantal, medium, min, max, etc
+df.sort_values('Name', ascending=False) soorteren op alfabetische voldorde van de naam, ascending false geeft descending
+df.sort_values('Type1', 'HP', ascending=[True,False]) eerst op type1, dan HP per collumn 
+
+//CHANGE DATA
+ 
+df['Total'] = df['HP'] + df['Attack'] +.... geeft een nieuwe column Total en plust alle colummen bij elkaar op per rij
+df = df.drop(columns=['Total']) haalt de column weg
+df['Total'] = df.iloc[:, 4:9].sum(axis=1) Hetzelfde maar anders opgeschreven, : betekent alle index(rijen) en 4:9 specifeert columns en dan .sum(axis=1) betekent bij elkaar optellen, maar horizontaal. axis=1 is verticaal
+
+cols = list(df.columns.values)
+df = df[cols[0:4] + [cols[-1]] + cols[4:12]] hiermee kan je de laaste (-1) tussen alle ander columns zetten. kijk boven
+                 extra [] want wordt gezien als string?!
+
+//SAVE DATA
+df.to_csv('Modified.csv') # om een dataframe op te slaan
+df.to_csv('Modified.csv', index=False) zorgt voor geen index in df
+df.to_excel('Modified.xslx', index=False)
+df.to_csv('modified.txt',index=false,sep='/t') seperate by tab? geen komma. dus alleen ruimte tussen dingen
+
+//FILTERING DATA
+df.loc[df['Type 1'] == 'Grass') & (df['Type 2']== 'Poison') & (df['HP'] > 70)] #je krijgt rijen met die 2 eisen | is or 
+
+ new_df = df.loc[df['Type 1'] == 'Grass') & (df['Type 2']== 'Poison') & (df['HP'] > 70)] #je krijgt rijen met die 2 eisen | is or 
+#hierdoor maak je een nieuwe df met alleen die eisen
+,maar de indexen(positieplaats) die worden niet gereset dus
+new_df =new_df.reset_index() en dan is de rij index normaal, maar dit slaat weer de oude indexen op als een column , dus om die weg te halen moet je :
+new_df =new_df.reset_index(drop=True)
+new_df.reset_index(drop=True, inplace = True) # dan hoef je geen print te doen of een nieuwe variabel te doen?
+
+new_df = df.loc(df['Name'].str.contains('Mega'))
+# alle rijen waarvan de naam Mega bevat
+new_df = df.loc(~df['Name'].str.contains('Mega'))
+# alle rijen waarvan de naam GEEN Mega bevat
+
+//
+import re #regular impressions
+
+df.loc[df['Type 1'].str.contains('fire|grass',flags=re.I,regex=True)]
+#of fire of grass zonder te kijken naar hoofdletter
+df.loc[df['Type 1'].str.contains('pi[a-z]*',flags=re.I,regex=True)] # ster betekent 0 of meer characters
+df.loc[df['Type 1'].str.contains('^pi[a-z]*',flags=re.I,regex=True)] #^ betekent begin
+df.loc[df['Name'].str[0:2] == 'Pi'] # deze en hierboven is voor begint het met Pi
+AI heeft geholpen: df =df.loc[df['Name'].str.startwith('Pi')]
+df.loc[df['Name'].str.slice(0, 2, na=False) == 'Pi']
+
+df.shape geeft de vorm
+dp.info() geeft datatypes van kolommen 
+
+
+
+
+
+str.slice(:,5) en str.slice(5,:) die : staat voor de rest voor of achter
+6-12-2024 tussen 17:00 en 18:30 
+df.loc[df['Type 1'] == 'fire','Type 1'] == ''Flamer'

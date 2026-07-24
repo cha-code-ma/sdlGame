@@ -1,0 +1,224 @@
+a = np.array([1,3,5])
+b = np.array([1,2,3])     
+a*b
+a.ndim # aantal dementies
+a.shape #geeft (r,c)
+a.dtype # datatype, zoald int32
+a = np.array([1,3,5],dtype 'int16')
+a.size #aantal elementen
+c = np.array([[1,2,3,4,5,6,7],[8,9,10,11,12,13,14]])
+c[r,c]
+c[1,5]#13  
+c[1,-2]#13
+c[0,:]#get a specific row
+c[:,2]#get a specific column 
+np.array([],ndim=5) # [[[[[]]]]]
+arr = np.array([1, 2, 3, 4, 5, 6, 7])
+arr[1:5]# 1 t/m 4
+arr[1:5:2] # dus slicing, met om de 2 
+arr[::2] # om de 2 over de hele array
+newarr = arr.astype('i')
+newarr = arr.astype(bool)
+x= arr.copy()
+x.base#checkt of dit een copy is van een array #none # of de originele [.,.,.]
+newarr = arr.reshape(4, 3)#geef een nieuwe aantal kolommen en rijen, product moet overeenkomen met aantal elementen (r,c)
+newarr = arr.reshape(2, 2, -1) #die -1 betekent, computer berekent de goede waarden
+arr.reshape(-1) #betekent dat je elke array naar een 1d array zet ongeacht de grootte
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+for x in arr:
+  for y in x:
+    print(y) # 1 2 3 4 5 6
+#MAAR er is een betere manier:
+for x in np.nditer(arr):
+  print(x)
+for x in np.nditer(arr, flags=['buffered'], op_dtypes=['S']):
+for x in np.nditer(arr[:, ::2]):  #nditer geeft altijd losse getallen
+for idx, x in np.ndenumerate(arr): # dus met dit kan je een index krijgen per waarden
+  print(idx, x) #(0, 0) 1, (0, 1) 2, (0, 2) 3, (0, 3) 4, (1, 0) 5, (1, 1) 6, (1, 2) 7, (1, 3) 8
+arr = np.concatenate((arr1, arr2))# geeft 1 lange lijst
+arr = np.concatenate((arr1, arr2), axis=1) # per kolom dus als de 2 arrays onder elkaar zitten, dan van boven naar beneden is 1 rij en dat gaat zo door
+arr = np.stack((arr1, arr2), axis=1) #doet hetzelfde als concatenate
+newarr = np.array_split(arr, 3)# 2de input staat voor aantal stukken, het past zich aan aan de situatie
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18]])
+newarr = np.array_split(arr, 3, axis=1)# dus dit split zich via de kolommen
+x = np.where(arr == 4) # geeft index of een array aan indexen als het meerdere keren voorkomt
+x = np.where(arr%2 == 0) voor even en arr%2==1 voor oneven
+x = np.searchsorted(arr, 7) # door in een sorted array , kijkt vanaf welk punt je getal kleiner is dan in de array en geeft index
+x = np.searchsorted(arr, 7, side='right') #2  dan ga je van rechts naar links
+x = np.searchsorted(arr, [2, 4, 6])#je krijgt dus een array met 3 waarden terug
+arrNew = np.sort(arr) #geeft copy
+arr = np.array([41, 42, 43, 44])
+x = [True, False, True, False]
+newarr = arr[x] # bepaald welke waarden wel en niet blijven#[41 43]
+filter_arr = []
+for element in arr:
+
+  if element > 42:
+    filter_arr.append(True)
+  else:
+    filter_arr.append(False)
+
+newarr = arr[filter_arr] # zo kan je automatisch waarden weghalen die te klein zijn of niet aan andere voorwaarden voldoen
+#MAAR ER IS OOK EEN ANDERE KORTERE MANIER:
+filter_arr = arr > 42 # geeft dus [true,false] zo een lijst 
+newarr = arr[filter_arr] #hiermee haal je dus echt de waarden weg en hou je een copy over vand e originele array
+arr.append(VALUE)
+arr = np.vstack((arr1,arr2))
+arr =np.hstack((arr1,arr2))
+arr = np.dstack((arr1,arr2))
+##RANDOM##
+from numpy import random
+x = random.randint(100) # random nummer tussen 0 en 100
+x = random.rand() #random tussen 0 en 1, float
+x=random.randint(100, size=(5)) # geeft een 1D array met lengte 5 met willekeurige warden tussen 0 tot en met100 #[26 47 71 7 78]
+x = random.rand(5) # een array 1D van 5 elementen tussen 0 en 1 
+x = random.randint(100, size=(3, 5)) # 2D array, 2 rijen 5 kolommen
+x = random.choice([3, 5, 7, 9]) # kiest een willekeurige waarden uit de array
+x = random.choice([3, 5, 7, 9], size=(3, 5)) # je kan ook een array maken bestaand willekeurig uit de array die je eerst benoemd.
+x = random.choice([3, 5, 7, 9], p=[0.1, 0.3, 0.6, 0.0], size=(3,5)) # dus p staat voor hoevaak het moet terugkomen
+random.shuffle(arr) #geeft alle waarden een willekeurige positie, GEEN COPY
+random.permutation(arr)# ook als shuffle maar maakt een copy
+--x = random.normal(loc=1, scale=2, size=(2, 3))# met parameter; loc = gemmidelde, scale = standaarduitwijking
+x = random.poisson(lam=2,size=10) lam staat voor lambda, wat staat voor hoevaak iets gebeuerd
+in een tijdseenheid; size betekent hoevaak je dit experiment doet en wat de size is van de array 
+dus eigenlijk is het vanuit de 10 keer hoevaak is het 3? of 2?
+x = random.uniform(size=(2, 3)) # geeft een lijst met willekeurige getallen tussen 0 en 1
+--x = random.logistic(loc=1, scale=2, size=(2, 3)) # logistische groei is van min naar max waarbij in het midden
+de helling het grootst is
+x = random.multinomial(n=6, pvals=[1/6, 1/6, 1/6, 1/6, 1/6, 1/6], size =(2,3)) # net als bij dubbelsteen
+n = aantal keer dat je het experiment doet en dus geeft het 6 uitkomsten; goevaak , pvals staat voor de lijst van alle kansen per uitkomst ( alles gelijk aan 1)
+size= de shape of the array      
+--x = random.exponential(scale=2, size=(2, 3)) # exponentiele verdeling, bechrijft de tijd tussen 2 willekeurige 
+gebeurtenissen die onafhankelijk van elkaar gebeuren met consante kans ( ook in AI) zoals het geven van punten ofzo, alle flosts zijn positief
+de floats staan voor de willekeurige wachttijd, gemiddelde wachttijd =scale
+λ  =1/scale = 0.5
+Zipf's Law: In a collection, the nth common term is 1/n times of the most common term.
+ E.g. the 5th most common word in English occurs nearly 1/5 times as often as the most common word.
+x = random.zipf(a=2, size=(2, 3))# deze functie bepaald hoevaak dingen voorkomen wat handig kan zijn voor het voorspellen van woorden 
+##NUMPY UNFUNC##
+x = [1, 2, 3, 4]
+y = [4, 5, 6, 7]
+z = np.add(x, y)#[ 5  7  9 11] # dus telt per kolom op
+arr = np.arange(1, 10) # van 1 tot 9
+newarr = np.subtract(arr1, arr2) # dus elke kolom - elkaar, op volgorde
+newarr = np.multiply(arr1, arr2) # per kolom
+newarr = np.divide(arr1, arr2)# per kolom, in volgorde
+newarr = np.power(arr1, arr2)# per kolom, in volgorde
+newarr = np.mod(arr1, arr2) # geeft rest, 10/3 = 3 rest 1, dus geeft 1 , 10 komt uit de arr1 en 3 uit arr2
+newarr = np.remainder(arr1, arr2) # doet hetzelfde als mod
+newarr = np.divmod(arr1, arr2) #divmod geeft eerst een array met de quotient en dan een array mer alle resten
+newarr = np.absolute(arr)
+arr = np.trunc([-3.1666, 3.6667]) # afronden naar benden, hele getal
+arr = np.fix([-3.1666, 3.6667]) # afronden naar beneden, hele getal
+arr = np.around(3.1666, 2) # gewoon normaal afronden, tweede input bepaald op welke decimaal je afrond
+arr = np.floor([-3.1666, 3.6667]) #[-4.  3.]# decimaal afronden naar laagste gehele getal ongeacht kommagetal, en bij mingetallen is het omgekeerd, dus meer negatief
+arr = np.ceil([-3.1666, 3.6667]) #[-3.  4.]# afronden naar boven, altijd, bij mingetalle nis het dus omgekeerd, dus meer positief dus -3
+np.log2(arr) # doet log2 voor elke waarden
+np.log10(arr)
+np.log(arr) # dit is NIET 10, maar met base e, als in euler ln()
+np.sum([arr1, arr2], axis=1)
+newarr = np.cumsum(arr) #cumalatief, dus 1, 1+2 ,1+2+3
+x = np.prod(arr)
+x = np.prod([arr1, arr2])
+newarr = np.diff(arr) # difference between the numbers, gives an array
+newarr = np.diff(arr, n=2)# does it 2 times
+x = np.lcm(num1, num2) #lowst common multiple, laagste gemeenschapelijke PRODUCT
+x = np.lcm.reduce(arr)# in een array!
+x = np.gcd(num1, num2)
+x = np.gcd.reduce(arr) # om in een array de gemeenschappelijke deler te vinden
+x = np.sin(np.pi/2)
+x = np.sin(arr)# kan ook met een array per waarden
+x = np.deg2rad(arr)# per waarden in array van graden naar radiens
+x = np.rad2deg(arr)
+x = np.arcsin(1.0)
+x = np.arcsin(arr)
+x = np.tan(np.pi*0.5)
+x = np.hypot(base, perp) #hypotenus als in C^2 in een rechthoekige driehoek
+x = np.sinh(np.pi/2)# is gewoon de sinus van imaginaire getallen maar geeft andere antwoord dan sin? idk waarom
+x = np.cosh(arr)
+x = np.arcsinh(1.0)
+newarr = np.union1d(arr1, arr2) #bij elkaar, maar geen repetitie in waarden
+newarr = np.intersect1d(arr1, arr2, assume_unique=True)# geeft een array met alleen de waarden die in beide arrays beschrikbaar zijn
+newarr = np.setxor1d(set1, set2, assume_unique=True) # geeft array van waarden die maar van 1 set komen van de 2, NIET beide
+newarr = np.divmod(arr1, arr2) #divmod geeft eerst een array met de quotient en dan een array mer alle resten
+met quotient bedoel ik bvb: 10/3 = 3 rest 1 dan is 3 de quotient
+x = np.unique(arr) # alleen maar unique waarden behouden
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

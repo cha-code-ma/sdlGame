@@ -1,0 +1,422 @@
+python
+list comprehension 
+class inheritance
+learn basics
+create simple app, calculator, webite, snake game
+integraal, vectoren en matrices, kansentheorie
+math tricks
+machine learning
+deep learning 
+
+a =np.array([1,2,3,4])
+#The first element has index 0
+a[0] = 10
+dus print(a) geeft array([10,2,3,4])
+
+b = a[1:]
+dus print(b) geeft array([2,3,4])
+b[0] = 40
+
+print(a) geeft array([10,40,3,4])
+dus als een variabel de array pakt van een andere
+variable (van a, met slicing), dan wordt bij aanpassing
+van b ook a veranderd. Het is meer een zicht op een specifiek geslicede
+deel.
+
+a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+dus elke variabel van a is weer een lijst aan cijfers.
+dit kan je zien als
+array([[ 1,  2,  3,  4],
+       [ 5,  6,  7,  8],
+       [ 9, 10, 11, 12]])
+a[1,3] geeft 8, want tweede rij 4de kolom, of 2de variable van a en
+in die variabe 4de cijder.
+
+Array attributes
+
+a.ndim geeft aantaal dementies in array (2)
+
+a.shape geeft aantal elementen per dimensie. Dus (3,4) want 3 rijen met elk 4 kolommen
+
+a.size geeft aantal elementen 
+
+a.dtype geeft data type, bvb int voor integer, 64 voor 64-bit
+
+
+np.zeros(2) geeft een array gevuld met nullen van 2 elementen
+np.ones(2) geeft een array gevuld met enen van 2 elementen
+np.empty(2) geeft een array met willekeurige waarden van 2 elementen
+
+np.arange(4) geeft een array van 0 tot 4
+
+np.arrange(first number, last number, stepsize)
+dus np.arange(2,9,2) geeft
+array([2,4,6,8])
+
+gebruik np.linspace() om een array te krijgen met 
+waarden die linear verdeeld zijn in een bepaald interval
+dus
+np.linspace(0,10, num=5) geeft
+array([0,2.5,5,7.5,10])
+dus 5 elemeten in totaal weergeven en linear verdeeld tussen 0 en 10
+
+float is default data type, als je een specifieke wil dan
+
+x = np.ones(2, dtype =np.int64)
+
+TOEVOEGEN, WEGHALEN, SOORTEREN
+arr = np.array([2,6,4,9,5])
+np.sort(arr) soteert het
+argsort, which is an indirect sort along a specified axis,
+
+lexsort, which is an indirect stable sort on multiple keys,
+
+searchsorted, which will find elements in a sorted array, and
+
+partition, which is a partial sort.
+*ZOEK DIT LATER OP*
+
+a = np.array([1, 2, 3, 4])
+b = np.array([5, 6, 7, 8])
+
+np.concatenate((a, b))
+array([1, 2, 3, 4, 5, 6, 7, 8])
+dus achter elkaar zetten in 1 array
+kan ook met 2 dimentionale array
+x = np.array([[1, 2], [3, 4]])
+y = np.array([[5, 6]])
+np.concatenate((x, y), axis=0)
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+ER IS MEER, LEER LATER
+
+GROOTTE EN VORM VAN ARRAY
+array_example = np.array([[[0, 1, 2, 3],
+                           [4, 5, 6, 7]],
+
+                          [[0, 1, 2, 3],
+                           [4, 5, 6, 7]],
+
+                          [[0 ,1 ,2, 3],
+                           [4, 5, 6, 7]]])
+
+array_example.ndim geeft aantal dementies: 3
+array_example.size geeft aantal elementen :24
+array_example.shape geeft vorm :(3,2,4)
+
+je kan de vorm van een array veranderen als je
+maar dezelfde aantal elementen behoudt
+
+a = np.arange(6)
+print(a)
+[0 1 2 3 4 5]
+
+b= a.reshape(3,2) 3 elementen met elk 2 elementen erin
+print(b)
+[[0 1]
+ [2 3]
+ [4 5]]
+je hebt ook np.reshape
+np.reshape(a, shape=(1,6), order='C')je hebt C,F en A? Memory
+array([[0, 1, 2, 3, 4, 5]])
+a2 = a[np.newaxis,:]
+a2.shape geeft dan (1,6) en kan ook omgekeerd (6,1) geven
+video opzoeken?
+Dit kan ook met b= np.expand_dims(a, axis=(1(of 2de 3de, etc))
+dan is b.shape (6,1) 0de kan ook
+
+data = np.array([1, 2, 3])
+data[1] geeft 2
+data[0:2] geeft array([1,2]) want bij slicing is laatste 2-1 dus 1de element
+
+data [a:b] geeft(a)de element, (b-1)de element als je vanuit 0 begint te tellen
+
+data[1:] geeft array([2,3])
+data[-2:] geeft  (dus terug tellen en dan normaal)
+array([2, 3])
+
+je kan ook voorwaarden toevoegen aan een array
+a = np.array([[1 , 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+
+print(a[a <5]) geeft
+[1,2,3,4]
+
+de condition kan ook een variable zijn:
+five_up = (a >= 5)
+print(a[five_up]) geeft
+[ 5  6  7  8  9 10 11 12]
+
+divisible_by_2 = a[a%2==0]
+print(divisible_by_2)
+[ 2  4  6  8 10 12]
+
+c = a[(a > 2) & (a < 11)] Meerdere voorwaarden
+print(c) geeft
+[ 3  4  5  6  7  8  9 10]
+
+
+Set {}
+
+list [] en array too
+
+tulp ()
+
+
+set3 = set1.intersection(set2) #in beide sets
+MAAR JE KAN OOK DIT GEBRUIKEN
+set3 = set1 & set2
+
+je kan set3 = set1.difference(set2) gebruiken OF
+
+set3 = set1 - set2
+dus die wel in set1 zitten en niet in set2
+
+
+set3 = set1.symmetric_difference(set2) # dit geeft een lijst met elementen die niet in beide lijsten zitten
+
+OF JE GEBRUIKT DIT
+
+set3 = set1 ^ set2
+
+
+
+for x, obj in myfamily.items(): #.items() geeft een lijst van de key en value paren in het woordenboek, 
+  #daarom moet je in de for loop ook 2 variabelen gebruiken, namelijk x voor de sleutel en obj voor de waarde
+    print(x)
+
+    for y in obj:
+        print(y + ':', obj[y])  # (Opmerking: de dubbele slash moet een hash zijn voor een comment)
+
+je hebt dus in een dictionairy .values() voor alle values in elke key en 
+.items is voor de key en de value en .keys() voor alle keys
+
+if:
+elif:
+else:
+
+
+
+def my_function(*kids):
+  print("The youngest child is " + kids[2])
+dus dat sterretje is ervoor als je niet weet hoeveel argumenten in de functie komen
+
+
+
+
+bij array en lists
+
+.insert(pos,value) of omgekeerd
+.append
+.pop
+
+
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+p1 = Person("John", 36)
+
+print(p1.name)
+print(p1.age)
+class Person:
+   def __init__(self,x,y): #in class
+      self.x = x
+
+
+en dan 
+p = Person("alice",30)
+
+print(p.name)
+print(p.age)
+
+oke en dit nog ook 
+
+
+
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  def __str__(self):
+    return f"{self.name}({self.age})"
+
+p1 = Person("John", 36)
+
+print(p1)
+# dus def __str__(self): dat returned een string van hoe de class zou moeten worden 
+uitgeprint, als je dit niet doet krijg je iets raars maar nu kan je in de class
+bepalen wat er gereturned moet worden 
+
+en het is niet $ maar f
+
+# je kan self ook veranderen naar een ander woordje als het maar consistent is 
+
+
+net als in C# kan je in python refereren naar een andere script ( dusmet .py)
+stel je voor de file heet mymodule.py
+
+en hierin staat
+
+def greeting(name):
+  print("Hello, " + name)
+
+dan kan je zeggen in een ander script
+
+import mymodule
+
+mymodule.greeting("johnDoe")
+
+import mymodule as Mm
+
+import platform
+
+x = dir(platform)
+print(x)
+
+dir geeft welke functies ( of variable naam) er beschrikbaar is in de module
+
+je kan ook maar een specifiek ding importeren van een andere script door te zeggen 
+
+from mymodule import person1 (een class)
+
+
+import json, json is belangrijk, want je kan een string wat eigenlijk een library is veranderd naar een echte library
+maar ook omgekeerd om het te printen 
+je hebt json.dump(x) wat er eeen string maakt en json.loads(y) om het weer terug te brengen 
+#dus alles met json.dump() wordt een string wat handig is voor het versturen van informatie
+zo kan je tussen een python programma en een website dingen versturen ook API
+
+maar als je json.dump(x) gebruikt dan is het allemaal op 1 lijn en moeilijk te lezen wanneer je een grote classe hebt
+daarom kan je indets gebruiken
+json.dumps(x,indent=4) je hebt ook nog seperator?
+
+json.dumps(x, indent=4, sort_keys=True)
+ sorteren kan ook op alfabetische volgorde
+bij json.loads() altijd dictionary??
+
+
+import re om in strings patronen te herkennen
+
+import re 
+txt = "The rain in Spain"
+x = re.search("^The.*Spain$", txt)
+
+oke dus
+ ^ betekent begin aan de string , moet in dit geval The bevatten
+ . betekent alles mag ertussen zitten behalve een nieuwe lijn /n
+ * betekent 0 of meer herhalingen van het vorige teken (.) dus mag er zo veel 
+tussen zitten als je wil
+ $ betekent einde van string, en moet in dit geval Spain bevatten
+ 
+.findall geeft alle matches
+.split
+
+
+import re
+
+#Split the string at every white-space character:
+
+txt = "The rain in Spain"
+x = re.split("\s", txt)
+print(x)
+#['The', 'rain', 'in', 'Spain']
+.sub()#zorgt ervoor dat elke character dat gevonden wordt wordt herplaatst door een ander character
+
+txt = "The rain in Spain"
+x = re.sub("\s", "9", txt)
+print(x)
+
+ + one or more occurences
+ ? zero or one occurrence
+{} exactly the specified number of occurrences
+ | either or 
+() capture and group???
+
+try:
+  print(x)
+except NameError:
+ print("x is er geen eens")
+except:
+  print("er is een error anders dan niet gedefined")
+
+
+
+try:
+  print("Hello")
+except:
+  print("Something went wrong")
+else:
+  print("Nothing went wrong")
+
+
+
+txt = f"...{var(.2f)}..."
+
+
+myorder = "I want {} pieces of item number {} for {:.2f} dollars."
+print(myorder.format(quantity, itemno, price))
+
+
+print("Enter your name:")
+name = input()
+print(f"Hello {name}")
+
+
+dus met input kan je een antwoord krijgen van de user ( een string) zet dat in een variable
+en zeg float(x) of int(y)
+
+en met try en except kan je kijken of het ook echt een nummer is door te kijken 
+of het geen error geeft als je float(x) doet 
+
+
+
+
+FILEHANDLING
+
+
+f = open("demofile.txt")
+
+
+
+f = open("demofile.txt")
+print(f.read())
+
+f = open("D:\\myfiles\welcome.txt")
+print(f.read())
+
+f = open("demofile.txt")
+print(f.readline())
+f.close() # ALS je with gebruikt hoef je de file niet te close gebeurd automatisch
+
+with open("demofile.txt") as f:
+  print(f.read())
+
+with open("demofile.txt") as f:
+  print(f.read(5))# de eerste 5 characters
+print(f.readline()) # eerste LIJN
+
+
+"x" - Create - will create a file, returns an error if the file exists
+
+"a" - Append - will create a file if the specified file does not exists
+
+"w" - Write - will create a file if the specified file does not exists
+
+f = open("myfile.txt", "x")
+
+import os
+os.remove("demofile.txt")
+
+
+import os
+if os.path.exists("demofile.txt"):
+  os.remove("demofile.txt")
+else:
+  print("The file does not exist")
+
+
+import os
+os.rmdir("myfolder")

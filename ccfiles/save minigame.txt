@@ -1,0 +1,126 @@
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+
+public class MemoryScript : MonoBehaviour
+{
+    public List<CardScript> flippedCards = new List<CardScript>();
+    // hiermee maak je een nieuwe lijst aan ( leeg) met het type cardscript die lijst heet flippedCards 
+    public Transform cardMapParent;
+    public CounterScript counterScript;
+    public int rows = 4;
+    public int columns = 6;
+    public int size = 80;
+    private float spacing = 20f;
+    public GameObject cardPrefab;
+    public Sprite[] cardImages; // Sleep je sprites in de Inspector
+    private bool blockFlipping = false;
+    public void CreateGrid()
+    {
+        float totalWidth = columns * size + (columns - 1) * spacing;
+        float totalHeight = rows * size + (rows - 1) * spacing;
+        float startX = -totalWidth / 2 + size / 2;
+        float startY = totalHeight / 2 - size / 2;
+
+        // 1. Maak een lijst met elk plaatje twee keer
+        List<Sprite> imagesForCards = new List<Sprite>();
+        for (int i = 0; i < (rows * columns) / 2; i++)
+        {
+            imagesForCards.Add(cardImages[i]);
+            imagesForCards.Add(cardImages[i]);
+        }
+        // 2. Shuffle de lijst
+        System.Random rng = new System.Random();
+        int n = imagesForCards.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            Sprite value = imagesForCards[k];
+            imagesForCards[k] = imagesForCards[n];
+            imagesForCards[n] = value;
+        }
+
+        // 3. Maak alle kaarten aan en wijs direct de sprite toe aan de Image van de Photo-child
+        int spriteIndex = 0;
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                GameObject card = Instantiate(cardPrefab, cardMapParent);
+                RectTransform rectTransform = card.GetComponent<RectTransform>();
+                rectTransform.sizeDelta = new Vector2(size, size);
+                rectTransform.anchoredPosition = new Vector2(
+                    startX + j * (size + spacing),
+                    startY - i * (size + spacing)
+                );
+
+                // Zoek het Photo-child en wijs direct de sprite toe
+                Transform photoChild = card.transform.Find("Photo");
+                if (photoChild != null)
+                {
+                    Image img = photoChild.GetComponent<Image>();
+                    if (img != null)
+                    {
+                        img.sprite = imagesForCards[spriteIndex];
+                        img.preserveAspect = true;
+                        img.color = Color.white;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Geen Image component gevonden op Photo-child van kaart " + spriteIndex);
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("Geen Photo-child gevonden op kaart " + spriteIndex);
+                }
+                spriteIndex++;
+            }
+        }
+        SignalAllCards(); // Roep de methode aan om alle kaarten voor te bereiden
+    }
+    public void SignalAllCards()
+    {
+        foreach (CardScript card in cardMapParent.GetComponentsInChildren<CardScript>())
+        {
+            card.PrepareCards(); // Roep een methode aan op elke kaart
+        }
+    }
+    public bool CanFlipCard(CardScript card)
+    {
+        if (blockFlipping) return false;
+        // Laat flippen toe als er minder dan 2 kaarten geflipt zijn en deze kaart nog niet geflipt is
+        return flippedCards.Count < 2 && !flippedCards.Contains(card) && !card.isFlipped;
+    }
+    public void RegisterFlippedCard(CardScript card)
+    {
+        if (!flippedCards.Contains(card))
+            flippedCards.Add(card);
+
+        // Als er nu 2 kaarten zijn, kun je hier logica toevoegen om te checken op een match
+        if (flippedCards.Count == 2)
+        {
+            StartCoroutine(BlockAndCheckMatch());
+        }
+        
+    }
+    public IEnumerator BlockAndCheckMatch()
+    {
+        blockFlipping = true;
+        yield return new WaitForSeconds(1.5f); // Wacht 1 seconde voor de check
+        UnflipAllCards();
+        blockFlipping = false;
+
+
+    }
+    public void UnflipAllCards()
+    {
+        foreach (var card in flippedCards)
+        {
+            card.Unflip(); // Je moet deze methode zelf maken in CardScript
+        }
+        flippedCards.Clear();
+    }
+}

@@ -1,0 +1,551 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <SDL3/SDL.h>
+#include <stdbool.h>
+
+#define PLAYER (1 << 0)
+#define WALL (1 << 1)
+
+SDL_Color red = { 225, 0, 0 , 255 };
+
+SDL_Color blue = { 0, 255, 0, 255 };
+
+typedef enum {
+	SQUARE,
+	TRIANGLE
+} all_shapes;
+
+typedef enum {
+	IDLE,
+	WALKING,
+	JUMPING
+} all_states;
+
+
+typedef struct {
+	all_shapes my_shape;
+	all_states state;
+
+	float x_position;
+	float y_position;
+	float x_size;
+	float y_size;
+	float future_dx;
+	float future_dy;
+	float speed;
+	SDL_Color color;
+
+	int frame;
+	float frame_time; //time since last frame
+
+	bool animation;
+
+	bool move_up;
+	bool move_down;
+	bool move_left;
+	bool move_right;
+
+	bool visible;
+	bool collision;
+
+	unsigned int mask;
+	unsigned int layer;
+} shape;
+
+typedef struct node {
+	shape *character;
+	struct node *next;
+} node;
+
+typedef struct {
+	node *start_node;
+	size_t count;
+
+} object_list;
+
+
+/*
+	checks collision between 2 struct shape pointers, also looking at layer and mask
+
+	Output:
+	returns 1 if collison has occured, return 0 if not.
+*/
+static int check_collision(shape* obj1, shape* obj2) {
+	if ((!((obj1->mask & obj2->layer) && (obj2->mask & obj1->layer)))
+		|| !obj1->collision || !obj2->collision) {
+		return 0;
+	}
+	float obj1_left = obj1->x_position + obj1->future_dx;
+	float obj1_right = obj1->x_position + obj1->x_size + obj1->future_dx;
+	float obj1_top = obj1->y_position + obj1->future_dy;
+	float obj1_bottom = obj1->y_position + obj1->y_size + obj1->future_dy;
+
+	float obj2_left = obj2->x_position + obj2->future_dx;
+	float obj2_right = obj2->x_position + obj2->x_size + obj2->future_dx;
+	float obj2_top = obj2->y_position + obj2->future_dy;
+	float obj2_bottom = obj2->y_position + obj2->y_size + obj2->future_dy;
+
+	if (obj1_right < obj2_left && obj1_left < obj2_right
+		&& obj1_bottom > obj2_top && obj1_top < obj2_bottom) {
+		return 1;
+	}
+	return 0;
+}
+
+/*
+	checks all collisions between the input :struct shape pointer obj1 and all objects in the scene.
+
+	Output:
+	returns 0 is there is no collision, returns 1 if there was a collision with any object of
+	the scene.
+	Returns -1 if something went wrong.
+*/
+static int check_all_collision(shape* obj1, object_list* list, float dt) {
+	int collision;
+	if (!obj1 || !list) {
+		return -1;
+	}
+	if (!list->start_node) {
+		return 0;
+	}
+	node* current_node = list->start_node;
+
+	while (current_node) {
+		if (current_node == obj1) {
+			current_node = current_node->next;
+			continue;
+		}
+		collision = check_collision(obj1, current_node->character);
+		if (collision == -1) {
+			return -1;
+		}
+		if (collision) {
+			return 1;
+		}
+			current_node = current_node->next;
+	}
+	return 0;
+}
+
+static void update_future_movement(shape *c, bool left, bool right, bool up, bool down, float dt) {
+	if (!c) {
+		return;
+	}
+	if (left) {
+		c->future_dx = -(c->speed * dt);
+	}
+	if (right) {
+		c->future_dx = c->speed * dt;
+	}
+	if (up) {
+		c->future_dy = -(c->speed * dt);
+	}
+	if (down) {
+		c->future_dy = c->speed * dt;
+	}
+}
+
+/*
+	changes the coordinates of a struct shape * according to the input
+
+	Output:
+	returns 0 if something went wrong. 1 if well.
+*/
+static void update_charachter(shape *c, bool up, bool down, bool left, bool right, float dt, float speed) {
+	//movement
+	if (left) {
+		c->x_position -= speed * dt;
+	}
+	if (right) {
+		c->x_position += speed * dt;
+	}
+	if (up) {
+		c->y_position -= speed * dt;
+	}
+	if (down) {
+		c->y_position += speed * dt;
+	}
+	//animation
+	if (c->animation) {
+		c->frame_time += dt;
+		if (c->frame_time > 0.1f) {
+			c->frame = (c->frame + 1) % 4;
+			c->frame_time = 0.00f;
+		}
+	}
+	return;
+}
+
+/*
+	moves the character on the renderer, gives 1 if the given key moves the character
+
+	Output:
+	0 when the input isnt about moving or keycode is equal to NULL.
+*/
+static int move_charachter(object_list* list, shape* c, float dt) {
+	if (!c || !list) {
+		return 0;
+	}
+	int collision = check_all_collision(list, c, dt);
+	if (collision) {
+		return 0;
+	}
+
+	if (c->move_up) {
+		update_charachter(c, true, false, false, false, dt, c->speed);
+	}
+	if (c->move_left) {
+		update_charachter(c, false, false, true, false, dt, c->speed);
+	}
+	if (c->move_right) {
+		update_charachter(c, false, false, false, true, dt, c->speed);
+	}
+	if (c->move_down) {
+		update_charachter(c, false, true, false, false, dt, c->speed);
+	}
+	return 1;
+}
+
+/*
+	Initializes a struct node pointer.
+
+	Output:
+	returns the node pointer is everything went well, otherwise NULL
+*/
+static node* node_init(shape *s_p) {
+	node* n_p = malloc(sizeof(node));
+	if (!n_p) {
+		return NULL;
+	}
+	n_p->character = s_p;
+	n_p->next = NULL;
+	return n_p;
+}
+
+/*
+	deletes the malloced struct node pointer.
+*/
+static void node_delete(node* n_p) {
+	if (!n_p) {
+		return;
+	}
+	if (n_p->character) {
+		free(n_p->character);
+	}
+	free(n_p);
+}
+
+/*
+	Inserts a struct node into the struct object_list
+
+	Output:
+	returns 1 if insert went well, returns 0 if something went wrong
+*/
+static int node_insert(object_list* list_c, node* n_p) {
+	if (!list_c || !n_p) {
+		return 0;
+	}
+	if (!list_c->start_node) {
+		list_c->start_node = n_p;
+		return 1;
+	}
+	node* current_node = list_c->start_node;
+
+	while (current_node) {
+		if (!current_node->next) {
+			current_node->next = n_p;
+			list_c->count++;
+			return 1;
+		}
+		current_node = current_node->next;
+	}
+	return 0;
+}
+/*
+	frees the struct object_list pointer
+*/
+static void free_object_list(object_list* list_c) {
+	if (!list_c) {
+		return;
+	}
+	if (!list_c->start_node) {
+		free(list_c);
+		return;
+	}
+
+	node* current_node = list_c->start_node;
+
+	while (current_node) {
+		node* temp_node = current_node->next;
+		node_delete(current_node);
+		current_node = temp_node;
+	}
+	free(list_c);
+}
+
+/*
+	Initializes a struct shape pointer, inputs are obvious.
+
+	Output:
+	returns shape pointer is everything went well, otherwise NULL
+*/
+static shape* shape_init(all_shapes my_shape, float x_pos, float y_pos, float x_size, float y_size, float speed, bool animation, SDL_Color color,
+	object_list* list_c, object_list* list_object, unsigned int layer, unsigned int mask, bool visible, bool player, bool collision) {
+	shape *s_p = malloc(sizeof(shape));
+	if (!s_p) {
+		return NULL;
+	}
+	int check = 1;
+	node* n_p = node_init(s_p);
+	if (player) {
+		check = node_insert(list_c, n_p);
+	}
+
+	if (!check) {
+		free(s_p);
+		return NULL;
+	}
+	check = node_insert(list_object, n_p);
+	if (!check) {
+		free(s_p);
+		return NULL;
+	}
+
+	list_c->count++;
+	s_p->my_shape = my_shape;
+	s_p->x_position = x_pos;
+	s_p->y_position = y_pos;
+	s_p->x_size = x_size;
+	s_p->y_size = y_size;
+	s_p->state = IDLE;
+	s_p->animation = animation;
+	s_p->move_down = false;
+	s_p->move_left = false;
+	s_p->move_right = false;
+	s_p->move_up = false;
+	s_p->color = color;
+	s_p->visible = true;
+	s_p->mask = mask;
+	s_p->layer = layer;
+	s_p->future_dx = 0.0f;
+	s_p->future_dy = 0.0f;
+	s_p->speed = speed;
+	s_p->collision = collision;
+
+	return s_p;
+}
+
+/*
+	decides wether the key implies movement.
+
+	Output:
+	returns true if movement is implied, else false
+*/
+static bool moving(shape* s_p, SDL_Keycode key) {
+	if (s_p->move_down) {
+		return true;
+	}
+	if (s_p->move_left) {
+		return true;
+	}
+	if (s_p->move_right) {
+		return true;
+	}
+	if (s_p->move_up) {
+		return true;
+	}
+	return false;
+}
+/*
+	puts character on the renderer, using the struct shape pointer.
+*/
+static void draw_character(SDL_Renderer *renderer, shape *c) {
+	SDL_SetRenderDrawColor(renderer, c->color.r, c->color.g, c->color.b, c->color.a);
+	if (c->my_shape == SQUARE) {
+		SDL_FRect rect = {
+			(float)c->x_position,
+			(float)c->y_position,
+			(float)c->x_size,
+			(float)c->y_size
+		};
+			SDL_RenderFillRect(renderer, &rect);
+			return;
+	}
+	if (c->my_shape == TRIANGLE) {
+
+	}
+}
+
+/*
+	draws all shapes pointers in struct object_list on the renderer. SPECIFICALLY CHARACTER LIST
+*/
+static void draw_all_characters(SDL_Renderer *renderer, object_list*l_c) {
+
+	if (!renderer || !l_c || !l_c->start_node) {
+		return;
+	}
+	node* current_node = l_c->start_node;
+	while (current_node) {
+		draw_character(renderer, current_node->character);
+		current_node = current_node->next;
+	}
+}
+
+/*
+	initializes a struct all_characters_list pointer
+
+	Output:
+	if everything went well, it outputs the object_list pointer, else NULL
+*/
+static object_list*object_list_init(void) {
+	object_list* l_c = malloc(sizeof(object_list));
+	if (!l_c) {
+		return NULL;
+	}
+	l_c->start_node = NULL;
+	l_c->count = 0;
+	return l_c;
+}
+
+/*
+	sets movement boolean of the shape pointer all to false.
+*/
+static void set_all_false(shape* s_p) {
+	s_p->move_down = false;
+	s_p->move_left = false;
+	s_p->move_up = false;
+	s_p->move_right = false;
+}
+
+static void free_all_things(object_list* list_c, SDL_Renderer* renderer, SDL_Window* window) {
+	if (list_c) {
+		free_object_list(list_c);
+	}
+	if (renderer) {
+		SDL_DestroyRenderer(renderer);
+	}
+	if (window) {
+		SDL_DestroyWindow(window);
+	}
+
+}
+
+static void reset_dx_dy(shape* c) {
+	if (!c) {
+		return;
+	}
+	c->future_dx = 0.0f;
+	c->future_dy = 0.0f;
+}
+
+static void reset_all_dx_dy(object_list* list) {
+	if (!list || !list->start_node) {
+		return;
+	}
+	node* current_node = list->start_node;
+	while (current_node) {
+		reset_dx_dy(current_node->character);
+		current_node = current_node->next;
+	}
+}
+
+int main(void) {
+	object_list* list_c = object_list_init();
+	if (!list_c) {
+		SDL_Log("init Error list_c %s", SDL_GetError());
+		return 1;
+	}
+
+	object_list* all_objects_list = object_list_init();
+	if (!all_objects_list) {
+		SDL_Log("Renderer init error %s", SDL_GetError());
+		free(list_c);
+		SDL_Quit();
+	}
+
+	SDL_SetHint(SDL_HINT_RENDER_DRIVER, "software");
+	SDL_Init(SDL_INIT_VIDEO);
+	/*if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+		SDL_Log("init Error  INIT video %s", SDL_GetError());
+		return 1;
+	}*/
+
+	SDL_Window* window = SDL_CreateWindow("Move Game", 800, 600, SDL_WINDOW_RESIZABLE);
+	if (!window) {
+		SDL_Quit();
+		return 1;
+	}
+	SDL_Renderer* renderer = SDL_CreateRenderer(window, NULL);
+	if (!renderer) {
+		SDL_Log("Renderer init error %s", SDL_GetError());
+		free_all_things(list_c, window, renderer);
+		SDL_Quit();
+		return 1;
+	}
+
+	shape* square = shape_init(SQUARE, 100.0f, 100.0f, 200.0f, 200.0f, 200.0f, false, red, list_c,
+								all_objects_list, PLAYER, WALL, true, true, true);
+	if (!square) {
+		SDL_Log("sqaure init error %s", SDL_GetError());
+		free_all_things(list_c, window, renderer);
+		SDL_Quit();
+		return 1;
+	}
+
+	shape* wall = shape_init(SQUARE, 500, 400, 50, 50, 0.0f, false, blue, list_c, all_objects_list,
+								WALL, PLAYER, true, false, true);
+	if (!wall) {
+		SDL_Log("wall init error %s", SDL_GetError());
+		free_all_things(list_c, window, renderer);
+		return 1;
+	}
+
+
+	bool key_move = false;
+	bool running = true;
+	SDL_Event event;
+	Uint32 last_time = SDL_GetTicks();
+	SDL_Keycode current_key = NULL;
+	SDL_Keycode previous_key = NULL;
+	while (running) {
+		reset_all_dx_dy(list_c);
+		Uint32 current_time = SDL_GetTicks();
+		float dt = (current_time - last_time) / 1000.0f;
+		last_time = current_time;
+
+		while (SDL_PollEvent(&event)) {
+			if (event.type == SDL_EVENT_QUIT) {
+				running = false;
+			}
+		}
+		if (!running) {
+			break;
+		}
+		set_all_false(square);
+		const Uint8* keystates = SDL_GetKeyboardState(NULL);
+
+		if (keystates[SDL_SCANCODE_W]) { square->move_up = true; }
+		if (keystates[SDL_SCANCODE_A]) { square->move_left = true; }
+		if (keystates[SDL_SCANCODE_S]) { square->move_down = true; }
+		if (keystates[SDL_SCANCODE_D]) { square->move_right = true; }
+
+		update_future_movement(square, square->move_left, square->move_right, square->move_up, square->move_down, dt);
+
+
+
+
+		move_charachter(square, all_objects_list, dt);
+
+
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+		SDL_RenderClear(renderer);
+		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+		draw_all_characters(renderer, list_c);
+		SDL_RenderPresent(renderer);
+		SDL_Delay(16);
+	}
+
+	free_all_things(list_c, renderer, window);
+	SDL_Quit();
+	return 0;
+}

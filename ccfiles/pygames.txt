@@ -1,0 +1,82 @@
+import pygame from pygame.locals import *
+class.app:
+
+
+import pygame as py
+import pandas as pd
+import numpy as np
+import torch as tr
+from sys import exit 
+py.init()
+left = False 
+right = False 
+up = False 
+down = False  
+speed = 1.2
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 400 
+screen = py.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
+py.display.set_caption('Documenten/Pac-Man/PacMan AI')
+clock = py.time.Clock()
+posX = 200
+posY = 200
+moving_down = False
+moving_left = False 
+moving_right = False
+moving_up = False
+#dingen van te voren maken
+#player = py.Rect((posX,posY,30,30))
+player = py.Surface((30, 30), py.SRCALPHA).fill((0, 0, 0, 0))
+wall1 = py.Rect((300,100,200,50))
+player2= py.image.load("C:/Users/Asus/Documents/Pac-Man/PacMan1.png").convert_alpha()
+Pacman = py.transform.smoothscale(player2,(30,30))
+run = True
+test_surface =py.Surface((100,200))
+test_surface.fill((255,0,0))
+while run == True:
+    screen.fill((0,255,0))
+    #screen.blit(test_surface,(200,100))
+    py.draw.rect(screen,(255,0,0),wall1)
+    py.draw.rect(screen,(0,0,0),player)
+    clock.tick(60)
+    key = py.key.get_pressed()
+    if key[py.K_w]:
+        moving_up = True
+        moving_down = moving_left = moving_right = False
+    elif key[py.K_s]:
+        moving_down = True
+        moving_up = moving_left = moving_right = False
+    elif key[py.K_a]:
+        moving_left = True
+        moving_up = moving_down = moving_right = False
+    elif key[py.K_d]:
+        moving_right = True
+        moving_up = moving_down = moving_left = False
+    if moving_up and player.top > 0:
+        player.move_ip(0, -speed)
+    elif moving_down and player.bottom < screen.get_height():
+        player.move_ip(0, speed)
+    elif moving_left and player.left > 0:
+        player.move_ip(-speed, 0)
+    elif moving_right and player.right < screen.get_width():
+        player.move_ip(speed, 0)
+    screen.blit(Pacman,player.topleft)
+     
+     
+
+
+
+   
+    for event in py.event.get():
+         if event.type == py.QUIT:
+               run = False 
+       
+    py.display.update()
+
+
+    
+
+
+py.quit()
+    
+  
