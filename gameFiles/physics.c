@@ -10,6 +10,11 @@
 #include "physics.h"
 #include "object_list.h"
 
+
+
+
+
+
 int check_collision_x(object* obj1, object* obj2) {
 	if ((!(object_get_mask(obj1) & object_get_layer(obj2)) && (object_get_mask(obj2) & object_get_layer(obj1)))
 		|| !object_get_collision(obj1) || !object_get_collision(obj2)) {

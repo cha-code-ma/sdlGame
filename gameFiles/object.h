@@ -16,21 +16,28 @@
 
 typedef struct object object;
 typedef struct node node;
-
+typedef struct animation_data animation_data;
 typedef struct object_list object_list;
+typedef struct size_data size_data;
+typedef struct position_list position_list;
+typedef struct size_list size_list;
 
+typedef struct position_data position_data;
 extern SDL_Color red;
 extern SDL_Color blue;
 
 typedef enum {
 	SQUARE,
-	TRIANGLE
+	TRIANGLE,
+	TEXTURE
 } object_type;
 
 typedef enum {
 	IDLE,
 	WALKING,
-	JUMPING
+	JUMPING,
+	FALLING,
+	SLOW_DOWN
 } all_states;
 
 typedef enum {
@@ -40,7 +47,28 @@ typedef enum {
 	DOWN
 } direction;
 
+typedef enum {
+	COLLISION_NONE  = 0,
+    COLLISION_TOP    = 1 << 0,
+    COLLISION_BOTTOM = 1 << 1,
+    COLLISION_LEFT   = 1 << 2,
+    COLLISION_RIGHT  = 1 << 3
+} collisionFlags;
 
+typedef enum {
+    LAYER_PLAYER  = 1 << 0,
+    LAYER_ENEMY   = 1 << 1,
+    LAYER_WALL    = 1 << 2,
+    LAYER_BULLET  = 1 << 3,
+} layer;
+
+typedef enum {
+    MASK_NONE    = 0,
+    MASK_PLAYER  = LAYER_PLAYER,
+    MASK_ENEMY   = LAYER_ENEMY,
+    MASK_WALL    = LAYER_WALL,
+    MASK_BULLET  = LAYER_BULLET,
+} mask;
 /*
 	Initializes a struct shape pointer, inputs are obvious.
 
@@ -61,6 +89,7 @@ object* player_init(
 	unsigned int mask,
 	bool visible,
 	bool player,
+	layer obj_layer,
 	bool collision,
 	int amount_frames_animation
 );

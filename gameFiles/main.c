@@ -16,8 +16,8 @@
 	Output:
 	returns 0 if something went wrong. 1 if well.
 */
-static void update_charachter(object *c, bool up, bool down, bool left, bool right, float dt,
-								float speed, bool collision_x, bool collision_y) {
+static void update_charachter(object* c, bool up, bool down, bool left, bool right, float dt,
+	float speed, bool collision_x, bool collision_y) {
 	float factor = 1;
 	int amount_inputs = 0;
 	if (left) {
@@ -33,7 +33,7 @@ static void update_charachter(object *c, bool up, bool down, bool left, bool rig
 		amount_inputs++;
 	}
 	if (amount_inputs == 2) {
-		factor = 1.0f/sqrtf(2);
+		factor = 1.0f / sqrtf(2);
 	}
 
 	if (left && !collision_x) {
@@ -66,7 +66,7 @@ static void update_charachter(object *c, bool up, bool down, bool left, bool rig
 	Output:
 	0 when the input isnt about moving or keycode is equal to NULL.
 */
-static int move_charachter(object_list* list, object* c, float dt) {
+int move_charachter(object_list* list, object* c, float dt) {
 	if (!c || !list) {
 		return 0;
 	}
@@ -95,7 +95,7 @@ static int move_charachter(object_list* list, object* c, float dt) {
 /*
 	puts character on the renderer, using the struct shape pointer.
 */
-static void draw_character(SDL_Renderer *renderer, object *c) {
+static void draw_character(SDL_Renderer* renderer, object* c) {
 	SDL_SetRenderDrawColor(renderer, object_get_color(c).r, object_get_color(c).g, object_get_color(c).b, object_get_color(c).a);
 	if (object_get_type(c) == SQUARE) {
 		SDL_FRect rect = {
@@ -104,8 +104,8 @@ static void draw_character(SDL_Renderer *renderer, object *c) {
 			object_get_x_size(c),
 			object_get_y_size(c)
 		};
-			SDL_RenderFillRect(renderer, &rect);
-			return;
+		SDL_RenderFillRect(renderer, &rect);
+		return;
 	}
 	if (object_get_type(c) == TRIANGLE) {
 
@@ -115,7 +115,7 @@ static void draw_character(SDL_Renderer *renderer, object *c) {
 /*
 	draws all shapes pointers in struct object_list on the renderer. SPECIFICALLY CHARACTER LIST
 */
-static void draw_all_characters(SDL_Renderer *renderer, object_list*l_c) {
+static void draw_all_characters(SDL_Renderer* renderer, object_list* l_c) {
 
 	if (!renderer || !l_c || !object_list_get_start_node(l_c)) {
 		return;
@@ -216,7 +216,7 @@ int main(void) {
 	}
 
 	object* square = shape_init(SQUARE, 100.0f, 100.0f, 100.0f, 100.0f, 200.0f, false, red, list_c,
-								all_objects_list, PLAYER, WALL, true, true, true, 4);
+		all_objects_list, PLAYER, WALL, true, true, true, 4);
 	if (!square) {
 		SDL_Log("sqaure init error %s", SDL_GetError());
 		free_all_things(list_c, renderer, window);
@@ -225,14 +225,14 @@ int main(void) {
 	}
 
 	object* wall = shape_init(SQUARE, 500.0f, 400.0f, 50.0f, 200.0f, 0.0f, false, blue, list_c, all_objects_list,
-								WALL, PLAYER, true, false, true, 4);
+		WALL, PLAYER, true, false, true, 4);
 	if (!wall) {
 		SDL_Log("wall init error %s", SDL_GetError());
 		free_all_things(list_c, window, renderer);
 		return 1;
 	}
 
-
+	//MAIN LOOP
 	bool key_move = false;
 	bool running = true;
 	SDL_Event event;

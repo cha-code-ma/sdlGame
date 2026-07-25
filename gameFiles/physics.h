@@ -7,6 +7,7 @@
 #include <SDL3/SDL.h>
 #include <stdbool.h>
 
+
 typedef struct node node;
 typedef struct object object;
 typedef struct object_list object_list;

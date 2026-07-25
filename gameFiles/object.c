@@ -11,6 +11,19 @@
 SDL_Color red = { 255, 0, 0, 255 };
 SDL_Color blue = { 0, 0, 255, 255 };
 
+struct animation_data {
+	int Current_frame;
+	float frame_time;
+	int amount_frames_animation;
+	bool animation;
+	SDL_Texture* animation_textures;
+};
+
+struct size_list {
+	float *x_list;
+	float *y_list;
+	float *t_list; //time intervals for each position.
+};
 
 struct node {
 	object* character;
@@ -23,35 +36,40 @@ struct object_list {
 
 };
 
+struct position_list {
+	float *x_list;
+	float *y_list;
+	float *t_list; //time intervals for each position.
+};
+
+struct size_data {
+	float x;
+	float y;
+};
+
+struct position_data {
+	float x;
+	float y;
+};
+
 struct object {
 	object_type my_shape;
 	all_states state;
-
-	float x_position;
-	float y_position;
-	float x_size;
-	float y_size;
-	float future_dx;
-	float future_dy;
+	size_data* size;
+	size_data* future_size;
+	position_data *current_position;
+	position_data *future_position;
+	position_data *move_diretion;
+	position_list *list_postions;
+	size_list *list_sizes;
+	bool visible;
 	float speed;
 	SDL_Color color;
-
-	int frame;
-	float frame_time;
-	int amount_frames_animation;
-	bool animation;
-
-	bool move_up;
-	bool move_down;
-	bool move_left;
-	bool move_right;
-
-	bool visible;
-	bool collision;
-
-	unsigned int mask;
-	unsigned int layer;
-	SDL_Texture* texture;
+	position_data* current;
+	animation_data* animation;
+	mask *ojb_mask;
+	layer *obj_layer;
+	SDL_Texture *texture;
 };
 
 /*
