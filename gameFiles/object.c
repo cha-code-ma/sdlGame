@@ -61,7 +61,7 @@ struct object {
 	all_states state;
 	size_data size; //hitbox
 	size_data future_size; //hitbox
-	position_data current_position;
+	position_data position;
 	position_data future_position;
 	position_data move_diretion;
 	fixed_movement *obj_fixed_movement;
@@ -69,7 +69,7 @@ struct object {
 	float speed;
 	SDL_Color color;
 	animation_data *animation;
-	mask ojb_mask;
+	mask obj_mask;
 	layer obj_layer;
 	SDL_Texture *texture;
 };
@@ -166,19 +166,20 @@ object* obj_init(
 		s_p->animation = NULL;
 	}
 
-
 	s_p->obj_shape = my_shape;
-	s_p->current_position.x = x_pos;
-	s_p->current_position.y = y_pos;
-	s_p->current_position.x = x_size;
-	s_p->current_position.y = y_size;
+	s_p->position.x = x_pos;
+	s_p->position.y = y_pos;
+	s_p->future_position.x = x_pos;
+	s_p->future_position.y = y_pos;
+	s_p->size.x = x_size;
+	s_p->size.y = y_size;
+	s_p->future_size.x = x_size;
+	s_p->future_size.y = y_size;
 	s_p->state = IDLE;
 	s_p->color = color;
 	s_p->visible = true;
-	s_p->ojb_mask = obj_mask;
+	s_p->obj_mask = obj_mask;
 	s_p->obj_layer = obj_layer;
-	s_p->future_position.x = 0.0f;
-	s_p->future_position.y = 0.0f;
 	s_p->speed = speed;
 	s_p->obj_fixed_movement->list_size.x_list = size_list_x;
 	s_p->obj_fixed_movement->list_size.y_list = size_list_y;
@@ -193,281 +194,247 @@ object* obj_init(
 	return s_p;
 }
 
+void free_object(object* obj) {
+	if (obj->obj_fixed_movement) {
+		if (obj->obj_fixed_movement->list_position) {
+			free(obj->obj_fixed_movement->list_position);
+		}
+		free(obj->obj_fixed_movement);
+	}
+	if (obj->obj_fixed_movement) {
+		if (obj->obj_fixed_movement->list_position) {
+			if (obj->obj_fixed_movement->list_position->x_list) {
+				free(obj->obj_fixed_movement->list_position->x_list);
+			}
+			if(obj->obj_fixed_movement->list_position->y_list) {
+				free(obj->obj_fixed_movement->list_position->y_list);
+			}
+			if (obj->obj_fixed_movement->list_position->t_list) {
+				free(obj->obj_fixed_movement->list_position->t_list);
+			}
+			free(obj->obj_fixed_movement->list_position);
+		}
+		if (obj->obj_fixed_movement->list_size.x_list) {
+			free(obj->obj_fixed_movement->list_size.x_list);
+		}
+		if (obj->obj_fixed_movement->list_size.y_list) {
+			free(obj->obj_fixed_movement->list_size.x_list);
+		}
+		if (obj->obj_fixed_movement->list_size.t_list) {
+			free(obj->obj_fixed_movement->list_size.x_list);
+		}
+
+	}
+	if (obj->texture) {
+		free(obj->texture);
+	}
+	if (obj->animation) {
+		if (obj->animation->animation_textures) {
+			for (int i = 0; i < len(obj->animation->animation_textures); i++) {
+			free(i);
+			}
+			free(obj->animation->animation_textures);
+		}
+		free(obj->animation);
+	}
+	free(obj);
+}
+
 int object_excist(object* obj) {
 	if (obj) {
 		return 1;
 	}
 	return 0;
 }
-float object_get_x_pos(object* obj) {
 
-	return obj->x_position;
+object_type object_get_shape(object* obj) {
+    return obj->obj_shape;
+}
+int object_set_shape(object* obj, object_type shape) {
+    if (!obj) return 0;
+    obj->obj_shape = shape;
+    return 1;
 }
 
-float object_get_y_pos(object* obj) {
-	return obj->y_position;
+all_states object_get_state(object* obj) {
+    return obj->state;
+}
+int object_set_state(object* obj, all_states state) {
+    if (!obj) return 0;
+    obj->state = state;
+    return 1;
 }
 
 float object_get_x_size(object* obj) {
-	return obj->x_size;
+    return obj->size.x;
 }
-
 float object_get_y_size(object* obj) {
-	return obj->y_size;
+    return obj->size.y;
+}
+int object_set_x_size(object* obj, float x_size) {
+    if (!obj) return 0;
+    obj->size.x = x_size;
+    return 1;
+}
+int object_set_y_size(object* obj, float y_size) {
+    if (!obj) return 0;
+    obj->size.y = y_size;
+    return 1;
 }
 
-float object_get_future_dx(object* obj) {
-	return obj->future_dx;
+float object_get_future_x_size(object* obj) {
+    return obj->future_size.x;
+}
+float object_get_future_y_size(object* obj) {
+    return obj->future_size.y;
+}
+int object_set_future_x_size(object* obj, float x_size) {
+    if (!obj) return 0;
+    obj->future_size.x = x_size;
+    return 1;
+}
+int object_set_future_y_size(object* obj, float y_size) {
+    if (!obj) return 0;
+    obj->future_size.y = y_size;
+    return 1;
 }
 
-float object_get_future_dy(object* obj) {
-	return obj->future_dy;
+float object_get_x_pos(object* obj) {
+    return obj->position.x;
+}
+float object_get_y_pos(object* obj) {
+    return obj->position.y;
+}
+int object_set_x_pos(object* obj, float x_pos) {
+    if (!obj) return 0;
+    obj->position.x = x_pos;
+    return 1;
+}
+int object_set_y_pos(object* obj, float y_pos) {
+    if (!obj) return 0;
+    obj->position.y = y_pos;
+    return 1;
 }
 
 float object_get_future_x_pos(object* obj) {
-	return obj->x_position + obj->future_dx;
+    return obj->future_position.x;
 }
-
 float object_get_future_y_pos(object* obj) {
-	return obj->y_position + obj->future_dy;
+    return obj->future_position.y;
+}
+int object_set_future_x_pos(object* obj, float x_pos) {
+    if (!obj) return 0;
+    obj->future_position.x = x_pos;
+    return 1;
+}
+int object_set_future_y_pos(object* obj, float y_pos) {
+    if (!obj) return 0;
+    obj->future_position.y = y_pos;
+    return 1;
 }
 
-float object_get_speed(object* obj) {
-	return obj->speed;
+float object_get_move_direction_x(object* obj) {
+    return obj->move_diretion.x;
+}
+float object_get_move_direction_y(object* obj) {
+    return obj->move_diretion.y;
 }
 
-SDL_Color object_get_color(object* obj) {
-	return obj->color;
+float object_get_dx_pos(object* obj) {
+	return obj->future_position.x - obj->position.x;
+}
+float object_get_dy_pos(object* obj) {
+	return obj->future_position.y - obj->position.y;
 }
 
-int object_get_animation_frame(object* obj) {
-	return obj->frame;
+float object_get_dx_size(object* obj) {
+	return obj->future_size.x - obj->future_size.x;
+}
+float object_get_dy_size(object* obj) {
+	return obj->future_size.y - obj->future_size.y;
 }
 
-unsigned int object_get_mask(object* obj) {
-	return obj->mask;
+int object_set_move_direction_x(object* obj, float x) {
+    if (!obj) return 0;
+    obj->move_diretion.x = x;
+    return 1;
+}
+int object_set_move_direction_y(object* obj, float y) {
+    if (!obj) return 0;
+    obj->move_diretion.y = y;
+    return 1;
 }
 
-unsigned int object_get_layer(object* obj) {
-	return obj->layer;
+fixed_movement* object_get_fixed_movement(object* obj) {
+    return obj->obj_fixed_movement;
+}
+int object_set_fixed_movement(object* obj, fixed_movement* fm) {
+    if (!obj) return 0;
+    obj->obj_fixed_movement = fm;
+    return 1;
 }
 
 bool object_get_visible(object* obj) {
-	return obj->visible;
+    return obj->visible;
 }
-
-bool object_get_collision(object* obj) {
-	return obj->collision;
-}
-
-bool object_get_animation(object* obj) {
-	return obj->animation;
-}
-
-float object_get_frame_time(object* obj) {
-	return obj->frame_time;
-}
-
-int object_set_x_pos(object* obj, float x_pos) {
-	if (!obj) {
-		return 0;
-	}
-	obj->x_position = x_pos;
-	return 1;
-}
-
-
-int object_set_y_pos(object* obj, float y_pos) {
-	if (!obj) {
-		return 0;
-	}
-	obj->y_position = y_pos;
-	return 1;
-}
-
-
-int object_set_x_size(object* obj, float x_size) {
-	if (!obj) {
-		return 0;
-	}
-	obj->x_size = x_size;
-	return 1;
-}
-
-int object_set_y_size(object* obj, float y_size) {
-	if (!obj) {
-		return 0;
-	}
-	obj->y_size = y_size;
-	return 1;
-}
-
-
-int object_set_future_dx(object* obj, float future_dx) {
-	if (!obj) {
-		return 0;
-	}
-	obj->future_dx = future_dx;
-	return 1;
-}
-
-
-int object_set_future_dy(object* obj, float future_dy) {
-	if (!obj) {
-		return 0;
-	}
-	obj->future_dy = future_dy;
-	return 1;
-}
-
-
-
-int object_set_speed(object* obj, float speed) {
-	if (!obj) {
-		return 0;
-	}
-	obj->speed = speed;
-	return 1;
-}
-
-
-int object_set_color(object* obj, SDL_Color color) {
-	if (!obj) {
-		return 0;
-	}
-	obj->color = color;
-	return 1;
-}
-
-
-int object_set_animation_frame(object* obj, int frame) {
-	if (!obj) {
-		return 0;
-	}
-	obj->frame = frame;
-	return 1;
-}
-
-
-int object_set_mask(object* obj, unsigned int mask) {
-	if (!obj) {
-		return 0;
-	}
-	obj->mask = mask;
-	return 1;
-}
-
-
-int object_set_layer(object* obj, unsigned int layer) {
-	if (!obj) {
-		return 0;
-	}
-	obj->layer = layer;
-	return 1;
-}
-
 int object_set_visible(object* obj, bool visible) {
-	if (!obj) {
-		return 0;
-	}
-	obj->visible = visible;
-	return 1;
+    if (!obj) return 0;
+    obj->visible = visible;
+    return 1;
 }
 
-
-int object_set_collision(object* obj, bool collision) {
-	if (!obj) {
-		return 0;
-	}
-	obj->collision = collision;
-	return 1;
+float object_get_speed(object* obj) {
+    return obj->speed;
+}
+int object_set_speed(object* obj, float speed) {
+    if (!obj) return 0;
+    obj->speed = speed;
+    return 1;
 }
 
-int object_set_animation(object* obj, bool animation) {
-	if (!obj) {
-		return 0;
-	}
-	obj->animation = animation;
-	return 1;
+SDL_Color object_get_color(object* obj) {
+    return obj->color;
+}
+int object_set_color(object* obj, SDL_Color color) {
+    if (!obj) return 0;
+    obj->color = color;
+    return 1;
 }
 
-int object_set_frame_time(object* obj, float frame_time) {
-	if (!obj) {
-		return 0;
-	}
-	obj->frame_time = frame_time;
-	return 1;
+animation_data* object_get_animation_ptr(object* obj) {
+    return obj->animation;
+}
+int object_set_animation_ptr(object* obj, animation_data* anim) {
+    if (!obj) return 0;
+    obj->animation = anim;
+    return 1;
 }
 
-int object_get_amount_frames_animation(object* obj) {
-	return obj->amount_frames_animation;
+unsigned int object_get_mask(object* obj) {
+    return obj->obj_mask;
 }
-int object_set_amount_frames_animation(object* obj, int amount) {
-	if (!obj) {
-		return 0;
-	}
-	obj->amount_frames_animation = amount;
-	return 1;
+int object_set_mask(object* obj, unsigned int mask) {
+    if (!obj) return 0;
+    obj->obj_mask = mask;
+    return 1;
 }
 
-bool object_get_bool_left(object* obj) {
-	return obj->move_left;
+unsigned int object_get_layer(object* obj) {
+    return obj->obj_layer;
+}
+int object_set_layer(object* obj, unsigned int layer) {
+    if (!obj) return 0;
+    obj->obj_layer = layer;
+    return 1;
 }
 
-bool object_get_bool_right(object* obj) {
-	return obj->move_right;
+SDL_Texture* object_get_texture(object* obj) {
+    return obj->texture;
 }
-
-bool object_get_bool_up(object* obj) {
-	return obj->move_up;
-}
-
-bool object_get_bool_down(object* obj) {
-	return obj->move_down;
-}
-
-int object_set_bool_left(object* obj, bool left) {
-	if (!obj) {
-		return 0;
-	}
-	obj->move_left = left;
-	return 1;
-}
-
-int object_set_bool_right(object* obj, bool right) {
-	if (!obj) {
-		return 0;
-	}
-	obj->move_right = right;
-	return 1;
-}
-
-int object_set_bool_up(object* obj, bool up) {
-	if (!obj) {
-		return 0;
-	}
-	obj->move_up = up;
-	return 1;
-}
-
-int object_set_bool_down(object* obj, bool down) {
-	if (!obj) {
-		return 0;
-	}
-	obj->move_down = down;
-	return 1;
-}
-
-int object_set_type(object* obj, object_type type) {
-	if (!obj) {
-		return 0;
-	}
-	obj->obj_shape = type;
-	return 1;
-}
-
-object_type object_get_type(object* obj) {
-	return obj->obj_shape;
+int object_set_texture(object* obj, SDL_Texture* texture) {
+    if (!obj) return 0;
+    obj->texture = texture;
+    return 1;
 }
 
 void update_charachter(object* c, bool up, bool down, bool left, bool right, float dt,

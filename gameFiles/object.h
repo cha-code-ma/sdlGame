@@ -97,139 +97,84 @@ object* obj_init(
 
 int object_excist(object* obj);
 
-float object_get_x_pos(object* obj);
+// object_type
+object_type object_get_shape(object* obj);
+int object_set_shape(object* obj, object_type shape);
 
-float object_get_y_pos(object* obj);
+// all_states
+all_states object_get_state(object* obj);
+int object_set_state(object* obj, all_states state);
 
+// size (hitbox)
 float object_get_x_size(object* obj);
-
 float object_get_y_size(object* obj);
-
-float object_get_future_dx(object* obj);
-
-float object_get_future_dy(object* obj);
-
-float object_get_future_x_pos(object* obj);
-
-float object_get_future_y_pos(object* obj);
-
-float object_get_speed(object* obj);
-
-SDL_Color object_get_color(object* obj);
-
-int object_get_animation_frame(object* obj);
-
-unsigned int object_get_mask(object* obj);
-
-unsigned int object_get_layer(object* obj);
-
-bool object_get_visible(object* obj);
-
-bool object_get_collision(object* obj);
-
-bool object_get_animation(object* obj);
-
-float object_get_frame_time(object* obj);
-
-int object_get_amount_frames_animation(object* obj);
-
-bool object_get_bool_left(object* obj);
-
-bool object_get_bool_right(object* obj);
-
-bool object_get_bool_up(object* obj);
-
-bool object_get_bool_down(object* obj);
-
-int object_set_bool_left(object* obj, bool left);
-
-int object_set_bool_right(object* obj, bool right);
-
-int object_set_bool_up(object* obj, bool up);
-
-int object_set_bool_down(object* obj, bool up);
-
-int object_set_type(object* obj, object_type type);
-
-object_type object_get_type(object* obj);
-
-/*
-	sets x_position. Returns 1 if it went well, returns 0 if not.  struct object
-*/
-int object_set_x_pos(object* obj, float x_pos);
-
-/*
-	sets y position. Returns 1 if it went well, returns 0 if not.  struct object
-*/
-int object_set_y_pos(object* obj, float y_pos);
-
-/*
-	sets x size. Returns 1 if it went well, returns 0 if not.  struct object
-*/
 int object_set_x_size(object* obj, float x_size);
-
-/*
-	sets y size. Returns 1 if it went well, returns 0 if not.  struct object
-*/
 int object_set_y_size(object* obj, float y_size);
 
-/*
-	sets future dx. Returns 1 if it went well, returns 0 if not. struct object
-*/
-int object_set_future_dx(object* obj, float future_dx);
+// future_size
+float object_get_future_x_size(object* obj);
+float object_get_future_y_size(object* obj);
+int object_set_future_x_size(object* obj, float x_size);
+int object_set_future_y_size(object* obj, float y_size);
 
-/*
-	sets future dy. Returns 1 if it went well, returns 0 if not. struct object
-*/
-int object_set_future_dy(object* obj, float future_dy);
+// position
+float object_get_x_pos(object* obj);
+float object_get_y_pos(object* obj);
+int object_set_x_pos(object* obj, float x_pos);
+int object_set_y_pos(object* obj, float y_pos);
 
-/*
-	sets speed. Returns 1 is if went well, returns 0 if not. struct object
-*/
-int object_set_speed(object* obj, float speed);
+// future_position
+float object_get_future_x_pos(object* obj);
+float object_get_future_y_pos(object* obj);
 
-/*
-	sets color. Returns 1 is it went well, returns 0 if not. struct object
-*/
-int object_set_color(object* obj, SDL_Color color);
+// d-position
+float object_get_dx_pos(object* obj);
+float object_get_dy_pos(object* obj);
 
-/*
-	sets animation frame. Returns 1 if it went well, returns 0 if not. struct object
-*/
-int object_set_animation_frame(object* obj, int frame);
 
-/*
-	sets mask. Returns 1 if it went well, returns 0 if not. struct object
-	you need to use bitoperations
-*/
-int object_set_mask(object* obj, unsigned int mask);
+// d-size
+float object_get_dx_size(object* obj);
+float object_get_dy_size(object* obj);
+float object_set_dx_size(object* obj, float dx);
+float object_set_dy_size(object* obj, float dy);
 
-/*
-	sets layer. Returns 1 if it went well, returns 0 if not. struct object
-	You need to use bitoperations
-*/
-int object_set_layer(object* obj, unsigned int layer);
+// move_diretion
+float object_get_move_direction_x(object* obj);
+float object_get_move_direction_y(object* obj);
+int object_set_move_direction_x(object* obj, float x);
+int object_set_move_direction_y(object* obj, float y);
 
-/*
-	sets visible boolean. Returns 1 if it went well, returns 0 if not. struct object
-*/
+// obj_fixed_movement (pointer)
+fixed_movement* object_get_fixed_movement(object* obj);
+int object_set_fixed_movement(object* obj, fixed_movement* fm);
+
+// visible
+bool object_get_visible(object* obj);
 int object_set_visible(object* obj, bool visible);
 
-/*
-	Sets collision boolean. Returns 1 if it went well, returns 0 if not. struct object
-*/
-int object_set_collision(object* obj, bool collision);
+// speed
+float object_get_speed(object* obj);
+int object_set_speed(object* obj, float speed);
 
-/*
-	Sets animation boolean. Returns 1 if it went well, returns 0 if not. struct object
-*/
-int object_set_animation(object* obj, bool animation);
+// color
+SDL_Color object_get_color(object* obj);
+int object_set_color(object* obj, SDL_Color color);
 
-/*
-	sets the last time the next frame has taken to apear, to get a consistent animation.
-	Returns 1 if it went well, returns 0 if not. struct object.
-*/
-int object_set_frame_time(object* obj, float frame_time);
+// animation (pointer)
+animation_data* object_get_animation_ptr(object* obj);
+int object_set_animation_ptr(object* obj, animation_data* anim);
+
+// obj_mask
+unsigned int object_get_mask(object* obj);
+int object_set_mask(object* obj, unsigned int mask);
+
+// obj_layer
+unsigned int object_get_layer(object* obj);
+int object_set_layer(object* obj, unsigned int layer);
+
+// texture
+SDL_Texture* object_get_texture(object* obj);
+int object_set_texture(object* obj, SDL_Texture* texture);
 
 void update_charachter(object* c, bool up, bool down, bool left, bool right, float dt,
 	float speed, bool collision_x, bool collision_y);
