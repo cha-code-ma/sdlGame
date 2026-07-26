@@ -11,12 +11,13 @@
 SDL_Color red = { 255, 0, 0, 255 };
 SDL_Color blue = { 0, 0, 255, 255 };
 
+
 struct animation_data {
-	int Current_frame;
+	int current_frame;
 	float frame_time;
 	int amount_frames_animation;
 	bool animation;
-	SDL_Texture* animation_textures;
+	SDL_Texture **animation_textures;
 };
 
 struct size_list {
@@ -25,6 +26,10 @@ struct size_list {
 	float *t_list; //time intervals for each position.
 };
 
+struct fixed_movement {
+	size_list list_size;
+	position_list *list_position;
+};
 struct node {
 	object* character;
 	struct node* next;
@@ -33,7 +38,6 @@ struct node {
 struct object_list {
 	node* start_node;
 	size_t count;
-
 };
 
 struct position_list {
@@ -53,22 +57,20 @@ struct position_data {
 };
 
 struct object {
-	object_type my_shape;
+	object_type obj_shape;
 	all_states state;
-	size_data* size;
-	size_data* future_size;
-	position_data *current_position;
-	position_data *future_position;
-	position_data *move_diretion;
-	position_list *list_postions;
-	size_list *list_sizes;
+	size_data size; //hitbox
+	size_data future_size; //hitbox
+	position_data current_position;
+	position_data future_position;
+	position_data move_diretion;
+	fixed_movement *obj_fixed_movement;
 	bool visible;
 	float speed;
 	SDL_Color color;
-	position_data* current;
-	animation_data* animation;
-	mask *ojb_mask;
-	layer *obj_layer;
+	animation_data *animation;
+	mask ojb_mask;
+	layer obj_layer;
 	SDL_Texture *texture;
 };
 
@@ -78,7 +80,7 @@ struct object {
 	Output:
 	returns shape pointer is everything went well, otherwise NULL
 */
-object* player_init(
+object* obj_init(
 	object_type my_shape,
 	float x_pos,
 	float y_pos,
@@ -87,13 +89,24 @@ object* player_init(
 	float speed,
 	bool animation,
 	SDL_Color color,
-	object_list* list_object,   // list_c is verwijderd
-	unsigned int layer,
-	unsigned int mask,
+	object_list* list_object,
+	layer  obj_layer,
+	mask obj_mask,
 	bool visible,
 	bool player,
 	bool collision,
-	int amount_frames_animation
+	int amount_frames_animation,
+	bool fixed_movement_bool,
+	float *size_list_x,
+	float *size_list_y,
+	float *time_list_size,
+	bool fixed_positions_bool,
+	float *position_list_x,
+	float *position_list_y,
+	float *time_list_position,
+	SDL_Texture *obj_texture,
+	SDL_Texture **obj_animation_textures
+
 ) {
 	object* s_p = malloc(sizeof(object));
 	if (!s_p) {
@@ -103,7 +116,7 @@ object* player_init(
 	node* n_p = node_init(s_p);
 
 
-	if (!check) {
+	if (!n_p) {
 		free(s_p);
 		return NULL;
 	}
@@ -114,28 +127,69 @@ object* player_init(
 	}
 		list_object->count++;
 
-	s_p->my_shape = my_shape;
-	s_p->x_position = x_pos;
-	s_p->y_position = y_pos;
-	s_p->x_size = x_size;
-	s_p->y_size = y_size;
+	if (fixed_movement_bool) {
+		s_p->obj_fixed_movement = malloc(sizeof(fixed_movement));
+		if (!s_p->obj_fixed_movement) {
+			free(s_p);
+			return NULL;
+		}
+		s_p->obj_fixed_movement->list_size.x_list = size_list_x;
+		s_p->obj_fixed_movement->list_size.y_list = size_list_y;
+		s_p->obj_fixed_movement->list_size.t_list = time_list_size;
+		if (fixed_positions_bool) {
+			s_p->obj_fixed_movement->list_position = malloc(sizeof(position_list));
+			if (!s_p->obj_fixed_movement->list_position) {
+				free(s_p);
+				return NULL;
+			}
+
+			s_p->obj_fixed_movement->list_position->x_list = position_list_x;
+			s_p->obj_fixed_movement->list_position->y_list = position_list_y;
+			s_p->obj_fixed_movement->list_position->t_list = time_list_position;
+		}
+	} else {
+		s_p->obj_fixed_movement = NULL;
+	}
+
+	if (animation) {
+		s_p->animation = malloc(sizeof(animation_data));
+		if (!s_p->animation) {
+			free(s_p);
+			return NULL;
+		}
+		s_p->animation->amount_frames_animation = amount_frames_animation;
+		s_p->animation->animation = animation;
+		s_p->animation->animation_textures = obj_animation_textures;
+		s_p->animation->current_frame = 0;
+		s_p->animation->frame_time = amount_frames_animation;
+	} else{
+		s_p->animation = NULL;
+	}
+
+
+	s_p->obj_shape = my_shape;
+	s_p->current_position.x = x_pos;
+	s_p->current_position.y = y_pos;
+	s_p->current_position.x = x_size;
+	s_p->current_position.y = y_size;
 	s_p->state = IDLE;
-	s_p->animation = animation;
-	s_p->move_down = false;
-	s_p->move_left = false;
-	s_p->move_right = false;
-	s_p->move_up = false;
 	s_p->color = color;
 	s_p->visible = true;
-	s_p->mask = mask;
-	s_p->layer = layer;
-	s_p->future_dx = 0.0f;
-	s_p->future_dy = 0.0f;
+	s_p->ojb_mask = obj_mask;
+	s_p->obj_layer = obj_layer;
+	s_p->future_position.x = 0.0f;
+	s_p->future_position.y = 0.0f;
 	s_p->speed = speed;
-	s_p->collision = collision;
-	s_p->amount_frames_animation = amount_frames_animation;
-	s_p->frame_time = 0.0f;
-	s_p->texture = NULL;
+	s_p->obj_fixed_movement->list_size.x_list = size_list_x;
+	s_p->obj_fixed_movement->list_size.y_list = size_list_y;
+	s_p->obj_fixed_movement->list_size.t_list = time_list_size;
+	s_p->obj_fixed_movement->list_position->x_list = position_list_x;
+	s_p->obj_fixed_movement->list_position->y_list = position_list_y;
+	s_p->obj_fixed_movement->list_position->t_list = time_list_position;
+	s_p->animation->amount_frames_animation = amount_frames_animation;
+	s_p->animation->animation = animation;
+	s_p->animation->animation_textures = obj_animation_textures;
+	s_p->texture = obj_texture;
 	return s_p;
 }
 
@@ -408,12 +462,12 @@ int object_set_type(object* obj, object_type type) {
 	if (!obj) {
 		return 0;
 	}
-	obj->my_shape = type;
+	obj->obj_shape = type;
 	return 1;
 }
 
 object_type object_get_type(object* obj) {
-	return obj->my_shape;
+	return obj->obj_shape;
 }
 
 void update_charachter(object* c, bool up, bool down, bool left, bool right, float dt,

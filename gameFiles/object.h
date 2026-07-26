@@ -18,6 +18,7 @@ typedef struct object object;
 typedef struct node node;
 typedef struct animation_data animation_data;
 typedef struct object_list object_list;
+typedef struct fixed_movement fixed_movement;
 typedef struct size_data size_data;
 typedef struct position_list position_list;
 typedef struct size_list size_list;
@@ -29,7 +30,8 @@ extern SDL_Color blue;
 typedef enum {
 	SQUARE,
 	TRIANGLE,
-	TEXTURE
+	TEXTURE,
+	CIRCLE
 } object_type;
 
 typedef enum {
@@ -75,7 +77,7 @@ typedef enum {
 	Output:
 	returns shape pointer is everything went well, otherwise NULL
 */
-object* player_init(
+object* obj_init(
 	object_type my_shape,
 	float x_pos,
 	float y_pos,
@@ -84,12 +86,11 @@ object* player_init(
 	float speed,
 	bool animation,
 	SDL_Color color,
-	object_list* list_object,   // list_c is verwijderd
-	unsigned int layer,
-	unsigned int mask,
+	object_list* list_object,
+	layer  obj_layer,
+	mask obj_mask,
 	bool visible,
 	bool player,
-	layer obj_layer,
 	bool collision,
 	int amount_frames_animation
 );
