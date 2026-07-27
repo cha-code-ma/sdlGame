@@ -13,6 +13,15 @@
 
 #define PLAYER (1 << 0)
 #define WALL (1 << 1)
+typedef struct game game;
+
+typedef struct game_state game_state;
+typedef struct game_settings game_ettings;
+typedef struct game_sounds game_sounds;
+typedef struct game_textures game_textures;
+typedef struct game_special_effects game_special_effects;
+typedef struct	levels levels;
+typedef struct	menus menus;
 
 typedef struct object object;
 typedef struct node node;
@@ -23,7 +32,7 @@ typedef struct size_data size_data;
 typedef struct position_list position_list;
 typedef struct size_list size_list;
 
-typedef struct position_data position_data;
+typedef struct vec2 vec2;
 extern SDL_Color red;
 extern SDL_Color blue;
 
@@ -43,10 +52,11 @@ typedef enum {
 } all_states;
 
 typedef enum {
-	LEFT,
-	RIGHT,
-	UP,
-	DOWN
+	NONE = 0,
+	LEFT = 1 << 0, // 0001
+	RIGHT = 1 << 1, //0010
+	UP = 1 << 2, //0100
+	DOWN = 1 << 3 //1000
 } direction;
 
 typedef enum {

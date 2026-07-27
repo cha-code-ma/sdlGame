@@ -11,6 +11,49 @@
 SDL_Color red = { 255, 0, 0, 255 };
 SDL_Color blue = { 0, 0, 255, 255 };
 
+struct game {
+	game_state state;
+	game_settings settings;
+	game_sounds sounds;
+	game_textures textures;
+	game_special_effects special_effects;
+
+
+};
+
+struct game_state {
+	levels level;
+	menus menu;
+
+};
+
+struct levels {
+	
+};
+
+struct menus {
+
+};
+
+struct game_settings {
+	bool music;
+	bool sound_effects;
+	float music_volume;
+	float sound_effects_volume;
+};
+
+struct game_sounds {
+
+};
+struct game_textures {
+	SDL_Texture *coin;
+};
+
+struct game_special_effects {
+
+};
+
+
 
 struct animation_data {
 	int current_frame;
@@ -51,7 +94,7 @@ struct size_data {
 	float y;
 };
 
-struct position_data {
+struct vec2 {
 	float x;
 	float y;
 };
@@ -61,9 +104,10 @@ struct object {
 	all_states state;
 	size_data size; //hitbox
 	size_data future_size; //hitbox
-	position_data position;
-	position_data future_position;
-	position_data move_diretion;
+	vec2 position;
+	vec2 future_position;
+	vec2 move_diretion; //after calculations.
+
 	fixed_movement *obj_fixed_movement;
 	bool visible;
 	float speed;
@@ -437,39 +481,29 @@ int object_set_texture(object* obj, SDL_Texture* texture) {
     return 1;
 }
 
-void update_charachter(object* c, bool up, bool down, bool left, bool right, float dt,
-	float speed, bool collision_x, bool collision_y) {
+void update_charachter(object* obj, float dt) {
 	float factor = 1;
+	float speed = obj->speed;
 	int amount_inputs = 0;
-	if (left) {
-		amount_inputs++;
-	}
-	if (right) {
-		amount_inputs++;
-	}
-	if (up) {
-		amount_inputs++;
-	}
-	if (down) {
-		amount_inputs++;
-	}
+
+	direction obj_direction = object_get_move_direction_x(obj), object_get_move_direction_y(obj)
+
+	//get direction
+	//check collision
+	//check wether direction is possible
+	//if , then go there
+	// if not, dont go to the x or y coordinate that isnt possible
+	//if he was jumping, then if up cllision, fall
+	//if walking, stop walking in that direction
+	//if falling, stop falling
+	//if 
+
+
 	if (amount_inputs == 2) {
 		factor = 1.0f / sqrtf(2);
 	}
-
-	if (left && !collision_x) {
-		object_set_x_pos(c, object_get_x_pos(c) - speed * dt * factor);
-	}
-	if (right && !collision_x) {
-		object_set_x_pos(c, object_get_x_pos(c) + speed * dt * factor);
-	}
-	if (up && !collision_y) {
-		object_set_y_pos(c, object_get_y_pos(c) - speed * dt * factor);
-
-	}
-	if (down && !collision_y) {
-		object_set_y_pos(c, object_get_y_pos(c) + speed * dt * factor);
-	}
+	object_set_x_pos;
+	direction current_direction = obj->;
 	//animation
 	if (object_get_animation(c)) {
 		float new_frame_time = object_get_frame_time(c) + dt;
