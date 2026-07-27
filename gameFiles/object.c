@@ -17,21 +17,31 @@ struct game {
 	game_sounds sounds;
 	game_textures textures;
 	game_special_effects special_effects;
-
+	game_values values;
 
 };
 
+struct game_values {
+	int coins;
+	int diamonds;
+	int level;
+	int xp;
+
+};
 struct game_state {
-	levels level;
-	menus menu;
+	level* all_levels;
+	menu menu;
 
 };
 
-struct levels {
-	
+struct level {
+	object_list *objects;
+	sprite_list *sprites;
+	object *player;
 };
 
-struct menus {
+struct menu {
+	object_list *all_menus;
 
 };
 
@@ -107,7 +117,6 @@ struct object {
 	vec2 position;
 	vec2 future_position;
 	vec2 move_diretion; //after calculations.
-
 	fixed_movement *obj_fixed_movement;
 	bool visible;
 	float speed;
@@ -174,7 +183,7 @@ object* obj_init(
 	if (fixed_movement_bool) {
 		s_p->obj_fixed_movement = malloc(sizeof(fixed_movement));
 		if (!s_p->obj_fixed_movement) {
-			free(s_p);
+			free_object(s_p);
 			return NULL;
 		}
 		s_p->obj_fixed_movement->list_size.x_list = size_list_x;
@@ -183,7 +192,7 @@ object* obj_init(
 		if (fixed_positions_bool) {
 			s_p->obj_fixed_movement->list_position = malloc(sizeof(position_list));
 			if (!s_p->obj_fixed_movement->list_position) {
-				free(s_p);
+				free_object(s_p);
 				return NULL;
 			}
 
@@ -198,7 +207,7 @@ object* obj_init(
 	if (animation) {
 		s_p->animation = malloc(sizeof(animation_data));
 		if (!s_p->animation) {
-			free(s_p);
+			free_object(s_p);
 			return NULL;
 		}
 		s_p->animation->amount_frames_animation = amount_frames_animation;

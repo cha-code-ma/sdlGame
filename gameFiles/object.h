@@ -16,13 +16,13 @@
 typedef struct game game;
 
 typedef struct game_state game_state;
-typedef struct game_settings game_ettings;
+typedef struct game_settings game_settings;
 typedef struct game_sounds game_sounds;
 typedef struct game_textures game_textures;
 typedef struct game_special_effects game_special_effects;
-typedef struct	levels levels;
-typedef struct	menus menus;
-
+typedef struct	level level;
+typedef struct	menu menu;
+typedef struct game_values game_values;
 typedef struct object object;
 typedef struct node node;
 typedef struct animation_data animation_data;

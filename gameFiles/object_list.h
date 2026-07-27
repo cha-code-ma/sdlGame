@@ -7,6 +7,7 @@
 typedef struct object object;
 typedef struct node node;
 typedef struct object_list object_list;
+typedef struct sprite_list sprite_list;
 
 
 
