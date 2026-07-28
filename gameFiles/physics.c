@@ -9,8 +9,13 @@
 #include "object.h"
 #include "physics.h"
 #include "object_list.h"
+#include  "structs.h"
 
+bool collision(object* obj1, object* obj2) {
+	if (obj1) {
 
+	}
+}
 
 
 

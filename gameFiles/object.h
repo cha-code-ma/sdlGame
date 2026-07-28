@@ -36,51 +36,7 @@ typedef struct vec2 vec2;
 extern SDL_Color red;
 extern SDL_Color blue;
 
-typedef enum {
-	SQUARE,
-	TRIANGLE,
-	TEXTURE,
-	CIRCLE
-} object_type;
 
-typedef enum {
-	IDLE,
-	WALKING,
-	JUMPING,
-	FALLING,
-	SLOW_DOWN
-} all_states;
-
-typedef enum {
-	NONE = 0,
-	LEFT = 1 << 0, // 0001
-	RIGHT = 1 << 1, //0010
-	UP = 1 << 2, //0100
-	DOWN = 1 << 3 //1000
-} direction;
-
-typedef enum {
-	COLLISION_NONE  = 0,
-    COLLISION_TOP    = 1 << 0,
-    COLLISION_BOTTOM = 1 << 1,
-    COLLISION_LEFT   = 1 << 2,
-    COLLISION_RIGHT  = 1 << 3
-} collisionFlags;
-
-typedef enum {
-    LAYER_PLAYER  = 1 << 0,
-    LAYER_ENEMY   = 1 << 1,
-    LAYER_WALL    = 1 << 2,
-    LAYER_BULLET  = 1 << 3,
-} layer;
-
-typedef enum {
-    MASK_NONE    = 0,
-    MASK_PLAYER  = LAYER_PLAYER,
-    MASK_ENEMY   = LAYER_ENEMY,
-    MASK_WALL    = LAYER_WALL,
-    MASK_BULLET  = LAYER_BULLET,
-} mask;
 /*
 	Initializes a struct shape pointer, inputs are obvious.
 

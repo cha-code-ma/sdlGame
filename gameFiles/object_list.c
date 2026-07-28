@@ -8,21 +8,6 @@
 #include "object.h"
 #include "physics.h"
 
-struct sprite_list {
-	node * start_node;
-	size_t count;
-};
-
-struct object_list {
-	node* start_node;
-	size_t count;
-
-};
-
-struct node {
-	object* character;
-	struct node* next;
-};
 
 
 object_list* object_list_init(void) {

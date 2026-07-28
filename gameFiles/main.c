@@ -8,6 +8,7 @@
 #include "object.h"
 #include "physics.h"
 #include "object_list.h"
+#include  "physics.h"
 #define SDL_MAIN_HANDLED
 
 /*
