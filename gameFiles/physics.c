@@ -12,8 +12,11 @@
 #include  "structs.h"
 
 bool collision(object* obj1, object* obj2) {
-	if (obj1) {
-
+	if (!obj1 || !obj2 ||!obj1->obj_layer || !obj2->obj_layer) {
+		return false;
+	}
+	if (obj1->obj_shape == SQUARE && obj2->obj_shape == SQUARE) {
+		
 	}
 }
 

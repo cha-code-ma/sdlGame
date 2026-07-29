@@ -110,6 +110,8 @@ struct object {
 	all_states state;
 	size_data size; //hitbox
 	size_data future_size; //hitbox
+	vec2 texture_position;
+	vec2 texture_size;
 	vec2 position;
 	vec2 future_position;
 	vec2 move_diretion; //after calculations.
@@ -189,4 +191,4 @@ struct node {
 
 
 
-#endif STRUCT_H
+#endif STRUCT_H;
