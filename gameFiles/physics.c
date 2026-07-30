@@ -15,8 +15,20 @@ bool collision(object* obj1, object* obj2) {
 	if (!obj1 || !obj2 ||!obj1->obj_layer || !obj2->obj_layer) {
 		return false;
 	}
+	if (obj1->obj_shape == SQUARE) {
+		vec2 lu1 = {obj1->future_position.x, obj1->future_position.y }; //lu: left upper
+		vec2 ru1 = {obj1->future_position.x + obj1->future_size.x, obj1->future_position.y }; //ru: right upper
+		vec2 ll1 = {obj1->future_position.x, obj1->future_position.y + obj1->future_size.y }; //ll: left lower
+		vec2 rl1 = {obj1->future_position.x + obj1->future_size.x, obj1->future_position.y + obj1->future_size.y }; //lu: right lower
+	}
+	if (obj2->obj_shape == SQUARE) {
+		vec2 lu2 = {obj2->future_position.x, obj2->future_position.y }; //lu: left upper
+		vec2 ru2 = {obj2->future_position.x + obj2->future_size.x, obj2->future_position.y }; //ru: right upper
+		vec2 ll2 = {obj2->future_position.x, obj2->future_position.y + obj2->future_size.y }; //ll: left lower
+		vec2 rl2 = {obj2->future_position.x + obj2->future_size.x, obj2->future_position.y + obj2->future_size.y }; //lu: right lower
+	}
 	if (obj1->obj_shape == SQUARE && obj2->obj_shape == SQUARE) {
-		
+		int total = 0
 	}
 }
 
