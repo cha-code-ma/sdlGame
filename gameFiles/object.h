@@ -23,12 +23,12 @@ typedef struct game_special_effects game_special_effects;
 typedef struct	level level;
 typedef struct	menu menu;
 typedef struct game_values game_values;
-typedef struct object object;
+typedef struct sub_object sub_object;
 typedef struct node node;
 typedef struct animation_data animation_data;
 typedef struct object_list object_list;
 typedef struct fixed_movement fixed_movement;
-typedef struct size_data size_data;
+typedef struct vec2 vec2;
 typedef struct position_list position_list;
 typedef struct size_list size_list;
 
@@ -43,7 +43,7 @@ extern SDL_Color blue;
 	Output:
 	returns shape pointer is everything went well, otherwise NULL
 */
-object* obj_init(
+sub_object* obj_init(
 	object_type my_shape,
 	float x_pos,
 	float y_pos,
@@ -61,10 +61,10 @@ object* obj_init(
 	int amount_frames_animation
 );
 
-int obj_exist(object* obj);
+int obj_exist(sub_object* obj);
 
 
-void update_charachter(object* c, bool up, bool down, bool left, bool right, float dt,
+void update_charachter(sub_object* c, bool up, bool down, bool left, bool right, float dt,
 	float speed, bool collision_x, bool collision_y);
 
 /*
@@ -73,11 +73,11 @@ void update_charachter(object* c, bool up, bool down, bool left, bool right, flo
 	Output:
 	0 when the input isnt about moving or keycode is equal to NULL.
 */
-int move_charachter(object_list* list, object* c, float dt);
+int move_charachter(object_list* list, sub_object* c, float dt);
 /*
 	puts character on the renderer, using the struct shape pointer.
 */
- void draw_character(SDL_Renderer* renderer, object* c);
+ void draw_character(SDL_Renderer* renderer, sub_object* c);
 /*
 	draws all shapes pointers in struct object_list on the renderer. SPECIFICALLY CHARACTER LIST
 */

@@ -31,7 +31,7 @@ struct game_state {
 struct level {
 	object_list *objects;
 	sprite_list *sprites;
-	object *player;
+	sub_object *player;
 	float time_duration;
 	int points;
 };
@@ -59,13 +59,18 @@ struct game_special_effects {
 
 };
 
-
+struct animation_order {
+	int animation_index;
+	float time;
+};
 
 struct animation_data {
 	int current_frame;
 	float frame_time;
 	int amount_frames_animation;
 	bool animation;
+	float *rotations;
+	animation_order order_animation;
 	SDL_Texture **animation_textures;
 };
 
@@ -80,7 +85,7 @@ struct fixed_movement {
 	position_list *list_position;
 };
 struct node {
-	object* character;
+	sub_object* character;
 	struct node* next;
 };
 
@@ -95,10 +100,6 @@ struct position_list {
 	float *t_list; //time intervals for each position.
 };
 
-struct size_data {
-	float x;
-	float y;
-};
 
 struct vec2 {
 	float x;
@@ -106,10 +107,15 @@ struct vec2 {
 };
 
 struct object {
+	sub_object **sub_objects;
+	float total_visible_time_remaining;
+};
+
+struct sub_object {
 	object_type obj_shape;
 	all_states state;
-	size_data size; //hitbox
-	size_data future_size; //hitbox
+	vec2 size; //hitbox
+	vec2 future_size; //hitbox
 	vec2 texture_position;
 	vec2 texture_size;
 	vec2 position;
@@ -124,6 +130,8 @@ struct object {
 	layer obj_layer;
 	SDL_Texture *texture;
 	int points;
+	float texture_rotation;
+	float visible_time_remaining;
 };
 
 typedef enum {
@@ -185,7 +193,7 @@ struct object_list {
 };
 
 struct node {
-	object* character;
+	sub_object* character;
 	struct node* next;
 };
 

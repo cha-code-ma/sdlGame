@@ -31,7 +31,7 @@ node* object_list_get_start_node(object_list* list) {
 	return list->start_node;
 }
 
-node* node_init(object* s_p) {
+node* node_init(sub_object* s_p) {
 	node* n_p = malloc(sizeof(node));
 	if (!n_p) {
 		return NULL;
@@ -126,7 +126,7 @@ void free_object_list(object_list* list_c) {
 }
 
 
-object* node_get_object(node* n_p) {
+sub_object* node_get_object(node* n_p) {
 	return n_p->character;
 }
 

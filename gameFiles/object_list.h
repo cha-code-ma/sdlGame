@@ -4,7 +4,7 @@
 #ifndef OBJECT_LIST_H
 #define OBJECT_LIST_H
 
-typedef struct object object;
+typedef struct sub_object sub_object;
 typedef struct node node;
 typedef struct object_list object_list;
 typedef struct sprite_list sprite_list;
@@ -30,7 +30,7 @@ node* object_list_get_start_node(object_list* list);
 	Output:
 	returns the node pointer is everything went well, otherwise NULL
 */
-node* node_init(object* s_p);
+node* node_init(sub_object* s_p);
 
 /*
 	deletes the malloced struct node pointer.
@@ -59,7 +59,7 @@ void free_object_list(object_list* list_c);
 /*
 	Gets the struct object pointer of the node
 */
-object* node_get_object(node* n_p);
+sub_object* node_get_object(node* n_p);
 
 /*
 	Gets the next node of the linked list struct object_list

@@ -7,7 +7,6 @@
 #include <stdbool.h>
 #include "object.h"
 #include "object_list.h"
-#include "physics.h"
 #include  "structs.h"
 SDL_Color red = { 255, 0, 0, 255 };
 SDL_Color blue = { 0, 0, 255, 255 };
@@ -19,7 +18,7 @@ SDL_Color blue = { 0, 0, 255, 255 };
 	Output:
 	returns shape pointer is everything went well, otherwise NULL
 */
-object* obj_init(
+sub_object* obj_init(
 	object_type my_shape,
 	float x_pos,
 	float y_pos,
@@ -45,10 +44,11 @@ object* obj_init(
 	float *time_list_position,
 	SDL_Texture *obj_texture,
 	SDL_Texture **obj_animation_textures,
-	int points
+	int points,
+	float stay_time
 
 ) {
-	object* s_p = malloc(sizeof(object));
+	sub_object* s_p = malloc(sizeof(sub_object));
 	if (!s_p) {
 		return NULL;
 	}
@@ -70,7 +70,7 @@ object* obj_init(
 	if (fixed_movement_bool) {
 		s_p->obj_fixed_movement = malloc(sizeof(fixed_movement));
 		if (!s_p->obj_fixed_movement) {
-			free_object(s_p);
+			free_sub_object(s_p);
 			return NULL;
 		}
 		s_p->obj_fixed_movement->list_size.x_list = size_list_x;
@@ -79,7 +79,7 @@ object* obj_init(
 		if (fixed_positions_bool) {
 			s_p->obj_fixed_movement->list_position = malloc(sizeof(position_list));
 			if (!s_p->obj_fixed_movement->list_position) {
-				free_object(s_p);
+				free_sub_object(s_p);
 				return NULL;
 			}
 
@@ -94,7 +94,7 @@ object* obj_init(
 	if (animation) {
 		s_p->animation = malloc(sizeof(animation_data));
 		if (!s_p->animation) {
-			free_object(s_p);
+			free_sub_object(s_p);
 			return NULL;
 		}
 		s_p->animation->amount_frames_animation = amount_frames_animation;
@@ -135,7 +135,7 @@ object* obj_init(
 	return s_p;
 }
 
-void free_object(object* obj) {
+void free_sub_object(sub_object* obj) {
 	if (obj->obj_fixed_movement) {
 		if (obj->obj_fixed_movement->list_position) {
 			free(obj->obj_fixed_movement->list_position);
@@ -181,29 +181,13 @@ void free_object(object* obj) {
 	free(obj);
 }
 
-int obj_exist(object* obj) {
-	if (obj) {
-		return 1;
-	}
-	return 0;
-}
 
-void update_charachter(object* obj, float dt) {
+void update_charachter(sub_object* obj, float dt) {
 	float factor = 1;
 	float speed = obj->speed;
 	int amount_inputs = 0;
 
 	direction obj_direction = object_get_move_direction_x(obj), object_get_move_direction_y(obj);
-
-	//get direction
-	//check collision
-	//check wether direction is possible
-	//if , then go there
-	// if not, dont go to the x or y coordinate that isnt possible
-	//if he was jumping, then if up cllision, fall
-	//if walking, stop walking in that direction
-	//if falling, stop falling
-	//if 
 
 
 	if (amount_inputs == 2) {
@@ -222,43 +206,14 @@ void update_charachter(object* obj, float dt) {
 	}
 }
 
-/*
-	moves the character on the renderer, gives 1 if the given key moves the character
 
-	Output:
-	0 when the input isnt about moving or keycode is equal to NULL.
-*/
-int move_charachter(object_list* list, object* c, float dt) {
-	if (!c || !list) {
-		return 0;
-	}
-	bool collision_x = check_all_collision_x(c, list, dt);
-	bool collision_y = check_all_collision_y(c, list, dt);
-	if (collision_x && collision_y) {
-		return 0;
-	}
-
-	if (object_get_bool_up(c)) {
-		update_charachter(c, true, false, false, false, dt, object_get_speed(c), collision_x, collision_y);
-	}
-	if (object_get_bool_left(c)) {
-		update_charachter(c, false, false, true, false, dt, object_get_speed(c), collision_x, collision_y);
-	}
-	if (object_get_bool_right(c)) {
-		update_charachter(c, false, false, false, true, dt, object_get_speed(c), collision_x, collision_y);
-	}
-	if (object_get_bool_down(c)) {
-		update_charachter(c, false, true, false, false, dt, object_get_speed(c), collision_x, collision_y);
-	}
-	return 1;
-}
 
 
 /*
 	puts character on the renderer, using the struct shape pointer.
 */
-void draw_character(SDL_Renderer* renderer, object* c) {
-	SDL_SetRenderDrawColor(renderer, object_get_color(c).r, object_get_color(c).g, object_get_color(c).b, object_get_color(c).a);
+void draw_character(SDL_Renderer* renderer, sub_object* c) {
+	SDL_SetRenderDrawColor(renderer, c->color.r, c->color.g, c->color.b, c->color.a);
 	if (object_get_type(c) == SQUARE) {
 		SDL_FRect rect = {
 			object_get_x_pos(c),
@@ -269,7 +224,8 @@ void draw_character(SDL_Renderer* renderer, object* c) {
 		SDL_RenderFillRect(renderer, &rect);
 		return;
 	}
-	if (object_get_type(c) == TRIANGLE) {
+	if (object_get_type(c) == CIRCLE) {
+
 
 	}
 }

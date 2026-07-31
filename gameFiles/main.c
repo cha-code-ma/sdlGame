@@ -6,9 +6,9 @@
 #include <SDL3/SDL.h>
 #include <stdbool.h>
 #include "object.h"
-#include "physics.h"
+#include "structs.h"
 #include "object_list.h"
-#include  "physics.h"
+
 #define SDL_MAIN_HANDLED
 
 /*
@@ -17,7 +17,7 @@
 	Output:
 	returns 0 if something went wrong. 1 if well.
 */
-static void update_charachter(object* c, bool up, bool down, bool left, bool right, float dt,
+static void update_charachter(sub_object* c, bool up, bool down, bool left, bool right, float dt,
 	float speed, bool collision_x, bool collision_y) {
 	float factor = 1;
 	int amount_inputs = 0;
@@ -67,7 +67,7 @@ static void update_charachter(object* c, bool up, bool down, bool left, bool rig
 	Output:
 	0 when the input isnt about moving or keycode is equal to NULL.
 */
-int move_charachter(object_list* list, object* c, float dt) {
+int move_charachter(object_list* list, sub_object* c, float dt) {
 	if (!c || !list) {
 		return 0;
 	}
@@ -96,7 +96,7 @@ int move_charachter(object_list* list, object* c, float dt) {
 /*
 	puts character on the renderer, using the struct shape pointer.
 */
-static void draw_character(SDL_Renderer* renderer, object* c) {
+static void draw_character(SDL_Renderer* renderer, sub_object* c) {
 	SDL_SetRenderDrawColor(renderer, object_get_color(c).r, object_get_color(c).g, object_get_color(c).b, object_get_color(c).a);
 	if (object_get_type(c) == SQUARE) {
 		SDL_FRect rect = {
@@ -133,7 +133,7 @@ static void draw_all_characters(SDL_Renderer* renderer, object_list* l_c) {
 /*
 	sets movement boolean of the shape pointer all to false.
 */
-static void set_all_false(object* s_p) {
+static void set_all_false(sub_object* s_p) {
 	if (!s_p) {
 		return;
 	}
@@ -156,7 +156,7 @@ static void free_all_things(object_list* list_c, SDL_Renderer* renderer, SDL_Win
 
 }
 
-static void reset_dx_dy(object* c) {
+static void reset_dx_dy(sub_object* c) {
 	if (!c) {
 		return;
 	}
@@ -216,7 +216,7 @@ int main(void) {
 		return 1;
 	}
 
-	object* square = shape_init(SQUARE, 100.0f, 100.0f, 100.0f, 100.0f, 200.0f, false, red, list_c,
+	sub_object* square = shape_init(SQUARE, 100.0f, 100.0f, 100.0f, 100.0f, 200.0f, false, red, list_c,
 		all_objects_list, PLAYER, WALL, true, true, true, 4);
 	if (!square) {
 		SDL_Log("sqaure init error %s", SDL_GetError());
@@ -225,7 +225,7 @@ int main(void) {
 		return 1;
 	}
 
-	object* wall = shape_init(SQUARE, 500.0f, 400.0f, 50.0f, 200.0f, 0.0f, false, blue, list_c, all_objects_list,
+	sub_object* wall = shape_init(SQUARE, 500.0f, 400.0f, 50.0f, 200.0f, 0.0f, false, blue, list_c, all_objects_list,
 		WALL, PLAYER, true, false, true, 4);
 	if (!wall) {
 		SDL_Log("wall init error %s", SDL_GetError());
