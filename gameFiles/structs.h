@@ -1,9 +1,37 @@
 #ifndef STRUCT_H
 #define STRUCT_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <SDL3/SDL.h>
 #include <stdbool.h>
+
+
+#define ABOSOLUTE_WINDOW_HEIGTH 800
+#define ABSOLUTE_WINDOW_WIDTH 450
+
+
+typedef struct game game;
+typedef struct game_state game_state;
+typedef struct game_settings game_settings;
+typedef struct game_sounds game_sounds;
+typedef struct game_textures game_textures;
+typedef struct game_special_effects game_special_effects;
+typedef struct game_values game_values;
+typedef struct texture_info texture_info;
+typedef struct animation_data animation_data;
+typedef struct animation_order animation_order;
+typedef struct object_list object_list;
+typedef struct sprite_list sprite_list;
+typedef struct sub_object sub_object;
+typedef struct level level;
+typedef struct menu menu;
+typedef struct node node;
+typedef struct size_list size_list;
+typedef struct position_list position_list;
+typedef struct fixed_movement fixed_movement;
+typedef struct object object;
+typedef struct vec2 vec2;
 
 struct game {
 	game_state state;
@@ -12,7 +40,19 @@ struct game {
 	game_textures textures;
 	game_special_effects special_effects;
 	game_values values;
+	SDL_Renderer *renderer;
+	SDL_Window *window;
+};
 
+struct texture_info {
+	SDL_Texture *texture;
+	float original_heigth;
+	float original_width;
+};
+
+struct animation_order {
+	int animation_index;
+	float time;
 };
 
 struct game_values {
@@ -25,6 +65,7 @@ struct game_values {
 struct game_state {
 	level* all_levels;
 	menu menu;
+	float time;
 
 };
 
@@ -59,10 +100,7 @@ struct game_special_effects {
 
 };
 
-struct animation_order {
-	int animation_index;
-	float time;
-};
+
 
 struct animation_data {
 	int current_frame;
@@ -129,6 +167,7 @@ struct sub_object {
 	mask obj_mask;
 	layer obj_layer;
 	SDL_Texture *texture;
+	texture_info *info_texture;
 	int points;
 	float texture_rotation;
 	float visible_time_remaining;

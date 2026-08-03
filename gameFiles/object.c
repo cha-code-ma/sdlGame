@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <SDL3/SDL.h>
+#include <SDL3_image/SDL_image.h>
 #include <stdbool.h>
 #include "object.h"
 #include "object_list.h"
@@ -19,6 +20,7 @@ SDL_Color blue = { 0, 0, 255, 255 };
 	returns shape pointer is everything went well, otherwise NULL
 */
 sub_object* obj_init(
+	SDL_Renderer *renderer,
 	object_type my_shape,
 	float x_pos,
 	float y_pos,
@@ -42,10 +44,11 @@ sub_object* obj_init(
 	float *position_list_x,
 	float *position_list_y,
 	float *time_list_position,
-	SDL_Texture *obj_texture,
+	char *img_text,
 	SDL_Texture **obj_animation_textures,
 	int points,
-	float stay_time
+	float stay_time,
+	float texture_scale
 
 ) {
 	sub_object* s_p = malloc(sizeof(sub_object));
@@ -106,6 +109,16 @@ sub_object* obj_init(
 		s_p->animation = NULL;
 	}
 
+	if (img_text) {
+		SDL_Texture *texture = IMG_LoadTexture(renderer, img_text);
+		s_p->info_texture = malloc(sizeof(texture_info));
+		s_p->info_texture->texture = texture;
+		s_p->info_texture->original_heigth = texture->h;
+		s_p->info_texture->original_width = texture->w;
+	} else {
+		s_p->info_texture = NULL;
+	}
+
 	s_p->obj_shape = my_shape;
 	s_p->position.x = x_pos;
 	s_p->position.y = y_pos;
@@ -130,7 +143,7 @@ sub_object* obj_init(
 	s_p->animation->amount_frames_animation = amount_frames_animation;
 	s_p->animation->animation = animation;
 	s_p->animation->animation_textures = obj_animation_textures;
-	s_p->texture = obj_texture;
+
 	s_p->points = points;
 	return s_p;
 }
