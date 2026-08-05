@@ -25,7 +25,13 @@ void show_sub_object(sub_object *obj, SDL_Renderer *renderer) {
 			return NULL;
 		}
 		SDL_Texture *texture = obj->info_texture->texture;
-		SDL_FRect rect =
+		SDL_FRect rect = {
+			.h = obj->future_size.y,
+			.w = obj->future_size.x,
+			.x = obj->future_position.x,
+			.y = obj->future_position.y
+		};
+		SDL_RenderTexture(renderer, obj->info_texture->texture, NULL, &rect);
     }
 
 }
