@@ -6,8 +6,7 @@
 #include <SDL3/SDL.h>
 #include <stdbool.h>
 #include "object.h"
-#include "physics.h"
-
+#include "structs.h"
 
 
 object_list* object_list_init(void) {
@@ -20,35 +19,24 @@ object_list* object_list_init(void) {
 	return l_c;
 }
 
-void object_list_count(object_list* list, int add_amount) {
-	if (!list) {
-		return;
-	}
-	list->count += add_amount;
-}
-
-node* object_list_get_start_node(object_list* list) {
-	return list->start_node;
-}
-
-node* node_init(sub_object* s_p) {
-	node* n_p = malloc(sizeof(node));
-	if (!n_p) {
+node* node_init(sub_object* sub_obj) {
+	node* n = malloc(sizeof(node));
+	if (!n) {
 		return NULL;
 	}
-	n_p->character = s_p;
-	n_p->next = NULL;
-	return n_p;
+	n->sub_obj = sub_obj;
+	n->next = NULL;
+	return n;
 }
 
-void node_delete(node* n_p) {
-	if (!n_p) {
+void free_node(node* n) {
+	if (!n) {
 		return;
 	}
-	if (n_p->character) {
-		free(n_p->character);
+	if (n->sub_obj) {
+		free(n->sub_obj);
 	}
-	free(n_p);
+	free(n);
 }
 
 
@@ -119,17 +107,8 @@ void free_object_list(object_list* list_c) {
 
 	while (current_node) {
 		node* temp_node = current_node->next;
-		node_delete(current_node);
+		free_node(current_node);
 		current_node = temp_node;
 	}
 	free(list_c);
-}
-
-
-sub_object* node_get_object(node* n_p) {
-	return n_p->character;
-}
-
-node* node_get_next(node* n_p) {
-	return n_p->next;
 }

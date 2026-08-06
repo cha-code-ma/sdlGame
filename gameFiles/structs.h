@@ -32,6 +32,9 @@ typedef struct position_list position_list;
 typedef struct fixed_movement fixed_movement;
 typedef struct object object;
 typedef struct vec2 vec2;
+typedef struct hitbox hitbox;
+typedef enum size_type size_type;
+typedef struct size_info size_info;
 
 struct game {
 	game_state state;
@@ -44,11 +47,6 @@ struct game {
 	SDL_Window *window;
 };
 
-struct texture_info {
-	SDL_Texture *texture;
-	float original_heigth;
-	float original_width;
-};
 
 struct animation_order {
 	int animation_index;
@@ -66,6 +64,8 @@ struct game_state {
 	level* all_levels;
 	menu menu;
 	float time;
+	float last_registered_logic_time;
+	int current_level;
 
 };
 
@@ -123,7 +123,7 @@ struct fixed_movement {
 	position_list *list_position;
 };
 struct node {
-	sub_object* character;
+	sub_object* sub_obj;
 	struct node* next;
 };
 
@@ -147,21 +147,46 @@ struct vec2 {
 struct object {
 	sub_object **sub_objects;
 	float total_visible_time_remaining;
+	hitbox transform;
+	fixed_movement *obj_fixed_movement;
+};
+
+struct hitbox {
+	vec2 size;
+	vec2 future_size;
+	vec2 position;
+	vec2 future_position;
+};
+
+
+enum size_type {
+	SIZE_TYPE_SCALE,
+	SIZE_TYPE_ABS_SIZE
+};
+
+struct texture_info {
+	SDL_Texture *texture;
+	float original_heigth;
+	float original_width;
+	vec2 offset;
+	bool bool_scale;
+	vec2 size;
+	vec2 future_size;
+};
+
+struct size_info {
+	size_type size_type;
+	vec2 size;
+	vec2 future_size;
 };
 
 struct sub_object {
+	vec2 offset;
+	bool centered_pos;
+	size_info size_info;
 	object_type obj_shape;
 	all_states state;
-	vec2 size; //hitbox
-	vec2 future_size; //hitbox
-	vec2 texture_position;
-	vec2 texture_size;
-	vec2 position;
-	vec2 future_position;
-	vec2 move_diretion; //after calculations.
-	fixed_movement *obj_fixed_movement;
 	bool visible;
-	float speed;
 	SDL_Color color;
 	animation_data *animation;
 	mask obj_mask;
@@ -232,7 +257,7 @@ struct object_list {
 };
 
 struct node {
-	sub_object* character;
+	sub_object* sub_obj;
 	struct node* next;
 };
 
