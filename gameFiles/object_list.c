@@ -82,14 +82,9 @@ int node_insert(object_list* list_c, node* n_p) {
 	}
 	node* current_node = list_c->start_node;
 
-	while (current_node) {
-		if (!current_node->next) {
-			current_node->next = n_p;
-			list_c->count++;
-			return 1;
-		}
-		current_node = current_node->next;
-	}
+	node *node_temp = current_node->next;
+	current_node->next = n_p;
+	n_p->next = node_temp;
 	return 0;
 }
 

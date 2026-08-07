@@ -7,25 +7,6 @@
 #include "sub_object.h"
 #include "object_list.h"
 
-struct sub_object {
-	vec2 offset;
-	bool centered_pos;
-	size_type size_type;
-	object_type obj_shape;
-	all_states state;
-	fixed_movement *obj_fixed_movement;
-	bool visible;
-	SDL_Color color;
-	animation_data *animation;
-	mask obj_mask;
-	layer obj_layer;
-	SDL_Texture *texture;
-	texture_info *info_texture;
-	int points;
-	float texture_rotation;
-	float visible_time_remaining;
-};
-
 vec2 calc_center(object *obj) {
 	vec2 ret;
 	ret.x = obj->transform.position.x + 0.5 * obj->transform.size.x;
@@ -87,8 +68,8 @@ void show_sub_object(object* obj,sub_object *sub_obj, SDL_Renderer *renderer) {
 
 void show_object(object *obj, SDL_Renderer *renderer) {
 	for (int i = 0; i < len(obj->sub_objects); i++) {
-		if (obj->sub_objects[i]->visible) {
-		show_sub_object(obj, obj->sub_objects[i], renderer);
+		if (obj->sub_objects.sub_objects[i]->visible) {
+		show_sub_object(obj, obj->sub_objects.sub_objects[i], renderer);
 		}
 	}
 }
@@ -96,7 +77,7 @@ void show_object(object *obj, SDL_Renderer *renderer) {
 void show_object_list(object_list *list, SDL_Renderer * renderer) {
 	node *cur_node = list->start_node;
 	for (int i = 1; i < len(list->count); i++) {
-		show_object(cur_node->sub_obj, renderer);
+		show_object(cur_node->obj, renderer);
 		cur_node = cur_node->next;
 	}
 }
