@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <SDL3/SDL.h>
+#include <SDL3_image/SDL_image.h>
 #include <stdbool.h>
 
 
@@ -20,21 +21,23 @@ typedef struct game_special_effects game_special_effects;
 typedef struct game_values game_values;
 typedef struct texture_info texture_info;
 typedef struct animation_data animation_data;
-typedef struct animation_order animation_order;
 typedef struct object_list object_list;
 typedef struct sprite_list sprite_list;
 typedef struct sub_object sub_object;
 typedef struct level level;
 typedef struct menu menu;
 typedef struct node node;
-typedef struct size_list size_list;
-typedef struct position_list position_list;
+typedef struct values_list values_list;
 typedef struct fixed_movement fixed_movement;
 typedef struct object object;
 typedef struct vec2 vec2;
 typedef struct hitbox hitbox;
 typedef enum size_type size_type;
 typedef struct size_info size_info;
+typedef struct vec2_float_list vec2_float_list;
+typedef enum behaviour_type behaviour_type;
+SDL_Color red = { 255, 0, 0, 255 };
+SDL_Color blue = { 0, 0, 255, 255 };
 
 struct game {
 	game_state state;
@@ -47,11 +50,6 @@ struct game {
 	SDL_Window *window;
 };
 
-
-struct animation_order {
-	int animation_index;
-	float time;
-};
 
 struct game_values {
 	int coins;
@@ -103,23 +101,28 @@ struct game_special_effects {
 
 
 struct animation_data {
+	values_list lists;
 	int current_frame;
 	float frame_time;
 	int amount_frames_animation;
 	bool animation;
-	float *rotations;
-	animation_order order_animation;
-	SDL_Texture **animation_textures;
+	int *order_animation;
 };
 
-struct size_list {
-	float *x_list;
-	float *y_list;
+struct vec2_float_list {
+	float *x;
+	float *y;
+};
+
+struct values_list {
+	vec2_float_list pos; //can be position or offset
+	vec2_float_list size;
 	float *t_list; //time intervals for each position.
+	float *r_list; //rotation
 };
 
 struct fixed_movement {
-	size_list list_size;
+	values_list list_size;
 	position_list *list_position;
 };
 struct node {
@@ -132,12 +135,6 @@ struct object_list {
 	size_t count;
 };
 
-struct position_list {
-	float *x_list;
-	float *y_list;
-	float *t_list; //time intervals for each position.
-};
-
 
 struct vec2 {
 	float x;
@@ -148,7 +145,7 @@ struct object {
 	sub_object **sub_objects;
 	float total_visible_time_remaining;
 	hitbox transform;
-	fixed_movement *obj_fixed_movement;
+	values_list *fixed_transform_lists;
 };
 
 struct hitbox {
@@ -163,6 +160,13 @@ enum size_type {
 	SIZE_TYPE_SCALE,
 	SIZE_TYPE_ABS_SIZE
 };
+
+enum behaviour_type {
+	BEHAVIOUR_TYPE_NONE,
+	BEHAVIOUR_TYPE_ANIMATION,
+	BEHAVIOUR_TYPE_FIXED_TRANSFORM
+};
+
 
 struct texture_info {
 	SDL_Texture *texture;
@@ -181,6 +185,7 @@ struct size_info {
 };
 
 struct sub_object {
+	behaviour_type behaviour_type;
 	vec2 offset;
 	bool centered_pos;
 	size_info size_info;
@@ -196,6 +201,7 @@ struct sub_object {
 	int points;
 	float texture_rotation;
 	float visible_time_remaining;
+	values_list *fixed_transform_lists;
 };
 
 typedef enum {
