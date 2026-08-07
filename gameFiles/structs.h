@@ -21,12 +21,11 @@ typedef struct game_special_effects game_special_effects;
 typedef struct game_values game_values;
 typedef struct texture_info texture_info;
 typedef struct animation_data animation_data;
-typedef struct object_list object_list;
-typedef struct sprite_list sprite_list;
+
+
 typedef struct sub_object sub_object;
 typedef struct level level;
 typedef struct menu menu;
-typedef struct node node;
 typedef struct values_list values_list;
 typedef struct object object;
 typedef struct vec2 vec2;
@@ -35,7 +34,29 @@ typedef enum size_type size_type;
 typedef struct size_info size_info;
 typedef struct vec2_float_list vec2_float_list;
 typedef enum behaviour_type behaviour_type;
-typedef struct sub_object_list sub_object_list;
+typedef struct button button;
+typedef struct object_pool object_pool;
+typedef struct sub_object_pool sub_object_pool;
+typedef struct text_info_t text_info_t;
+
+struct button {
+	text_info_t text_info;
+	vec2 position;
+	vec2 size;
+	SDL_Color color;
+	sub_object_pool *details;
+};
+
+
+struct text_info_t {
+	char *text;
+	bool text_centered_bool;
+	vec2 text_offset;
+	SDL_Color text_color;
+	vec2 text_size;
+	bool text_pos_scaled_bool;
+	bool text_size_scaled_bool;
+};
 
 SDL_Color red = { 255, 0, 0, 255 };
 SDL_Color blue = { 0, 0, 255, 255 };
@@ -69,15 +90,15 @@ struct game_state {
 };
 
 struct level {
-	object_list *objects;
-	sprite_list *sprites;
+	object_pool *objects;
+	object_pool *sprites;
 	sub_object *player;
 	float time_duration;
 	int points;
 };
 
 struct menu {
-	object_list *all_menus;
+	object_pool *all_menus;
 
 };
 
@@ -99,10 +120,7 @@ struct game_special_effects {
 
 };
 
-struct sub_object_list {
-	int count;
-	sub_object **sub_objects;
-};
+
 
 struct animation_data {
 	values_list lists;
@@ -125,16 +143,21 @@ struct values_list {
 	float *r_list; //rotation
 };
 
+typedef struct {
+    sub_object** objects;
+    int* free_list;
+    int count;
+    int capacity;
+    int free_count;
+} sub_object_pool;
 
-struct node {
-	object *obj;
-	node *next;
-};
-
-struct object_list {
-	node* start_node;
-	size_t count;
-};
+typedef struct {
+    object** objects;
+    int* free_list;
+    int count;
+    int capacity;
+    int free_count;
+} object_pool;
 
 
 struct vec2 {
@@ -143,7 +166,7 @@ struct vec2 {
 };
 
 struct object {
-	sub_object_list sub_objects;
+	sub_object_pool sub_objects;
 	float total_visible_time_remaining;
 	hitbox transform;
 	values_list *fixed_transform_lists;
@@ -251,24 +274,6 @@ typedef enum {
     MASK_WALL    = LAYER_WALL,
     MASK_BULLET  = LAYER_BULLET,
 } mask;
-
-
-struct sprite_list {
-	node * start_node;
-	size_t count;
-};
-
-struct object_list {
-	node* start_node;
-	size_t count;
-
-};
-
-struct node {
-	sub_object* sub_obj;
-	struct node* next;
-};
-
 
 
 #endif STRUCT_H;
