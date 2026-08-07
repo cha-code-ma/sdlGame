@@ -28,7 +28,6 @@ typedef struct level level;
 typedef struct menu menu;
 typedef struct node node;
 typedef struct values_list values_list;
-typedef struct fixed_movement fixed_movement;
 typedef struct object object;
 typedef struct vec2 vec2;
 typedef struct hitbox hitbox;
@@ -36,6 +35,8 @@ typedef enum size_type size_type;
 typedef struct size_info size_info;
 typedef struct vec2_float_list vec2_float_list;
 typedef enum behaviour_type behaviour_type;
+typedef struct sub_object_list sub_object_list;
+
 SDL_Color red = { 255, 0, 0, 255 };
 SDL_Color blue = { 0, 0, 255, 255 };
 
@@ -98,7 +99,10 @@ struct game_special_effects {
 
 };
 
-
+struct sub_object_list {
+	int count;
+	sub_object **sub_objects;
+};
 
 struct animation_data {
 	values_list lists;
@@ -121,13 +125,10 @@ struct values_list {
 	float *r_list; //rotation
 };
 
-struct fixed_movement {
-	values_list list_size;
-	position_list *list_position;
-};
+
 struct node {
-	sub_object* sub_obj;
-	struct node* next;
+	object *obj;
+	node *next;
 };
 
 struct object_list {
@@ -142,10 +143,11 @@ struct vec2 {
 };
 
 struct object {
-	sub_object **sub_objects;
+	sub_object_list sub_objects;
 	float total_visible_time_remaining;
 	hitbox transform;
 	values_list *fixed_transform_lists;
+	bool time_started;
 };
 
 struct hitbox {

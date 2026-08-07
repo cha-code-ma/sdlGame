@@ -5,9 +5,9 @@
 #include <stdlib.h>
 #include <SDL3/SDL.h>
 #include <stdbool.h>
-#include "object.h"
+#include "sub_object.h"
 #include "structs.h"
-
+#include "object.h"
 
 object_list* object_list_init(void) {
 	object_list* l_c = malloc(sizeof(object_list));
@@ -19,12 +19,12 @@ object_list* object_list_init(void) {
 	return l_c;
 }
 
-node* node_init(sub_object* sub_obj) {
+node* node_init(object* obj) {
 	node* n = malloc(sizeof(node));
 	if (!n) {
 		return NULL;
 	}
-	n->sub_obj = sub_obj;
+	n->obj = obj;
 	n->next = NULL;
 	return n;
 }
@@ -33,8 +33,8 @@ void free_node(node* n) {
 	if (!n) {
 		return;
 	}
-	if (n->sub_obj) {
-		free(n->sub_obj);
+	if (n->obj) {
+		free_object(n->obj);
 	}
 	free(n);
 }

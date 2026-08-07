@@ -6,8 +6,8 @@
 
 
 
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef SUB_OBJECT_H
+#define SUB_OBJECT_H
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
 #include "structs.h"
@@ -18,7 +18,6 @@
 */
 sub_object* sub_obj_init(
 	SDL_Renderer *renderer,
-	object_list* list_object,
 	object_type my_shape,
 	behaviour_type behaviour,
 	vec2 offset,

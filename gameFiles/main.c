@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <SDL3/SDL.h>
 #include <stdbool.h>
-#include "object.h"
+#include "sub_object.h"
 #include "structs.h"
 #include "object_list.h"
 
@@ -52,22 +52,6 @@ int main(void) {
 		return 1;
 	}
 
-	sub_object* square = shape_init(SQUARE, 100.0f, 100.0f, 100.0f, 100.0f, 200.0f, false, red, list_c,
-		all_objects_list, PLAYER, WALL, true, true, true, 4);
-	if (!square) {
-		SDL_Log("sqaure init error %s", SDL_GetError());
-		free_all_things(list_c, renderer, window);
-		SDL_Quit();
-		return 1;
-	}
-
-	sub_object* wall = shape_init(SQUARE, 500.0f, 400.0f, 50.0f, 200.0f, 0.0f, false, blue, list_c, all_objects_list,
-		WALL, PLAYER, true, false, true, 4);
-	if (!wall) {
-		SDL_Log("wall init error %s", SDL_GetError());
-		free_all_things(list_c, window, renderer);
-		return 1;
-	}
 
 	//MAIN LOOP
 	bool key_move = false;

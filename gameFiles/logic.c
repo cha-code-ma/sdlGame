@@ -4,7 +4,7 @@
 #include <SDL3_image/SDL_image.h>
 #include "structs.h"
 #include <stdbool.h>
-#include "object.h"
+#include "sub_object.h"
 #include "object_list.h"
 
 struct sub_object {

@@ -6,7 +6,7 @@
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
 #include <stdbool.h>
-#include "object.h"
+#include "sub_object.h"
 #include "object_list.h"
 #include  "structs.h"
 

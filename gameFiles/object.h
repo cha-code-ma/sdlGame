@@ -1,0 +1,17 @@
+/*
+
+*/
+
+
+#ifndef SUB_OBJECT_H
+#define SUB_OBJECT_H
+#include "structs.h"
+
+
+
+object *object_init(vec2 position, vec2 size, float visible_time, bool time_started);
+
+
+void free_object(object *obj);
+
+#endif
