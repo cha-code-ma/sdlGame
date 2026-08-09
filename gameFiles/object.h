@@ -3,8 +3,8 @@
 */
 
 
-#ifndef SUB_OBJECT_H
-#define SUB_OBJECT_H
+#ifndef OBJECT_H
+#define OBJECT_H
 #include "structs.h"
 
 
@@ -14,4 +14,5 @@ object *object_init(vec2 position, vec2 size, float visible_time, bool time_star
 
 void free_object(object *obj);
 
+void free_string(string *str);
 #endif

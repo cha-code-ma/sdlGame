@@ -29,27 +29,41 @@ typedef struct menu menu;
 typedef struct values_list values_list;
 typedef struct object object;
 typedef struct vec2 vec2;
-typedef struct hitbox hitbox;
-typedef enum size_type size_type;
+
+
 typedef struct size_info size_info;
 typedef struct vec2_float_list vec2_float_list;
-typedef enum behaviour_type behaviour_type;
+typedef struct hitbox hitbox;
 typedef struct button button;
 typedef struct object_pool object_pool;
 typedef struct sub_object_pool sub_object_pool;
 typedef struct text_info_t text_info_t;
+typedef struct ui_t uit_t;
+typedef struct button_pool button_pool;
+typedef struct string string;
+
+typedef enum behaviour_type behaviour_type;
+typedef enum size_type size_type;
+typedef enum object_type object_type;
+typedef enum sub_object_type sub_object_type;
+typedef enum button_type button_type;
 
 struct button {
+	button_type type;
+	string *name;
 	text_info_t text_info;
 	vec2 position;
 	vec2 size;
 	SDL_Color color;
 	sub_object_pool *details;
+	bool visible;
 };
 
-
+enum button_type {
+	BUTTON_TYPE_UI
+};
 struct text_info_t {
-	char *text;
+	string *text;
 	bool text_centered_bool;
 	vec2 text_offset;
 	SDL_Color text_color;
@@ -89,13 +103,42 @@ struct game_state {
 
 };
 
+enum object_type {
+	OBJ_PLAYER,
+    OBJ_ENEMY,
+    OBJ_COIN,
+    OBJ_BULLET
+};
+
+enum sub_object_type {
+	SUB_OBJ_PLAYER
+};
+
+
+
+struct ui_t {
+	object_pool ui_objects;
+	button_pool buttons;
+};
+
 struct level {
 	object_pool *objects;
 	object_pool *sprites;
-	sub_object *player;
+	uit_t *UI;
 	float time_duration;
 	int points;
 };
+
+struct button_pool {
+    button **buttons;
+    int* free_list;
+    int count;
+    int capacity;
+    int free_count;
+
+};
+
+
 
 struct menu {
 	object_pool *all_menus;
@@ -166,6 +209,8 @@ struct vec2 {
 };
 
 struct object {
+	object_type type;
+	string *name;
 	sub_object_pool sub_objects;
 	float total_visible_time_remaining;
 	hitbox transform;
@@ -209,7 +254,15 @@ struct size_info {
 	vec2 future_size;
 };
 
+
+struct string {
+	char *text;
+	int length; //length text
+	int capacity; //total char amount
+};
+
 struct sub_object {
+	sub_object_type type;
 	behaviour_type behaviour_type;
 	vec2 offset;
 	bool centered_pos;

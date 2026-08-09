@@ -5,7 +5,7 @@
 #include "structs.h"
 #include <stdbool.h>
 #include "sub_object.h"
-#include "object_list.h"
+
 
 vec2 calc_center(object *obj) {
 	vec2 ret;

@@ -18,7 +18,8 @@
 */
 sub_object* sub_obj_init(
 	SDL_Renderer *renderer,
-	object_type my_shape,
+	sub_object_type type,
+	object_type shape,
 	behaviour_type behaviour,
 	vec2 offset,
 	bool centered_pos,

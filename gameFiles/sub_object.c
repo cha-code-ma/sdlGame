@@ -7,7 +7,7 @@
 #include <SDL3_image/SDL_image.h>
 #include <stdbool.h>
 #include "sub_object.h"
-#include "object_list.h"
+
 #include  "structs.h"
 
 
@@ -15,7 +15,8 @@
 
 sub_object* sub_obj_init(
 	SDL_Renderer *renderer,
-	object_type my_shape,
+	sub_object_type type,
+	object_type shape,
 	behaviour_type behaviour,
 	vec2 offset,
 	bool centered_pos,
@@ -137,10 +138,10 @@ sub_object* sub_obj_init(
 		sub_obj->info_texture = NULL;
 	}
 	sub_obj->behaviour_type = behaviour;
-	sub_obj->obj_shape = my_shape;
+	sub_obj->type = type;
 	sub_obj->offset = offset;
 	sub_obj->size_info.size = size;
-
+	sub_obj->obj_shape = shape;
 	sub_obj->size_info.future_size = size;
 	sub_obj->state = IDLE;
 	sub_obj->color = color;

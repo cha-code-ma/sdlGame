@@ -7,7 +7,7 @@
 #include <stdbool.h>
 #include "sub_object.h"
 #include "structs.h"
-#include "object_list.h"
+
 
 #define SDL_MAIN_HANDLED
 

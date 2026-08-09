@@ -6,7 +6,7 @@
 #define BUTTON_H
 #include "structs.h"
 #include "sub_object.h"
-#include "object_list.h"
+
 #include "object.h"
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
