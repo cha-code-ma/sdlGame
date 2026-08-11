@@ -26,7 +26,7 @@ void free_button_pool(button_pool *pool, bool is_pointer) {
         return;
     }
     for (int i = 0; i < pool->count; i++) {
-        if (valueInList_int(pool->free_list, i, pool->free_count)) {
+        if (values_in_list_int(pool->free_list, i, pool->free_count)) {
             free_button(pool->buttons[i]);
         }
     }
@@ -57,7 +57,7 @@ void free_object_pool(object_pool *pool, bool is_pointer) {
         return;
     }
     for (int i = 0; i < pool->count; i++) {
-        if (valueInList_int(pool->free_list, i, pool->free_count)) {
+        if (values_in_list_int(pool->free_list, i, pool->free_count)) {
             free_sub_object(pool->objects[i]);
         }
     }
@@ -73,7 +73,7 @@ object *object_pool_remove_rand(object_pool* pool) {
     }
     object *sub_obj = NULL;
     for (int i = 0; i < pool->capacity; i++) {
-        if (!valueInList_int(i, pool->free_list, pool->capacity)) {
+        if (!values_in_list_int(i, pool->free_list, pool->capacity)) {
             sub_obj = pool->objects[i];
             pool->objects[i] = NULL;
             pool->count--;
@@ -141,7 +141,7 @@ void free_sub_object_pool(sub_object_pool *pool, bool is_pointer) {
         return;
     }
     for (int i = 0; i < pool->count; i++) {
-        if (valueInList_int(pool->free_list, i, pool->free_count)) {
+        if (values_in_list_int(pool->free_list, i, pool->free_count)) {
             free_object(pool->objects[i]);
         }
     }
@@ -166,7 +166,7 @@ sub_object *sub_object_pool_remove_rand(sub_object_pool* pool) {
     }
     sub_object *sub_obj = NULL;
     for (int i = 0; i < pool->capacity; i++) {
-        if (!valueInList_int(i, pool->free_list, pool->capacity)) {
+        if (!values_in_list_int(i, pool->free_list, pool->capacity)) {
             sub_obj = pool->objects[i];
             pool->objects[i] = NULL;
             pool->count--;
@@ -212,7 +212,7 @@ int pop_free_list_sub_obj(sub_object_pool* pool) {
 /*
     unsorted list, speed O(n)
 */
-bool valueInList_int(int * list, int value, int length) {
+bool values_in_list_int(int * list, int value, int length) {
     for (int i =0; i < length; i++) {
         if (list[i] == value) {
             return true;

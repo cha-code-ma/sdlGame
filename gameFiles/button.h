@@ -17,4 +17,10 @@ button *button_init(vec2 pos, vec2 size, SDL_Color color,char *text, bool center
 
 void free_button(button *but);
 
+
+bool button_clicked(button* but, float mouse_x, float mouse_y);
+
+bool button_hovered(button *but);
+
+void button_connect_function(button* but, button_type type, void *objects);
 #endif

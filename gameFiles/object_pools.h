@@ -18,3 +18,4 @@ void free_sub_object_pool(sub_object_pool *pool, bool is_pointer);
 
 bool sub_object_pool_add(sub_object_pool* pool, sub_object* sub_obj);
 #endif
+bool values_in_list_int(int * list, int value, int length);

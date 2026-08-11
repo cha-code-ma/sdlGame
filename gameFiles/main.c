@@ -7,8 +7,8 @@
 #include <stdbool.h>
 #include "sub_object.h"
 #include "structs.h"
-
-
+#include <SDL3_ttf/SDL_ttf.h>
+#include "button.h"
 #define SDL_MAIN_HANDLED
 
 int main(void) {
@@ -26,6 +26,10 @@ int main(void) {
 		);
 		return 1;
 	}
+	TTF_Font *font = TTF_OpenFont("path_to_tff file", 24);
+
+
+
 	object_list* list_c = object_list_init();
 	if (!list_c) {
 		SDL_Log("init Error list_c %s", SDL_GetError());
@@ -67,9 +71,18 @@ int main(void) {
 		last_time = current_time;
 
 		while (SDL_PollEvent(&event)) {
-			if (event.type == SDL_EVENT_QUIT) {
-				running = false;
+			switch (event.type) {
+				case SDL_EVENT_QUIT:
+					running = false;
+				case SDL_EVENT_MOUSE_BUTTON_DOWN:
+					if (event.button.button == SDL_BUTTON_LEFT) {
+						event.button.x
+					}
+					if (event.button.button = SDL_BUTTON_RIGHT) {
+
+					}
 			}
+
 		}
 		if (!running) {
 			break;

@@ -6,7 +6,7 @@
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
 #include <stdbool.h>
-
+#include <SDL3_ttf/SDL_ttf.h>
 
 #define ABOSOLUTE_WINDOW_HEIGTH 800
 #define ABSOLUTE_WINDOW_WIDTH 450
@@ -38,9 +38,11 @@ typedef struct button button;
 typedef struct object_pool object_pool;
 typedef struct sub_object_pool sub_object_pool;
 typedef struct text_info_t text_info_t;
-typedef struct ui_t uit_t;
+typedef struct ui_t ui_t;
 typedef struct button_pool button_pool;
 typedef struct string string;
+typedef struct text_ui text_ui;
+typedef struct group group;
 
 typedef enum behaviour_type behaviour_type;
 typedef enum size_type size_type;
@@ -55,22 +57,38 @@ struct button {
 	vec2 position;
 	vec2 size;
 	SDL_Color color;
+	SDL_Color second_color; //for when the button is being clicked/hovered.
 	sub_object_pool *details;
 	bool visible;
 };
 
 enum button_type {
-	BUTTON_TYPE_UI
+	BUTTON_TYPE_UI,
+	BUTTON_TYPE_HIDE_UI,
+	BUTTON_TYPE_NEG_VISIBLE_UI,
+	BUTTON_TYPE_ACTION_OBJECT,
+	BUTTON_TYPE_ACTION_SUB_OBJECT,
+
 };
 struct text_info_t {
 	string *text;
 	bool text_centered_bool;
 	vec2 text_offset;
-	SDL_Color text_color;
+
 	vec2 text_size;
 	bool text_pos_scaled_bool;
 	bool text_size_scaled_bool;
 };
+
+struct text_ui {
+	string *text;
+	vec2 pos;
+	vec2 size;
+	bool transparant_background;
+	SDL_Color background_color;
+};
+
+
 
 SDL_Color red = { 255, 0, 0, 255 };
 SDL_Color blue = { 0, 0, 255, 255 };
@@ -95,7 +113,8 @@ struct game_values {
 
 };
 struct game_state {
-	level* all_levels;
+	level *active_level;
+	level** all_levels;
 	menu menu;
 	float time;
 	float last_registered_logic_time;
@@ -121,10 +140,19 @@ struct ui_t {
 	button_pool buttons;
 };
 
+struct group {
+	char * name;
+	object_pool *objects;
+	ui_t *ui;
+
+
+};
+
 struct level {
 	object_pool *objects;
 	object_pool *sprites;
-	uit_t *UI;
+	ui_t *UI;
+	group *groups;
 	float time_duration;
 	int points;
 };
@@ -155,8 +183,10 @@ struct game_settings {
 struct game_sounds {
 
 };
+
+
 struct game_textures {
-	SDL_Texture *coin;
+	SDL_Texture *circle_yellow;
 };
 
 struct game_special_effects {
@@ -186,13 +216,13 @@ struct values_list {
 	float *r_list; //rotation
 };
 
-typedef struct {
+struct sub_object_pool {
     sub_object** objects;
     int* free_list;
     int count;
     int capacity;
     int free_count;
-} sub_object_pool;
+};
 
 typedef struct {
     object** objects;
@@ -248,6 +278,9 @@ struct texture_info {
 	vec2 future_size;
 };
 
+
+
+
 struct size_info {
 	size_type size_type;
 	vec2 size;
@@ -259,6 +292,8 @@ struct string {
 	char *text;
 	int length; //length text
 	int capacity; //total char amount
+	SDL_Color color;
+	TTF_Font *font;
 };
 
 struct sub_object {
