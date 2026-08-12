@@ -42,8 +42,11 @@ typedef struct ui_t ui_t;
 typedef struct button_pool button_pool;
 typedef struct string string;
 typedef struct text_ui text_ui;
-typedef struct group group;
+typedef struct group_t group_t;
+typedef struct group_action group_action;
+typedef struct button_action_info button_action_info;
 
+typedef enum action_type action_type;
 typedef enum behaviour_type behaviour_type;
 typedef enum size_type size_type;
 typedef enum object_type object_type;
@@ -51,7 +54,7 @@ typedef enum sub_object_type sub_object_type;
 typedef enum button_type button_type;
 
 struct button {
-	button_type type;
+	button_action_info *action_info;
 	string *name;
 	text_info_t text_info;
 	vec2 position;
@@ -60,16 +63,31 @@ struct button {
 	SDL_Color second_color; //for when the button is being clicked/hovered.
 	sub_object_pool *details;
 	bool visible;
+	bool active;
+	bool clicked;
+	float clicked_time_left;
+};
+
+struct button_action_info {
+	group_action *group_actions;
+	int action_count;
+	int action_capacity;
 };
 
 enum button_type {
 	BUTTON_TYPE_UI,
 	BUTTON_TYPE_HIDE_UI,
+	BUTTON_TYPE_SHOW_UI,
 	BUTTON_TYPE_NEG_VISIBLE_UI,
 	BUTTON_TYPE_ACTION_OBJECT,
 	BUTTON_TYPE_ACTION_SUB_OBJECT,
 
 };
+
+enum action_type {
+	ACTION_TYPE_HIDE
+};
+
 struct text_info_t {
 	string *text;
 	bool text_centered_bool;
@@ -136,11 +154,11 @@ enum sub_object_type {
 
 
 struct ui_t {
-	object_pool ui_objects;
-	button_pool buttons;
+	object_pool *ui_objects;
+	button_pool *buttons;
 };
 
-struct group {
+struct group_t {
 	char * name;
 	object_pool *objects;
 	ui_t *ui;
@@ -148,11 +166,18 @@ struct group {
 
 };
 
+struct group_action {
+	group_t *group_id;
+	action_type action;
+	bool is_active;
+	void (*custom_action)(group_t *group); //optioneel, eigen functie.
+};
+
 struct level {
 	object_pool *objects;
 	object_pool *sprites;
 	ui_t *UI;
-	group *groups;
+	group_t *groups;
 	float time_duration;
 	int points;
 };
@@ -241,7 +266,7 @@ struct vec2 {
 struct object {
 	object_type type;
 	string *name;
-	sub_object_pool sub_objects;
+	sub_object_pool *sub_objects;
 	float total_visible_time_remaining;
 	hitbox transform;
 	values_list *fixed_transform_lists;

@@ -17,5 +17,13 @@ void free_object_pool(object_pool *pool);
 void free_sub_object_pool(sub_object_pool *pool, bool is_pointer);
 
 bool sub_object_pool_add(sub_object_pool* pool, sub_object* sub_obj);
-#endif
+
+object **object_pool_get_objects(object_pool *pool, int *count);
+
 bool values_in_list_int(int * list, int value, int length);
+
+button **button_pool_get_objects(button_pool *pool, int *count);
+sub_object **sub_object_pool_get_objects(sub_object_pool *pool, int *count);
+#endif
+
+

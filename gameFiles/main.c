@@ -76,7 +76,8 @@ int main(void) {
 					running = false;
 				case SDL_EVENT_MOUSE_BUTTON_DOWN:
 					if (event.button.button == SDL_BUTTON_LEFT) {
-						event.button.x
+						button_
+						butt  event.button.x
 					}
 					if (event.button.button = SDL_BUTTON_RIGHT) {
 

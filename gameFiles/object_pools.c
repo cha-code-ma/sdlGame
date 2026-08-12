@@ -1,11 +1,11 @@
-#include "structs.h"
+
 #include "sub_object.h"
 
 #include "object.h"
 #include "button.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "structs.h"
 //button
 button_pool *button_pool_init(int capacity) {
     button_pool* pool = malloc(sizeof(button_pool));
@@ -36,6 +36,21 @@ void free_button_pool(button_pool *pool, bool is_pointer) {
 
 }
 
+button **button_pool_get_objects(button_pool *pool, int *count) {
+    button **buttons = malloc(sizeof(button*) * pool->count);
+    if (!buttons) {
+        return NULL;
+    }
+    int index = 0;
+    for (int i = 0; i < pool->capacity; i++) {
+        if (pool->buttons[i]) {
+            buttons[index] = pool->buttons[i];
+            index++;
+        }
+    }
+    *count = index;
+    return buttons;
+}
 
 //object
 object_pool *sub_object_pool_init(int capacity) {
@@ -85,23 +100,6 @@ object *object_pool_remove_rand(object_pool* pool) {
     return sub_obj;
 }
 
-object *sub_object_pool_remove_type(object_pool* pool,  object_type type) {
-    if (!pool || pool->count == 0 ) {
-        return NULL;
-    }
-    object *obj = NULL;
-    for (int i = 0; i < pool->capacity; i++) {
-        if (pool->objects[i]->type == type) {
-            obj = pool->objects[i];
-            pool->objects[i] = NULL;
-            pool->count--;
-            pool->free_list[pool->free_count] = i;
-            pool->free_count++;
-            break;
-        }
-    }
-    return obj;
-}
 
 object *object_pool_remove_name(object_pool* pool,  string name) {
     if (!pool || pool->count == 0 ) {
@@ -121,7 +119,41 @@ object *object_pool_remove_name(object_pool* pool,  string name) {
     return sub_obj;
 }
 
+object **object_pool_get_objects(object_pool *pool, int *count) {
+    object **objects = malloc(sizeof(object*) * pool->count);
+    if (!objects) {
+        return NULL;
+    }
+    int index = 0;
+    for (int i = 0; i < pool->capacity; i++) {
+        if (pool->objects[i]) {
+            objects[index] = pool->objects[i];
+            index++;
+        }
+    }
+    *count = index;
+    return objects;
+}
+
 //sub_object
+object *sub_object_pool_remove_type(object_pool* pool,  object_type type) {
+    if (!pool || pool->count == 0 ) {
+        return NULL;
+    }
+    object *obj = NULL;
+    for (int i = 0; i < pool->capacity; i++) {
+        if (pool->objects[i]->type == type) {
+            obj = pool->objects[i];
+            pool->objects[i] = NULL;
+            pool->count--;
+            pool->free_list[pool->free_count] = i;
+            pool->free_count++;
+            break;
+        }
+    }
+    return obj;
+}
+
 sub_object_pool *sub_object_pool_init(int capacity) {
     sub_object_pool* pool = malloc(sizeof(sub_object));
     pool->capacity = capacity;
@@ -208,6 +240,21 @@ int pop_free_list_sub_obj(sub_object_pool* pool) {
     return first;
 }
 
+sub_object **sub_object_pool_get_objects(sub_object_pool *pool, int *count) {
+    sub_object **sub_objects = malloc(sizeof(sub_object*) * pool->count);
+    if (!sub_objects) {
+        return NULL;
+    }
+    int index = 0;
+    for (int i = 0; i < pool->capacity; i++) {
+        if (pool->objects[i]) {
+            sub_objects[index] = pool->objects[i];
+            index++;
+        }
+    }
+    *count = index;
+    return sub_objects;
+}
 
 /*
     unsorted list, speed O(n)

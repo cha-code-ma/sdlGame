@@ -22,5 +22,5 @@ bool button_clicked(button* but, float mouse_x, float mouse_y);
 
 bool button_hovered(button *but);
 
-void button_connect_function(button* but, button_type type, void *objects);
+void activate_button(button* but, button_type type, void *objects);
 #endif
