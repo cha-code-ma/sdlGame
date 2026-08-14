@@ -268,3 +268,27 @@ bool values_in_list_int(int * list, int value, int length) {
     return false;
 }
 
+//ui_t
+
+ui_t *ui_t_init(object_pool *obj_pool, button_pool *but_pool) {
+    ui_t *ui = malloc(sizeof(ui_t));
+    if (!ui) {
+        return NULL;
+    }
+    ui->buttons = but_pool;
+    ui->ui_objects = obj_pool;
+    return ui;
+}
+
+void free_ui_t(ui_t *ui, bool with_objects, bool with_buttons) {
+    if (!ui) {
+        return;
+    }
+    if (with_objects) {
+        free_object_pool(ui->ui_objects, true);
+    }
+    if (with_buttons) {
+        free_button_pool(ui->buttons, true);
+    }
+    free(ui);
+}

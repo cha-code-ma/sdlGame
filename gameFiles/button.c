@@ -12,22 +12,36 @@
 #include "object_pools.h"
 #include "logic.h"
 #include <SDL3_ttf/SDL_ttf.h>
+
+
 button *button_init(button_type type, vec2 pos, vec2 size, SDL_Color color,SDL_Color second_color, char *name, int name_length, int name_capacity, char * text, bool centered_text, bool scaled_position,
-    vec2 text_offset, bool scaled_size, vec2 text_size, SDL_Color text_color,TTF_Font *font, int text_length, int text_capacity, ) {
+    vec2 text_offset, bool scaled_size, vec2 text_size, SDL_Color text_color,TTF_Font *font, int text_length, int text_capacity, group_action **group_actions, int group_act_amount, int group_act_capacity) {
     button *but = malloc(sizeof(button));
     but->color = color;
     but->second_color = second_color;
     but->position = pos;
     but->size = size;
     but->details = NULL;
-    but->action_groups = malloc(sizeof(group_t*) * amount_actions);
-    if (!but->action_groups) {
-        return NULL;
+
+
+
+    but->action_info = calloc(1, sizeof(button_action_info));
+    if (!but->action_info) {
         free_button(but);
+        return NULL;
+
     }
-    but->action_groups = 
-    but->actions = amount_actions;
-        but->type = type;
+    but->action_info->action_count = group_act_amount;
+    but->action_info->action_capacity = group_act_capacity;
+    but->action_info->group_actions = calloc(group_act_capacity, sizeof(button_action_info*));
+    if (!but->action_info->group_actions) {
+        free_button(but);
+        return NULL;
+    }
+    for (int i = 0; i < group_act_amount; i++) {
+        but->action_info->group_actions[i] = group_actions[i];
+    }
+
     if (name) {
         but->name = malloc(sizeof(string));
         if (!but->name->text) {
@@ -70,7 +84,7 @@ button *button_init(button_type type, vec2 pos, vec2 size, SDL_Color color,SDL_C
 void free_button(button *but) {
     free_sub_object_pool(but->details, true);
     free_string(but->name);
-    free_string(but->text_info.text);  
+    free_string(but->text_info.text); 
     free(but);
 }
 
@@ -92,7 +106,7 @@ void activate_button(button* but) {
     }
     switch (cur_action->action) {
     case ACTION_TYPE_HIDE:
-        
+
         break;
 
     }

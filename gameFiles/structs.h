@@ -69,7 +69,7 @@ struct button {
 };
 
 struct button_action_info {
-	group_action *group_actions;
+	group_action **group_actions;
 	int action_count;
 	int action_capacity;
 };
@@ -159,7 +159,7 @@ struct ui_t {
 };
 
 struct group_t {
-	char * name;
+	string *name;
 	object_pool *objects;
 	ui_t *ui;
 

@@ -24,6 +24,9 @@ bool values_in_list_int(int * list, int value, int length);
 
 button **button_pool_get_objects(button_pool *pool, int *count);
 sub_object **sub_object_pool_get_objects(sub_object_pool *pool, int *count);
+
+ui_t *ui_t_init(object_pool *obj_pool, button_pool *but_pool);
+void free_ui_t(ui_t *ui, bool with_objects, bool with_buttons);
 #endif
 
 
