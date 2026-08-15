@@ -5,7 +5,7 @@
 #include "sub_object.h"
 
 #include "object_pools.h"
-object *object_init(object_type type, vec2 position, vec2 size, float visible_time, bool time_started, char *text, int length, int text_capacity) {
+object *object_init(object_type type, vec2 position, vec2 size, float visible_time, bool time_started, char *text, int length, int text_capacity, sub_object_pool* sub_objects) {
     object * obj = malloc(sizeof(object));
     if (!obj) {
         free_object(obj);
@@ -13,12 +13,11 @@ object *object_init(object_type type, vec2 position, vec2 size, float visible_ti
     }
     memset(obj, 0, sizeof(object));
     obj->type = type;
+    obj->sub_objects = sub_objects;
     obj->transform.position = position;
     obj->transform.future_position = position;
     obj->transform.size = size;
     obj->transform.future_position = size;
-    obj->sub_objects.count = 0;
-    obj->sub_objects.objects = NULL;
     obj->total_visible_time_remaining = visible_time;
     obj->time_started = time_started;
     if (text) {

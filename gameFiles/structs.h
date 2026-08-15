@@ -36,7 +36,7 @@ typedef struct vec2_float_list vec2_float_list;
 typedef struct hitbox hitbox;
 typedef struct button button;
 typedef struct object_pool object_pool;
-typedef struct sub_object_pool sub_object_pool;
+typedef struct sub_object_pool sub_object_pool; 
 typedef struct text_info_t text_info_t;
 typedef struct ui_t ui_t;
 typedef struct button_pool button_pool;
@@ -51,7 +51,7 @@ typedef enum behaviour_type behaviour_type;
 typedef enum size_type size_type;
 typedef enum object_type object_type;
 typedef enum sub_object_type sub_object_type;
-typedef enum button_type button_type;
+
 
 struct button {
 	button_action_info *action_info;
@@ -74,18 +74,14 @@ struct button_action_info {
 	int action_capacity;
 };
 
-enum button_type {
-	BUTTON_TYPE_UI,
-	BUTTON_TYPE_HIDE_UI,
-	BUTTON_TYPE_SHOW_UI,
-	BUTTON_TYPE_NEG_VISIBLE_UI,
-	BUTTON_TYPE_ACTION_OBJECT,
-	BUTTON_TYPE_ACTION_SUB_OBJECT,
 
-};
 
 enum action_type {
-	ACTION_TYPE_HIDE
+	ACTION_TYPE_RAND_FUNC,
+	ACTION_TYPE_HIDE,
+	ACTION_TYPE_SHOW,
+	ACTION_TYPE_NEG_VISIBILITY,
+
 };
 
 struct text_info_t {
@@ -130,6 +126,7 @@ struct game_values {
 	int xp;
 
 };
+
 struct game_state {
 	level *active_level;
 	level** all_levels;
@@ -203,6 +200,7 @@ struct game_settings {
 	bool sound_effects;
 	float music_volume;
 	float sound_effects_volume;
+	char language[30];
 };
 
 struct game_sounds {
