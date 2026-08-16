@@ -9,13 +9,36 @@ game *game_init(SDL_Renderer *renderer, SDL_Window *window) {
     }
     game_p->renderer = renderer;
     game_p->window = window;
-    bool debug = load_settings(&game_p->settings);
+    bool debug = load_settings(game_p);
     if (!debug) return NULL;
-    debug = load_sounds(&game_p->sounds);
+    debug = load_sounds(game_p);
     if (!debug) return NULL;
-    debug = load_special_effects(&game_p->special_effects);
+    debug = load_special_effects(game_p);
+    if (!debug) return NULL;
     debug = load_game_state(game_p);
+    if (!debug) return NULL;
+    debug = load_textures(game_p);
+    if (!debug) return NULL;
+    debug = load_saved_values(game_p);
+    if (!debug) return NULL;
+
     return game_p;
+}
+
+bool load_saved_values(game *game_p) {
+    game_save_values *save_values = &game_p->save_values;
+    // get setting and game values.
+    //if its there, then assing these to the right structs
+    //if not, then use basic/fresh values
+}
+
+bool load_special_effects(game *game_p) {
+    //....
+}
+
+bool load_sound(game *game_p) {
+    game_sounds *sounds = &game_p->sounds;
+    //.....
 }
 
 bool load_game_state(game *game_p) {
@@ -24,14 +47,24 @@ bool load_game_state(game *game_p) {
     debug = load_all_levels(state);
     if (!debug) return false;
     state->last_registered_logic_time = 0;
-    load_menu(&state->menu);
+    debug = load_menu(state);
+    if (!debug) return NULL;
     state->time = 0;
+    return true;
+}
+
+bool load_menu(game_state *state) {
+    menu *menu_p = &state->menu;
+    //........
 }
 
 bool load_all_levels(game_state *state) {
     int level_count = 1;
-    state->all_levels = calloc(1, sizeof(level*));
+    state->all_levels = calloc(level_count, sizeof(level*));
     if (!state->all_levels) return false;
+
+    state->all_levels[0] = init_level_1(); //bestaat nog niet.
+
 }
 
 void free_game(game *game_p) {
@@ -40,10 +73,77 @@ void free_game(game *game_p) {
     }
     free(game_p);
 }
-//settings
+//save_values
 
-bool settings_exist(const char *path) {
-    SDL_IOStream *file = SDL_IOFromFile(path, 'rb');
+
+
+char *get_path(const char *file) {
+    char *path = SDL_GetPrefPath("chakirCode", "tapGame");
+    if (!path) {
+        SDL_Log("cant get preffered path");
+        return NULL;
+    }
+    static char full_path[512];
+    SDL_snprintf(full_path, sizeof(full_path), "%s%s", path, file);
+    //volledige pad
+    SDL_free(path);
+
+    return full_path;
+}
+
+bool save_game_values(game *game_p) {
+    char *path = get_path("save_values.ibm");
+    if (!path) return false;
+
+    SDL_IOStream *file = SDL_IOFromFile(path, "wb");
+    if (!file) return false;
+
+    SDL_WriteIO(file, &game_p->save_values, sizeof(game_save_values));
+    SDL_CloseIO(file);
+    return true;
+}
+
+bool load_save_values(game *game_p) {
+    char *path = get_path("save_values.ibm");
+    if  (!path) return false;
+    SDL_IOStream *file;
+    if (settings_exist(path)) {
+        SDL_IOStream *file = SDL_IOFromFile(path, "rb");
+        size_t read = SDL_ReadIO(file, &game_p->save_values, sizeof(game_save_values));
+        SDL_RWclose(file);
+        if (read != 1) return false;
+        bool debug = load_settings(game_p);
+        if (!debug) return false;
+        bool debug = load_game_values(game_p);
+        if (!debug) return false;
+    }
+
+    bool debug = set_default_save_values(file, game_p);
+    if (!debug) return false;
+
+    return true;
+
+}
+
+bool load_game_values(game *game_p) {
+    game_p->values.coins = game_p->save_values.coins;
+    game_p->values.diamonds = game_p->save_values.diamonds;
+    game_p->values.level = game_p->save_values.level;
+    game_p->values.xp = game_p->save_values.xp;
+    return true;
+}
+
+
+bool valid_volume(int volume) {
+    if (volume > 100 || volume < 0) {
+        return false;
+    }
+    return true;
+}
+
+
+bool file_exist(const char *full_path) {
+    SDL_IOStream *file = SDL_IOFromFile(full_path, 'rb');
     if (file) {
         SDL_CloseIO(file);
         return true;
@@ -65,7 +165,7 @@ char *get_settings_path(void) {
     return full_path;
 }
 
-bool save_settings(game *game_p) {
+bool save_data(game *game_p) {
     char *path = get_settings_path();
     if (!path) return false;
 
@@ -78,31 +178,28 @@ bool save_settings(game *game_p) {
 }
 
 bool load_settings(game *game_p) {
-    char *path = get_settings_path();
-    if  (!path) return false;
-
-    if (settings_exist(path)) {
-        SDL_IOStream *file = SDL_IOFromFile(path, "rb");
-        size_t read = SDL_ReadIO(file, &game_p->settings, sizeof(game_settings));
-        SDL_RWclose(file);
-        if (read != 1) return false;
-        game_settings settings = game_p->settings;
-
-        if (in_language_list(settings.language) ||
-        valid_volume(settings.sound_effects_volume) ||
-        valid_volume(settings.music_volume))
-        return true;
+    strcpy(game_p->settings.language, game_p->save_values.language);
+    game_p->settings.music = game_p->save_values.music;
+    game_p->settings.music_volume = game_p->save_values.music_volume;
+    game_p->settings.sound_effects = game_p->save_values.sound_effects;
+    game_p->settings.sound_effects_volume = game_p->save_values.sound_effects_volume;
+    if (!in_language_list(game_p->settings.language, game_p) ||
+    !valid_volume(game_p->settings.music_volume) ||
+    !valid_volume(game_p->settings.sound_effects_volume)) {
+        set_default_settings(game_p);
     }
-
-    bool debug = set_default_settings(path, game_p);
-    if (!debug) return false;
-
-
     return true;
-
 }
 
-bool set_default_settings(const char *path, game *game_p) {
+bool in_language_list(char language[30], game *game_p) {
+    char *list[30] = game_p->const_values.languages;
+    for (int i = 0; i <game_p->const_values.amount_languages; i++) {
+        if (strcmp(list[i], language)) return true;
+    }
+    return false;
+}
+
+bool set_default_settings(game *game_p) {
     if (!game_p) {
         return false;
     }
@@ -111,12 +208,5 @@ bool set_default_settings(const char *path, game *game_p) {
     game_p->settings.music_volume = 100;
     game_p->settings.sound_effects = true;
     game_p->settings.sound_effects_volume = 100;
-    return true;
-}
-
-bool valid_volume(int volume) {
-    if (volume > 100 || volume < 0) {
-        return false;
-    }
     return true;
 }

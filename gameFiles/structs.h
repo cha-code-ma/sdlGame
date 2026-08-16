@@ -46,6 +46,8 @@ typedef struct group_t group_t;
 typedef struct group_action group_action;
 typedef struct button_action_info button_action_info;
 typedef struct game_progress game_progress;
+typedef struct game_save_values game_save_values;
+typedef struct game_const_values game_const_values;
 
 typedef enum action_type action_type;
 typedef enum behaviour_type behaviour_type;
@@ -109,6 +111,7 @@ SDL_Color red = { 255, 0, 0, 255 };
 SDL_Color blue = { 0, 0, 255, 255 };
 
 struct game {
+	game_const_values const_values;
 	game_state state;
 	game_settings settings;
 	game_sounds sounds;
@@ -118,6 +121,28 @@ struct game {
 	SDL_Renderer *renderer;
 	SDL_Window *window;
 	game_progress progress;
+	game_save_values save_values;
+};
+
+struct game_const_values {
+	char *languages[30];
+	int amount_languages;
+}
+
+
+struct game_save_values {
+	//settings
+	bool music;
+	bool sound_effects;
+	int music_volume;
+	int sound_effects_volume;
+	char language[30];
+	// game_values
+	int current_level;
+	int coins;
+	int diamonds;
+	int level;
+	int xp;
 };
 
 struct game_progress {
@@ -201,8 +226,8 @@ struct menu {
 struct game_settings {
 	bool music;
 	bool sound_effects;
-	float music_volume;
-	float sound_effects_volume;
+	int music_volume;
+	int sound_effects_volume;
 	char language[30];
 };
 
