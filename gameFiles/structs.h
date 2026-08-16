@@ -45,6 +45,7 @@ typedef struct text_ui text_ui;
 typedef struct group_t group_t;
 typedef struct group_action group_action;
 typedef struct button_action_info button_action_info;
+typedef struct game_progress game_progress;
 
 typedef enum action_type action_type;
 typedef enum behaviour_type behaviour_type;
@@ -116,8 +117,12 @@ struct game {
 	game_values values;
 	SDL_Renderer *renderer;
 	SDL_Window *window;
+	game_progress progress;
 };
 
+struct game_progress {
+
+};
 
 struct game_values {
 	int coins;
@@ -133,8 +138,6 @@ struct game_state {
 	menu menu;
 	float time;
 	float last_registered_logic_time;
-	int current_level;
-
 };
 
 enum object_type {
