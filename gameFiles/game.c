@@ -223,11 +223,11 @@ void game_set_time(game_t *game, Uint64 cur_time, Uint64 prev_time) {
     game->state.dt = (float)(cur_time - prev_time);
 }
 
-void game_set_input(game_t *game, SDL_Keycode *key_p, float x, float y) {
+void game_set_input(game_t *game, int button, float x, float y, bool input) {
     if (!game) return;
-    if (key_p) {
+    if (input) {
         game->state.previous_key = game->state.current_key;
-        game->state.current_key = *key_p;
+        game->state.current_key = button;
         game->state.prev_valid = game->state.cur_valid;
         game->state.cur_valid = TIME_TYPE_VALID;
         game->state.key_time = 0.5;

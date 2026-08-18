@@ -181,9 +181,9 @@ struct game_state {
 	float dt;
 	Uint64 time;
 	time_type cur_valid;
-	SDL_Keycode current_key;
+	int current_key;
 	time_type prev_valid;
-	SDL_Keycode previous_key;
+	int previous_key;
 	float key_time;
 };
 

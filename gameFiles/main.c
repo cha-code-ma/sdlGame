@@ -49,7 +49,7 @@ int main(void) {
 		SDL_Quit();
 	}
 	//MAIN LOOP
-	
+
 	bool running = true;
 	SDL_Event event;
 
@@ -66,15 +66,19 @@ int main(void) {
 					break;
 				case SDL_EVENT_MOUSE_BUTTON_DOWN:
 					if (event.button.button == SDL_BUTTON_LEFT) {
-						game_set_input(game, event.tfinger. );
+						game_set_input(game, event.button.button, event.button.x, event.button.y, true);
 					}
-					if (event.button.button = SDL_BUTTON_RIGHT) {
+					if (event.button.button == SDL_BUTTON_RIGHT) {
 
 					}
 					break;
 				case SDL_EVENT_FINGER_DOWN:
 					float x = event.tfinger.x * SCREEN_WIDTH;
 					float y = event.tfinger.y * SCREEN_HEIGTH;
+					game_set_input(game, event.button.button, x, y, true);
+				break;
+				default:
+					game_set_input(game, 0, 0, 0, false);
 				break;
 			}
 
@@ -82,26 +86,11 @@ int main(void) {
 		if (!running) {
 			break;
 		}
-		set_all_false(square);
-		const Uint8* keystates = SDL_GetKeyboardState(NULL);
-
-		if (keystates[SDL_SCANCODE_W]) { object_set_bool_up(square, true); }
-		if (keystates[SDL_SCANCODE_A]) { object_set_bool_left(square, true); }
-		if (keystates[SDL_SCANCODE_S]) { object_set_bool_down(square, true); }
-		if (keystates[SDL_SCANCODE_D]) { object_set_bool_right(square, true); }
-
-		update_future_movement(square, object_get_bool_left(square), object_get_bool_right(square), object_get_bool_up(square), object_get_bool_down(square), dt);
-
-
-
-
-		move_charachter(all_objects_list, square, dt);
 
 
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderClear(renderer);
 		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-		draw_all_characters(renderer, list_c);
 		SDL_RenderPresent(renderer);
 		SDL_Delay(16);
 	}

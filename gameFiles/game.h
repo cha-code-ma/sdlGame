@@ -8,7 +8,7 @@ bool load_settings(game_t *game_p);
 
 game_t *game_init(SDL_Renderer *renderer, SDL_Window *window);
 
-void game_set_time(game_t *game, float cur_time, float prev_time);
-void game_set_input(game_t *game, SDL_Keycode *key_p);
+void game_set_time(game_t *game, Uint64 cur_time, Uint64 prev_time);
+void game_set_input(game_t *game, int button, float x, float y, bool input);
 
 #endif
