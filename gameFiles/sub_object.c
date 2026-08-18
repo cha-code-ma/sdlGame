@@ -45,7 +45,7 @@ sub_object* sub_obj_init(
 
 
 
-
+	if (animation) {
 	sub_obj->animation = malloc(sizeof(animation_data));
 	if (!sub_obj->animation) {
 		free_sub_object(sub_obj);
@@ -64,8 +64,7 @@ sub_object* sub_obj_init(
 	memcpy(sub_obj->animation->frame_time_list, animation_time_list, sizeof(float) * animation_length);
 	memcpy(sub_obj->animation->rotation_list, animation_rot_list, sizeof(float) * animation_length);
 	memcpy(sub_obj->animation->order_animation, order_animation, sizeof(int) * animation_length);
-
-
+	}
 
 	sub_obj->texture = texture;
 	sub_obj->behaviour_type = behaviour;
@@ -84,42 +83,19 @@ sub_object* sub_obj_init(
 }
 
 
-void free_sub_object(sub_object* sub_obj) {
+void free_sub_object(sub_object* sub_obj) { //not done
     if (!sub_obj) {
         return;
     }
 
-    if (sub_obj->fixed_transform_lists) {
-
-        if (sub_obj->fixed_transform_lists->size.x) {
-            free(sub_obj->fixed_transform_lists->size.x);
-
-        }
-        if (sub_obj->fixed_transform_lists->size.y) {
-            free(sub_obj->fixed_transform_lists->size.y);
-
-        }
-
-        if (sub_obj->fixed_transform_lists->pos.x) {
-            free(sub_obj->fixed_transform_lists->pos.x);
-
-        }
-        if (sub_obj->fixed_transform_lists->pos.y) {
-            free(sub_obj->fixed_transform_lists->pos.y);
-
-        }
 
 
-        if (sub_obj->animation->rotation_list) {
-            free(sub_obj->animation->rotation_list);
-
-        }
-
-        free(sub_obj->fixed_transform_lists);
-        sub_obj->fixed_transform_lists = NULL;
-    }
 
 
+	if (sub_obj->animation->rotation_list) {
+		free(sub_obj->animation->rotation_list);
+
+	}
 
     if (sub_obj->info_texture) {
         if (sub_obj->info_texture->texture) {

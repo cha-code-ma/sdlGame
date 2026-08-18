@@ -27,10 +27,7 @@ int main(void) {
 
 
 
-	if (game) {
-		SDL_Log("init Error list_c %s", SDL_GetError());
-		return 1;
-	}
+
 
 
 	SDL_Window* window = SDL_CreateWindow("Move Game", 800, 600, SDL_WINDOW_RESIZABLE);
@@ -55,19 +52,17 @@ int main(void) {
 	bool running = true;
 	SDL_Event event;
 
-	SDL_Keycode current_key = NULL;
-	SDL_Keycode previous_key = NULL;
-	Uint32 last_time = SDL_GetTicks();
+
+	Uint64 last_time = SDL_GetTicks();
 	while (running) {
 		//reset_all_dx_dy(list_c);
-		Uint32 current_time = SDL_GetTicks();
-		float dt = (current_time - last_time) / 1000.0f;
-		last_time = current_time;
-
+		Uint64 current_time = SDL_GetTicks();
+		game_set_time(game, current_time, last_time);
 		while (SDL_PollEvent(&event)) {
 			switch (event.type) {
 				case SDL_EVENT_QUIT:
 					running = false;
+					break;
 				case SDL_EVENT_MOUSE_BUTTON_DOWN:
 					if (event.button.button == SDL_BUTTON_LEFT) {
 						button_
@@ -76,6 +71,10 @@ int main(void) {
 					if (event.button.button = SDL_BUTTON_RIGHT) {
 
 					}
+					break;
+				default:
+
+					break;
 			}
 
 		}

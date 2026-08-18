@@ -51,7 +51,9 @@ typedef struct game_save_values game_save_values;
 typedef struct game_const_values game_const_values;
 typedef struct game_textures game_textures;
 typedef struct game_fonts game_fonts;
+typedef struct fixed_tempelate_list fixed_tempelate_list;
 
+typedef enum time_type time_type;
 typedef enum action_type action_type;
 typedef enum behaviour_type behaviour_type;
 typedef enum size_type size_type;
@@ -169,8 +171,19 @@ struct game_state {
 	level *active_level;
 	level** all_levels;
 	menu menu;
-	float time;
-	float last_registered_logic_time;
+	float dt;
+	Uint64 time;
+	time_type cur_valid;
+	SDL_Keycode current_key;
+	time_type prev_valid;
+	SDL_Keycode previous_key;
+	float key_time;
+};
+
+enum time_type {
+	TIME_TYPE_VALID,
+	TIME_TYPE_INVALID,
+	TIME_TYPE_LATE
 };
 
 enum object_type {
@@ -268,11 +281,18 @@ struct vec2_float_list {
 	float *y;
 };
 
+struct fixed_tempelate_list {
+	vec2_float_list fixed_list;
+	Uint64 *time_list;
+	int length;
+	int index;
+	Uint64 time_left;
+};
+
 struct values_list {
-	vec2_float_list pos; //can be position or offset
-	vec2_float_list size;
-	float *time_pos;
-	float *time_size;
+	fixed_tempelate_list *pos;
+	fixed_tempelate_list *size;
+
 };
 
 struct sub_object_pool {

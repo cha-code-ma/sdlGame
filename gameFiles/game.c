@@ -52,7 +52,7 @@ bool load_game_state(game_t *game_p) {
     bool debug;
     debug = load_all_levels(state);
     if (!debug) return false;
-    state->last_registered_logic_time = 0;
+    state->time = 0;
     debug = load_menu(state);
     if (!debug) return NULL;
     state->time = 0;
@@ -215,4 +215,24 @@ bool set_default_settings(game_t *game_p) {
     game_p->settings.sound_effects = true;
     game_p->settings.sound_effects_volume = 100;
     return true;
+}
+
+void game_set_time(game_t *game, Uint64 cur_time, Uint64 prev_time) {
+    if (!game) return;
+    game->state.time = cur_time;
+    game->state.dt = (float)(cur_time - prev_time);
+}
+
+void game_set_input(game_t *game, SDL_Keycode *key_p) {
+    if (!game) return;
+    if (key_p) {
+        game->state.previous_key = game->state.current_key;
+        game->state.current_key = *key_p;
+        game->state.prev_valid = game->state.cur_valid;
+        game->state.cur_valid = TIME_TYPE_VALID;
+    } else {
+        if (game->state.key_time - game->state.dt < 0) {
+
+        }
+    }
 }

@@ -14,7 +14,7 @@
 #include <SDL3_ttf/SDL_ttf.h>
 
 
-button *button_init(button_type type, vec2 pos, vec2 size, SDL_Color color,SDL_Color second_color, char *name, int name_length, int name_capacity, char * text, bool centered_text, bool scaled_position,
+button *button_init(vec2 pos, vec2 size, SDL_Color color,SDL_Color second_color, char *name, int name_length, int name_capacity, char * text, bool centered_text, bool scaled_position,
     vec2 text_offset, bool scaled_size, vec2 text_size, SDL_Color text_color,TTF_Font *font, int text_length, int text_capacity, group_action **group_actions, int group_act_amount, int group_act_capacity) {
     button *but = malloc(sizeof(button));
     but->color = color;
