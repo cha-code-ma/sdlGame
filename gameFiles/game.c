@@ -9,27 +9,26 @@ game *game_init(SDL_Renderer *renderer, SDL_Window *window) {
     }
     game_p->renderer = renderer;
     game_p->window = window;
-    bool debug = load_settings(game_p);
+    bool debug = load_saved_values(game_p);
     if (!debug) return NULL;
-    debug = load_sounds(game_p);
+    debug = load_sounds(game_p); //not done
     if (!debug) return NULL;
-    debug = load_special_effects(game_p);
+    debug = load_special_effects(game_p); //not done
     if (!debug) return NULL;
-    debug = load_game_state(game_p);
+    debug = load_game_state(game_p); //not done (with levels/ UI)
     if (!debug) return NULL;
-    debug = load_textures(game_p);
-    if (!debug) return NULL;
-    debug = load_saved_values(game_p);
+    debug = load_surfaces(game_p, renderer); //started
     if (!debug) return NULL;
 
     return game_p;
 }
 
-bool load_saved_values(game *game_p) {
-    game_save_values *save_values = &game_p->save_values;
-    // get setting and game values.
-    //if its there, then assing these to the right structs
-    //if not, then use basic/fresh values
+bool load_surfaces(game *game_p, SDL_Renderer *renderer) {
+    SDL_Surface *surface = SDL_LoadSurface("media/character_poppetje.png");
+	if (!surface) return false;
+    SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
+	if (!texture) return false;
+    game_p->surfaces.circle_yellow = surface;
 }
 
 bool load_special_effects(game *game_p) {
@@ -103,7 +102,7 @@ bool save_game_values(game *game_p) {
     return true;
 }
 
-bool load_save_values(game *game_p) {
+bool load_saved_values(game *game_p) {
     char *path = get_path("save_values.ibm");
     if  (!path) return false;
     SDL_IOStream *file;

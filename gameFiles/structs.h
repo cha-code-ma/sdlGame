@@ -36,7 +36,7 @@ typedef struct vec2_float_list vec2_float_list;
 typedef struct hitbox hitbox;
 typedef struct button button;
 typedef struct object_pool object_pool;
-typedef struct sub_object_pool sub_object_pool; 
+typedef struct sub_object_pool sub_object_pool;
 typedef struct text_info_t text_info_t;
 typedef struct ui_t ui_t;
 typedef struct button_pool button_pool;
@@ -48,6 +48,7 @@ typedef struct button_action_info button_action_info;
 typedef struct game_progress game_progress;
 typedef struct game_save_values game_save_values;
 typedef struct game_const_values game_const_values;
+typedef struct game_textures game_textures;
 
 typedef enum action_type action_type;
 typedef enum behaviour_type behaviour_type;
@@ -127,7 +128,7 @@ struct game {
 struct game_const_values {
 	char *languages[30];
 	int amount_languages;
-}
+};
 
 
 struct game_save_values {
@@ -247,9 +248,9 @@ struct game_special_effects {
 
 
 struct animation_data {
-	values_list lists;
-	int current_frame;
-	float frame_time;
+	int current_animation_index;
+	float *frame_time_list;
+	float *rotation_list;
 	int amount_frames_animation;
 	bool animation;
 	int *order_animation;
@@ -263,8 +264,8 @@ struct vec2_float_list {
 struct values_list {
 	vec2_float_list pos; //can be position or offset
 	vec2_float_list size;
-	float *t_list; //time intervals for each position.
-	float *r_list; //rotation
+	float *time_pos;
+	float *time_size;
 };
 
 struct sub_object_pool {

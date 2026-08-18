@@ -5,13 +5,29 @@
 #include "sub_object.h"
 
 #include "object_pools.h"
-object *object_init(object_type type, vec2 position, vec2 size, float visible_time, bool time_started, char *text, int length, int text_capacity, sub_object_pool* sub_objects) {
-    object * obj = malloc(sizeof(object));
+object *object_init(object_type type, vec2 position,
+    vec2 size, float visible_time, bool time_started,
+    char *text, int length,
+    int text_capacity,
+    sub_object_pool* sub_objects,
+    int sub_objects_count,
+    int fixed_size_length,
+    int fixed_pos_length,
+	bool fixed_size_bool,
+	float *fixed_size_list_x,
+	float *fixed_size_list_y,
+	float *time_list_size,
+	bool fixed_positions_bool,
+	float *fixed_position_list_x,
+	float *fixed_position_list_y,
+	float *time_list_position
+) {
+    object * obj = calloc(1, sizeof(object));
     if (!obj) {
         free_object(obj);
         return NULL;
     }
-    memset(obj, 0, sizeof(object));
+
     obj->type = type;
     obj->sub_objects = sub_objects;
     obj->transform.position = position;
@@ -20,6 +36,34 @@ object *object_init(object_type type, vec2 position, vec2 size, float visible_ti
     obj->transform.future_position = size;
     obj->total_visible_time_remaining = visible_time;
     obj->time_started = time_started;
+
+    if (fixed_size_bool) {
+
+        obj->fixed_transform_lists->size.x = malloc(sizeof(float) * fixed_size_length);
+        obj->fixed_transform_lists->size.y = malloc(sizeof(float) * fixed_size_length);
+        obj->fixed_transform_lists->time_pos = malloc(sizeof(float) * fixed_size_length);
+        if (!obj->fixed_transform_lists->size.x || !obj->fixed_transform_lists->size.y) {
+            free_object(obj);
+            return NULL;
+        }
+        memcpy(obj->fixed_transform_lists->size.x, fixed_size_list_x, sizeof(float) * fixed_size_length);
+        memcpy(obj->fixed_transform_lists->size.y, fixed_size_list_y, sizeof(float) * fixed_size_length);
+        memcpy(obj->fixed_transform_lists->time_pos, time_list_size, sizeof(float) * fixed_size_length);
+    }
+    if (fixed_positions_bool) {
+        obj->fixed_transform_lists->pos.x = malloc(sizeof(float) * fixed_pos_length);
+        obj->fixed_transform_lists->pos.y = malloc(sizeof(float) * fixed_pos_length);
+        obj->fixed_transform_lists->time_pos = malloc(sizeof(float) * fixed_pos_length);
+        if (!obj->fixed_transform_lists->pos.x || !obj->fixed_transform_lists->pos.y || !obj->fixed_transform_lists->time_pos) {
+            free_object(obj);
+            return NULL;
+        }
+        memcpy(obj->fixed_transform_lists->pos.x, fixed_position_list_x, sizeof(float) * fixed_pos_length);
+        memcpy(obj->fixed_transform_lists->pos.y, fixed_position_list_y, sizeof(float) * fixed_pos_length);
+        memcpy(obj->fixed_transform_lists->time_pos, time_list_position, sizeof(float) * fixed_pos_length);
+    }
+
+
     if (text) {
         char * mal_text = malloc(sizeof(char) * text_capacity);
         strcpy(mal_text, text);

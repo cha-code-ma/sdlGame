@@ -68,10 +68,10 @@ void show_sub_object(object* obj,sub_object *sub_obj, SDL_Renderer *renderer) {
 }
 
 void show_object(object *obj, SDL_Renderer *renderer) {
-	for (int i = 0; i < obj->sub_objects.capacity; i++) {
-		if (!values_in_list_int(obj->sub_objects.free_list, i, obj->sub_objects.free_count)) {
-			if (obj->sub_objects.objects[i]->visible) {
-				show_sub_object(obj, obj->sub_objects.objects[i], renderer);
+	for (int i = 0; i < obj->sub_objects->capacity; i++) {
+		if (!values_in_list_int(obj->sub_objects->free_list, i, obj->sub_objects->free_count)) {
+			if (obj->sub_objects->objects[i]->visible) {
+				show_sub_object(obj, obj->sub_objects->objects[i], renderer);
 			}
 		}
 	}
@@ -152,36 +152,29 @@ SDL_FRect calc_rect_general(
         return rect;
     }
 
-bool game_textures_init(game_textures *game_tex, SDL_Renderer *renderer) {
-	if (!game_tex) {
-		game_tex = malloc(sizeof(game_textures));
-		if (!game_tex) {
-			return false;
-		}
-	}
+bool game_textures_init(game *game_p, SDL_Renderer *renderer) {
+	if (!game_p) return false;
+
+
 	SDL_Surface *surface = SDL_LoadSurface("media/character_poppetje.png");
 	if (!surface) {
-		free_game_textures(game_tex);
+		free_game_textures(game_p);
 		return false;
 	}
-	game_tex->circle_yellow = SDL_CreateTextureFromSurface(renderer, surface);
-	if (!game_tex->circle_yellow) {
-		free_game_textures(game_tex);
+	game_p->textures.circle_yellow = SDL_CreateTextureFromSurface(renderer, surface);
+	if (!game_p->textures.circle_yellow) {
+		free_game_textures(game_p);
 		return false;
 	}
 
 	return true;
 }
 
-void free_game_textures(game_textures *game_tex) {
-	if (game_tex->circle_yellow) {
-		SDL_DestroyTexture(game_tex->circle_yellow);
+void free_game_textures(game *game_p) {
+	if (game_p->textures.circle_yellow) {
+		SDL_DestroyTexture(game_p->textures.circle_yellow);
 	}
 
-
-
-
-	free(game_tex);
 }
 
 //text:
