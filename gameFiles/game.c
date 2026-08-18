@@ -223,16 +223,26 @@ void game_set_time(game_t *game, Uint64 cur_time, Uint64 prev_time) {
     game->state.dt = (float)(cur_time - prev_time);
 }
 
-void game_set_input(game_t *game, SDL_Keycode *key_p) {
+void game_set_input(game_t *game, SDL_Keycode *key_p, float x, float y) {
     if (!game) return;
     if (key_p) {
         game->state.previous_key = game->state.current_key;
         game->state.current_key = *key_p;
         game->state.prev_valid = game->state.cur_valid;
         game->state.cur_valid = TIME_TYPE_VALID;
+        game->state.key_time = 0.5;
+        game->IO.prev_mouse_pos.x = game->IO.mouse_pos.x;
+        game->IO.prev_mouse_pos.y = game->IO.prev_mouse_pos.y;
+        game->IO.mouse_pos.x = x;
+        game->IO.prev_mouse_pos.y = y;
     } else {
-        if (game->state.key_time - game->state.dt < 0) {
 
+        if (!(game->state.prev_valid == TIME_TYPE_INVALID) && game->state.key_time - game->state.dt < 0) {
+            game->state.cur_valid = TIME_TYPE_LATE;
+            game->state.prev_valid = TIME_TYPE_LATE;
+            game->state.key_time = 0.5;
+        } else {
+            game->state.key_time -= game->state.dt;
         }
     }
 }

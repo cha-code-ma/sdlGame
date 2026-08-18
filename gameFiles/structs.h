@@ -52,6 +52,7 @@ typedef struct game_const_values game_const_values;
 typedef struct game_textures game_textures;
 typedef struct game_fonts game_fonts;
 typedef struct fixed_tempelate_list fixed_tempelate_list;
+typedef struct game_IO game_IO;
 
 typedef enum time_type time_type;
 typedef enum action_type action_type;
@@ -128,6 +129,12 @@ struct game_t {
 	game_progress progress;
 	game_save_values save_values;
 	game_fonts fonts;
+	game_IO IO;
+};
+
+struct game_IO {
+	vec2 mouse_pos;
+	vec2 prev_mouse_pos;
 };
 
 struct game_fonts {

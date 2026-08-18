@@ -7,10 +7,11 @@
 #include <stdbool.h>
 #include "SDL3/SDL.h"
 #define SDL_MAIN_HANDLED
-
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGTH 450
 int main(void) {
 	SDL_SetHint(SDL_HINT_RENDER_DRIVER, "software");
-
+	SDL_SetHint(SDL_HINT_TOUCH_MOUSE_EVENTS, "0");
 	if (SDL_Init(SDL_INIT_VIDEO) != 0) {
 		const char* err = SDL_GetError();
 		printf("SDL_Init failed: %s\n", err);
@@ -48,7 +49,7 @@ int main(void) {
 		SDL_Quit();
 	}
 	//MAIN LOOP
-
+	
 	bool running = true;
 	SDL_Event event;
 
@@ -65,16 +66,16 @@ int main(void) {
 					break;
 				case SDL_EVENT_MOUSE_BUTTON_DOWN:
 					if (event.button.button == SDL_BUTTON_LEFT) {
-						button_
-						butt  event.button.x
+						game_set_input(game, event.tfinger. );
 					}
 					if (event.button.button = SDL_BUTTON_RIGHT) {
 
 					}
 					break;
-				default:
-
-					break;
+				case SDL_EVENT_FINGER_DOWN:
+					float x = event.tfinger.x * SCREEN_WIDTH;
+					float y = event.tfinger.y * SCREEN_HEIGTH;
+				break;
 			}
 
 		}
