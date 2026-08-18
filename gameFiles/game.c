@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include "structs.h"
 #include <SDL3/SDL.h>
-game *game_init(SDL_Renderer *renderer, SDL_Window *window) {
-    game *game_p = calloc(1, sizeof(game));
+game_t *game_init(SDL_Renderer *renderer, SDL_Window *window) {
+    game_t *game_p = calloc(1, sizeof(game_t));
     if (!game_p) {
         return NULL;
     }
@@ -17,30 +17,37 @@ game *game_init(SDL_Renderer *renderer, SDL_Window *window) {
     if (!debug) return NULL;
     debug = load_game_state(game_p); //not done (with levels/ UI)
     if (!debug) return NULL;
-    debug = load_surfaces(game_p, renderer); //started
+    debug = load_textures(game_p, renderer); //started
+    if (!debug) return NULL;
+    debug = load_fonts(game_p);
     if (!debug) return NULL;
 
     return game_p;
 }
 
-bool load_surfaces(game *game_p, SDL_Renderer *renderer) {
+bool load_fonts(game_t *game_p) {
+    game_p->fonts.basic_font = TTF_OpenFont("path_to_tff file", 24);
+}
+
+
+bool load_textures(game_t *game_p, SDL_Renderer *renderer) {
     SDL_Surface *surface = SDL_LoadSurface("media/character_poppetje.png");
 	if (!surface) return false;
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
 	if (!texture) return false;
-    game_p->surfaces.circle_yellow = surface;
+    game_p->textures.circle_yellow = surface;
 }
 
-bool load_special_effects(game *game_p) {
+bool load_special_effects(game_t *game_p) {
     //....
 }
 
-bool load_sound(game *game_p) {
+bool load_sound(game_t *game_p) {
     game_sounds *sounds = &game_p->sounds;
     //.....
 }
 
-bool load_game_state(game *game_p) {
+bool load_game_state(game_t *game_p) {
     game_state *state = &game_p->state;
     bool debug;
     debug = load_all_levels(state);
@@ -66,7 +73,7 @@ bool load_all_levels(game_state *state) {
 
 }
 
-void free_game(game *game_p) {
+void free_game(game_t *game_p) {
     if (!game_p) {
         return;
     }
@@ -90,7 +97,7 @@ char *get_path(const char *file) {
     return full_path;
 }
 
-bool save_game_values(game *game_p) {
+bool save_game_values(game_t *game_p) {
     char *path = get_path("save_values.ibm");
     if (!path) return false;
 
@@ -102,7 +109,7 @@ bool save_game_values(game *game_p) {
     return true;
 }
 
-bool load_saved_values(game *game_p) {
+bool load_saved_values(game_t *game_p) {
     char *path = get_path("save_values.ibm");
     if  (!path) return false;
     SDL_IOStream *file;
@@ -124,7 +131,7 @@ bool load_saved_values(game *game_p) {
 
 }
 
-bool load_game_values(game *game_p) {
+bool load_game_values(game_t *game_p) {
     game_p->values.coins = game_p->save_values.coins;
     game_p->values.diamonds = game_p->save_values.diamonds;
     game_p->values.level = game_p->save_values.level;
@@ -164,7 +171,7 @@ char *get_settings_path(void) {
     return full_path;
 }
 
-bool save_data(game *game_p) {
+bool save_data(game_t *game_p) {
     char *path = get_settings_path();
     if (!path) return false;
 
@@ -176,7 +183,7 @@ bool save_data(game *game_p) {
     return true;
 }
 
-bool load_settings(game *game_p) {
+bool load_settings(game_t *game_p) {
     strcpy(game_p->settings.language, game_p->save_values.language);
     game_p->settings.music = game_p->save_values.music;
     game_p->settings.music_volume = game_p->save_values.music_volume;
@@ -190,7 +197,7 @@ bool load_settings(game *game_p) {
     return true;
 }
 
-bool in_language_list(char language[30], game *game_p) {
+bool in_language_list(char language[30], game_t *game_p) {
     char *list[30] = game_p->const_values.languages;
     for (int i = 0; i <game_p->const_values.amount_languages; i++) {
         if (strcmp(list[i], language)) return true;
@@ -198,7 +205,7 @@ bool in_language_list(char language[30], game *game_p) {
     return false;
 }
 
-bool set_default_settings(game *game_p) {
+bool set_default_settings(game_t *game_p) {
     if (!game_p) {
         return false;
     }

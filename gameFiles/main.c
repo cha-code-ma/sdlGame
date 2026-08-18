@@ -3,12 +3,9 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include <SDL3/SDL.h>
-#include <stdbool.h>
-#include "sub_object.h"
 #include "structs.h"
-#include <SDL3_ttf/SDL_ttf.h>
-#include "button.h"
+#include <stdbool.h>
+#include "SDL3/SDL.h"
 #define SDL_MAIN_HANDLED
 
 int main(void) {
@@ -26,22 +23,15 @@ int main(void) {
 		);
 		return 1;
 	}
-	TTF_Font *font = TTF_OpenFont("path_to_tff file", 24);
 
 
 
-	object_list* list_c = object_list_init();
-	if (!list_c) {
+
+	if (game) {
 		SDL_Log("init Error list_c %s", SDL_GetError());
 		return 1;
 	}
 
-	object_list* all_objects_list = object_list_init();
-	if (!all_objects_list) {
-		SDL_Log("Renderer init error %s", SDL_GetError());
-		free(list_c);
-		SDL_Quit();
-	}
 
 	SDL_Window* window = SDL_CreateWindow("Move Game", 800, 600, SDL_WINDOW_RESIZABLE);
 	if (!window) {
@@ -51,19 +41,23 @@ int main(void) {
 	SDL_Renderer* renderer = SDL_CreateRenderer(window, NULL);
 	if (!renderer) {
 		SDL_Log("Renderer init error %s", SDL_GetError());
-		free_all_things(list_c, renderer, window);
 		SDL_Quit();
 		return 1;
 	}
 
-
+	game_t *game = game_init(renderer, window);
+	if (!game) {
+		SDL_Log("game init error %s", SDL_GetError());
+		SDL_Quit();
+	}
 	//MAIN LOOP
-	bool key_move = false;
+
 	bool running = true;
 	SDL_Event event;
-	Uint32 last_time = SDL_GetTicks();
+
 	SDL_Keycode current_key = NULL;
 	SDL_Keycode previous_key = NULL;
+	Uint32 last_time = SDL_GetTicks();
 	while (running) {
 		//reset_all_dx_dy(list_c);
 		Uint32 current_time = SDL_GetTicks();

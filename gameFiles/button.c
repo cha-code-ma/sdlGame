@@ -112,7 +112,7 @@ void activate_button(button* but) {
     }
 }
 
-void check_buttons(game *game_ptr, float mouse_x, float mouse_y) {
+void check_buttons(game_t *game_ptr, float mouse_x, float mouse_y) {
     if (!game_ptr->state.active_level->UI->buttons) {
         return;
     }

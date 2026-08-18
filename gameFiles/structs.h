@@ -7,12 +7,13 @@
 #include <SDL3_image/SDL_image.h>
 #include <stdbool.h>
 #include <SDL3_ttf/SDL_ttf.h>
-
+#include "game.h"
+#include <stdbool.h>
 #define ABOSOLUTE_WINDOW_HEIGTH 800
 #define ABSOLUTE_WINDOW_WIDTH 450
 
 
-typedef struct game game;
+typedef struct game_t game_t;
 typedef struct game_state game_state;
 typedef struct game_settings game_settings;
 typedef struct game_sounds game_sounds;
@@ -49,6 +50,7 @@ typedef struct game_progress game_progress;
 typedef struct game_save_values game_save_values;
 typedef struct game_const_values game_const_values;
 typedef struct game_textures game_textures;
+typedef struct game_fonts game_fonts;
 
 typedef enum action_type action_type;
 typedef enum behaviour_type behaviour_type;
@@ -111,7 +113,7 @@ struct text_ui {
 SDL_Color red = { 255, 0, 0, 255 };
 SDL_Color blue = { 0, 0, 255, 255 };
 
-struct game {
+struct game_t {
 	game_const_values const_values;
 	game_state state;
 	game_settings settings;
@@ -123,6 +125,11 @@ struct game {
 	SDL_Window *window;
 	game_progress progress;
 	game_save_values save_values;
+	game_fonts fonts;
+};
+
+struct game_fonts {
+	TTF_Font *basic_font;
 };
 
 struct game_const_values {

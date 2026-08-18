@@ -152,7 +152,7 @@ SDL_FRect calc_rect_general(
         return rect;
     }
 
-bool game_textures_init(game *game_p, SDL_Renderer *renderer) {
+bool game_textures_init(game_t *game_p, SDL_Renderer *renderer) {
 	if (!game_p) return false;
 
 
@@ -170,7 +170,7 @@ bool game_textures_init(game *game_p, SDL_Renderer *renderer) {
 	return true;
 }
 
-void free_game_textures(game *game_p) {
+void free_game_textures(game_t *game_p) {
 	if (game_p->textures.circle_yellow) {
 		SDL_DestroyTexture(game_p->textures.circle_yellow);
 	}
