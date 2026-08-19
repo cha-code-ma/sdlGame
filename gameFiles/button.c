@@ -84,7 +84,7 @@ button *button_init(vec2 pos, vec2 size, SDL_Color color,SDL_Color second_color,
 void free_button(button *but) {
     free_sub_object_pool(but->details, true);
     free_string(but->name);
-    free_string(but->text_info.text); 
+    free_string(but->text_info.text);
     free(but);
 }
 
@@ -112,7 +112,7 @@ void activate_button(button* but) {
     }
 }
 
-void check_buttons(game_t *game_ptr, float mouse_x, float mouse_y) {
+void update_level_buttons(game_t *game_ptr) {
     if (!game_ptr->state.active_level->UI->buttons) {
         return;
     }
@@ -120,7 +120,22 @@ void check_buttons(game_t *game_ptr, float mouse_x, float mouse_y) {
     for (int i = 0; i < buttons->capacity; i++) {
         if (buttons->buttons[i]) {
             if (buttons->buttons[i]->active && buttons->buttons[i]->visible) {
-                check_button_clicked(buttons->buttons[i], mouse_x, mouse_y);
+                check_button_clicked(buttons->buttons[i], game_ptr->IO.mouse_pos.x, game_ptr->IO.mouse_pos.y);
+            }
+        }
+
+    }
+}
+
+void update_menu_buttons(game_t *game_ptr) { //not done
+    if (!game_ptr->state.active_level->UI->buttons) {
+        return;
+    }
+    button_pool *buttons =game_ptr->state.active_level->UI->buttons;
+    for (int i = 0; i < buttons->capacity; i++) {
+        if (buttons->buttons[i]) {
+            if (buttons->buttons[i]->active && buttons->buttons[i]->visible) {
+                check_button_clicked(buttons->buttons[i], game_ptr->IO.mouse_pos.x, game_ptr->IO.mouse_pos.y);
             }
         }
 

@@ -17,6 +17,89 @@ button_pool *button_pool_init(int capacity) {
     pool->free_count = capacity;
 }
 
+int pool_get_free_index(void *pool, pool_types type) {
+    switch (type) {
+        case POOL_TYPES_BUTTON:
+            button_pool *b_pool = (button_pool *)pool;
+            for (int i = 0; i < b_pool->capacity; i++) {
+                if (values_in_list_int(b_pool->free_list, i, b_pool->free_count)) {
+                    b_pool->free_list = remove_value_list_int(b_pool->free_list, i, &b_pool->free_count);
+                    return i;
+                }
+            }
+
+        case POOL_TYPES_OBJECT:
+            object_pool *o_pool = (object_pool *)pool;
+            for (int i = 0; i < o_pool->capacity; i++) {
+                if (values_in_list_int(o_pool->free_list, i, o_pool->free_count)) {
+                    o_pool->free_list = remove_value_list_int(o_pool->free_list, i, &o_pool->free_count);
+                    return i;
+                }
+            }
+
+        case POOL_TYPES_SUB_OBJECT:
+            sub_object_pool *s_pool = (sub_object_pool *)pool;
+            for (int i = 0; i < s_pool->capacity; i++) {
+                if (values_in_list_int(s_pool->free_list, i, s_pool->free_count)) {
+                    s_pool->free_list = remove_value_list_int(s_pool->free_list, i, &s_pool->free_count);
+                    return i;
+                }
+            }
+
+        case POOL_TYPES_TEXT_UI:
+            text_ui_pool *t_pool = (sub_object_pool *)pool;
+            for (int i = 0; i < t_pool->capacity; i++) {
+                if (values_in_list_int(t_pool->free_list, i, t_pool->free_count)) {
+                    t_pool->free_list = remove_value_list_int(t_pool->free_list, i, &t_pool->free_count);
+                    return i;
+                }
+            }
+    }
+}
+
+bool button_pool_add_button(button_pool *pool, button *button) {
+    if (pool->free_count == 0) return false;
+    int index = 
+
+
+    pool->free_count -= 1;
+    return true;
+}
+
+int *remove_value_list_int(int *list, int value, int *list_length) {
+    for (int i = 0; i < *list_length; i ++) {
+        if (list[i] == value) {
+            if (*list_length == 1) {
+                free(list);
+                *list = NULL;
+                return NULL;
+            }
+            int *temp = malloc(sizeof(int) * ((*list_length)-1));
+            for (int j = 0; j < list_length-1; j++) {
+                if (i != j) {
+                    temp[j] = list[j];
+                } else continue;
+            }
+            *list_length--;
+            return temp;
+
+
+            return NULL;
+        }
+    }
+}
+/*
+    unsorted list, speed O(n)
+*/
+bool values_in_list_int(int * list, int value, int length) {
+    for (int i =0; i < length; i++) {
+        if (list[i] == value) {
+            return true;
+        }
+    }
+    return false;
+}
+
 void free_button_pool(button_pool *pool, bool is_pointer) {
     if (!pool) {
         return;
@@ -53,15 +136,6 @@ button **button_pool_get_objects(button_pool *pool, int *count) {
 }
 
 //object
-object_pool *sub_object_pool_init(int capacity) {
-    object_pool* pool = malloc(sizeof(object_pool));
-    pool->capacity = capacity;
-    pool->count = 0;
-    pool->free_count = 0;
-    pool->free_list = malloc(sizeof(int) * capacity);
-    pool->objects = NULL;
-    pool->free_count = capacity;
-}
 
 void free_object_pool(object_pool *pool, bool is_pointer) {
     if (!pool) {
@@ -135,6 +209,21 @@ object **object_pool_get_objects(object_pool *pool, int *count) {
     return objects;
 }
 
+object **object_pool_get_objects(object_pool *pool, int *count) {
+    object **objects = malloc(sizeof(object*) * pool->count);
+    if (!objects) {
+        return NULL;
+    }
+    int index = 0;
+    for (int i = 0; i < pool->capacity; i++) {
+        if (pool->objects[i]) {
+            objects[index] = pool->objects[i];
+            index++;
+        }
+    }
+    *count = index;
+    return objects;
+}
 //sub_object
 object *sub_object_pool_remove_type(object_pool* pool,  object_type type) {
     if (!pool || pool->count == 0 ) {
@@ -256,17 +345,7 @@ sub_object **sub_object_pool_get_objects(sub_object_pool *pool, int *count) {
     return sub_objects;
 }
 
-/*
-    unsorted list, speed O(n)
-*/
-bool values_in_list_int(int * list, int value, int length) {
-    for (int i =0; i < length; i++) {
-        if (list[i] == value) {
-            return true;
-        }
-    }
-    return false;
-}
+
 
 //ui_t
 
@@ -292,3 +371,37 @@ void free_ui_t(ui_t *ui, bool with_objects, bool with_buttons) {
     }
     free(ui);
 }
+
+
+//text_UI
+
+text_ui_pool *text_ui_pool_init(int capacity) {
+    text_ui_pool* pool = malloc(sizeof(text_ui_pool));
+    pool->capacity = capacity;
+    pool->count = 0;
+    pool->free_count = 0;
+    pool->free_list = malloc(sizeof(int) * capacity);
+    pool->strings = NULL;
+    pool->free_count = capacity;
+}
+
+void free_text_ui_pool(text_ui_pool *pool, bool is_pointer) {
+    if (!pool) {
+        return;
+    }
+    if (!pool->strings) {
+        free(pool);
+        return;
+    }
+    for (int i = 0; i < pool->count; i++) {
+        if (values_in_list_int(pool->free_list, i, pool->free_count)) {
+            free_ui_t(pool->strings[i], true, true);
+        }
+    }
+    if (is_pointer) {
+        free(pool);
+    }
+
+}
+
+

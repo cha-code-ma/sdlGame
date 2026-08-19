@@ -53,6 +53,7 @@ typedef struct game_textures game_textures;
 typedef struct game_fonts game_fonts;
 typedef struct fixed_tempelate_list fixed_tempelate_list;
 typedef struct game_IO game_IO;
+typedef struct text_ui_pool text_ui_pool;
 
 typedef enum time_type time_type;
 typedef enum action_type action_type;
@@ -60,7 +61,7 @@ typedef enum behaviour_type behaviour_type;
 typedef enum size_type size_type;
 typedef enum object_type object_type;
 typedef enum sub_object_type sub_object_type;
-
+typedef enum pool_types pool_types;
 
 struct button {
 	button_action_info *action_info;
@@ -135,6 +136,11 @@ struct game_t {
 struct game_IO {
 	vec2 mouse_pos;
 	vec2 prev_mouse_pos;
+	time_type cur_valid;
+	int current_key;
+	time_type prev_valid;
+	int previous_key;
+	float key_time;
 };
 
 struct game_fonts {
@@ -180,11 +186,6 @@ struct game_state {
 	menu menu;
 	float dt;
 	Uint64 time;
-	time_type cur_valid;
-	int current_key;
-	time_type prev_valid;
-	int previous_key;
-	float key_time;
 };
 
 enum time_type {
@@ -209,6 +210,7 @@ enum sub_object_type {
 struct ui_t {
 	object_pool *ui_objects;
 	button_pool *buttons;
+	text_ui_pool *strings;
 };
 
 struct group_t {
@@ -235,6 +237,16 @@ struct level {
 	int points;
 };
 
+struct text_ui_pool {
+    string **strings;
+    int* free_list;
+    int count;
+    int capacity;
+    int free_count;
+
+};
+
+
 struct button_pool {
     button **buttons;
     int* free_list;
@@ -244,6 +256,12 @@ struct button_pool {
 
 };
 
+enum pool_types {
+	POOL_TYPES_BUTTON,
+	POOL_TYPES_OBJECT,
+	POOL_TYPES_SUB_OBJECT,
+	POOL_TYPES_TEXT_UI
+};
 
 
 struct menu {
@@ -332,6 +350,8 @@ struct object {
 	hitbox transform;
 	values_list *fixed_transform_lists;
 	bool time_started;
+	bool clicked;
+	bool is_clickable;
 };
 
 struct hitbox {
@@ -339,6 +359,7 @@ struct hitbox {
 	vec2 future_size;
 	vec2 position;
 	vec2 future_position;
+	bool click_active;
 };
 
 

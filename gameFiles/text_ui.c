@@ -52,3 +52,7 @@ void free_text_ui(text_ui *ui_text) {
     }
     free(ui_text);
 }
+
+void update_text(text_ui *ui_text) {
+    
+}

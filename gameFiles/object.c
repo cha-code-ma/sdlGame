@@ -104,3 +104,7 @@ void free_object(object *obj) { //not done
     free_sub_object_pool(&obj->sub_objects, false);
     free(obj);
 }
+
+void object_click_action(object *obj) {
+    
+}

@@ -56,7 +56,6 @@ int main(void) {
 
 	Uint64 last_time = SDL_GetTicks();
 	while (running) {
-		//reset_all_dx_dy(list_c);
 		Uint64 current_time = SDL_GetTicks();
 		game_set_time(game, current_time, last_time);
 		while (SDL_PollEvent(&event)) {
