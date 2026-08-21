@@ -1,0 +1,8 @@
+/home/chakir/sdlGame/build/CMakeFiles/jouw_project.dir
+/home/chakir/sdlGame/build/CMakeFiles/edit_cache.dir
+/home/chakir/sdlGame/build/CMakeFiles/rebuild_cache.dir
+/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir
+/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3_test.dir
+/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL_uclibc.dir
+/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/edit_cache.dir
+/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/rebuild_cache.dir
