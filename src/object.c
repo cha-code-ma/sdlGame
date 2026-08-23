@@ -5,6 +5,23 @@
 #include "sub_object.h"
 
 #include "object_pools.h"
+
+void free_string(string *str) {
+    if (str) {
+    if (str->text) {
+        free(str->text);
+    }
+    free(str);
+    }
+
+}
+void free_object(object *obj) { //not done
+    free_string(obj->name);
+    free_sub_object_pool(obj->sub_objects, false);
+    free(obj);
+}
+
+
 object *object_init(object_type type, behaviour_type behaviour, vec2 position,
     vec2 size, float visible_time, bool time_started,
     char *text, int length,
@@ -89,21 +106,9 @@ object *object_init(object_type type, behaviour_type behaviour, vec2 position,
     return obj;
 }
 
-void free_string(string *str) {
-    if (str) {
-    if (str->text) {
-        free(str->text);
-    }
-    free(str);
-    }
 
-}
 
-void free_object(object *obj) { //not done
-    free_string(obj->name);
-    free_sub_object_pool(&obj->sub_objects, false);
-    free(obj);
-}
+
 
 void object_click_action(object *obj) {
     

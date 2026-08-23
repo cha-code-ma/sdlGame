@@ -3,7 +3,27 @@
 #include "structs.h"
 #include "object_pools.h"
 
-group_t *group_init(object *obj_pool, ui_t *ui, char *text, int text_length, int text_capacity) {
+
+void free_group(group_t *group, bool with_objects, bool with_ui) {
+    if (!group) {
+        return;
+    }
+    if (group->name) {
+        if (group->name->text) {
+            free(group->name->text);
+        }
+        free(group->name);
+    }
+    if (with_objects) {
+        free_object_pool(group->objects);
+    }
+    if (with_ui) {
+        free_ui_t(group->ui, true, true);
+    }
+    free(group);
+}
+
+group_t *group_init(object_pool *obj_pool, ui_t *ui, char *text, int text_length, int text_capacity) {
     group_t *group = malloc(sizeof(group_t));
     if (!group) {
         return NULL;
@@ -28,27 +48,15 @@ group_t *group_init(object *obj_pool, ui_t *ui, char *text, int text_length, int
     group->ui = ui;
     return group;
 }
-
-void free_group(group_t *group, bool with_objects, bool with_ui) {
-    if (!group) {
+void free_group_action(group_action *group_act, bool with_group) {
+    if (!group_act) {
         return;
     }
-    if (group->name) {
-        if (group->name->text) {
-            free(group->name->text);
-        }
-        free(group->name);
+    if (with_group) {
+        free_group(group_act->group_id, false, false);
     }
-    if (with_objects) {
-        free_object_pool(group->objects);
-    }
-    if (with_ui) {
-        free_ui_t(group->ui, true, true);
-    }
-    free(group);
+    free(group_act);
 }
-
-
 group_action *group_action_init(group_t *group, action_type action, bool is_active, void (*custom_action)(group_t *group)) {
     group_action *group_act = calloc(1, sizeof(group_action));
     if (!group_act) {
@@ -62,29 +70,24 @@ group_action *group_action_init(group_t *group, action_type action, bool is_acti
     return group_act;
 }
 
-void free_group_action(group_action *group_act, bool with_group) {
-    if (!group_act) {
-        return;
-    }
-    if (with_group) {
-        free_group(group_act->group_id, false, false);
-    }
-    free(group_act);
-}
-
 void group_action_hide(group_t *group, bool with_objects, bool with_UI) {
     if (!group || !group->objects) {
         return;
     }
     int count;
+    bool debug;
     if (with_objects) {
-        object **objects = object_pool_get_objects(group->objects, &count);
-        if (!objects) {
+        object **objects;
+        debug = pool_get_objects(group->objects, (void ***)&objects, POOL_TYPES_OBJECT, &count);
+        if (!debug) {
             return;
         }
         for (int i = 0; i < count; i++) {
             int sub_count;
-            sub_object **sub_objects = sub_object_pool_get_objects(objects[i]->sub_objects, &sub_count);
+            sub_object **sub_objects;
+
+            debug = pool_get_objects( objects[i]->sub_objects, (void ***)&sub_objects,POOL_TYPES_SUB_OBJECT, &sub_count);
+            if (!debug) return;
             for (int j = 0; j < sub_count; j++) {
                 sub_objects[j]->visible = false;
             }
@@ -92,18 +95,25 @@ void group_action_hide(group_t *group, bool with_objects, bool with_UI) {
     }
     if (with_UI) {
         int ui_count;
-        object **ui_objects = object_pool_get_objects(group->ui->ui_objects, &ui_count);
-        if (!ui_objects) {
+        object **ui_objects;
+
+        debug = pool_get_objects( group->ui->ui_objects, (void ***)&ui_objects, POOL_TYPES_OBJECT, &ui_count);
+        if (!debug) {
             return;
         }
         for (int i = 0; i < ui_count; i++) {
             int sub_count;
-            sub_object **sub_objects = sub_object_pool_get_objects(ui_objects[i]->sub_objects, &sub_count);
+            sub_object **sub_objects;
+
+            debug = pool_get_objects(ui_objects[i]->sub_objects, (void ***)&sub_objects,  POOL_TYPES_SUB_OBJECT, &sub_count);
+            if (!debug) return;
             for (int j = 0; j < sub_count; j++) {
                 sub_objects[j]->visible = false;
             }
         }
-        button **buttons = button_pool_get_objects(group->ui->buttons, &ui_count);
+        button **buttons;
+
+        debug = pool_get_objects(group->ui->buttons,(void ***)&buttons,  POOL_TYPES_BUTTON, &ui_count);
         if (!buttons) {
             return;
         }
@@ -113,19 +123,28 @@ void group_action_hide(group_t *group, bool with_objects, bool with_UI) {
     }
 }
 
+
+
+
 void group_action_show(group_t *group, bool with_objects, bool with_UI) {
     if (!group || !group->objects) {
         return;
     }
     int count;
+    bool debug;
     if (with_objects) {
-        object **objects = object_pool_get_objects(group->objects, &count);
-        if (!objects) {
+        object **objects;
+
+        debug = pool_get_objects( group->objects, (void ***)&objects, POOL_TYPES_OBJECT, &count);
+        if (!debug) {
             return;
         }
         for (int i = 0; i < count; i++) {
             int sub_count;
-            sub_object **sub_objects = sub_object_pool_get_objects(objects[i]->sub_objects, &sub_count);
+            sub_object **sub_objects;
+
+            debug = pool_get_objects( objects[i]->sub_objects, (void ***)&sub_objects, POOL_TYPES_SUB_OBJECT, &sub_count);
+            if (!debug) return;
             for (int j = 0; j < sub_count; j++) {
                 sub_objects[j]->visible = true;
             }
@@ -133,18 +152,25 @@ void group_action_show(group_t *group, bool with_objects, bool with_UI) {
     }
     if (with_UI) {
         int ui_count;
-        object **ui_objects = object_pool_get_objects(group->ui->ui_objects, &ui_count);
-        if (!ui_objects) {
+        object **ui_objects;
+
+        debug = pool_get_objects( group->ui->ui_objects, (void ***)&ui_objects, POOL_TYPES_OBJECT, &ui_count);
+        if (!debug) {
             return;
         }
         for (int i = 0; i < ui_count; i++) {
             int sub_count;
-            sub_object **sub_objects = sub_object_pool_get_objects(ui_objects[i]->sub_objects, &sub_count);
+            sub_object **sub_objects;
+
+            debug = pool_get_objects( ui_objects[i]->sub_objects, (void ***)&sub_objects,POOL_TYPES_SUB_OBJECT, &sub_count);
+            if (!debug) return;
             for (int j = 0; j < sub_count; j++) {
                 sub_objects[j]->visible = true;
             }
         }
-        button **buttons = button_pool_get_objects(group->ui->buttons, &ui_count);
+        button **buttons;
+
+        debug = pool_get_objects( group->ui->buttons, (void ***)&buttons, POOL_TYPES_BUTTON, &ui_count);
         if (!buttons) {
             return;
         }
@@ -159,14 +185,20 @@ void group_action_invert_visibility(group_t *group, bool with_objects, bool with
         return;
     }
     int count;
+    bool debug;
     if (with_objects) {
-        object **objects = object_pool_get_objects(group->objects, &count);
-        if (!objects) {
+        object **objects;
+
+        debug = pool_get_objects(group->objects, (void ***)&objects, POOL_TYPES_OBJECT, &count);
+        if (!debug) {
             return;
         }
         for (int i = 0; i < count; i++) {
             int sub_count;
-            sub_object **sub_objects = sub_object_pool_get_objects(objects[i]->sub_objects, &sub_count);
+            sub_object **sub_objects;
+
+            debug = pool_get_objects(objects[i]->sub_objects, (void ***)&sub_objects,  POOL_TYPES_SUB_OBJECT, &sub_count);
+            if (!debug) return;
             for (int j = 0; j < sub_count; j++) {
                 sub_objects[j]->visible = !sub_objects[j]->visible;
             }
@@ -174,18 +206,25 @@ void group_action_invert_visibility(group_t *group, bool with_objects, bool with
     }
     if (with_UI) {
         int ui_count;
-        object **ui_objects = object_pool_get_objects(group->ui->ui_objects, &ui_count);
-        if (!ui_objects) {
+        object **ui_objects;
+
+        debug = pool_get_objects( group->ui->ui_objects, (void ***)&ui_objects, POOL_TYPES_OBJECT, &ui_count);
+        if (!debug) {
             return;
         }
         for (int i = 0; i < ui_count; i++) {
             int sub_count;
-            sub_object **sub_objects = sub_object_pool_get_objects(ui_objects[i]->sub_objects, &sub_count);
+            sub_object **sub_objects;
+
+            debug = pool_get_objects( ui_objects[i]->sub_objects, (void ***)&sub_objects, POOL_TYPES_SUB_OBJECT, &sub_count);
+            if (!debug) return;
             for (int j = 0; j < sub_count; j++) {
-                sub_objects[j]->visible = !sub_objects[j]->visible ;
+                sub_objects[j]->visible = !sub_objects[j]->visible;
             }
         }
-        button **buttons = button_pool_get_objects(group->ui->buttons, &ui_count);
+        button **buttons;
+
+        debug = pool_get_objects( group->ui->buttons, (void ***)&buttons,POOL_TYPES_BUTTON, &ui_count);
         if (!buttons) {
             return;
         }

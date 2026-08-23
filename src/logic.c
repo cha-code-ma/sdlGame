@@ -58,9 +58,7 @@ void show_sub_object(object* obj,sub_object *sub_obj, SDL_Renderer *renderer) {
 		return;
     }
     else  {
-		if (!sub_obj->texture) {
-			return NULL;
-		}
+		if (!sub_obj->texture) return;
 		SDL_Texture *texture = sub_obj->info_texture->texture;
 		SDL_RenderTexture(renderer, sub_obj->info_texture->texture, NULL, &rect);
     }
@@ -85,6 +83,57 @@ void show_obj_pool(object_pool *obj_p, SDL_Renderer *renderer) {
 	}
 }
 
+void free_game_textures(game_t *game_p) {
+	if (game_p->textures.circle_yellow) {
+		SDL_DestroyTexture(game_p->textures.circle_yellow);
+	}
+
+}
+
+
+SDL_FRect calc_rect_general(
+    vec2 pos,
+    vec2 size,
+    bool parent,
+    bool centered,
+    bool size_scaled,
+    bool position_scaled,
+    vec2 parent_pos,
+    vec2 parent_size) {
+	SDL_FRect rect;
+	if (parent) {
+		if (size_scaled) {
+			rect.h = parent_size.y * size.y;
+			rect.w = parent_size.x * size.x;
+		} else {
+			rect.h = size.y;
+			rect.w = size.x;
+		}
+		if (centered) {
+			if (position_scaled) {
+				rect.x = parent_pos.x + 0.5*parent_size.x + pos.x * parent_size.x;
+				rect.y = parent_pos.y + 0.5*parent_size.y + pos.y * parent_size.y;
+			} else {
+				rect.x = parent_pos.x + 0.5*parent_size.x + pos.x;
+				rect.x = parent_pos.y + 0.5*parent_size.y + pos.y;
+			}
+		} else {
+			if (position_scaled) {
+				rect.x = parent_pos.x + 0.5*parent_size.x + pos.x * parent_size.x;
+				rect.y = parent_pos.y + 0.5*parent_size.y + pos.y * parent_size.y;
+			} else {
+				rect.x = parent_pos.x + 0.5*parent_size.x + pos.x;
+				rect.x = parent_pos.y + 0.5*parent_size.y + pos.y;
+			}
+		}
+	} else{
+		rect.h = size.y;
+		rect.w = size.x;
+		rect.x = pos.x;
+		rect.y = pos.y;
+	}
+	return rect;
+}
 void show_button(button *but, SDL_Renderer *renderer) {
 	SDL_FRect rect =
 	{.h = but->size.y,
@@ -106,52 +155,6 @@ void show_button(button *but, SDL_Renderer *renderer) {
 	SDL_RenderTexture(renderer, txt_texture, NULL, &text_rect);
 	SDL_DestroyTexture(txt_texture);
 }
-
-
-SDL_FRect calc_rect_general(
-    vec2 pos,
-    vec2 size,
-    bool parent,
-    bool centered,
-    bool size_scaled,
-    bool position_scaled,
-    vec2 parent_pos,
-    vec2 parent_size) {
-        SDL_FRect rect;
-        if (parent) {
-            if (size_scaled) {
-                rect.h = parent_size.y * size.y;
-                rect.w = parent_size.x * size.x;
-            } else {
-                rect.h = size.y;
-                rect.w = size.x;
-            }
-            if (centered) {
-                if (position_scaled) {
-                    rect.x = parent_pos.x + 0.5*parent_size.x + pos.x * parent_size.x;
-                    rect.y = parent_pos.y + 0.5*parent_size.y + pos.y * parent_size.y;
-                } else {
-                    rect.x = parent_pos.x + 0.5*parent_size.x + pos.x;
-                    rect.x = parent_pos.y + 0.5*parent_size.y + pos.y;
-                }
-            } else {
-                if (position_scaled) {
-                    rect.x = parent_pos.x + 0.5*parent_size.x + pos.x * parent_size.x;
-                    rect.y = parent_pos.y + 0.5*parent_size.y + pos.y * parent_size.y;
-                } else {
-                    rect.x = parent_pos.x + 0.5*parent_size.x + pos.x;
-                    rect.x = parent_pos.y + 0.5*parent_size.y + pos.y;
-                }
-            }
-        } else{
-            rect.h = size.y;
-            rect.w = size.x;
-            rect.x = pos.x;
-            rect.y = pos.y;
-        }
-        return rect;
-    }
-
 bool game_textures_init(game_t *game_p, SDL_Renderer *renderer) {
 	if (!game_p) return false;
 
@@ -170,12 +173,7 @@ bool game_textures_init(game_t *game_p, SDL_Renderer *renderer) {
 	return true;
 }
 
-void free_game_textures(game_t *game_p) {
-	if (game_p->textures.circle_yellow) {
-		SDL_DestroyTexture(game_p->textures.circle_yellow);
-	}
 
-}
 
 //text:
 

@@ -49,6 +49,7 @@ CMakeFiles/jouw_project.dir/src/button.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
  /home/chakir/sdlGame/vendored/SDL/include/SDL3/SDL.h \
  /home/chakir/sdlGame/vendored/SDL/include/SDL3/SDL_stdinc.h \
  /home/chakir/sdlGame/vendored/SDL/include/SDL3/SDL_platform_defines.h \
@@ -64,7 +65,6 @@ CMakeFiles/jouw_project.dir/src/button.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /usr/include/inttypes.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
  /home/chakir/sdlGame/vendored/SDL/include/SDL3/SDL_close_code.h \
  /home/chakir/sdlGame/vendored/SDL/include/SDL3/SDL_assert.h \
  /home/chakir/sdlGame/vendored/SDL/include/SDL3/SDL_asyncio.h \
@@ -122,7 +122,7 @@ CMakeFiles/jouw_project.dir/src/button.c.o: \
  /home/chakir/sdlGame/vendored/SDL/include/SDL3/SDL_tray.h \
  /home/chakir/sdlGame/vendored/SDL/include/SDL3/SDL_version.h \
  /home/chakir/sdlGame/vendored/SDL/include/SDL3/SDL_oldnames.h \
- /usr/local/include/SDL3_image/SDL_image.h \
- /usr/include/SDL3_ttf/SDL_ttf.h /home/chakir/sdlGame/src/game.h \
- /home/chakir/sdlGame/src/sub_object.h /home/chakir/sdlGame/src/object.h \
+ /home/chakir/sdlGame/vendored/SDL3_image/include/SDL3_image/SDL_image.h \
+ /usr/include/SDL3_ttf/SDL_ttf.h /home/chakir/sdlGame/src/sub_object.h \
+ /home/chakir/sdlGame/src/object.h \
  /home/chakir/sdlGame/src/object_pools.h /home/chakir/sdlGame/src/logic.h

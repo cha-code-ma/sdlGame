@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DDLL_EXPORT -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=5 -DUSING_GENERATED_CONFIG_H
 
-C_INCLUDES = -I/home/chakir/sdlGame/build/vendored/SDL/include-config-/build_config -I/home/chakir/sdlGame/build/vendored/SDL/include-revision -I/home/chakir/sdlGame/vendored/SDL/include -I/home/chakir/sdlGame/vendored/SDL/src -isystem /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols -isystem /usr/include/libdrm -isystem /usr/include/libdecor-0 -isystem /usr/include/dbus-1.0 -isystem /usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/ibus-1.0 -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /usr/include/libmount -isystem /usr/include/blkid
+C_INCLUDES = -I/home/chakir/sdlGame/build/vendored/SDL/include-config-/build_config -I/home/chakir/sdlGame/build/vendored/SDL/include-revision -I/home/chakir/sdlGame/vendored/SDL/include -I/home/chakir/sdlGame/vendored/SDL/src -isystem /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols -isystem /usr/include/pipewire-0.3 -isystem /usr/include/spa-0.2 -isystem /usr/include/libdrm -isystem /usr/include/libdecor-0 -isystem /usr/include/dbus-1.0 -isystem /usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/ibus-1.0 -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /usr/include/libmount -isystem /usr/include/blkid
 
 C_FLAGS = -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -idirafter/home/chakir/sdlGame/vendored/SDL/src/video/khronos -D_REENTRANT
 
@@ -306,6 +306,12 @@ C_FLAGS = -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict
 
 # PCH options: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/alsa/SDL_alsa_audio.c.o_OPTIONS = -Winvalid-pch;-include;/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 
+# PCH options: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o_OPTIONS = -Winvalid-pch;-include;/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
+
+# PCH options: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o_OPTIONS = -Winvalid-pch;-include;/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
+
+# PCH options: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o_OPTIONS = -Winvalid-pch;-include;/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
+
 # PCH options: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o_OPTIONS = -Winvalid-pch;-include;/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 
 # PCH options: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.o_OPTIONS = -Winvalid-pch;-include;/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
@@ -489,6 +495,8 @@ C_FLAGS = -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict
 # PCH options: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.o_OPTIONS = -Winvalid-pch;-include;/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 
 # PCH options: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.o_OPTIONS = -Winvalid-pch;-include;/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
+
+# PCH options: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o_OPTIONS = -Winvalid-pch;-include;/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 
 # PCH options: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o_OPTIONS = -Winvalid-pch;-include;/home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 

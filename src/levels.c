@@ -5,6 +5,8 @@
 #include "object.h"
 #include "sub_object.h"
 #include "logic.h"
+SDL_Color red = {255, 0, 0, 255};
+SDL_Color blue = {0, 0, 255, 255};
 level *init_level_1(void) {
     level *lvl = calloc(1, sizeof(level));
     if (!lvl) return NULL;

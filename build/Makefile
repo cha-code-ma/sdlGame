@@ -169,6 +169,32 @@ SDL_uclibc/fast:
 	$(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL_uclibc.dir/build.make vendored/SDL/CMakeFiles/SDL_uclibc.dir/build
 .PHONY : SDL_uclibc/fast
 
+#=============================================================================
+# Target rules for targets named SDL3_ttf-shared
+
+# Build rule for target.
+SDL3_ttf-shared: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SDL3_ttf-shared
+.PHONY : SDL3_ttf-shared
+
+# fast build rule for target.
+SDL3_ttf-shared/fast:
+	$(MAKE) $(MAKESILENT) -f vendored/SDL3_ttf/CMakeFiles/SDL3_ttf-shared.dir/build.make vendored/SDL3_ttf/CMakeFiles/SDL3_ttf-shared.dir/build
+.PHONY : SDL3_ttf-shared/fast
+
+#=============================================================================
+# Target rules for targets named SDL3_image-shared
+
+# Build rule for target.
+SDL3_image-shared: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SDL3_image-shared
+.PHONY : SDL3_image-shared
+
+# fast build rule for target.
+SDL3_image-shared/fast:
+	$(MAKE) $(MAKESILENT) -f vendored/SDL3_image/CMakeFiles/SDL3_image-shared.dir/build.make vendored/SDL3_image/CMakeFiles/SDL3_image-shared.dir/build
+.PHONY : SDL3_image-shared/fast
+
 src/button.o: src/button.c.o
 .PHONY : src/button.o
 
@@ -442,7 +468,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... SDL3-shared"
+	@echo "... SDL3_image-shared"
 	@echo "... SDL3_test"
+	@echo "... SDL3_ttf-shared"
 	@echo "... SDL_uclibc"
 	@echo "... jouw_project"
 	@echo "... src/button.o"

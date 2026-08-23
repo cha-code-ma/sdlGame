@@ -7,12 +7,18 @@
 #include "object.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <SDL3/SDL.h>
-#include <SDL3_image/SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include "object_pools.h"
 #include "logic.h"
-#include <SDL3_ttf/SDL_ttf.h>
+#include <SDL2/SDL_ttf.h>
 
+void free_button(button *but) {
+    free_sub_object_pool(but->details, true);
+    free_string(but->name);
+    free_string(but->text_info.text);
+    free(but);
+}
 
 button *button_init(vec2 pos, vec2 size, SDL_Color color,SDL_Color second_color, char *name, int name_length, int name_capacity, char * text, bool centered_text, bool scaled_position,
     vec2 text_offset, bool scaled_size, vec2 text_size, SDL_Color text_color,TTF_Font *font, int text_length, int text_capacity, group_action **group_actions, int group_act_amount, int group_act_capacity) {
@@ -81,25 +87,8 @@ button *button_init(vec2 pos, vec2 size, SDL_Color color,SDL_Color second_color,
     }
 }
 
-void free_button(button *but) {
-    free_sub_object_pool(but->details, true);
-    free_string(but->name);
-    free_string(but->text_info.text);
-    free(but);
-}
-
-
-bool check_button_clicked(button* but, float mouse_x, float mouse_y) {
-    if (but->position.x <= mouse_x && but->position.x + but->size.x >= mouse_x &&
-        but->position.y < mouse_y && but->position.y + but->size.y >= mouse_y) {
-            activate_button(but);
-        }
-}
-
-bool button_hovered(button *but);
-
 void activate_button(button* but) {
-    group_action *cur_action = but->action_info->group_actions;
+    group_action *cur_action = but->action_info->group_actions[0];
     if (cur_action->custom_action) {
         cur_action->custom_action(cur_action->group_id);
         return;
@@ -111,6 +100,20 @@ void activate_button(button* but) {
 
     }
 }
+
+
+bool check_button_clicked(button* but, float mouse_x, float mouse_y) {
+    if (but->position.x <= mouse_x && but->position.x + but->size.x >= mouse_x &&
+        but->position.y < mouse_y && but->position.y + but->size.y >= mouse_y) {
+            activate_button(but);
+        }
+}
+
+bool button_hovered(button *but) {
+
+}
+
+
 
 
 

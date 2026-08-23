@@ -726,6 +726,54 @@ src/audio/dummy/SDL_dummyaudio.c.s:
 	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/dummy/SDL_dummyaudio.c.s
 .PHONY : src/audio/dummy/SDL_dummyaudio.c.s
 
+src/audio/jack/SDL_jackaudio.o: src/audio/jack/SDL_jackaudio.c.o
+.PHONY : src/audio/jack/SDL_jackaudio.o
+
+# target to build an object file
+src/audio/jack/SDL_jackaudio.c.o:
+	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o
+.PHONY : src/audio/jack/SDL_jackaudio.c.o
+
+src/audio/jack/SDL_jackaudio.i: src/audio/jack/SDL_jackaudio.c.i
+.PHONY : src/audio/jack/SDL_jackaudio.i
+
+# target to preprocess a source file
+src/audio/jack/SDL_jackaudio.c.i:
+	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.i
+.PHONY : src/audio/jack/SDL_jackaudio.c.i
+
+src/audio/jack/SDL_jackaudio.s: src/audio/jack/SDL_jackaudio.c.s
+.PHONY : src/audio/jack/SDL_jackaudio.s
+
+# target to generate assembly for a file
+src/audio/jack/SDL_jackaudio.c.s:
+	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.s
+.PHONY : src/audio/jack/SDL_jackaudio.c.s
+
+src/audio/pipewire/SDL_pipewire.o: src/audio/pipewire/SDL_pipewire.c.o
+.PHONY : src/audio/pipewire/SDL_pipewire.o
+
+# target to build an object file
+src/audio/pipewire/SDL_pipewire.c.o:
+	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o
+.PHONY : src/audio/pipewire/SDL_pipewire.c.o
+
+src/audio/pipewire/SDL_pipewire.i: src/audio/pipewire/SDL_pipewire.c.i
+.PHONY : src/audio/pipewire/SDL_pipewire.i
+
+# target to preprocess a source file
+src/audio/pipewire/SDL_pipewire.c.i:
+	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.i
+.PHONY : src/audio/pipewire/SDL_pipewire.c.i
+
+src/audio/pipewire/SDL_pipewire.s: src/audio/pipewire/SDL_pipewire.c.s
+.PHONY : src/audio/pipewire/SDL_pipewire.s
+
+# target to generate assembly for a file
+src/audio/pipewire/SDL_pipewire.c.s:
+	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.s
+.PHONY : src/audio/pipewire/SDL_pipewire.c.s
+
 src/audio/pulseaudio/SDL_pulseaudio.o: src/audio/pulseaudio/SDL_pulseaudio.c.o
 .PHONY : src/audio/pulseaudio/SDL_pulseaudio.o
 
@@ -821,6 +869,30 @@ src/camera/dummy/SDL_camera_dummy.s: src/camera/dummy/SDL_camera_dummy.c.s
 src/camera/dummy/SDL_camera_dummy.c.s:
 	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/dummy/SDL_camera_dummy.c.s
 .PHONY : src/camera/dummy/SDL_camera_dummy.c.s
+
+src/camera/pipewire/SDL_camera_pipewire.o: src/camera/pipewire/SDL_camera_pipewire.c.o
+.PHONY : src/camera/pipewire/SDL_camera_pipewire.o
+
+# target to build an object file
+src/camera/pipewire/SDL_camera_pipewire.c.o:
+	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o
+.PHONY : src/camera/pipewire/SDL_camera_pipewire.c.o
+
+src/camera/pipewire/SDL_camera_pipewire.i: src/camera/pipewire/SDL_camera_pipewire.c.i
+.PHONY : src/camera/pipewire/SDL_camera_pipewire.i
+
+# target to preprocess a source file
+src/camera/pipewire/SDL_camera_pipewire.c.i:
+	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.i
+.PHONY : src/camera/pipewire/SDL_camera_pipewire.c.i
+
+src/camera/pipewire/SDL_camera_pipewire.s: src/camera/pipewire/SDL_camera_pipewire.c.s
+.PHONY : src/camera/pipewire/SDL_camera_pipewire.s
+
+# target to generate assembly for a file
+src/camera/pipewire/SDL_camera_pipewire.c.s:
+	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.s
+.PHONY : src/camera/pipewire/SDL_camera_pipewire.c.s
 
 src/camera/v4l2/SDL_camera_v4l2.o: src/camera/v4l2/SDL_camera_v4l2.c.o
 .PHONY : src/camera/v4l2/SDL_camera_v4l2.o
@@ -2237,6 +2309,30 @@ src/io/generic/SDL_asyncio_generic.s: src/io/generic/SDL_asyncio_generic.c.s
 src/io/generic/SDL_asyncio_generic.c.s:
 	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/generic/SDL_asyncio_generic.c.s
 .PHONY : src/io/generic/SDL_asyncio_generic.c.s
+
+src/io/io_uring/SDL_asyncio_liburing.o: src/io/io_uring/SDL_asyncio_liburing.c.o
+.PHONY : src/io/io_uring/SDL_asyncio_liburing.o
+
+# target to build an object file
+src/io/io_uring/SDL_asyncio_liburing.c.o:
+	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o
+.PHONY : src/io/io_uring/SDL_asyncio_liburing.c.o
+
+src/io/io_uring/SDL_asyncio_liburing.i: src/io/io_uring/SDL_asyncio_liburing.c.i
+.PHONY : src/io/io_uring/SDL_asyncio_liburing.i
+
+# target to preprocess a source file
+src/io/io_uring/SDL_asyncio_liburing.c.i:
+	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.i
+.PHONY : src/io/io_uring/SDL_asyncio_liburing.c.i
+
+src/io/io_uring/SDL_asyncio_liburing.s: src/io/io_uring/SDL_asyncio_liburing.c.s
+.PHONY : src/io/io_uring/SDL_asyncio_liburing.s
+
+# target to generate assembly for a file
+src/io/io_uring/SDL_asyncio_liburing.c.s:
+	cd /home/chakir/sdlGame/build && $(MAKE) $(MAKESILENT) -f vendored/SDL/CMakeFiles/SDL3-shared.dir/build.make vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.s
+.PHONY : src/io/io_uring/SDL_asyncio_liburing.c.s
 
 src/joystick/SDL_gamepad.o: src/joystick/SDL_gamepad.c.o
 .PHONY : src/joystick/SDL_gamepad.o
@@ -8489,6 +8585,12 @@ help:
 	@echo "... src/audio/dummy/SDL_dummyaudio.o"
 	@echo "... src/audio/dummy/SDL_dummyaudio.i"
 	@echo "... src/audio/dummy/SDL_dummyaudio.s"
+	@echo "... src/audio/jack/SDL_jackaudio.o"
+	@echo "... src/audio/jack/SDL_jackaudio.i"
+	@echo "... src/audio/jack/SDL_jackaudio.s"
+	@echo "... src/audio/pipewire/SDL_pipewire.o"
+	@echo "... src/audio/pipewire/SDL_pipewire.i"
+	@echo "... src/audio/pipewire/SDL_pipewire.s"
 	@echo "... src/audio/pulseaudio/SDL_pulseaudio.o"
 	@echo "... src/audio/pulseaudio/SDL_pulseaudio.i"
 	@echo "... src/audio/pulseaudio/SDL_pulseaudio.s"
@@ -8501,6 +8603,9 @@ help:
 	@echo "... src/camera/dummy/SDL_camera_dummy.o"
 	@echo "... src/camera/dummy/SDL_camera_dummy.i"
 	@echo "... src/camera/dummy/SDL_camera_dummy.s"
+	@echo "... src/camera/pipewire/SDL_camera_pipewire.o"
+	@echo "... src/camera/pipewire/SDL_camera_pipewire.i"
+	@echo "... src/camera/pipewire/SDL_camera_pipewire.s"
 	@echo "... src/camera/v4l2/SDL_camera_v4l2.o"
 	@echo "... src/camera/v4l2/SDL_camera_v4l2.i"
 	@echo "... src/camera/v4l2/SDL_camera_v4l2.s"
@@ -8678,6 +8783,9 @@ help:
 	@echo "... src/io/generic/SDL_asyncio_generic.o"
 	@echo "... src/io/generic/SDL_asyncio_generic.i"
 	@echo "... src/io/generic/SDL_asyncio_generic.s"
+	@echo "... src/io/io_uring/SDL_asyncio_liburing.o"
+	@echo "... src/io/io_uring/SDL_asyncio_liburing.i"
+	@echo "... src/io/io_uring/SDL_asyncio_liburing.s"
 	@echo "... src/joystick/SDL_gamepad.o"
 	@echo "... src/joystick/SDL_gamepad.i"
 	@echo "... src/joystick/SDL_gamepad.s"

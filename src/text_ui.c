@@ -12,6 +12,21 @@
 #include "object_pools.h"
 #include "logic.h"
 
+void free_text_ui(text_ui *ui_text) {
+    if (!ui_text) {
+        return;
+    }
+    if (ui_text->text) {
+        if (ui_text->text->text) {
+            free(ui_text->text->text);
+        }
+
+        free(ui_text);
+    }
+    free(ui_text);
+}
+
+
 text_ui *text_ui_init(vec2 pos, vec2 size, SDL_Color background_color,
                         char *source_text, int text_length, int text_capacity, SDL_Color text_color, TTF_Font *font) {
     text_ui *ui_text = malloc(sizeof(text_ui));
@@ -39,19 +54,7 @@ text_ui *text_ui_init(vec2 pos, vec2 size, SDL_Color background_color,
 
 }
 
-void free_text_ui(text_ui *ui_text) {
-    if (!ui_text) {
-        return;
-    }
-    if (ui_text->text) {
-        if (ui_text->text->text) {
-            free(ui_text->text->text);
-        }
 
-        free(ui_text);
-    }
-    free(ui_text);
-}
 
 void update_text(text_ui *ui_text) {
     

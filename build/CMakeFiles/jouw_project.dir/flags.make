@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/chakir/sdlGame/build/vendored/SDL/include-revision -I/home/chakir/sdlGame/vendored/SDL/include
+C_INCLUDES = -I/home/chakir/sdlGame/build/vendored/SDL/include-revision -I/home/chakir/sdlGame/vendored/SDL/include -I/home/chakir/sdlGame/vendored/SDL3_image/include
 
-C_FLAGS = 
+C_FLAGS = -fPIE
 

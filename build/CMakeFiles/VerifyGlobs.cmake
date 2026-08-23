@@ -144,6 +144,26 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
 endif()
 
 # both_sources at vendored/SDL/cmake/sdlcommands.cmake:29 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/chakir/sdlGame/vendored/SDL/src/audio/jack/*.c")
+set(OLD_GLOB
+  "/home/chakir/sdlGame/vendored/SDL/src/audio/jack/SDL_jackaudio.c"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/home/chakir/sdlGame/build/CMakeFiles/cmake.verify_globs")
+endif()
+
+# both_sources at vendored/SDL/cmake/sdlcommands.cmake:29 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/chakir/sdlGame/vendored/SDL/src/audio/pipewire/*.c")
+set(OLD_GLOB
+  "/home/chakir/sdlGame/vendored/SDL/src/audio/pipewire/SDL_pipewire.c"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/home/chakir/sdlGame/build/CMakeFiles/cmake.verify_globs")
+endif()
+
+# both_sources at vendored/SDL/cmake/sdlcommands.cmake:29 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/chakir/sdlGame/vendored/SDL/src/audio/pulseaudio/*.c")
 set(OLD_GLOB
   "/home/chakir/sdlGame/vendored/SDL/src/audio/pulseaudio/SDL_pulseaudio.c"
@@ -197,6 +217,16 @@ endif()
 # both_sources at vendored/SDL/cmake/sdlcommands.cmake:29 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/chakir/sdlGame/vendored/SDL/src/camera/dummy/*.h")
 set(OLD_GLOB
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/home/chakir/sdlGame/build/CMakeFiles/cmake.verify_globs")
+endif()
+
+# both_sources at vendored/SDL/cmake/sdlcommands.cmake:29 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/chakir/sdlGame/vendored/SDL/src/camera/pipewire/*.c")
+set(OLD_GLOB
+  "/home/chakir/sdlGame/vendored/SDL/src/camera/pipewire/SDL_camera_pipewire.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

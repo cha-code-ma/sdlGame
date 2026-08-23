@@ -23,6 +23,9 @@ ALSA_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libasound.so
 //Path to a library.
 ASOUND_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libasound.so
 
+//Build the library as a shared library
+BUILD_SHARED_LIBS:BOOL=ON
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -198,6 +201,9 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 //Path to a program.
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
+//Build static libraries with -fPIC
+CMAKE_POSITION_INDEPENDENT_CODE:BOOL=ON
+
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
 
@@ -318,7 +324,7 @@ GBM_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libgbm.so
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
 
 //Path to a file.
-HAVE_LIBURING_H:PATH=HAVE_LIBURING_H-NOTFOUND
+HAVE_LIBURING_H:PATH=/usr/include
 
 //Path to a file.
 HAVE_XCURSOR_H:FILEPATH=/usr/include/X11/Xcursor/Xcursor.h
@@ -352,6 +358,9 @@ HAVE_XSYNC_H:FILEPATH=/usr/include/X11/extensions/sync.h
 
 //Path to a file.
 HAVE_XTEST_H:FILEPATH=/usr/include/X11/extensions/XTest.h
+
+//Path to a library.
+JACK_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libjack.so
 
 //Extra compile options of LibUSB
 LibUSB_COMPILE_OPTIONS:STRING=
@@ -404,6 +413,9 @@ OPENGL_opengl_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libOpenGL.so
 //Path to a file.
 OPENGL_xmesa_INCLUDE_DIR:PATH=OPENGL_xmesa_INCLUDE_DIR-NOTFOUND
 
+//Path to a library.
+PIPEWIRE_0.3_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so
+
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
 
@@ -411,16 +423,196 @@ PKG_CONFIG_ARGN:STRING=
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //Path to a library.
+PLUTOVG_MATH_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libm.so
+
+//The directory containing a CMake configuration file for PNG.
+PNG_DIR:PATH=PNG_DIR-NOTFOUND
+
+//Path to a library.
+PNG_LIBRARY_DEBUG:FILEPATH=PNG_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+PNG_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libpng.so
+
+//Path to a file.
+PNG_PNG_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
 PULSE_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libpulse.so
 
 //Value Computed by CMake
 SDL3_BINARY_DIR:STATIC=/home/chakir/sdlGame/build/vendored/SDL
+
+//The directory containing a CMake configuration file for SDL3.
+SDL3_DIR:PATH=/usr/local/lib/cmake/SDL3
 
 //Value Computed by CMake
 SDL3_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 SDL3_SOURCE_DIR:STATIC=/home/chakir/sdlGame/vendored/SDL
+
+//Value Computed by CMake
+SDL3_image_BINARY_DIR:STATIC=/home/chakir/sdlGame/build/vendored/SDL3_image
+
+//Value Computed by CMake
+SDL3_image_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+SDL3_image_SOURCE_DIR:STATIC=/home/chakir/sdlGame/vendored/SDL3_image
+
+//Value Computed by CMake
+SDL3_ttf_BINARY_DIR:STATIC=/home/chakir/sdlGame/build/vendored/SDL3_ttf
+
+//The directory containing a CMake configuration file for SDL3_ttf.
+SDL3_ttf_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SDL3_ttf
+
+//Value Computed by CMake
+SDL3_ttf_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+SDL3_ttf_SOURCE_DIR:STATIC=/home/chakir/sdlGame/vendored/SDL3_ttf
+
+//Support loading ANI animations
+SDLIMAGE_ANI:BOOL=ON
+
+//Add ANI save support
+SDLIMAGE_ANI_SAVE:BOOL=ON
+
+//Support loading AVIF images
+SDLIMAGE_AVIF:BOOL=ON
+
+//Add AVIF save support
+SDLIMAGE_AVIF_SAVE:BOOL=ON
+
+//Dynamically load AVIF support (requires shared libavif)
+SDLIMAGE_AVIF_SHARED:BOOL=ON
+
+//Use stb_image for loading JPEG files
+SDLIMAGE_BACKEND_STB:BOOL=ON
+
+//Support loading BMP images
+SDLIMAGE_BMP:BOOL=ON
+
+//Add BMP save support
+SDLIMAGE_BMP_SAVE:BOOL=ON
+
+//Load dependencies dynamically
+SDLIMAGE_DEPS_SHARED:BOOL=ON
+
+//Support loading GIF images
+SDLIMAGE_GIF:BOOL=ON
+
+//Add GIF save support
+SDLIMAGE_GIF_SAVE:BOOL=ON
+
+//Enable SDL3_image install target
+SDLIMAGE_INSTALL:BOOL=OFF
+
+//Support loading JPEG images
+SDLIMAGE_JPG:BOOL=ON
+
+//Add JPEG save support
+SDLIMAGE_JPG_SAVE:BOOL=ON
+
+//Support loading JXL images
+SDLIMAGE_JXL:BOOL=OFF
+
+//Support loading LBM images
+SDLIMAGE_LBM:BOOL=ON
+
+//Support loading PCX images
+SDLIMAGE_PCX:BOOL=ON
+
+//Support loading PNG images
+SDLIMAGE_PNG:BOOL=ON
+
+//Support loading PNGs using libpng (useful for APNGs)
+SDLIMAGE_PNG_LIBPNG:BOOL=ON
+
+//Add PNG save support
+SDLIMAGE_PNG_SAVE:BOOL=ON
+
+//Dynamically load PNG support (requires shared libpng)
+SDLIMAGE_PNG_SHARED:BOOL=ON
+
+//Support loading PNM images
+SDLIMAGE_PNM:BOOL=ON
+
+//Support loading QOI images
+SDLIMAGE_QOI:BOOL=ON
+
+//Build the SDL3_image sample program(s)
+SDLIMAGE_SAMPLES:BOOL=OFF
+
+//Fail when a dependency could not be found
+SDLIMAGE_STRICT:BOOL=OFF
+
+//Support loading SVG images
+SDLIMAGE_SVG:BOOL=ON
+
+//Build unit tests?
+SDLIMAGE_TESTS:BOOL=OFF
+
+//Install unit tests?
+SDLIMAGE_TESTS_INSTALL:BOOL=OFF
+
+//Support loading TGA images
+SDLIMAGE_TGA:BOOL=ON
+
+//Add TGA save support
+SDLIMAGE_TGA_SAVE:BOOL=ON
+
+//Support loading TIFF images
+SDLIMAGE_TIF:BOOL=ON
+
+//Dynamically load TIFF support (requires shared libtiff)
+SDLIMAGE_TIF_SHARED:BOOL=ON
+
+//Use vendored third-party libraries
+SDLIMAGE_VENDORED:BOOL=OFF
+
+//Support loading WEBP images
+SDLIMAGE_WEBP:BOOL=ON
+
+//Add WEBP save support
+SDLIMAGE_WEBP_SAVE:BOOL=ON
+
+//Dynamically load WEBP support (requires shared libwebp)
+SDLIMAGE_WEBP_SHARED:BOOL=ON
+
+//Treat warnings as errors
+SDLIMAGE_WERROR:BOOL=OFF
+
+//Support loading XCF images
+SDLIMAGE_XCF:BOOL=ON
+
+//Support loading XPM images
+SDLIMAGE_XPM:BOOL=ON
+
+//Support loading XV images
+SDLIMAGE_XV:BOOL=ON
+
+//Use harfbuzz to improve text shaping
+SDLTTF_HARFBUZZ:BOOL=ON
+
+//Enable SDL3_ttf install target
+SDLTTF_INSTALL:BOOL=OFF
+
+//Use plutosvg for color emoji support
+SDLTTF_PLUTOSVG:BOOL=ON
+
+//Build the SDL3_ttf sample program(s)
+SDLTTF_SAMPLES:BOOL=OFF
+
+//Fail when a dependency could not be found
+SDLTTF_STRICT:BOOL=OFF
+
+//Use vendored third-party libraries
+SDLTTF_VENDORED:BOOL=OFF
+
+//Treat warnings as errors
+SDLTTF_WERROR:BOOL=OFF
 
 //Support the ALSA audio API
 SDL_ALSA:BOOL=ON
@@ -782,6 +974,18 @@ SDL_X11_XTEST:BOOL=ON
 
 //Path to a library.
 SNDIO_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libsndio.so
+
+//The directory containing a CMake configuration file for TIFF.
+TIFF_DIR:PATH=TIFF_DIR-NOTFOUND
+
+//Path to a file.
+TIFF_INCLUDE_DIR:PATH=/usr/include/x86_64-linux-gnu
+
+//Path to a library.
+TIFF_LIBRARY_DEBUG:FILEPATH=TIFF_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+TIFF_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libtiff.so
 
 //Path to a library.
 UDEV_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libudev.so
@@ -1233,6 +1437,36 @@ XSS_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXss.so
 //Path to a library.
 XTST_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXtst.so
 
+//The directory containing a CMake configuration file for ZLIB.
+ZLIB_DIR:PATH=ZLIB_DIR-NOTFOUND
+
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
+
+//Extra compile flags of harfbuzz
+harfbuzz_COMPILE_OPTIONS:STRING=
+
+//Path to a file.
+harfbuzz_INCLUDE_PATH:PATH=/usr/include/harfbuzz
+
+//Path to a library.
+harfbuzz_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libharfbuzz.so
+
+//Extra link directories of harfbuzz
+harfbuzz_LINK_DIRECTORIES:PATH=/usr/lib/x86_64-linux-gnu
+
+//Extra link libraries of harfbuzz
+harfbuzz_LINK_LIBRARIES:STRING=
+
+//Extra link flags of harfbuzz
+harfbuzz_LINK_OPTIONS:STRING=
+
 //Value Computed by CMake
 jouw_project_BINARY_DIR:STATIC=/home/chakir/sdlGame/build
 
@@ -1241,6 +1475,9 @@ jouw_project_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 jouw_project_SOURCE_DIR:STATIC=/home/chakir/sdlGame
+
+//The directory containing a CMake configuration file for libavif.
+libavif_DIR:PATH=/home/chakir/anaconda3/lib/cmake/libavif
 
 //Path to a library.
 pkgcfg_lib_DBUS_dbus-1:FILEPATH=/usr/lib/x86_64-linux-gnu/libdbus-1.so
@@ -1258,13 +1495,28 @@ pkgcfg_lib_IBUS_gobject-2.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libgobject-2.0.so
 pkgcfg_lib_IBUS_ibus-1.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libibus-1.0.so
 
 //Path to a library.
+pkgcfg_lib_LIBURING_uring-ffi:FILEPATH=/usr/lib/x86_64-linux-gnu/liburing-ffi.so
+
+//Path to a library.
 pkgcfg_lib_PC_GBM_gbm:FILEPATH=/usr/lib/x86_64-linux-gnu/libgbm.so
+
+//Path to a library.
+pkgcfg_lib_PC_HARFBUZZ_harfbuzz:FILEPATH=/usr/lib/x86_64-linux-gnu/libharfbuzz.so
+
+//Path to a library.
+pkgcfg_lib_PC_JACK_jack:FILEPATH=/usr/lib/x86_64-linux-gnu/libjack.so
+
+//Path to a library.
+pkgcfg_lib_PC_JACK_pthread:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.a
 
 //Path to a library.
 pkgcfg_lib_PC_LIBDECOR_decor-0:FILEPATH=/usr/lib/x86_64-linux-gnu/libdecor-0.so
 
 //Path to a library.
 pkgcfg_lib_PC_LIBDRM_drm:FILEPATH=/usr/lib/x86_64-linux-gnu/libdrm.so
+
+//Path to a library.
+pkgcfg_lib_PC_PIPEWIRE_pipewire-0.3:FILEPATH=/usr/lib/x86_64-linux-gnu/libpipewire-0.3.so
 
 //Path to a library.
 pkgcfg_lib_PC_PULSEAUDIO_pulse:FILEPATH=/usr/lib/x86_64-linux-gnu/libpulse.so
@@ -1292,6 +1544,93 @@ pkgcfg_lib_PKG_FONTCONFIG_fontconfig:FILEPATH=/usr/lib/x86_64-linux-gnu/libfontc
 
 //Path to a library.
 pkgcfg_lib_PKG_FONTCONFIG_freetype:FILEPATH=/usr/lib/x86_64-linux-gnu/libfreetype.so
+
+//Extra compile flags of plutosvg
+plutosvg_COMPILE_OPTIONS:STRING=
+
+//Path to a file.
+plutosvg_INCLUDE_PATH:PATH=plutosvg_INCLUDE_PATH-NOTFOUND
+
+//Path to a library.
+plutosvg_LIBRARY:FILEPATH=plutosvg_LIBRARY-NOTFOUND
+
+//Extra link flags of plutosvg
+plutosvg_LINK_DIRECTORIES:STRING=
+
+//Extra link libraries of plutosvg
+plutosvg_LINK_LIBRARIES:STRING=
+
+//Extra link flags of plutosvg
+plutosvg_LINK_OPTIONS:STRING=
+
+//Extra compile flags of plutovg
+plutovg_COMPILE_OPTIONS:STRING=
+
+//Path to a file.
+plutovg_INCLUDE_PATH:PATH=plutovg_INCLUDE_PATH-NOTFOUND
+
+//Path to a library.
+plutovg_LIBRARY:FILEPATH=plutovg_LIBRARY-NOTFOUND
+
+//Extra link flags of plutovg
+plutovg_LINK_DIRECTORIES:STRING=
+
+//Extra link libraries of plutovg
+plutovg_LINK_LIBRARIES:STRING=
+
+//Extra link flags of plutovg
+plutovg_LINK_OPTIONS:STRING=
+
+//The directory containing a CMake configuration file for tiff.
+tiff_DIR:PATH=tiff_DIR-NOTFOUND
+
+//Extra compile options of webp
+webp_COMPILE_OPTIONS:STRING=
+
+//The directory containing a CMake configuration file for webp.
+webp_DIR:PATH=webp_DIR-NOTFOUND
+
+//Path to a file.
+webp_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+webp_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libwebp.so
+
+//Extra link flags of webp
+webp_LINK_FLAGS:STRING=
+
+//Extra link libraries of webp
+webp_LINK_LIBRARIES:STRING=
+
+//Extra compile options of webpdemux
+webpdemux_COMPILE_OPTIONS:STRING=
+
+//Path to a file.
+webpdemux_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+webpdemux_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libwebpdemux.so
+
+//Extra link flags of webpdemux
+webpdemux_LINK_FLAGS:STRING=
+
+//Extra link libraries of webpdemux
+webpdemux_LINK_LIBRARIES:STRING=
+
+//Extra compile options of webpmux
+webpmux_COMPILE_OPTIONS:STRING=
+
+//Path to a file.
+webpmux_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+webpmux_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libwebpmux.so
+
+//Extra link flags of webpmux
+webpmux_LINK_FLAGS:STRING=
+
+//Extra link libraries of webpmux
+webpmux_LINK_LIBRARIES:STRING=
 
 
 ########################
@@ -1444,7 +1783,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1552,12 +1891,24 @@ DBUS_dbus-1_PREFIX:INTERNAL=
 DBUS_dbus-1_VERSION:INTERNAL=
 //Details about finding ALSA
 FIND_PACKAGE_MESSAGE_DETAILS_ALSA:INTERNAL=[/usr/lib/x86_64-linux-gnu/libasound.so][/usr/include][v1.2.11()]
+//Details about finding Freetype
+FIND_PACKAGE_MESSAGE_DETAILS_Freetype:INTERNAL=[/usr/lib/x86_64-linux-gnu/libfreetype.so][/usr/include/freetype2][v2.13.2(2.8.0)]
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libOpenGL.so][/usr/lib/x86_64-linux-gnu/libGLX.so][/usr/include][c ][v()]
+//Details about finding PNG
+FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpng.so][/usr/include][v1.6.43()]
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v1.8.1()]
+//Details about finding TIFF
+FIND_PACKAGE_MESSAGE_DETAILS_TIFF:INTERNAL=[/usr/lib/x86_64-linux-gnu/libtiff.so][/usr/include/x86_64-linux-gnu][c ][v4.5.1()]
 //Details about finding X11
 FIND_PACKAGE_MESSAGE_DETAILS_X11:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libX11.so][c ][v()]
+//Details about finding ZLIB
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/x86_64-linux-gnu/libz.so][/usr/include][c ][v1.3()]
+//Details about finding harfbuzz
+FIND_PACKAGE_MESSAGE_DETAILS_harfbuzz:INTERNAL=[/usr/lib/x86_64-linux-gnu/libharfbuzz.so][/usr/include/harfbuzz][v8.3.0(2.3.1)]
+//Details about finding webp
+FIND_PACKAGE_MESSAGE_DETAILS_webp:INTERNAL=[/usr/lib/x86_64-linux-gnu/libwebp.so][/usr/include][/usr/lib/x86_64-linux-gnu/libwebpdemux.so][/usr/include][/usr/lib/x86_64-linux-gnu/libwebpmux.so][/usr/include][v()]
 //Have library c
 FOUND_CLOCK_GETTIME_LIBC:INTERNAL=1
 //ADVANCED property for variable: FREETYPE_INCLUDE_DIR_freetype2
@@ -1694,6 +2045,8 @@ HAVE_SYSCONF:INTERNAL=1
 HAVE_SYSCTLBYNAME:INTERNAL=
 //Have include sys/inotify.h
 HAVE_SYS_INOTIFY_H:INTERNAL=1
+//Test HAVE_WL_NO_UNDEFINED
+HAVE_WL_NO_UNDEFINED:INTERNAL=1
 //Test HAVE_WL_VERSION_SCRIPT
 HAVE_WL_VERSION_SCRIPT:INTERNAL=1
 //Test HAVE_XFIXES_H
@@ -2003,31 +2356,43 @@ LIBC_ISNAN_HANDLES_FLOAT:INTERNAL=1
 LIBC_IS_GLIBC:INTERNAL=1
 //Test LIBUNWIND_HAS_WORKINGLIBUNWIND
 LIBUNWIND_HAS_WORKINGLIBUNWIND:INTERNAL=
-LIBURING_CFLAGS:INTERNAL=
+LIBURING_CFLAGS:INTERNAL=-I/usr/include
 LIBURING_CFLAGS_I:INTERNAL=
 LIBURING_CFLAGS_OTHER:INTERNAL=
-LIBURING_FOUND:INTERNAL=
-LIBURING_INCLUDEDIR:INTERNAL=
-LIBURING_LIBDIR:INTERNAL=
+LIBURING_FOUND:INTERNAL=1
+LIBURING_INCLUDEDIR:INTERNAL=/usr/include
+LIBURING_INCLUDE_DIRS:INTERNAL=/usr/include
+LIBURING_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-luring-ffi
+LIBURING_LDFLAGS_OTHER:INTERNAL=
+LIBURING_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+LIBURING_LIBRARIES:INTERNAL=uring-ffi
+LIBURING_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
 LIBURING_LIBS:INTERNAL=
 LIBURING_LIBS_L:INTERNAL=
 LIBURING_LIBS_OTHER:INTERNAL=
 LIBURING_LIBS_PATHS:INTERNAL=
-LIBURING_MODULE_NAME:INTERNAL=
-LIBURING_PREFIX:INTERNAL=
-LIBURING_STATIC_CFLAGS:INTERNAL=
+LIBURING_MODULE_NAME:INTERNAL=liburing-ffi
+LIBURING_PREFIX:INTERNAL=/usr
+LIBURING_STATIC_CFLAGS:INTERNAL=-I/usr/include
 LIBURING_STATIC_CFLAGS_I:INTERNAL=
 LIBURING_STATIC_CFLAGS_OTHER:INTERNAL=
+LIBURING_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include
+LIBURING_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-luring-ffi
+LIBURING_STATIC_LDFLAGS_OTHER:INTERNAL=
 LIBURING_STATIC_LIBDIR:INTERNAL=
+LIBURING_STATIC_LIBRARIES:INTERNAL=uring-ffi
+LIBURING_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
 LIBURING_STATIC_LIBS:INTERNAL=
 LIBURING_STATIC_LIBS_L:INTERNAL=
 LIBURING_STATIC_LIBS_OTHER:INTERNAL=
 LIBURING_STATIC_LIBS_PATHS:INTERNAL=
-LIBURING_VERSION:INTERNAL=
+LIBURING_VERSION:INTERNAL=2.5
 LIBURING_liburing-ffi_INCLUDEDIR:INTERNAL=
 LIBURING_liburing-ffi_LIBDIR:INTERNAL=
 LIBURING_liburing-ffi_PREFIX:INTERNAL=
 LIBURING_liburing-ffi_VERSION:INTERNAL=
+//Test LINKER_SUPPORTS_VERSION_SCRIPT
+LINKER_SUPPORTS_VERSION_SCRIPT:INTERNAL=1
 //Test LINKER_SUPPORTS_WL_NO_UNDEFINED
 LINKER_SUPPORTS_WL_NO_UNDEFINED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_EGL_INCLUDE_DIR
@@ -2114,27 +2479,72 @@ PC_GBM_gbm_INCLUDEDIR:INTERNAL=
 PC_GBM_gbm_LIBDIR:INTERNAL=
 PC_GBM_gbm_PREFIX:INTERNAL=
 PC_GBM_gbm_VERSION:INTERNAL=
-PC_JACK_CFLAGS:INTERNAL=
+PC_HARFBUZZ_CFLAGS:INTERNAL=-I/usr/include/harfbuzz;-I/usr/include/freetype2;-I/usr/include;-I/usr/include/libpng16;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_HARFBUZZ_CFLAGS_I:INTERNAL=
+PC_HARFBUZZ_CFLAGS_OTHER:INTERNAL=
+PC_HARFBUZZ_FOUND:INTERNAL=1
+PC_HARFBUZZ_INCLUDEDIR:INTERNAL=/usr/include
+PC_HARFBUZZ_INCLUDE_DIRS:INTERNAL=/usr/include/harfbuzz;/usr/include/freetype2;/usr/include;/usr/include/libpng16;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_HARFBUZZ_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lharfbuzz
+PC_HARFBUZZ_LDFLAGS_OTHER:INTERNAL=
+PC_HARFBUZZ_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+PC_HARFBUZZ_LIBRARIES:INTERNAL=harfbuzz
+PC_HARFBUZZ_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+PC_HARFBUZZ_LIBS:INTERNAL=
+PC_HARFBUZZ_LIBS_L:INTERNAL=
+PC_HARFBUZZ_LIBS_OTHER:INTERNAL=
+PC_HARFBUZZ_LIBS_PATHS:INTERNAL=
+PC_HARFBUZZ_MODULE_NAME:INTERNAL=harfbuzz
+PC_HARFBUZZ_PREFIX:INTERNAL=/usr
+PC_HARFBUZZ_STATIC_CFLAGS:INTERNAL=-I/usr/include/harfbuzz;-I/usr/include/freetype2;-I/usr/include;-I/usr/include/libpng16;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_HARFBUZZ_STATIC_CFLAGS_I:INTERNAL=
+PC_HARFBUZZ_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_HARFBUZZ_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/harfbuzz;/usr/include/freetype2;/usr/include;/usr/include/libpng16;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_HARFBUZZ_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lharfbuzz;-pthread;-lm;-L/usr/lib/x86_64-linux-gnu;-lfreetype;-lbz2;-L/usr/lib/x86_64-linux-gnu;-L/usr/lib/x86_64-linux-gnu;-lz;-lpng16;-lm;-lz;-lm;-L/usr/lib/x86_64-linux-gnu;-L/usr/lib/x86_64-linux-gnu;-lz;-lbrotlidec;-L/usr/lib/x86_64-linux-gnu;-lbrotlicommon;-lglib-2.0;-lm;-pthread;-L/usr/lib/x86_64-linux-gnu;-lpcre2-8;-lgraphite2
+PC_HARFBUZZ_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread;-pthread
+PC_HARFBUZZ_STATIC_LIBDIR:INTERNAL=
+PC_HARFBUZZ_STATIC_LIBRARIES:INTERNAL=harfbuzz;m;freetype;bz2;z;png16;m;z;m;z;brotlidec;brotlicommon;glib-2.0;m;pcre2-8;graphite2
+PC_HARFBUZZ_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu
+PC_HARFBUZZ_STATIC_LIBS:INTERNAL=
+PC_HARFBUZZ_STATIC_LIBS_L:INTERNAL=
+PC_HARFBUZZ_STATIC_LIBS_OTHER:INTERNAL=
+PC_HARFBUZZ_STATIC_LIBS_PATHS:INTERNAL=
+PC_HARFBUZZ_VERSION:INTERNAL=8.3.0
+PC_HARFBUZZ_harfbuzz_INCLUDEDIR:INTERNAL=
+PC_HARFBUZZ_harfbuzz_LIBDIR:INTERNAL=
+PC_HARFBUZZ_harfbuzz_PREFIX:INTERNAL=
+PC_HARFBUZZ_harfbuzz_VERSION:INTERNAL=
+PC_JACK_CFLAGS:INTERNAL=-I/usr/include
 PC_JACK_CFLAGS_I:INTERNAL=
 PC_JACK_CFLAGS_OTHER:INTERNAL=
-PC_JACK_FOUND:INTERNAL=
-PC_JACK_INCLUDEDIR:INTERNAL=
-PC_JACK_LIBDIR:INTERNAL=
+PC_JACK_FOUND:INTERNAL=1
+PC_JACK_INCLUDEDIR:INTERNAL=/usr/include
+PC_JACK_INCLUDE_DIRS:INTERNAL=/usr/include
+PC_JACK_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-ljack;-lpthread
+PC_JACK_LDFLAGS_OTHER:INTERNAL=
+PC_JACK_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+PC_JACK_LIBRARIES:INTERNAL=jack;pthread
+PC_JACK_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
 PC_JACK_LIBS:INTERNAL=
 PC_JACK_LIBS_L:INTERNAL=
 PC_JACK_LIBS_OTHER:INTERNAL=
 PC_JACK_LIBS_PATHS:INTERNAL=
-PC_JACK_MODULE_NAME:INTERNAL=
-PC_JACK_PREFIX:INTERNAL=
-PC_JACK_STATIC_CFLAGS:INTERNAL=
+PC_JACK_MODULE_NAME:INTERNAL=jack
+PC_JACK_PREFIX:INTERNAL=/usr
+PC_JACK_STATIC_CFLAGS:INTERNAL=-I/usr/include
 PC_JACK_STATIC_CFLAGS_I:INTERNAL=
 PC_JACK_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_JACK_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include
+PC_JACK_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-ljack;-lpthread
+PC_JACK_STATIC_LDFLAGS_OTHER:INTERNAL=
 PC_JACK_STATIC_LIBDIR:INTERNAL=
+PC_JACK_STATIC_LIBRARIES:INTERNAL=jack;pthread
+PC_JACK_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
 PC_JACK_STATIC_LIBS:INTERNAL=
 PC_JACK_STATIC_LIBS_L:INTERNAL=
 PC_JACK_STATIC_LIBS_OTHER:INTERNAL=
 PC_JACK_STATIC_LIBS_PATHS:INTERNAL=
-PC_JACK_VERSION:INTERNAL=
+PC_JACK_VERSION:INTERNAL=0.126.0
 PC_JACK_jack_INCLUDEDIR:INTERNAL=
 PC_JACK_jack_LIBDIR:INTERNAL=
 PC_JACK_jack_PREFIX:INTERNAL=
@@ -2288,31 +2698,91 @@ PC_LibUSB_libusb-1.0_INCLUDEDIR:INTERNAL=
 PC_LibUSB_libusb-1.0_LIBDIR:INTERNAL=
 PC_LibUSB_libusb-1.0_PREFIX:INTERNAL=
 PC_LibUSB_libusb-1.0_VERSION:INTERNAL=
-PC_PIPEWIRE_CFLAGS:INTERNAL=
+PC_PIPEWIRE_CFLAGS:INTERNAL=-I/usr/include/pipewire-0.3;-I/usr/include/spa-0.2;-D_REENTRANT
 PC_PIPEWIRE_CFLAGS_I:INTERNAL=
-PC_PIPEWIRE_CFLAGS_OTHER:INTERNAL=
-PC_PIPEWIRE_FOUND:INTERNAL=
-PC_PIPEWIRE_INCLUDEDIR:INTERNAL=
-PC_PIPEWIRE_LIBDIR:INTERNAL=
+PC_PIPEWIRE_CFLAGS_OTHER:INTERNAL=-D_REENTRANT
+PC_PIPEWIRE_FOUND:INTERNAL=1
+PC_PIPEWIRE_INCLUDEDIR:INTERNAL=/usr/include
+PC_PIPEWIRE_INCLUDE_DIRS:INTERNAL=/usr/include/pipewire-0.3;/usr/include/spa-0.2
+PC_PIPEWIRE_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lpipewire-0.3
+PC_PIPEWIRE_LDFLAGS_OTHER:INTERNAL=
+PC_PIPEWIRE_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+PC_PIPEWIRE_LIBRARIES:INTERNAL=pipewire-0.3
+PC_PIPEWIRE_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
 PC_PIPEWIRE_LIBS:INTERNAL=
 PC_PIPEWIRE_LIBS_L:INTERNAL=
 PC_PIPEWIRE_LIBS_OTHER:INTERNAL=
 PC_PIPEWIRE_LIBS_PATHS:INTERNAL=
-PC_PIPEWIRE_MODULE_NAME:INTERNAL=
-PC_PIPEWIRE_PREFIX:INTERNAL=
-PC_PIPEWIRE_STATIC_CFLAGS:INTERNAL=
+PC_PIPEWIRE_MODULE_NAME:INTERNAL=libpipewire-0.3
+PC_PIPEWIRE_PREFIX:INTERNAL=/usr
+PC_PIPEWIRE_STATIC_CFLAGS:INTERNAL=-I/usr/include/pipewire-0.3;-I/usr/include/spa-0.2;-D_REENTRANT
 PC_PIPEWIRE_STATIC_CFLAGS_I:INTERNAL=
-PC_PIPEWIRE_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_PIPEWIRE_STATIC_CFLAGS_OTHER:INTERNAL=-D_REENTRANT
+PC_PIPEWIRE_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/pipewire-0.3;/usr/include/spa-0.2
+PC_PIPEWIRE_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lpipewire-0.3
+PC_PIPEWIRE_STATIC_LDFLAGS_OTHER:INTERNAL=
 PC_PIPEWIRE_STATIC_LIBDIR:INTERNAL=
+PC_PIPEWIRE_STATIC_LIBRARIES:INTERNAL=pipewire-0.3
+PC_PIPEWIRE_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
 PC_PIPEWIRE_STATIC_LIBS:INTERNAL=
 PC_PIPEWIRE_STATIC_LIBS_L:INTERNAL=
 PC_PIPEWIRE_STATIC_LIBS_OTHER:INTERNAL=
 PC_PIPEWIRE_STATIC_LIBS_PATHS:INTERNAL=
-PC_PIPEWIRE_VERSION:INTERNAL=
+PC_PIPEWIRE_VERSION:INTERNAL=1.0.5
 PC_PIPEWIRE_libpipewire-0.3_INCLUDEDIR:INTERNAL=
 PC_PIPEWIRE_libpipewire-0.3_LIBDIR:INTERNAL=
 PC_PIPEWIRE_libpipewire-0.3_PREFIX:INTERNAL=
 PC_PIPEWIRE_libpipewire-0.3_VERSION:INTERNAL=
+PC_PLUTOSVG_CFLAGS:INTERNAL=
+PC_PLUTOSVG_CFLAGS_I:INTERNAL=
+PC_PLUTOSVG_CFLAGS_OTHER:INTERNAL=
+PC_PLUTOSVG_FOUND:INTERNAL=
+PC_PLUTOSVG_INCLUDEDIR:INTERNAL=
+PC_PLUTOSVG_LIBDIR:INTERNAL=
+PC_PLUTOSVG_LIBS:INTERNAL=
+PC_PLUTOSVG_LIBS_L:INTERNAL=
+PC_PLUTOSVG_LIBS_OTHER:INTERNAL=
+PC_PLUTOSVG_LIBS_PATHS:INTERNAL=
+PC_PLUTOSVG_MODULE_NAME:INTERNAL=
+PC_PLUTOSVG_PREFIX:INTERNAL=
+PC_PLUTOSVG_STATIC_CFLAGS:INTERNAL=
+PC_PLUTOSVG_STATIC_CFLAGS_I:INTERNAL=
+PC_PLUTOSVG_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_PLUTOSVG_STATIC_LIBDIR:INTERNAL=
+PC_PLUTOSVG_STATIC_LIBS:INTERNAL=
+PC_PLUTOSVG_STATIC_LIBS_L:INTERNAL=
+PC_PLUTOSVG_STATIC_LIBS_OTHER:INTERNAL=
+PC_PLUTOSVG_STATIC_LIBS_PATHS:INTERNAL=
+PC_PLUTOSVG_VERSION:INTERNAL=
+PC_PLUTOSVG_plutosvg_INCLUDEDIR:INTERNAL=
+PC_PLUTOSVG_plutosvg_LIBDIR:INTERNAL=
+PC_PLUTOSVG_plutosvg_PREFIX:INTERNAL=
+PC_PLUTOSVG_plutosvg_VERSION:INTERNAL=
+PC_PLUTOVG_CFLAGS:INTERNAL=
+PC_PLUTOVG_CFLAGS_I:INTERNAL=
+PC_PLUTOVG_CFLAGS_OTHER:INTERNAL=
+PC_PLUTOVG_FOUND:INTERNAL=
+PC_PLUTOVG_INCLUDEDIR:INTERNAL=
+PC_PLUTOVG_LIBDIR:INTERNAL=
+PC_PLUTOVG_LIBS:INTERNAL=
+PC_PLUTOVG_LIBS_L:INTERNAL=
+PC_PLUTOVG_LIBS_OTHER:INTERNAL=
+PC_PLUTOVG_LIBS_PATHS:INTERNAL=
+PC_PLUTOVG_MODULE_NAME:INTERNAL=
+PC_PLUTOVG_PREFIX:INTERNAL=
+PC_PLUTOVG_STATIC_CFLAGS:INTERNAL=
+PC_PLUTOVG_STATIC_CFLAGS_I:INTERNAL=
+PC_PLUTOVG_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_PLUTOVG_STATIC_LIBDIR:INTERNAL=
+PC_PLUTOVG_STATIC_LIBS:INTERNAL=
+PC_PLUTOVG_STATIC_LIBS_L:INTERNAL=
+PC_PLUTOVG_STATIC_LIBS_OTHER:INTERNAL=
+PC_PLUTOVG_STATIC_LIBS_PATHS:INTERNAL=
+PC_PLUTOVG_VERSION:INTERNAL=
+PC_PLUTOVG_plutovg_INCLUDEDIR:INTERNAL=
+PC_PLUTOVG_plutovg_LIBDIR:INTERNAL=
+PC_PLUTOVG_plutovg_PREFIX:INTERNAL=
+PC_PLUTOVG_plutovg_VERSION:INTERNAL=
 PC_PULSEAUDIO_CFLAGS:INTERNAL=-I/usr/include;-D_REENTRANT
 PC_PULSEAUDIO_CFLAGS_I:INTERNAL=
 PC_PULSEAUDIO_CFLAGS_OTHER:INTERNAL=-D_REENTRANT
@@ -2478,6 +2948,12 @@ PKG_FONTCONFIG_fontconfig_INCLUDEDIR:INTERNAL=
 PKG_FONTCONFIG_fontconfig_LIBDIR:INTERNAL=
 PKG_FONTCONFIG_fontconfig_PREFIX:INTERNAL=
 PKG_FONTCONFIG_fontconfig_VERSION:INTERNAL=
+//ADVANCED property for variable: PNG_LIBRARY_DEBUG
+PNG_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_LIBRARY_RELEASE
+PNG_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_PNG_INCLUDE_DIR
+PNG_PNG_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SDL_CHECK_REQUIRED_INCLUDES
 SDL_CHECK_REQUIRED_INCLUDES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SDL_CHECK_REQUIRED_LINK_OPTIONS
@@ -2488,6 +2964,12 @@ SDL_CMAKE_C_COMPILER_LINKER_ID-ADVANCED:INTERNAL=1
 SDL_CPU_CHECK_ALL:INTERNAL=TRUE
 //Have include X11/XKBlib.h
 SDL_VIDEO_DRIVER_X11_HAS_XKBLIB:INTERNAL=1
+//ADVANCED property for variable: TIFF_INCLUDE_DIR
+TIFF_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TIFF_LIBRARY_DEBUG
+TIFF_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TIFF_LIBRARY_RELEASE
+TIFF_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: X11_ICE_INCLUDE_PATH
 X11_ICE_INCLUDE_PATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: X11_ICE_LIB
@@ -2756,13 +3238,22 @@ X11_xkbcommon_X11_LIB-ADVANCED:INTERNAL=1
 X11_xkbfile_INCLUDE_PATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: X11_xkbfile_LIB
 X11_xkbfile_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DEBUG
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 __pkg_config_arguments_PC_GBM:INTERNAL=IMPORTED_TARGET;gbm
+__pkg_config_arguments_PC_HARFBUZZ:INTERNAL=QUIET;harfbuzz
+__pkg_config_arguments_PC_JACK:INTERNAL=IMPORTED_TARGET;jack
 __pkg_config_arguments_PC_LIBDECOR:INTERNAL=IMPORTED_TARGET;libdecor-0
 __pkg_config_arguments_PC_LIBDRM:INTERNAL=IMPORTED_TARGET;libdrm
+__pkg_config_arguments_PC_PIPEWIRE:INTERNAL=IMPORTED_TARGET;libpipewire-0.3>=0.3.44
 __pkg_config_arguments_PC_PULSEAUDIO:INTERNAL=IMPORTED_TARGET;libpulse>=0.9.15
 __pkg_config_arguments_PC_SNDIO:INTERNAL=IMPORTED_TARGET;sndio
 __pkg_config_arguments_PC_WAYLAND:INTERNAL=IMPORTED_TARGET;wayland-client>=1.18;wayland-egl;wayland-cursor;egl;xkbcommon>=0.5.0
@@ -2772,6 +3263,7 @@ __pkg_config_checked_IBUS:INTERNAL=1
 __pkg_config_checked_LIBURING:INTERNAL=1
 __pkg_config_checked_PC_FRIBIDI:INTERNAL=1
 __pkg_config_checked_PC_GBM:INTERNAL=1
+__pkg_config_checked_PC_HARFBUZZ:INTERNAL=1
 __pkg_config_checked_PC_JACK:INTERNAL=1
 __pkg_config_checked_PC_LIBDECOR:INTERNAL=1
 __pkg_config_checked_PC_LIBDRM:INTERNAL=1
@@ -2779,6 +3271,8 @@ __pkg_config_checked_PC_LIBTHAI:INTERNAL=1
 __pkg_config_checked_PC_LIBUNWIND:INTERNAL=1
 __pkg_config_checked_PC_LibUSB:INTERNAL=1
 __pkg_config_checked_PC_PIPEWIRE:INTERNAL=1
+__pkg_config_checked_PC_PLUTOSVG:INTERNAL=1
+__pkg_config_checked_PC_PLUTOVG:INTERNAL=1
 __pkg_config_checked_PC_PULSEAUDIO:INTERNAL=1
 __pkg_config_checked_PC_SNDIO:INTERNAL=1
 __pkg_config_checked_PC_WAYLAND:INTERNAL=1
@@ -2793,12 +3287,22 @@ pkgcfg_lib_IBUS_glib-2.0-ADVANCED:INTERNAL=1
 pkgcfg_lib_IBUS_gobject-2.0-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_IBUS_ibus-1.0
 pkgcfg_lib_IBUS_ibus-1.0-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_LIBURING_uring-ffi
+pkgcfg_lib_LIBURING_uring-ffi-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_GBM_gbm
 pkgcfg_lib_PC_GBM_gbm-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_HARFBUZZ_harfbuzz
+pkgcfg_lib_PC_HARFBUZZ_harfbuzz-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_JACK_jack
+pkgcfg_lib_PC_JACK_jack-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_JACK_pthread
+pkgcfg_lib_PC_JACK_pthread-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_LIBDECOR_decor-0
 pkgcfg_lib_PC_LIBDECOR_decor-0-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_LIBDRM_drm
 pkgcfg_lib_PC_LIBDRM_drm-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_PIPEWIRE_pipewire-0.3
+pkgcfg_lib_PC_PIPEWIRE_pipewire-0.3-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_PULSEAUDIO_pulse
 pkgcfg_lib_PC_PULSEAUDIO_pulse-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_SNDIO_sndio

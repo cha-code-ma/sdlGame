@@ -4,36 +4,6 @@
 #include "object_pools.h"
 #include "button.h"
 
-void game_update_active_level(game_t *game) {
-    if (game && game->state.active_level) {
-        update_level(game);
-    }
-}
-
-void update_level(game_t *game) {
-    if (game->state.active_level->objects) {
-        update_level_objects(game);
-    }
-    if (game->state.active_level->UI) {
-        update_level_UI(game);
-    }
-
-
-}
-
-void update_level_UI(game_t *game) {
-    if (game->state.active_level->UI->buttons) {
-        update_level_buttons(game);
-    }
-    if (game->state.active_level->UI->strings) {
-        update_level_text(game);
-    }
-
-    if (game->state.active_level->UI->ui_objects) {
-        update_level_UI_objects(game);
-    }
-
-}
 void update_level_buttons(game_t *game) {
     if (!game->state.active_level->UI->buttons) {
         return;
@@ -42,64 +12,42 @@ void update_level_buttons(game_t *game) {
     for (int i = 0; i < buttons->capacity; i++) {
         if (buttons->buttons[i]) {
             if (buttons->buttons[i]->active && buttons->buttons[i]->visible) {
-                check_button_clicked(buttons->buttons[i], game->IO.mouse_pos.x, game->IO.mouse_pos.y);
+                //check_button_clicked(buttons->buttons[i], game->IO.mouse_pos.x, game->IO.mouse_pos.y);
             }
         }
 
     }
 }
 
-void update_menu_buttons(game_t *game_ptr) { //not done
-    if (!game_ptr->state.active_level->UI->buttons) {
-        return;
-    }
-    button_pool *buttons =game_ptr->state.active_level->UI->buttons;
-    for (int i = 0; i < buttons->capacity; i++) {
-        if (buttons->buttons[i]) {
-            if (buttons->buttons[i]->active && buttons->buttons[i]->visible) {
-                check_button_clicked(buttons->buttons[i], game_ptr->IO.mouse_pos.x, game_ptr->IO.mouse_pos.y);
+bool object_clicked(object *obj, game_t *game, bool future) {
+    if (!obj || !game || !obj->is_clickable || game->IO.cur_valid != TIME_TYPE_VALID) return false;
+    if (!obj->clicked) {
+        if (future) {
+            if (obj->transform.future_position.x <= game->IO.mouse_pos.x && obj->transform.future_position.x + obj->transform.future_size.x >= game->IO.mouse_pos.x &&
+            obj->transform.future_position.y < game->IO.mouse_pos.y && obj->transform.future_position.y + obj->transform.future_size.y >= game->IO.mouse_pos.y) {
+                return true;
+            }
+        } else {
+            if (obj->transform.position.x <= game->IO.mouse_pos.x && obj->transform.position.x + obj->transform.size.x >= game->IO.mouse_pos.x &&
+            obj->transform.position.y < game->IO.mouse_pos.y && obj->transform.position.y + obj->transform.size.y >= game->IO.mouse_pos.y) {
+                return true;
             }
         }
-
     }
-} 
-
-void update_level_UI_objects(game_t *game) {
-    update_text_pool(game->state.active_level->UI->strings, game);
+    return false;
 }
+void update_text_ui(text_ui *text, game_t *game) {
 
-
-void update_level_UI_objects(game_t *game) {
-    update_object_pool(game->state.active_level->UI->ui_objects, game);
 }
-
-void update_level_objects(game_t *game) {
-    update_object_pool(game->state.active_level->objects, game);
-}
-
-update_text_pool(text_ui_pool *pool, game_t *game) {
+void update_text_pool(text_ui_pool *pool, game_t *game) {
     int count;
     text_ui **ui_text;
-    bool debug = pool_get_objects(pool, ui_text, POOL_TYPES_TEXT_UI, &count);
+    bool debug = pool_get_objects(pool, (void ***)&ui_text, POOL_TYPES_TEXT_UI, &count);
     if (!debug) return;
     for (int i = 0; i < count; i++) {
         update_text_ui(ui_text[i], game);
     }
 }
-update_text_ui(text_ui *text, game_t *game) {
-
-}
-void update_object_pool(object_pool *pool, game_t *game) {
-    int count;
-    object **objects;
-    bool debug = pool_get_objects(pool, objects, POOL_TYPES_OBJECT, &count);
-    if (!debug) return;
-    for (int i = 0; i < count; i++) {
-        update_object(objects[i], game);
-    }
-}
-
-
 
 void update_object(object *obj, game_t *game) {
     Uint64 cur_time = game->state.time;
@@ -141,21 +89,78 @@ void update_object(object *obj, game_t *game) {
         }
     }
 }
+void update_object_pool(object_pool *pool, game_t *game) {
+    int count;
+    object **objects;
+    bool debug = pool_get_objects(pool, (void ***)&objects, POOL_TYPES_OBJECT, &count);
+    if (!debug) return;
+    for (int i = 0; i < count; i++) {
+        update_object(objects[i], game);
+    }
+}
 
-bool object_clicked(object *obj, game_t *game, bool future) {
-    if (!obj || !game || !obj->is_clickable || game->IO.cur_valid != TIME_TYPE_VALID) return false;
-    if (!obj->clicked) {
-        if (future) {
-            if (obj->transform.future_position.x <= game->IO.mouse_pos.x && obj->transform.future_position.x + obj->transform.future_size.x >= game->IO.mouse_pos.x &&
-            obj->transform.future_position.y < game->IO.mouse_pos.y && obj->transform.future_position.y + obj->transform.future_size.y >= game->IO.mouse_pos.y) {
-                return true;
-            }
-        } else {
-            if (obj->transform.position.x <= game->IO.mouse_pos.x && obj->transform.position.x + obj->transform.size.x >= game->IO.mouse_pos.x &&
-            obj->transform.position.y < game->IO.mouse_pos.y && obj->transform.position.y + obj->transform.size.y >= game->IO.mouse_pos.y) {
-                return true;
+void update_level_UI_objects(game_t *game) {
+    update_text_pool(game->state.active_level->UI->strings, game);
+    update_object_pool(game->state.active_level->UI->ui_objects, game);
+}
+
+void update_level_UI(game_t *game) {
+    if (game->state.active_level->UI->buttons) {
+        update_level_buttons(game);
+    }
+    if (game->state.active_level->UI->strings) {
+        //update_level_text(game);
+    }
+
+    if (game->state.active_level->UI->ui_objects) {
+       // update_level_UI_objects(game);
+    }
+
+}
+void update_menu_buttons(game_t *game_ptr) { //not done
+    if (!game_ptr->state.active_level->UI->buttons) {
+        return;
+    }
+    button_pool *buttons =game_ptr->state.active_level->UI->buttons;
+    for (int i = 0; i < buttons->capacity; i++) {
+        if (buttons->buttons[i]) {
+            if (buttons->buttons[i]->active && buttons->buttons[i]->visible) {
+               // check_button_clicked(buttons->buttons[i], game_ptr->IO.mouse_pos.x, game_ptr->IO.mouse_pos.y);
             }
         }
+
     }
-    return false;
+} 
+
+
+
+
+
+void update_level_objects(game_t *game) {
+    update_object_pool(game->state.active_level->objects, game);
 }
+
+
+
+
+
+void update_level(game_t *game) {
+    if (game->state.active_level->objects) {
+        update_level_objects(game);
+    }
+    if (game->state.active_level->UI) {
+        update_level_UI(game);
+    }
+
+
+}
+
+
+
+void game_update_active_level(game_t *game) {
+    if (game && game->state.active_level) {
+        update_level(game);
+    }
+}
+
+

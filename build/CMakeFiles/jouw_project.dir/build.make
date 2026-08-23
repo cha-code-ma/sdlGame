@@ -252,6 +252,7 @@ jouw_project: CMakeFiles/jouw_project.dir/src/sub_object.c.o
 jouw_project: CMakeFiles/jouw_project.dir/src/text_ui.c.o
 jouw_project: CMakeFiles/jouw_project.dir/src/update.c.o
 jouw_project: CMakeFiles/jouw_project.dir/build.make
+jouw_project: vendored/SDL3_image/libSDL3_image.so.0.5.0
 jouw_project: vendored/SDL/libSDL3.so.0.5.0
 jouw_project: /home/chakir/sdlGame/vendored/SDL/src/dynapi/SDL_dynapi.sym
 jouw_project: CMakeFiles/jouw_project.dir/link.txt

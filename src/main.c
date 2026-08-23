@@ -6,12 +6,14 @@
 #include "structs.h"
 #include <stdbool.h>
 #include "SDL3/SDL.h"
-#define SDL_MAIN_HANDLED
+#include "game.h"
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGTH 450
-int main(void) {
+int main(int argc, char *argv[]) {
+
 	SDL_SetHint(SDL_HINT_RENDER_DRIVER, "software");
-	SDL_SetHint(SDL_HINT_TOUCH_MOUSE_EVENTS, "0");
+	SDL_SetHint(SDL_HINT_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR, "0");
+
 	if (SDL_Init(SDL_INIT_VIDEO) != 0) {
 		const char* err = SDL_GetError();
 		printf("SDL_Init failed: %s\n", err);
@@ -24,7 +26,8 @@ int main(void) {
 		);
 		return 1;
 	}
-
+	SDL_SetHint(SDL_HINT_RENDER_DRIVER, "software");
+	SDL_SetHint(SDL_HINT_TOUCH_MOUSE_EVENTS, "0");
 
 
 

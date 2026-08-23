@@ -19,7 +19,7 @@
 void *pool_init(int capacity, pool_types type);
 bool pool_add(void *pool, void *insert_object, pool_types type);
 bool pool_remove_rand(void *pool, void *return_object, pool_types type);
-bool pool_get_objects(void *pool, void **return_objects , pool_types type, int *length);
+bool pool_get_objects(void *pool, void ***return_objects , pool_types type, int *length);
 bool values_in_list_int(int * list, int value, int length);
 
 void free_button_pool(button_pool *pool);

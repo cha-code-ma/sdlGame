@@ -2682,12 +2682,60 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/alsa/SDL_alsa_audio.c.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3-shared.dir/src/audio/alsa/SDL_alsa_audio.c.s"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -S /home/chakir/sdlGame/vendored/SDL/src/audio/alsa/SDL_alsa_audio.c -o CMakeFiles/SDL3-shared.dir/src/audio/alsa/SDL_alsa_audio.c.s
 
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/flags.make
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o: /home/chakir/sdlGame/vendored/SDL/src/audio/jack/SDL_jackaudio.c
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_205) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o"
+	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o -MF CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o.d -o CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o -c /home/chakir/sdlGame/vendored/SDL/src/audio/jack/SDL_jackaudio.c
+
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.i"
+	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -E /home/chakir/sdlGame/vendored/SDL/src/audio/jack/SDL_jackaudio.c > CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.i
+
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.s"
+	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -S /home/chakir/sdlGame/vendored/SDL/src/audio/jack/SDL_jackaudio.c -o CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.s
+
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/flags.make
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o: /home/chakir/sdlGame/vendored/SDL/src/audio/pipewire/SDL_pipewire.c
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_206) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o"
+	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o -MF CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o.d -o CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o -c /home/chakir/sdlGame/vendored/SDL/src/audio/pipewire/SDL_pipewire.c
+
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.i"
+	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -E /home/chakir/sdlGame/vendored/SDL/src/audio/pipewire/SDL_pipewire.c > CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.i
+
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.s"
+	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -S /home/chakir/sdlGame/vendored/SDL/src/audio/pipewire/SDL_pipewire.c -o CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.s
+
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/flags.make
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o: /home/chakir/sdlGame/vendored/SDL/src/camera/pipewire/SDL_camera_pipewire.c
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_207) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o"
+	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o -MF CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o.d -o CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o -c /home/chakir/sdlGame/vendored/SDL/src/camera/pipewire/SDL_camera_pipewire.c
+
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.i"
+	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -E /home/chakir/sdlGame/vendored/SDL/src/camera/pipewire/SDL_camera_pipewire.c > CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.i
+
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.s"
+	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -S /home/chakir/sdlGame/vendored/SDL/src/camera/pipewire/SDL_camera_pipewire.c -o CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.s
+
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/flags.make
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o: /home/chakir/sdlGame/vendored/SDL/src/audio/pulseaudio/SDL_pulseaudio.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_205) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_208) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o -MF CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o.d -o CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o -c /home/chakir/sdlGame/vendored/SDL/src/audio/pulseaudio/SDL_pulseaudio.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.i: cmake_force
@@ -2703,7 +2751,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.o: /hom
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_206) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_209) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.o -MF CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.o.d -o CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.o -c /home/chakir/sdlGame/vendored/SDL/src/audio/sndio/SDL_sndioaudio.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.i: cmake_force
@@ -2719,7 +2767,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11clipboard.c.o: /hom
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11clipboard.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11clipboard.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11clipboard.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_207) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11clipboard.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_210) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11clipboard.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11clipboard.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11clipboard.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11clipboard.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11clipboard.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11clipboard.c.i: cmake_force
@@ -2735,7 +2783,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11dyn.c.o: /home/chak
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11dyn.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11dyn.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11dyn.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_208) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11dyn.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_211) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11dyn.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11dyn.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11dyn.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11dyn.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11dyn.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11dyn.c.i: cmake_force
@@ -2751,7 +2799,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11events.c.o: /home/c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11events.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11events.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11events.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_209) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11events.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_212) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11events.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11events.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11events.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11events.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11events.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11events.c.i: cmake_force
@@ -2767,7 +2815,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11framebuffer.c.o: /h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11framebuffer.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11framebuffer.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11framebuffer.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_210) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11framebuffer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_213) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11framebuffer.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11framebuffer.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11framebuffer.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11framebuffer.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11framebuffer.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11framebuffer.c.i: cmake_force
@@ -2783,7 +2831,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11keyboard.c.o: /home
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11keyboard.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11keyboard.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11keyboard.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_211) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11keyboard.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_214) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11keyboard.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11keyboard.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11keyboard.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11keyboard.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11keyboard.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11keyboard.c.i: cmake_force
@@ -2799,7 +2847,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11messagebox.c.o: /ho
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11messagebox.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11messagebox.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11messagebox.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_212) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11messagebox.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_215) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11messagebox.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11messagebox.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11messagebox.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11messagebox.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11messagebox.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11messagebox.c.i: cmake_force
@@ -2815,7 +2863,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11modes.c.o: /home/ch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11modes.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11modes.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11modes.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_213) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11modes.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_216) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11modes.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11modes.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11modes.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11modes.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11modes.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11modes.c.i: cmake_force
@@ -2831,7 +2879,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11mouse.c.o: /home/ch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11mouse.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11mouse.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11mouse.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_214) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11mouse.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_217) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11mouse.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11mouse.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11mouse.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11mouse.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11mouse.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11mouse.c.i: cmake_force
@@ -2847,7 +2895,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.o: /home/c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_215) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_218) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11opengl.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.i: cmake_force
@@ -2863,7 +2911,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengles.c.o: /home
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengles.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengles.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengles.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_216) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengles.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_219) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengles.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengles.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengles.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengles.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11opengles.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengles.c.i: cmake_force
@@ -2879,7 +2927,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11pen.c.o: /home/chak
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11pen.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11pen.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11pen.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_217) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11pen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_220) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11pen.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11pen.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11pen.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11pen.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11pen.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11pen.c.i: cmake_force
@@ -2895,7 +2943,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11settings.c.o: /home
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11settings.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11settings.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11settings.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_218) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11settings.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_221) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11settings.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11settings.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11settings.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11settings.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11settings.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11settings.c.i: cmake_force
@@ -2911,7 +2959,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11shape.c.o: /home/ch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11shape.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11shape.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11shape.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_219) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11shape.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_222) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11shape.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11shape.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11shape.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11shape.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11shape.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11shape.c.i: cmake_force
@@ -2927,7 +2975,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11toolkit.c.o: /home/
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11toolkit.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11toolkit.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11toolkit.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_220) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11toolkit.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_223) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11toolkit.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11toolkit.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11toolkit.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11toolkit.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11toolkit.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11toolkit.c.i: cmake_force
@@ -2943,7 +2991,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11touch.c.o: /home/ch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11touch.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11touch.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11touch.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_221) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11touch.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_224) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11touch.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11touch.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11touch.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11touch.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11touch.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11touch.c.i: cmake_force
@@ -2959,7 +3007,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11video.c.o: /home/ch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11video.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11video.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11video.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_222) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11video.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_225) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11video.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11video.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11video.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11video.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11video.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11video.c.i: cmake_force
@@ -2975,7 +3023,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11vulkan.c.o: /home/c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11vulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11vulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11vulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_223) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11vulkan.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_226) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11vulkan.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11vulkan.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11vulkan.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11vulkan.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11vulkan.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11vulkan.c.i: cmake_force
@@ -2991,7 +3039,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11window.c.o: /home/c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11window.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11window.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11window.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_224) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11window.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_227) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11window.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11window.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11window.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11window.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11window.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11window.c.i: cmake_force
@@ -3007,7 +3055,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xfixes.c.o: /home/c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xfixes.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xfixes.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xfixes.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_225) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xfixes.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_228) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xfixes.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xfixes.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xfixes.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xfixes.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11xfixes.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xfixes.c.i: cmake_force
@@ -3023,7 +3071,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xinput2.c.o: /home/
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xinput2.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xinput2.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xinput2.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_226) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xinput2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_229) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xinput2.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xinput2.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xinput2.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xinput2.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11xinput2.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xinput2.c.i: cmake_force
@@ -3039,7 +3087,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xsync.c.o: /home/ch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xsync.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xsync.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xsync.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_227) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xsync.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_230) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xsync.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xsync.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xsync.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xsync.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11xsync.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xsync.c.i: cmake_force
@@ -3055,7 +3103,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xtest.c.o: /home/ch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xtest.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xtest.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xtest.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_228) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xtest.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_231) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xtest.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xtest.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xtest.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xtest.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/SDL_x11xtest.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11xtest.c.i: cmake_force
@@ -3071,7 +3119,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/edid-parse.c.o: /home/chak
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/edid-parse.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/edid-parse.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/edid-parse.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_229) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/edid-parse.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_232) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/edid-parse.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/edid-parse.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/edid-parse.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/edid-parse.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/edid-parse.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/edid-parse.c.i: cmake_force
@@ -3087,7 +3135,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/xsettings-client.c.o: /hom
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/xsettings-client.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/xsettings-client.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/xsettings-client.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_230) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/xsettings-client.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_233) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/xsettings-client.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/xsettings-client.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/x11/xsettings-client.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/x11/xsettings-client.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/x11/xsettings-client.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/xsettings-client.c.i: cmake_force
@@ -3103,7 +3151,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmdyn.c.o: /hom
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmdyn.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmdyn.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmdyn.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_231) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmdyn.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_234) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmdyn.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmdyn.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmdyn.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmdyn.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/kmsdrm/SDL_kmsdrmdyn.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmdyn.c.i: cmake_force
@@ -3119,7 +3167,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmevents.c.o: /
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmevents.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmevents.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmevents.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_232) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmevents.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_235) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmevents.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmevents.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmevents.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmevents.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/kmsdrm/SDL_kmsdrmevents.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmevents.c.i: cmake_force
@@ -3135,7 +3183,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmmouse.c.o: /h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmmouse.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmmouse.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmmouse.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_233) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmmouse.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_236) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmmouse.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmmouse.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmmouse.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmmouse.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/kmsdrm/SDL_kmsdrmmouse.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmmouse.c.i: cmake_force
@@ -3151,7 +3199,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmopengles.c.o:
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmopengles.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmopengles.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmopengles.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_234) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmopengles.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_237) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmopengles.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmopengles.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmopengles.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmopengles.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/kmsdrm/SDL_kmsdrmopengles.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmopengles.c.i: cmake_force
@@ -3167,7 +3215,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.o: /h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_235) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_238) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/kmsdrm/SDL_kmsdrmvideo.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.i: cmake_force
@@ -3183,7 +3231,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvulkan.c.o: /
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_236) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvulkan.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_239) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvulkan.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvulkan.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvulkan.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvulkan.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/kmsdrm/SDL_kmsdrmvulkan.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvulkan.c.i: cmake_force
@@ -3199,7 +3247,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandclipboard.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandclipboard.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandclipboard.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandclipboard.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_237) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandclipboard.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_240) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandclipboard.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandclipboard.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandclipboard.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandclipboard.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandclipboard.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandclipboard.c.i: cmake_force
@@ -3215,7 +3263,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandcolor.c.o: 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandcolor.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandcolor.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandcolor.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_238) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandcolor.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_241) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandcolor.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandcolor.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandcolor.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandcolor.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandcolor.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandcolor.c.i: cmake_force
@@ -3231,7 +3279,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddatamanager
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddatamanager.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddatamanager.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddatamanager.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_239) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddatamanager.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_242) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddatamanager.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddatamanager.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddatamanager.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddatamanager.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylanddatamanager.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddatamanager.c.i: cmake_force
@@ -3247,7 +3295,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddyn.c.o: /h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddyn.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddyn.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddyn.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_240) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddyn.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_243) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddyn.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddyn.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddyn.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddyn.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylanddyn.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddyn.c.i: cmake_force
@@ -3263,7 +3311,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o:
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_241) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_244) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandevents.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.i: cmake_force
@@ -3279,7 +3327,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandeventthread
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandeventthread.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandeventthread.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandeventthread.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_242) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandeventthread.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_245) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandeventthread.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandeventthread.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandeventthread.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandeventthread.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandeventthread.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandeventthread.c.i: cmake_force
@@ -3295,7 +3343,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandkeyboard.c.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandkeyboard.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandkeyboard.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandkeyboard.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_243) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandkeyboard.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_246) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandkeyboard.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandkeyboard.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandkeyboard.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandkeyboard.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandkeyboard.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandkeyboard.c.i: cmake_force
@@ -3311,7 +3359,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmessagebox.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmessagebox.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmessagebox.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmessagebox.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_244) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmessagebox.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_247) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmessagebox.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmessagebox.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmessagebox.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmessagebox.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandmessagebox.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmessagebox.c.i: cmake_force
@@ -3327,7 +3375,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmouse.c.o: 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmouse.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmouse.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmouse.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_245) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmouse.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_248) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmouse.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmouse.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmouse.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmouse.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandmouse.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandmouse.c.i: cmake_force
@@ -3343,7 +3391,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandopengles.c.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandopengles.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandopengles.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandopengles.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_246) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandopengles.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_249) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandopengles.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandopengles.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandopengles.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandopengles.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandopengles.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandopengles.c.i: cmake_force
@@ -3359,7 +3407,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandshmbuffer.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandshmbuffer.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandshmbuffer.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandshmbuffer.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_247) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandshmbuffer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_250) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandshmbuffer.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandshmbuffer.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandshmbuffer.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandshmbuffer.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandshmbuffer.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandshmbuffer.c.i: cmake_force
@@ -3375,7 +3423,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandutil.c.o: /
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandutil.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandutil.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandutil.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_248) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandutil.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_251) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandutil.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandutil.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandutil.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandutil.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandutil.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandutil.c.i: cmake_force
@@ -3391,7 +3439,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvideo.c.o: 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvideo.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvideo.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvideo.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_249) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvideo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_252) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvideo.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvideo.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvideo.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvideo.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandvideo.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvideo.c.i: cmake_force
@@ -3407,7 +3455,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o:
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_250) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_253) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandvulkan.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.i: cmake_force
@@ -3423,7 +3471,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandwindow.c.o:
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandwindow.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandwindow.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandwindow.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_251) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandwindow.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_254) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandwindow.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandwindow.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandwindow.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandwindow.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/wayland/SDL_waylandwindow.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandwindow.c.i: cmake_force
@@ -3439,7 +3487,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/alpha-modifi
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/alpha-modifier-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/alpha-modifier-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/alpha-modifier-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_252) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/alpha-modifier-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_255) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/alpha-modifier-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/alpha-modifier-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/alpha-modifier-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/alpha-modifier-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/alpha-modifier-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/alpha-modifier-v1-protocol.c.i: cmake_force
@@ -3455,7 +3503,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/color-manage
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/color-management-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/color-management-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/color-management-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_253) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/color-management-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_256) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/color-management-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/color-management-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/color-management-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/color-management-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/color-management-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/color-management-v1-protocol.c.i: cmake_force
@@ -3471,7 +3519,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/cursor-shape
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/cursor-shape-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/cursor-shape-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/cursor-shape-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_254) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/cursor-shape-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_257) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/cursor-shape-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/cursor-shape-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/cursor-shape-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/cursor-shape-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/cursor-shape-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/cursor-shape-v1-protocol.c.i: cmake_force
@@ -3487,7 +3535,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/fractional-s
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/fractional-scale-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/fractional-scale-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/fractional-scale-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_255) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/fractional-scale-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_258) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/fractional-scale-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/fractional-scale-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/fractional-scale-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/fractional-scale-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/fractional-scale-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/fractional-scale-v1-protocol.c.i: cmake_force
@@ -3503,7 +3551,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/frog-color-m
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/frog-color-management-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/frog-color-management-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/frog-color-management-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_256) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/frog-color-management-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_259) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/frog-color-management-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/frog-color-management-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/frog-color-management-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/frog-color-management-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/frog-color-management-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/frog-color-management-v1-protocol.c.i: cmake_force
@@ -3519,7 +3567,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/idle-inhibit
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/idle-inhibit-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/idle-inhibit-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/idle-inhibit-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_257) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/idle-inhibit-unstable-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_260) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/idle-inhibit-unstable-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/idle-inhibit-unstable-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/idle-inhibit-unstable-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/idle-inhibit-unstable-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/idle-inhibit-unstable-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/idle-inhibit-unstable-v1-protocol.c.i: cmake_force
@@ -3535,7 +3583,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/input-timest
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/input-timestamps-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/input-timestamps-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/input-timestamps-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_258) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/input-timestamps-unstable-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_261) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/input-timestamps-unstable-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/input-timestamps-unstable-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/input-timestamps-unstable-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/input-timestamps-unstable-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/input-timestamps-unstable-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/input-timestamps-unstable-v1-protocol.c.i: cmake_force
@@ -3551,7 +3599,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/keyboard-sho
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_259) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_262) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-protocol.c.i: cmake_force
@@ -3567,7 +3615,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-cons
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-constraints-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-constraints-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-constraints-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_260) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-constraints-unstable-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_263) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-constraints-unstable-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-constraints-unstable-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-constraints-unstable-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-constraints-unstable-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/pointer-constraints-unstable-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-constraints-unstable-v1-protocol.c.i: cmake_force
@@ -3583,7 +3631,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-gest
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-gestures-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-gestures-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-gestures-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_261) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-gestures-unstable-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_264) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-gestures-unstable-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-gestures-unstable-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-gestures-unstable-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-gestures-unstable-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/pointer-gestures-unstable-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-gestures-unstable-v1-protocol.c.i: cmake_force
@@ -3599,7 +3647,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-warp
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-warp-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-warp-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-warp-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_262) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-warp-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_265) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-warp-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-warp-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-warp-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-warp-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/pointer-warp-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/pointer-warp-v1-protocol.c.i: cmake_force
@@ -3615,7 +3663,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/primary-sele
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/primary-selection-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/primary-selection-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/primary-selection-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_263) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/primary-selection-unstable-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_266) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/primary-selection-unstable-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/primary-selection-unstable-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/primary-selection-unstable-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/primary-selection-unstable-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/primary-selection-unstable-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/primary-selection-unstable-v1-protocol.c.i: cmake_force
@@ -3631,7 +3679,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/relative-poi
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/relative-pointer-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/relative-pointer-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/relative-pointer-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_264) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/relative-pointer-unstable-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_267) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/relative-pointer-unstable-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/relative-pointer-unstable-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/relative-pointer-unstable-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/relative-pointer-unstable-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/relative-pointer-unstable-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/relative-pointer-unstable-v1-protocol.c.i: cmake_force
@@ -3647,7 +3695,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/single-pixel
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/single-pixel-buffer-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/single-pixel-buffer-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/single-pixel-buffer-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_265) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/single-pixel-buffer-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_268) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/single-pixel-buffer-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/single-pixel-buffer-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/single-pixel-buffer-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/single-pixel-buffer-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/single-pixel-buffer-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/single-pixel-buffer-v1-protocol.c.i: cmake_force
@@ -3663,7 +3711,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/tablet-v2-pr
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/tablet-v2-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/tablet-v2-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/tablet-v2-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_266) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/tablet-v2-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_269) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/tablet-v2-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/tablet-v2-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/tablet-v2-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/tablet-v2-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/tablet-v2-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/tablet-v2-protocol.c.i: cmake_force
@@ -3679,7 +3727,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/text-input-u
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/text-input-unstable-v3-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/text-input-unstable-v3-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/text-input-unstable-v3-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_267) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/text-input-unstable-v3-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_270) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/text-input-unstable-v3-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/text-input-unstable-v3-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/text-input-unstable-v3-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/text-input-unstable-v3-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/text-input-unstable-v3-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/text-input-unstable-v3-protocol.c.i: cmake_force
@@ -3695,7 +3743,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/viewporter-p
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/viewporter-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/viewporter-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/viewporter-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_268) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/viewporter-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_271) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/viewporter-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/viewporter-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/viewporter-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/viewporter-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/viewporter-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/viewporter-protocol.c.i: cmake_force
@@ -3711,7 +3759,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/wayland-prot
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/wayland-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/wayland-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/wayland-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_269) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/wayland-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_272) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/wayland-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/wayland-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/wayland-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/wayland-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/wayland-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/wayland-protocol.c.i: cmake_force
@@ -3727,7 +3775,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-activati
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-activation-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-activation-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-activation-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_270) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-activation-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_273) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-activation-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-activation-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-activation-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-activation-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/xdg-activation-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-activation-v1-protocol.c.i: cmake_force
@@ -3743,7 +3791,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-decorati
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-decoration-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-decoration-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-decoration-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_271) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-decoration-unstable-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_274) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-decoration-unstable-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-decoration-unstable-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-decoration-unstable-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-decoration-unstable-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/xdg-decoration-unstable-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-decoration-unstable-v1-protocol.c.i: cmake_force
@@ -3759,7 +3807,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-dialog-v
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-dialog-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-dialog-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-dialog-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_272) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-dialog-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_275) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-dialog-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-dialog-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-dialog-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-dialog-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/xdg-dialog-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-dialog-v1-protocol.c.i: cmake_force
@@ -3775,7 +3823,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-foreign-
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-foreign-unstable-v2-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-foreign-unstable-v2-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-foreign-unstable-v2-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_273) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-foreign-unstable-v2-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_276) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-foreign-unstable-v2-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-foreign-unstable-v2-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-foreign-unstable-v2-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-foreign-unstable-v2-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/xdg-foreign-unstable-v2-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-foreign-unstable-v2-protocol.c.i: cmake_force
@@ -3791,7 +3839,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-output-u
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_274) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_277) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c.i: cmake_force
@@ -3807,7 +3855,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-session-
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-session-management-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-session-management-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-session-management-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_275) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-session-management-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_278) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-session-management-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-session-management-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-session-management-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-session-management-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/xdg-session-management-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-session-management-v1-protocol.c.i: cmake_force
@@ -3823,7 +3871,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-shell-pr
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-shell-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-shell-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-shell-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_276) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-shell-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_279) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-shell-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-shell-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-shell-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-shell-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/xdg-shell-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-shell-protocol.c.i: cmake_force
@@ -3839,7 +3887,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-icon-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-icon-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-icon-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_277) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-icon-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_280) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-icon-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-icon-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-icon-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-icon-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/xdg-toplevel-icon-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-icon-v1-protocol.c.i: cmake_force
@@ -3855,7 +3903,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-tag-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-tag-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-tag-v1-protocol.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_278) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-tag-v1-protocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_281) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-tag-v1-protocol.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-tag-v1-protocol.c.o -MF CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-tag-v1-protocol.c.o.d -o CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-tag-v1-protocol.c.o -c /home/chakir/sdlGame/build/vendored/SDL/wayland-generated-protocols/xdg-toplevel-tag-v1-protocol.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/xdg-toplevel-tag-v1-protocol.c.i: cmake_force
@@ -3871,7 +3919,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_dbustray.c.o: /home/ch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_dbustray.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_dbustray.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_dbustray.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_279) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_dbustray.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_282) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_dbustray.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_dbustray.c.o -MF CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_dbustray.c.o.d -o CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_dbustray.c.o -c /home/chakir/sdlGame/vendored/SDL/src/tray/unix/SDL_dbustray.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_dbustray.c.i: cmake_force
@@ -3887,7 +3935,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_tray.c.o: /home/chakir
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_tray.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_tray.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_tray.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_280) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_tray.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_283) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_tray.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_tray.c.o -MF CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_tray.c.o.d -o CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_tray.c.o -c /home/chakir/sdlGame/vendored/SDL/src/tray/unix/SDL_tray.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/unix/SDL_tray.c.i: cmake_force
@@ -3903,7 +3951,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_appid.c.o: /home/chaki
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_appid.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_appid.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_appid.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_281) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_appid.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_284) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_appid.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_appid.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_appid.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_appid.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/unix/SDL_appid.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_appid.c.i: cmake_force
@@ -3919,7 +3967,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_fribidi.c.o: /home/cha
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_fribidi.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_fribidi.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_fribidi.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_282) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_fribidi.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_285) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_fribidi.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_fribidi.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_fribidi.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_fribidi.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/unix/SDL_fribidi.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_fribidi.c.i: cmake_force
@@ -3935,7 +3983,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_libthai.c.o: /home/cha
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_libthai.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_libthai.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_libthai.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_283) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_libthai.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_286) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_libthai.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_libthai.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_libthai.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_libthai.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/unix/SDL_libthai.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_libthai.c.i: cmake_force
@@ -3951,7 +3999,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_poll.c.o: /home/chakir
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_poll.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_poll.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_poll.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_284) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_poll.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_287) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_poll.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_poll.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_poll.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_poll.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/unix/SDL_poll.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_poll.c.i: cmake_force
@@ -3967,7 +4015,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/v4l2/SDL_camera_v4l2.c.o: /ho
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/v4l2/SDL_camera_v4l2.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/v4l2/SDL_camera_v4l2.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/v4l2/SDL_camera_v4l2.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_285) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/v4l2/SDL_camera_v4l2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_288) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/v4l2/SDL_camera_v4l2.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/v4l2/SDL_camera_v4l2.c.o -MF CMakeFiles/SDL3-shared.dir/src/camera/v4l2/SDL_camera_v4l2.c.o.d -o CMakeFiles/SDL3-shared.dir/src/camera/v4l2/SDL_camera_v4l2.c.o -c /home/chakir/sdlGame/vendored/SDL/src/camera/v4l2/SDL_camera_v4l2.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/v4l2/SDL_camera_v4l2.c.i: cmake_force
@@ -3983,7 +4031,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/linux/SDL_syshaptic.c.o: /hom
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/linux/SDL_syshaptic.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/linux/SDL_syshaptic.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/linux/SDL_syshaptic.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_286) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/linux/SDL_syshaptic.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_289) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/linux/SDL_syshaptic.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/linux/SDL_syshaptic.c.o -MF CMakeFiles/SDL3-shared.dir/src/haptic/linux/SDL_syshaptic.c.o.d -o CMakeFiles/SDL3-shared.dir/src/haptic/linux/SDL_syshaptic.c.o -c /home/chakir/sdlGame/vendored/SDL/src/haptic/linux/SDL_syshaptic.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/linux/SDL_syshaptic.c.i: cmake_force
@@ -3999,7 +4047,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_dbus.c.o: /home/chaki
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_dbus.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_dbus.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_dbus.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_287) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_dbus.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_290) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_dbus.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_dbus.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_dbus.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_dbus.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_dbus.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_dbus.c.i: cmake_force
@@ -4015,7 +4063,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_system_theme.c.o: /ho
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_system_theme.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_system_theme.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_system_theme.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_288) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_system_theme.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_291) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_system_theme.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_system_theme.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_system_theme.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_system_theme.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_system_theme.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_system_theme.c.i: cmake_force
@@ -4031,7 +4079,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_progressbar.c.o: /hom
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_progressbar.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_progressbar.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_progressbar.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_289) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_progressbar.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_292) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_progressbar.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_progressbar.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_progressbar.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_progressbar.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_progressbar.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_progressbar.c.i: cmake_force
@@ -4047,7 +4095,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/notification/unix/SDL_dbusnotificati
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/notification/unix/SDL_dbusnotification.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/notification/unix/SDL_dbusnotification.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/notification/unix/SDL_dbusnotification.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_290) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/notification/unix/SDL_dbusnotification.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_293) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/notification/unix/SDL_dbusnotification.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/notification/unix/SDL_dbusnotification.c.o -MF CMakeFiles/SDL3-shared.dir/src/notification/unix/SDL_dbusnotification.c.o.d -o CMakeFiles/SDL3-shared.dir/src/notification/unix/SDL_dbusnotification.c.o -c /home/chakir/sdlGame/vendored/SDL/src/notification/unix/SDL_dbusnotification.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/notification/unix/SDL_dbusnotification.c.i: cmake_force
@@ -4063,7 +4111,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ime.c.o: /home/chakir
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ime.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ime.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ime.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_291) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ime.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_294) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ime.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ime.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ime.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ime.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_ime.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ime.c.i: cmake_force
@@ -4079,7 +4127,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ibus.c.o: /home/chaki
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ibus.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ibus.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ibus.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_292) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ibus.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_295) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ibus.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ibus.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ibus.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ibus.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_ibus.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ibus.c.i: cmake_force
@@ -4095,7 +4143,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_fcitx.c.o: /home/chak
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_fcitx.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_fcitx.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_fcitx.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_293) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_fcitx.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_296) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_fcitx.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_fcitx.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_fcitx.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_fcitx.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_fcitx.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_fcitx.c.i: cmake_force
@@ -4111,7 +4159,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_udev.c.o: /home/chaki
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_udev.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_udev.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_udev.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_294) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_udev.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_297) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_udev.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_udev.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_udev.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_udev.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_udev.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_udev.c.i: cmake_force
@@ -4127,7 +4175,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.o: /home/chak
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_295) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_298) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_evdev.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.i: cmake_force
@@ -4143,7 +4191,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.o: /home/
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_296) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_299) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_evdev_kbd.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.i: cmake_force
@@ -4154,12 +4202,28 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.s: cmake_
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.s"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -S /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_evdev_kbd.c -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.s
 
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/flags.make
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o: /home/chakir/sdlGame/vendored/SDL/src/io/io_uring/SDL_asyncio_liburing.c
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_300) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o"
+	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o -MF CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o.d -o CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o -c /home/chakir/sdlGame/vendored/SDL/src/io/io_uring/SDL_asyncio_liburing.c
+
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.i"
+	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -E /home/chakir/sdlGame/vendored/SDL/src/io/io_uring/SDL_asyncio_liburing.c > CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.i
+
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.s"
+	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -S /home/chakir/sdlGame/vendored/SDL/src/io/io_uring/SDL_asyncio_liburing.c -o CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.s
+
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/flags.make
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o: /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_evdev_capabilities.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_297) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_301) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_evdev_capabilities.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.i: cmake_force
@@ -4175,7 +4239,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o: /home
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_298) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_302) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_threadprio.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.i: cmake_force
@@ -4191,7 +4255,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ubuntu_touch.c.o: /ho
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ubuntu_touch.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ubuntu_touch.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ubuntu_touch.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_299) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ubuntu_touch.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_303) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ubuntu_touch.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ubuntu_touch.c.o -MF CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ubuntu_touch.c.o.d -o CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ubuntu_touch.c.o -c /home/chakir/sdlGame/vendored/SDL/src/core/linux/SDL_ubuntu_touch.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ubuntu_touch.c.i: cmake_force
@@ -4207,7 +4271,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_8bitdo.c.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_8bitdo.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_8bitdo.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_8bitdo.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_300) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_8bitdo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_304) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_8bitdo.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_8bitdo.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_8bitdo.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_8bitdo.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_8bitdo.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_8bitdo.c.i: cmake_force
@@ -4223,7 +4287,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_combined.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_combined.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_combined.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_combined.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_301) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_combined.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_305) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_combined.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_combined.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_combined.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_combined.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_combined.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_combined.c.i: cmake_force
@@ -4239,7 +4303,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_flydigi.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_flydigi.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_flydigi.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_flydigi.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_302) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_flydigi.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_306) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_flydigi.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_flydigi.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_flydigi.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_flydigi.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_flydigi.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_flydigi.c.i: cmake_force
@@ -4255,7 +4319,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamecube.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamecube.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamecube.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamecube.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_303) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamecube.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_307) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamecube.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamecube.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamecube.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamecube.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_gamecube.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamecube.c.i: cmake_force
@@ -4271,7 +4335,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamesir.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamesir.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamesir.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamesir.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_304) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamesir.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_308) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamesir.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamesir.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamesir.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamesir.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_gamesir.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gamesir.c.i: cmake_force
@@ -4287,7 +4351,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gip.c.o: 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gip.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gip.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gip.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_305) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gip.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_309) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gip.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gip.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gip.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gip.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_gip.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_gip.c.i: cmake_force
@@ -4303,7 +4367,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_lg4ff.c.o
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_lg4ff.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_lg4ff.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_lg4ff.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_306) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_lg4ff.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_310) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_lg4ff.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_lg4ff.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_lg4ff.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_lg4ff.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_lg4ff.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_lg4ff.c.i: cmake_force
@@ -4319,7 +4383,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_luna.c.o:
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_luna.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_luna.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_luna.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_307) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_luna.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_311) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_luna.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_luna.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_luna.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_luna.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_luna.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_luna.c.i: cmake_force
@@ -4335,7 +4399,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps3.c.o: 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps3.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps3.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps3.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_308) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_312) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps3.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps3.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps3.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps3.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_ps3.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps3.c.i: cmake_force
@@ -4351,7 +4415,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps4.c.o: 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps4.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps4.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps4.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_309) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps4.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_313) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps4.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps4.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps4.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps4.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_ps4.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps4.c.i: cmake_force
@@ -4367,7 +4431,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps5.c.o: 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps5.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps5.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps5.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_310) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps5.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_314) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps5.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps5.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps5.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps5.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_ps5.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_ps5.c.i: cmake_force
@@ -4383,7 +4447,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_rumble.c.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_rumble.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_rumble.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_rumble.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_311) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_rumble.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_315) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_rumble.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_rumble.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_rumble.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_rumble.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_rumble.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_rumble.c.i: cmake_force
@@ -4399,7 +4463,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_shield.c.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_shield.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_shield.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_shield.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_312) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_shield.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_316) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_shield.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_shield.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_shield.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_shield.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_shield.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_shield.c.i: cmake_force
@@ -4415,7 +4479,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_sinput.c.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_sinput.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_sinput.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_sinput.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_313) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_sinput.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_317) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_sinput.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_sinput.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_sinput.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_sinput.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_sinput.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_sinput.c.i: cmake_force
@@ -4431,7 +4495,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_stadia.c.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_stadia.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_stadia.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_stadia.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_314) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_stadia.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_318) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_stadia.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_stadia.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_stadia.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_stadia.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_stadia.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_stadia.c.i: cmake_force
@@ -4447,7 +4511,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam.c.o
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_315) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_319) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_steam.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam.c.i: cmake_force
@@ -4463,7 +4527,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_hor
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_hori.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_hori.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_hori.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_316) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_hori.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_320) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_hori.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_hori.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_hori.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_hori.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_steam_hori.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_hori.c.i: cmake_force
@@ -4479,7 +4543,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_tri
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_triton.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_triton.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_triton.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_317) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_triton.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_321) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_triton.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_triton.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_triton.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_triton.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_steam_triton.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steam_triton.c.i: cmake_force
@@ -4495,7 +4559,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steamdeck
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steamdeck.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steamdeck.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steamdeck.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_318) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steamdeck.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_322) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steamdeck.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steamdeck.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steamdeck.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steamdeck.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_steamdeck.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_steamdeck.c.i: cmake_force
@@ -4511,7 +4575,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch.c.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_319) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_323) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_switch.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch.c.i: cmake_force
@@ -4527,7 +4591,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch2.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch2.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch2.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch2.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_320) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_324) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch2.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch2.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch2.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch2.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_switch2.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch2.c.i: cmake_force
@@ -4543,7 +4607,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_wii.c.o: 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_wii.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_wii.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_wii.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_321) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_wii.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_325) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_wii.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_wii.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_wii.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_wii.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_wii.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_wii.c.i: cmake_force
@@ -4559,7 +4623,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_322) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_326) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_xbox360.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360.c.i: cmake_force
@@ -4575,7 +4639,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360w.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360w.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360w.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360w.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_323) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360w.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_327) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360w.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360w.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360w.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360w.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_xbox360w.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xbox360w.c.i: cmake_force
@@ -4591,7 +4655,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xboxone.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xboxone.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xboxone.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xboxone.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_324) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xboxone.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_328) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xboxone.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xboxone.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xboxone.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xboxone.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_xboxone.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_xboxone.c.i: cmake_force
@@ -4607,7 +4671,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_zuiki.c.o
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_zuiki.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_zuiki.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_zuiki.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_325) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_zuiki.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_329) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_zuiki.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_zuiki.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_zuiki.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_zuiki.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapi_zuiki.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_zuiki.c.i: cmake_force
@@ -4623,7 +4687,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapijoystick.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapijoystick.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapijoystick.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapijoystick.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_326) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapijoystick.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_330) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapijoystick.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapijoystick.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapijoystick.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapijoystick.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_hidapijoystick.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapijoystick.c.i: cmake_force
@@ -4639,7 +4703,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_report_descripto
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_report_descriptor.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_report_descriptor.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_report_descriptor.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_327) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_report_descriptor.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_331) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_report_descriptor.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_report_descriptor.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_report_descriptor.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_report_descriptor.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/hidapi/SDL_report_descriptor.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_report_descriptor.c.i: cmake_force
@@ -4655,7 +4719,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic.c.o: 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_328) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_332) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic.c.o -MF CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic.c.o.d -o CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic.c.o -c /home/chakir/sdlGame/vendored/SDL/src/haptic/hidapi/SDL_hidapihaptic.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic.c.i: cmake_force
@@ -4671,7 +4735,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic_lg4ff
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic_lg4ff.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic_lg4ff.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic_lg4ff.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_329) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic_lg4ff.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_333) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic_lg4ff.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic_lg4ff.c.o -MF CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic_lg4ff.c.o.d -o CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic_lg4ff.c.o -c /home/chakir/sdlGame/vendored/SDL/src/haptic/hidapi/SDL_hidapihaptic_lg4ff.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/haptic/hidapi/SDL_hidapihaptic_lg4ff.c.i: cmake_force
@@ -4687,7 +4751,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/linux/SDL_sysjoystick.c.o: 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/linux/SDL_sysjoystick.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/linux/SDL_sysjoystick.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/linux/SDL_sysjoystick.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_330) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/linux/SDL_sysjoystick.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_334) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/linux/SDL_sysjoystick.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/linux/SDL_sysjoystick.c.o -MF CMakeFiles/SDL3-shared.dir/src/joystick/linux/SDL_sysjoystick.c.o.d -o CMakeFiles/SDL3-shared.dir/src/joystick/linux/SDL_sysjoystick.c.o -c /home/chakir/sdlGame/vendored/SDL/src/joystick/linux/SDL_sysjoystick.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/joystick/linux/SDL_sysjoystick.c.i: cmake_force
@@ -4703,7 +4767,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systhread.c.o: /h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systhread.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systhread.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systhread.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_331) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systhread.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_335) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systhread.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systhread.c.o -MF CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systhread.c.o.d -o CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systhread.c.o -c /home/chakir/sdlGame/vendored/SDL/src/thread/pthread/SDL_systhread.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systhread.c.i: cmake_force
@@ -4719,7 +4783,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysmutex.c.o: /ho
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysmutex.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysmutex.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysmutex.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_332) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysmutex.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_336) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysmutex.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysmutex.c.o -MF CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysmutex.c.o.d -o CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysmutex.c.o -c /home/chakir/sdlGame/vendored/SDL/src/thread/pthread/SDL_sysmutex.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysmutex.c.i: cmake_force
@@ -4735,7 +4799,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syscond.c.o: /hom
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syscond.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syscond.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syscond.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_333) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syscond.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_337) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syscond.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syscond.c.o -MF CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syscond.c.o.d -o CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syscond.c.o -c /home/chakir/sdlGame/vendored/SDL/src/thread/pthread/SDL_syscond.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syscond.c.i: cmake_force
@@ -4751,7 +4815,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysrwlock.c.o: /h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysrwlock.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysrwlock.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysrwlock.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_334) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysrwlock.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_338) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysrwlock.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysrwlock.c.o -MF CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysrwlock.c.o.d -o CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysrwlock.c.o -c /home/chakir/sdlGame/vendored/SDL/src/thread/pthread/SDL_sysrwlock.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysrwlock.c.i: cmake_force
@@ -4767,7 +4831,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systls.c.o: /home
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systls.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systls.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systls.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_335) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systls.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_339) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systls.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systls.c.o -MF CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systls.c.o.d -o CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systls.c.o -c /home/chakir/sdlGame/vendored/SDL/src/thread/pthread/SDL_systls.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_systls.c.i: cmake_force
@@ -4783,7 +4847,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syssem.c.o: /home
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syssem.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syssem.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syssem.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_336) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syssem.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_340) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syssem.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syssem.c.o -MF CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syssem.c.o.d -o CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syssem.c.o -c /home/chakir/sdlGame/vendored/SDL/src/thread/pthread/SDL_syssem.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_syssem.c.i: cmake_force
@@ -4799,7 +4863,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/misc/unix/SDL_sysurl.c.o: /home/chak
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/misc/unix/SDL_sysurl.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/misc/unix/SDL_sysurl.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/misc/unix/SDL_sysurl.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_337) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/misc/unix/SDL_sysurl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_341) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/misc/unix/SDL_sysurl.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/misc/unix/SDL_sysurl.c.o -MF CMakeFiles/SDL3-shared.dir/src/misc/unix/SDL_sysurl.c.o.d -o CMakeFiles/SDL3-shared.dir/src/misc/unix/SDL_sysurl.c.o -c /home/chakir/sdlGame/vendored/SDL/src/misc/unix/SDL_sysurl.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/misc/unix/SDL_sysurl.c.i: cmake_force
@@ -4815,7 +4879,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/power/linux/SDL_syspower.c.o: /home/
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/power/linux/SDL_syspower.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/power/linux/SDL_syspower.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/power/linux/SDL_syspower.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_338) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/power/linux/SDL_syspower.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_342) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/power/linux/SDL_syspower.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/power/linux/SDL_syspower.c.o -MF CMakeFiles/SDL3-shared.dir/src/power/linux/SDL_syspower.c.o.d -o CMakeFiles/SDL3-shared.dir/src/power/linux/SDL_syspower.c.o -c /home/chakir/sdlGame/vendored/SDL/src/power/linux/SDL_syspower.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/power/linux/SDL_syspower.c.i: cmake_force
@@ -4831,7 +4895,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/locale/unix/SDL_syslocale.c.o: /home
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/locale/unix/SDL_syslocale.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/locale/unix/SDL_syslocale.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/locale/unix/SDL_syslocale.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_339) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/locale/unix/SDL_syslocale.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_343) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/locale/unix/SDL_syslocale.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/locale/unix/SDL_syslocale.c.o -MF CMakeFiles/SDL3-shared.dir/src/locale/unix/SDL_syslocale.c.o.d -o CMakeFiles/SDL3-shared.dir/src/locale/unix/SDL_syslocale.c.o -c /home/chakir/sdlGame/vendored/SDL/src/locale/unix/SDL_syslocale.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/locale/unix/SDL_syslocale.c.i: cmake_force
@@ -4847,7 +4911,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/unix/SDL_sysfilesystem.c.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/unix/SDL_sysfilesystem.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/unix/SDL_sysfilesystem.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/unix/SDL_sysfilesystem.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_340) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/unix/SDL_sysfilesystem.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_344) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/unix/SDL_sysfilesystem.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/unix/SDL_sysfilesystem.c.o -MF CMakeFiles/SDL3-shared.dir/src/filesystem/unix/SDL_sysfilesystem.c.o.d -o CMakeFiles/SDL3-shared.dir/src/filesystem/unix/SDL_sysfilesystem.c.o -c /home/chakir/sdlGame/vendored/SDL/src/filesystem/unix/SDL_sysfilesystem.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/unix/SDL_sysfilesystem.c.i: cmake_force
@@ -4863,7 +4927,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/generic/SDL_genericstorage.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/generic/SDL_genericstorage.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/generic/SDL_genericstorage.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/generic/SDL_genericstorage.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_341) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/generic/SDL_genericstorage.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_345) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/generic/SDL_genericstorage.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/generic/SDL_genericstorage.c.o -MF CMakeFiles/SDL3-shared.dir/src/storage/generic/SDL_genericstorage.c.o.d -o CMakeFiles/SDL3-shared.dir/src/storage/generic/SDL_genericstorage.c.o -c /home/chakir/sdlGame/vendored/SDL/src/storage/generic/SDL_genericstorage.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/generic/SDL_genericstorage.c.i: cmake_force
@@ -4879,7 +4943,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/steam/SDL_steamstorage.c.o: 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/steam/SDL_steamstorage.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/steam/SDL_steamstorage.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/steam/SDL_steamstorage.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_342) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/steam/SDL_steamstorage.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_346) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/steam/SDL_steamstorage.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/steam/SDL_steamstorage.c.o -MF CMakeFiles/SDL3-shared.dir/src/storage/steam/SDL_steamstorage.c.o.d -o CMakeFiles/SDL3-shared.dir/src/storage/steam/SDL_steamstorage.c.o -c /home/chakir/sdlGame/vendored/SDL/src/storage/steam/SDL_steamstorage.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/storage/steam/SDL_steamstorage.c.i: cmake_force
@@ -4895,7 +4959,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/posix/SDL_sysfsops.c.o: /
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/posix/SDL_sysfsops.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/posix/SDL_sysfsops.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/posix/SDL_sysfsops.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_343) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/posix/SDL_sysfsops.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_347) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/posix/SDL_sysfsops.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/posix/SDL_sysfsops.c.o -MF CMakeFiles/SDL3-shared.dir/src/filesystem/posix/SDL_sysfsops.c.o.d -o CMakeFiles/SDL3-shared.dir/src/filesystem/posix/SDL_sysfsops.c.o -c /home/chakir/sdlGame/vendored/SDL/src/filesystem/posix/SDL_sysfsops.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/filesystem/posix/SDL_sysfsops.c.i: cmake_force
@@ -4911,7 +4975,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/time/unix/SDL_systime.c.o: /home/cha
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/time/unix/SDL_systime.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/time/unix/SDL_systime.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/time/unix/SDL_systime.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_344) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/time/unix/SDL_systime.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_348) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/time/unix/SDL_systime.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/time/unix/SDL_systime.c.o -MF CMakeFiles/SDL3-shared.dir/src/time/unix/SDL_systime.c.o.d -o CMakeFiles/SDL3-shared.dir/src/time/unix/SDL_systime.c.o -c /home/chakir/sdlGame/vendored/SDL/src/time/unix/SDL_systime.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/time/unix/SDL_systime.c.i: cmake_force
@@ -4927,7 +4991,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/timer/unix/SDL_systimer.c.o: /home/c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/timer/unix/SDL_systimer.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/timer/unix/SDL_systimer.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/timer/unix/SDL_systimer.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_345) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/timer/unix/SDL_systimer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_349) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/timer/unix/SDL_systimer.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/timer/unix/SDL_systimer.c.o -MF CMakeFiles/SDL3-shared.dir/src/timer/unix/SDL_systimer.c.o.d -o CMakeFiles/SDL3-shared.dir/src/timer/unix/SDL_systimer.c.o -c /home/chakir/sdlGame/vendored/SDL/src/timer/unix/SDL_systimer.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/timer/unix/SDL_systimer.c.i: cmake_force
@@ -4943,7 +5007,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog.c.o: /home/chakir/
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_346) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_350) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog.c.o -MF CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog.c.o.d -o CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog.c.o -c /home/chakir/sdlGame/vendored/SDL/src/dialog/SDL_dialog.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog.c.i: cmake_force
@@ -4959,7 +5023,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog_utils.c.o: /home/c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog_utils.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog_utils.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog_utils.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_347) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog_utils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_351) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog_utils.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog_utils.c.o -MF CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog_utils.c.o.d -o CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog_utils.c.o -c /home/chakir/sdlGame/vendored/SDL/src/dialog/SDL_dialog_utils.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/SDL_dialog_utils.c.i: cmake_force
@@ -4975,7 +5039,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_unixdialog.c.o: /hom
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_unixdialog.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_unixdialog.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_unixdialog.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_348) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_unixdialog.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_352) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_unixdialog.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_unixdialog.c.o -MF CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_unixdialog.c.o.d -o CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_unixdialog.c.o -c /home/chakir/sdlGame/vendored/SDL/src/dialog/unix/SDL_unixdialog.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_unixdialog.c.i: cmake_force
@@ -4991,7 +5055,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_portaldialog.c.o: /h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_portaldialog.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_portaldialog.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_portaldialog.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_349) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_portaldialog.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_353) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_portaldialog.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_portaldialog.c.o -MF CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_portaldialog.c.o.d -o CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_portaldialog.c.o -c /home/chakir/sdlGame/vendored/SDL/src/dialog/unix/SDL_portaldialog.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_portaldialog.c.i: cmake_force
@@ -5007,7 +5071,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitydialog.c.o: /h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitydialog.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitydialog.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitydialog.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_350) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitydialog.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_354) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitydialog.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitydialog.c.o -MF CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitydialog.c.o.d -o CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitydialog.c.o -c /home/chakir/sdlGame/vendored/SDL/src/dialog/unix/SDL_zenitydialog.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitydialog.c.i: cmake_force
@@ -5023,7 +5087,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitymessagebox.c.o
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitymessagebox.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitymessagebox.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitymessagebox.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_351) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitymessagebox.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_355) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitymessagebox.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitymessagebox.c.o -MF CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitymessagebox.c.o.d -o CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitymessagebox.c.o -c /home/chakir/sdlGame/vendored/SDL/src/dialog/unix/SDL_zenitymessagebox.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/dialog/unix/SDL_zenitymessagebox.c.i: cmake_force
@@ -5039,7 +5103,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/SDL_process.c.o: /home/chaki
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/SDL_process.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/SDL_process.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/SDL_process.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_352) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/SDL_process.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_356) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/SDL_process.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/SDL_process.c.o -MF CMakeFiles/SDL3-shared.dir/src/process/SDL_process.c.o.d -o CMakeFiles/SDL3-shared.dir/src/process/SDL_process.c.o -c /home/chakir/sdlGame/vendored/SDL/src/process/SDL_process.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/SDL_process.c.i: cmake_force
@@ -5055,7 +5119,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/posix/SDL_posixprocess.c.o: 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/posix/SDL_posixprocess.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/posix/SDL_posixprocess.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/posix/SDL_posixprocess.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_353) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/posix/SDL_posixprocess.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_357) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/posix/SDL_posixprocess.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/posix/SDL_posixprocess.c.o -MF CMakeFiles/SDL3-shared.dir/src/process/posix/SDL_posixprocess.c.o.d -o CMakeFiles/SDL3-shared.dir/src/process/posix/SDL_posixprocess.c.o -c /home/chakir/sdlGame/vendored/SDL/src/process/posix/SDL_posixprocess.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/process/posix/SDL_posixprocess.c.i: cmake_force
@@ -5071,7 +5135,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenevents.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenevents.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenevents.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenevents.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_354) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenevents.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_358) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenevents.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenevents.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenevents.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenevents.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/offscreen/SDL_offscreenevents.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenevents.c.i: cmake_force
@@ -5087,7 +5151,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenframebu
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenframebuffer.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenframebuffer.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenframebuffer.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_355) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenframebuffer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_359) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenframebuffer.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenframebuffer.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenframebuffer.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenframebuffer.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/offscreen/SDL_offscreenframebuffer.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenframebuffer.c.i: cmake_force
@@ -5103,7 +5167,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenopengle
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenopengles.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenopengles.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenopengles.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_356) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenopengles.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_360) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenopengles.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenopengles.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenopengles.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenopengles.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/offscreen/SDL_offscreenopengles.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenopengles.c.i: cmake_force
@@ -5119,7 +5183,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvideo.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvideo.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvideo.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvideo.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_357) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvideo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_361) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvideo.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvideo.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvideo.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvideo.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/offscreen/SDL_offscreenvideo.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvideo.c.i: cmake_force
@@ -5135,7 +5199,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvulkan.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_358) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvulkan.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_362) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvulkan.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvulkan.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvulkan.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvulkan.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/offscreen/SDL_offscreenvulkan.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenvulkan.c.i: cmake_force
@@ -5151,7 +5215,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenwindow.
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenwindow.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenwindow.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenwindow.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_359) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenwindow.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_363) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenwindow.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenwindow.c.o -MF CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenwindow.c.o.d -o CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenwindow.c.o -c /home/chakir/sdlGame/vendored/SDL/src/video/offscreen/SDL_offscreenwindow.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/offscreen/SDL_offscreenwindow.c.i: cmake_force
@@ -5167,7 +5231,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/SDL_tray_utils.c.o: /home/chaki
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/SDL_tray_utils.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/SDL_tray_utils.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/SDL_tray_utils.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_360) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/SDL_tray_utils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_364) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/SDL_tray_utils.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/SDL_tray_utils.c.o -MF CMakeFiles/SDL3-shared.dir/src/tray/SDL_tray_utils.c.o.d -o CMakeFiles/SDL3-shared.dir/src/tray/SDL_tray_utils.c.o -c /home/chakir/sdlGame/vendored/SDL/src/tray/SDL_tray_utils.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/tray/SDL_tray_utils.c.i: cmake_force
@@ -5183,7 +5247,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/gpu/vulkan/SDL_gpu_vulkan.c.o: /home
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/gpu/vulkan/SDL_gpu_vulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/gpu/vulkan/SDL_gpu_vulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/gpu/vulkan/SDL_gpu_vulkan.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_361) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/gpu/vulkan/SDL_gpu_vulkan.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_365) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/gpu/vulkan/SDL_gpu_vulkan.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/gpu/vulkan/SDL_gpu_vulkan.c.o -MF CMakeFiles/SDL3-shared.dir/src/gpu/vulkan/SDL_gpu_vulkan.c.o.d -o CMakeFiles/SDL3-shared.dir/src/gpu/vulkan/SDL_gpu_vulkan.c.o -c /home/chakir/sdlGame/vendored/SDL/src/gpu/vulkan/SDL_gpu_vulkan.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/gpu/vulkan/SDL_gpu_vulkan.c.i: cmake_force
@@ -5199,7 +5263,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/sensor/dummy/SDL_dummysensor.c.o: /h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/sensor/dummy/SDL_dummysensor.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/sensor/dummy/SDL_dummysensor.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/sensor/dummy/SDL_dummysensor.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_362) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/sensor/dummy/SDL_dummysensor.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_366) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/sensor/dummy/SDL_dummysensor.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/sensor/dummy/SDL_dummysensor.c.o -MF CMakeFiles/SDL3-shared.dir/src/sensor/dummy/SDL_dummysensor.c.o.d -o CMakeFiles/SDL3-shared.dir/src/sensor/dummy/SDL_dummysensor.c.o -c /home/chakir/sdlGame/vendored/SDL/src/sensor/dummy/SDL_dummysensor.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/sensor/dummy/SDL_dummysensor.c.i: cmake_force
@@ -5215,7 +5279,7 @@ vendored/SDL/CMakeFiles/SDL3-shared.dir/src/main/generic/SDL_sysmain_callbacks.c
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/main/generic/SDL_sysmain_callbacks.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/main/generic/SDL_sysmain_callbacks.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h.gch
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/main/generic/SDL_sysmain_callbacks.c.o: vendored/SDL/CMakeFiles/SDL3-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_363) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/main/generic/SDL_sysmain_callbacks.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_367) "Building C object vendored/SDL/CMakeFiles/SDL3-shared.dir/src/main/generic/SDL_sysmain_callbacks.c.o"
 	cd /home/chakir/sdlGame/build/vendored/SDL && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Winvalid-pch -include /home/chakir/sdlGame/build/vendored/SDL/CMakeFiles/SDL3-shared.dir/cmake_pch.h -MD -MT vendored/SDL/CMakeFiles/SDL3-shared.dir/src/main/generic/SDL_sysmain_callbacks.c.o -MF CMakeFiles/SDL3-shared.dir/src/main/generic/SDL_sysmain_callbacks.c.o.d -o CMakeFiles/SDL3-shared.dir/src/main/generic/SDL_sysmain_callbacks.c.o -c /home/chakir/sdlGame/vendored/SDL/src/main/generic/SDL_sysmain_callbacks.c
 
 vendored/SDL/CMakeFiles/SDL3-shared.dir/src/main/generic/SDL_sysmain_callbacks.c.i: cmake_force
@@ -5377,6 +5441,9 @@ SDL3__shared_OBJECTS = \
 "CMakeFiles/SDL3-shared.dir/src/video/dummy/SDL_nullframebuffer.c.o" \
 "CMakeFiles/SDL3-shared.dir/src/video/dummy/SDL_nullvideo.c.o" \
 "CMakeFiles/SDL3-shared.dir/src/audio/alsa/SDL_alsa_audio.c.o" \
+"CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o" \
+"CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o" \
+"CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o" \
 "CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o" \
 "CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.o" \
 "CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11clipboard.c.o" \
@@ -5469,6 +5536,7 @@ SDL3__shared_OBJECTS = \
 "CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_udev.c.o" \
 "CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.o" \
 "CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.o" \
+"CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o" \
 "CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o" \
 "CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o" \
 "CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ubuntu_touch.c.o" \
@@ -5690,6 +5758,9 @@ vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/dummy/SDL_nullframebuffer.c.o
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/dummy/SDL_nullvideo.c.o
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/alsa/SDL_alsa_audio.c.o
+vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o
+vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pipewire/SDL_pipewire.c.o
+vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/audio/sndio/SDL_sndioaudio.c.o
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11clipboard.c.o
@@ -5782,6 +5853,7 @@ vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_udev.c.o
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev.c.o
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_kbd.c.o
+vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_evdev_capabilities.c.o
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_ubuntu_touch.c.o
@@ -5853,7 +5925,7 @@ vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/build.mak
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/libSDL_uclibc.a
 vendored/SDL/libSDL3.so.0.5.0: /home/chakir/sdlGame/vendored/SDL/src/dynapi/SDL_dynapi.sym
 vendored/SDL/libSDL3.so.0.5.0: vendored/SDL/CMakeFiles/SDL3-shared.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_364) "Linking C shared library libSDL3.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_368) "Linking C shared library libSDL3.so"
 	cd /home/chakir/sdlGame/build/vendored/SDL && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SDL3-shared.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/chakir/sdlGame/build/vendored/SDL && $(CMAKE_COMMAND) -E cmake_symlink_library libSDL3.so.0.5.0 libSDL3.so.0 libSDL3.so
 
