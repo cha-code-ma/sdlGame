@@ -23,7 +23,7 @@ bool load_fonts(game_t *game_p) {
 
 
 bool load_textures(game_t *game_p, SDL_Renderer *renderer) {
-    SDL_Surface *surface = SDL_LoadSurface("media/character_poppetje.png");
+    SDL_Surface *surface = IMG_Load("media/character_poppetje.png");
 	if (!surface) return false;
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
 	if (!texture) return false;
@@ -82,11 +82,11 @@ bool save_game_values(game_t *game_p) {
     char *path = get_path("save_values.ibm");
     if (!path) return false;
 
-    SDL_IOStream *file = SDL_IOFromFile(path, "wb");
+    SDL_RWops *file = SDL_RWFromFile(path, "wb");
     if (!file) return false;
 
-    SDL_WriteIO(file, &game_p->save_values, sizeof(game_save_values));
-    SDL_CloseIO(file);
+    SDL_RWwrite(file, &game_p->save_values, sizeof(game_save_values), 1);
+    SDL_RWclose(file);
     return true;
 }
 
@@ -110,9 +110,9 @@ bool valid_volume(int volume) {
 
 
 bool file_exist(const char *full_path) {
-    SDL_IOStream *file = SDL_IOFromFile(full_path, "rb");
+    SDL_RWops *file = SDL_RWFromFile(full_path, "rb");
     if (file) {
-        SDL_CloseIO(file);
+        SDL_RWclose(file);
         return true;
     }
     return false;
@@ -121,11 +121,11 @@ bool file_exist(const char *full_path) {
 bool load_saved_values(game_t *game_p) {
     char *path = get_path("save_values.ibm");
     if  (!path) return false;
-    SDL_IOStream *file;
+    SDL_RWops *file;
     if (file_exist(path)) {
-        SDL_IOStream *file = SDL_IOFromFile(path, "rb");
-        size_t read = SDL_ReadIO(file, &game_p->save_values, sizeof(game_save_values));
-        SDL_CloseIO(file);
+        SDL_RWops *file = SDL_RWFromFile(path, "rb");
+        size_t read = SDL_RWread(file, &game_p->save_values, sizeof(game_save_values), 1);
+        SDL_RWclose(file);
         if (read != 1) return false;
         bool debug;
         //debug = load_settings(game_p);
@@ -159,11 +159,11 @@ bool save_data(game_t *game_p) {
     char *path = get_settings_path();
     if (!path) return false;
 
-    SDL_IOStream *file = SDL_IOFromFile(path, "wb");
+    SDL_RWops *file = SDL_RWFromFile(path, "wb");
     if (!file) return false;
 
-    SDL_WriteIO(file, &game_p->settings, sizeof(game_settings));
-    SDL_CloseIO(file);
+    SDL_RWwrite(file, &game_p->settings, sizeof(game_settings), 1);
+    SDL_RWclose(file);
     return true;
 }
 /*bool in_language_list(char language[30], game_t *game_p) {
@@ -240,7 +240,8 @@ game_t *game_init(SDL_Renderer *renderer, SDL_Window *window, int *active_level)
     }
     game_p->renderer = renderer;
     game_p->window = window;
-    bool debug = load_saved_values(game_p);
+    bool debug;
+    //debug = load_saved_values(game_p);
     if (!debug) return NULL;
     debug = load_sounds(game_p); //not done
     if (!debug) return NULL;
@@ -248,7 +249,7 @@ game_t *game_init(SDL_Renderer *renderer, SDL_Window *window, int *active_level)
     if (!debug) return NULL;
     debug = load_game_state(game_p); //not done (with levels/ UI)
     if (!debug) return NULL;
-    debug = load_textures(game_p, renderer); //started
+    //debug = load_textures(game_p, renderer); //started
     if (!debug) return NULL;
     debug = load_fonts(game_p);
     if (!debug) return NULL;

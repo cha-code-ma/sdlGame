@@ -8,8 +8,8 @@
 #include "sub_object.h"
 
 #include "object.h"
-#include <SDL3/SDL.h>
-#include <SDL3_image/SDL_image.h>
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_image.h"
 
 button *button_init(vec2 pos, vec2 size, SDL_Color color,char *text, bool centered_text,
     bool scaled_position,

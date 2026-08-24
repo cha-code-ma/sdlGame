@@ -5,8 +5,9 @@
 #include <stdlib.h>
 #include "structs.h"
 #include <stdbool.h>
-#include "SDL3/SDL.h"
+#include "SDL2/SDL.h"
 #include "game.h"
+#include "update.h"
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGTH 450
 int main(int argc, char *argv[]) {
@@ -34,16 +35,20 @@ int main(int argc, char *argv[]) {
 
 
 
-	SDL_Window* window = SDL_CreateWindow("Move Game", 800, 600, SDL_WINDOW_RESIZABLE);
+	SDL_Window* window = SDL_CreateWindow("Move Game",0, 0, SCREEN_WIDTH, SCREEN_HEIGTH, SDL_WINDOW_RESIZABLE);
 	if (!window) {
 		SDL_Quit();
 		return 1;
 	}
-	SDL_Renderer* renderer = SDL_CreateRenderer(window, NULL);
+	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, (Uint32)0);
 	if (!renderer) {
 		SDL_Log("Renderer init error %s", SDL_GetError());
 		SDL_Quit();
 		return 1;
+	}
+	if (IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG) == 0) {
+    printf("IMG_Init failed: %s\n", SDL_GetError());
+    return 1;
 	}
 	int active_level = 1;
 	game_t *game = game_init(renderer, window, &active_level);
@@ -63,10 +68,10 @@ int main(int argc, char *argv[]) {
 		game_set_time(game, current_time, last_time);
 		while (SDL_PollEvent(&event)) {
 			switch (event.type) {
-				case SDL_EVENT_QUIT:
+				case SDL_QUIT:
 					running = false;
 					break;
-				case SDL_EVENT_MOUSE_BUTTON_DOWN:
+				case SDL_MOUSEBUTTONDOWN:
 					if (event.button.button == SDL_BUTTON_LEFT) {
 						game_set_input(game, event.button.button, event.button.x, event.button.y, true);
 					}
@@ -74,7 +79,7 @@ int main(int argc, char *argv[]) {
 
 					}
 					break;
-				case SDL_EVENT_FINGER_DOWN:
+				case SDL_FINGERDOWN:
 					float x = event.tfinger.x * SCREEN_WIDTH;
 					float y = event.tfinger.y * SCREEN_HEIGTH;
 					game_set_input(game, event.button.button, x, y, true);
@@ -83,6 +88,7 @@ int main(int argc, char *argv[]) {
 					game_set_input(game, 0, 0, 0, false);
 				break;
 			}
+			update_level(game);
 
 		}
 		if (!running) {

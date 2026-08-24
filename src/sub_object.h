@@ -8,8 +8,8 @@
 
 #ifndef SUB_OBJECT_H
 #define SUB_OBJECT_H
-#include <SDL3/SDL.h>
-#include <SDL3_image/SDL_image.h>
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_image.h"
 #include "structs.h"
 
 

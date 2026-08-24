@@ -252,9 +252,9 @@ jouw_project: CMakeFiles/jouw_project.dir/src/sub_object.c.o
 jouw_project: CMakeFiles/jouw_project.dir/src/text_ui.c.o
 jouw_project: CMakeFiles/jouw_project.dir/src/update.c.o
 jouw_project: CMakeFiles/jouw_project.dir/build.make
-jouw_project: vendored/SDL3_image/libSDL3_image.so.0.5.0
-jouw_project: vendored/SDL/libSDL3.so.0.5.0
-jouw_project: /home/chakir/sdlGame/vendored/SDL/src/dynapi/SDL_dynapi.sym
+jouw_project: /usr/lib/x86_64-linux-gnu/libSDL2.so
+jouw_project: /usr/lib/x86_64-linux-gnu/libSDL2_image.so
+jouw_project: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so
 jouw_project: CMakeFiles/jouw_project.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chakir/sdlGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable jouw_project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/jouw_project.dir/link.txt --verbose=$(VERBOSE)

@@ -4,9 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <SDL3/SDL.h>
-#include <SDL3_image/SDL_image.h>
-#include <SDL3_ttf/SDL_ttf.h>
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_image.h"
+#include "SDL2/SDL_ttf.h"
 
 #define ABOSOLUTE_WINDOW_HEIGTH 800
 #define ABSOLUTE_WINDOW_WIDTH 450

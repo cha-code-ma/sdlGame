@@ -7,8 +7,8 @@
 #include "object.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <SDL3/SDL.h>
-#include <SDL3_image/SDL_image.h>
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_image.h"
 #include "object_pools.h"
 #include "logic.h"
 
