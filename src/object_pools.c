@@ -10,6 +10,7 @@
 bool values_in_list_int(int * list, int value, int length) {
     for (int i =0; i < length; i++) {
         if (list[i] == value) {
+            SDL_Log("value in list found!");
             return true;
         }
     }
@@ -31,8 +32,8 @@ int *remove_value_list_int(int *list, int value, int *list_length, int *pool_cou
                     temp[j] = list[j];
                 } else continue;
             }
-            *list_length--;
-            *pool_count++;
+            (*list_length)--;
+            (*pool_count)++;
             return temp;
 
 
@@ -58,6 +59,8 @@ void *pool_init(int capacity, pool_types type) {
         case POOL_TYPES_BUTTON:
             button_pool *b_pool = calloc(1, sizeof(button_pool));
             if (!b_pool) return NULL;
+            b_pool->buttons = calloc(capacity, sizeof(button*));
+            if(!b_pool->buttons) return NULL;
             b_pool->capacity = capacity;
             b_pool->free_count = capacity;
             b_pool->free_list = malloc(sizeof(int) * capacity);
@@ -69,6 +72,8 @@ void *pool_init(int capacity, pool_types type) {
         case POOL_TYPES_OBJECT:
             object_pool *o_pool = calloc(1, sizeof(object_pool));
             if (!o_pool) return NULL;
+            o_pool->objects = calloc(capacity, sizeof(object*));
+            if (!o_pool->objects) return NULL;
             o_pool->capacity = capacity;
             o_pool->free_count = capacity;
             o_pool->free_list = malloc(sizeof(int) * capacity);
@@ -81,6 +86,8 @@ void *pool_init(int capacity, pool_types type) {
         case POOL_TYPES_SUB_OBJECT:
             sub_object_pool *s_pool = calloc(1, sizeof(sub_object_pool));
             if (!s_pool) return NULL;
+            s_pool->objects = calloc(capacity, sizeof(sub_object*));
+            if (!s_pool->objects) return NULL;
             s_pool->capacity = capacity;
             s_pool->free_count = capacity;
             s_pool->free_list = malloc(sizeof(int) * capacity);
@@ -92,6 +99,8 @@ void *pool_init(int capacity, pool_types type) {
         case POOL_TYPES_TEXT_UI:
             text_ui_pool *t_pool = calloc(1, sizeof(text_ui_pool));
             if (!t_pool) return NULL;
+            t_pool->strings = calloc(capacity, sizeof(text_ui*));
+            if (!t_pool->strings) return NULL;
             t_pool->capacity = capacity;
             t_pool->free_count = capacity;
             t_pool->free_list = malloc(sizeof(int) * capacity);
@@ -133,6 +142,7 @@ bool pool_get_free_index(void *pool, pool_types type, int *value) {
                 if (values_in_list_int(s_pool->free_list, i, s_pool->free_count)) {
                     s_pool->free_list = remove_value_list_int(s_pool->free_list, i, &s_pool->free_count, &s_pool->count);
                     *value = i;
+                    SDL_Log("index: %d", i);
                     return true;
                 }
             }
@@ -176,13 +186,20 @@ bool pool_add(void *pool, void *insert_object, pool_types type) {
             return true;
 
         case POOL_TYPES_SUB_OBJECT:
+            SDL_Log("pool add started");
             sub_object_pool *s_pool = (sub_object_pool *)pool;
             sub_object *sub_obj = (sub_object *)insert_object;
             if (s_pool->capacity == 0) return false;
             free_index= 0;
             possible = pool_get_free_index(s_pool, POOL_TYPES_SUB_OBJECT, &free_index);
             if (!possible) return false;
+            SDL_Log("arrived here");
+            if (free_index >= s_pool->capacity) {
+                SDL_Log("free_index out of bounds: %d", free_index);
+                return false;
+            }
             s_pool->objects[free_index] = sub_obj;
+            SDL_Log("done with pool_add");
             return true;
 
         case POOL_TYPES_TEXT_UI:
@@ -460,11 +477,14 @@ object *object_pool_remove_type(object_pool* pool,  object_type type) {
 
 sub_object_pool *sub_object_pool_init(int capacity) {
     sub_object_pool* pool = malloc(sizeof(sub_object));
+    if (!pool) return NULL;
+    pool->objects = malloc (sizeof(object*) * capacity);
+    if (!pool->objects) return NULL;
     pool->capacity = capacity;
     pool->count = 0;
     pool->free_count = 0;
     pool->free_list = malloc(sizeof(int) * capacity);
-    pool->objects = NULL;
+
     pool->free_count = capacity;
 }
 

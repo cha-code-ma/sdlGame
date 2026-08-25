@@ -115,6 +115,8 @@ void object_click_action(object *obj) {
 }
 
 bool object_add_sub_object(object *obj, sub_object *sub_obj) {
+    SDL_Log("boject_add_sub_object function started");
     bool debug = pool_add(obj->sub_objects, sub_obj, POOL_TYPES_SUB_OBJECT);
+    SDL_Log("debug: ");
     return debug;
 }

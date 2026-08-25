@@ -3,7 +3,7 @@
 #include "structs.h"
 #include <SDL2/SDL.h>
 #include "levels.h"
-
+#include "logic.h"
 char *get_path(const char *file) {
     char *path = SDL_GetPrefPath("chakirCode", "tapGame");
     if (!path) {
@@ -17,9 +17,9 @@ char *get_path(const char *file) {
 
     return full_path;
 }
-bool load_fonts(game_t *game_p) {
-    game_p->fonts.basic_font = TTF_OpenFont("path_to_tff file", 24);
-}
+//bool load_fonts(game_t *game_p) {
+ //   game_p->fonts.basic_font = TTF_OpenFont("path_to_tff file", 24);
+//}
 
 
 bool load_textures(game_t *game_p, SDL_Renderer *renderer) {
@@ -43,26 +43,31 @@ bool load_sounds(game_t *game_p) {
 bool load_all_levels(game_state *state) {
     int level_count = 1;
     state->all_levels = calloc(level_count + 1, sizeof(level*));
+    SDL_Log("load_all_levels calloc has done");
     if (!state->all_levels) return false;
-
-    state->all_levels[1] = init_level_1(); //bestaat nog niet.
-
+    SDL_Log("calloc succesfull");
+    state->all_levels[0] = init_level_1();
+    SDL_Log("end of load_all_levels_function");
+    return true;
 }
 
 bool load_menu(game_state *state) {
     menu *menu_p = &state->menu;
     //........
+    return true;
 }
 
 bool load_game_state(game_t *game_p) {
+    SDL_Log("load game state function start");
     game_state *state = &game_p->state;
     bool debug;
     debug = load_all_levels(state);
     if (!debug) return false;
     state->time = 0;
+    SDL_Log("time = 0");
     debug = load_menu(state);
+    SDL_Log("menu loaded");
     if (!debug) return NULL;
-    state->time = 0;
     return true;
 }
 
@@ -234,31 +239,84 @@ void game_set_input(game_t *game, int button, float x, float y, bool input) {
 }
 
 game_t *game_init(SDL_Renderer *renderer, SDL_Window *window, int *active_level) {
+    SDL_Log("game_init: start");
+    
     game_t *game_p = calloc(1, sizeof(game_t));
     if (!game_p) {
+        SDL_Log("game_init: calloc failed");
         return NULL;
     }
+    SDL_Log("game_init: calloc OK");
+    
     game_p->renderer = renderer;
     game_p->window = window;
-    bool debug;
-    //debug = load_saved_values(game_p);
-    if (!debug) return NULL;
-    debug = load_sounds(game_p); //not done
-    if (!debug) return NULL;
-    debug = load_special_effects(game_p); //not done
-    if (!debug) return NULL;
-    debug = load_game_state(game_p); //not done (with levels/ UI)
-    if (!debug) return NULL;
-    //debug = load_textures(game_p, renderer); //started
-    if (!debug) return NULL;
-    debug = load_fonts(game_p);
-    if (!debug) return NULL;
-
-    if (active_level) {
-        game_p->state.active_level = game_p->state.all_levels[*active_level];
+    SDL_Log("game_init: renderer and window set");
+    bool debug = true;
+    // Load saved values
+    //bool debug = load_saved_values(game_p);
+    if (!debug) {
+        SDL_Log("game_init: load_saved_values failed");
+        free(game_p);
+        return NULL;
     }
-
+    SDL_Log("game_init: load_saved_values OK");
+    
+    // Load sounds (skip for now)
+    // debug = load_sounds(game_p);
+    // if (!debug) {
+    //     SDL_Log("game_init: load_sounds failed");
+    //     free(game_p);
+    //     return NULL;
+    // }
+    
+    // Load special effects (skip for now)
+    // debug = load_special_effects(game_p);
+    // if (!debug) {
+    //     SDL_Log("game_init: load_special_effects failed");
+    //     free(game_p);
+    //     return NULL;
+    // }
+    
+    // Load game state
+    debug = load_game_state(game_p);
+    if (!debug) {
+        SDL_Log("game_init: load_game_state failed: %s", SDL_GetError());
+        free(game_p);
+        return NULL;
+    }
+    SDL_Log("game_init: load_game_state OK");
+    
+    // Load textures
+    //debug = load_textures(game_p, renderer);
+    if (!debug) {
+        SDL_Log("game_init: load_textures failed");
+        free(game_p);
+        return NULL;
+    }
+    SDL_Log("game_init: load_textures OK");
+    
+    // Load fonts
+    //debug = load_fonts(game_p);
+    if (!debug) {
+        SDL_Log("game_init: load_fonts failed");
+        free(game_p);
+        return NULL;
+    }
+    SDL_Log("game_init: load_fonts OK");
+    
+    //Set active level
+    if (active_level && *active_level > 0) {
+        game_p->state.active_level = game_p->state.all_levels[*active_level-1];
+       SDL_Log("game_init: active level set to %d", *active_level);
+    }
+    
+    SDL_Log("game_init: SUCCESS!");
     return game_p;
 }
 
 //save_values
+
+void show_active_level(game_t *game) {
+    if (!game || !game->state.active_level) return;
+    show_obj_pool(game->state.active_level->objects, game->renderer);
+}

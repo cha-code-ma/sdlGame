@@ -53,7 +53,9 @@ void show_sub_object(object* obj,sub_object *sub_obj, SDL_Renderer *renderer) {
 	SDL_Rect *rect = malloc(sizeof(SDL_Rect));
 	if (!rect) return;
 	*rect = calc_rect(obj, sub_obj);
-    if (!sub_obj->animation) {
+	SDL_Log("position is calculated");
+    if (!sub_obj->texture) {
+		SDL_Log("show rectangle");
         SDL_SetRenderDrawColor(renderer, sub_obj->color.r, sub_obj->color.g, sub_obj->color.b, sub_obj->color.a);
 
 		SDL_RenderFillRect(renderer, rect);
@@ -68,9 +70,12 @@ void show_sub_object(object* obj,sub_object *sub_obj, SDL_Renderer *renderer) {
 }
 
 void show_object(object *obj, SDL_Renderer *renderer) {
+
 	for (int i = 0; i < obj->sub_objects->capacity; i++) {
 		if (!values_in_list_int(obj->sub_objects->free_list, i, obj->sub_objects->free_count)) {
+			SDL_Log("sub_object found");
 			if (obj->sub_objects->objects[i]->visible) {
+				SDL_Log("sub object visible");
 				show_sub_object(obj, obj->sub_objects->objects[i], renderer);
 			}
 		}
@@ -78,8 +83,10 @@ void show_object(object *obj, SDL_Renderer *renderer) {
 }
 
 void show_obj_pool(object_pool *obj_p, SDL_Renderer *renderer) {
+	SDL_Log("show_object_pool function started");
 	for (int i = 0; i < obj_p->capacity; i++) {
 		if (!values_in_list_int(obj_p->free_list, i, obj_p->free_count)) {
+			SDL_Log("valid object found");
 			show_object(obj_p->objects[i], renderer);
 		}
 	}

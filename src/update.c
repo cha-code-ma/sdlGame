@@ -148,9 +148,9 @@ void update_level(game_t *game) {
     if (game->state.active_level->objects) {
         update_level_objects(game);
     }
-    if (game->state.active_level->UI) {
-        update_level_UI(game);
-    }
+    //if (game->state.active_level->UI) {
+     //   update_level_UI(game);
+    //}
 
 
 }

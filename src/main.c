@@ -40,12 +40,20 @@ int main(int argc, char *argv[]) {
 		SDL_Quit();
 		return 1;
 	}
-	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, (Uint32)0);
+	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	if (!renderer) {
+		SDL_Log("accelerated renderer doesnt work");
+		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
+	}
+
 	if (!renderer) {
 		SDL_Log("Renderer init error %s", SDL_GetError());
 		SDL_Quit();
 		return 1;
 	}
+
+	SDL_RenderSetLogicalSize(renderer, 800, 600);
+
 	if (IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG) == 0) {
     printf("IMG_Init failed: %s\n", SDL_GetError());
     return 1;
@@ -60,13 +68,15 @@ int main(int argc, char *argv[]) {
 
 	bool running = true;
 	SDL_Event event;
-
+	bool input;
 
 	Uint64 last_time = SDL_GetTicks();
 	while (running) {
+		input = false;
 		Uint64 current_time = SDL_GetTicks();
 		game_set_time(game, current_time, last_time);
 		while (SDL_PollEvent(&event)) {
+			input = true;
 			switch (event.type) {
 				case SDL_QUIT:
 					running = false;
@@ -88,14 +98,17 @@ int main(int argc, char *argv[]) {
 					game_set_input(game, 0, 0, 0, false);
 				break;
 			}
-			update_level(game);
+
 
 		}
 		if (!running) {
 			break;
 		}
+		if (!input) game_set_input(game, 0, 0, 0, false);
+		update_level(game);
+		SDL_Log("update succesfull");
 		SDL_RenderClear(renderer);
-
+		show_active_level(game);
 		SDL_RenderPresent(renderer);
 		SDL_Delay(16);
 	}

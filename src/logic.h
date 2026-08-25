@@ -4,7 +4,7 @@
 /*
     calculates render rectangle for all possible formats.
 */
-SDL_FRect calc_rect_general(
+SDL_Rect calc_rect_general(
     vec2 pos,
     vec2 size,
     bool parent,
@@ -14,4 +14,5 @@ SDL_FRect calc_rect_general(
     vec2 parent_pos,
     vec2 parent_size);
 
+    void show_obj_pool(object_pool *obj_p, SDL_Renderer *renderer);
 #endif
