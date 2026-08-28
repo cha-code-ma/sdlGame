@@ -50,6 +50,7 @@ object *object_init(object_type type, behaviour_type behaviour, vec2 position,
     obj->transform.position = position;
     obj->transform.future_position = position;
     obj->transform.size = size;
+    obj->transform.future_size = size;
     obj->transform.future_position = size;
     obj->total_visible_time_remaining = visible_time;
     obj->time_started = time_started;

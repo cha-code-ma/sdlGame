@@ -50,6 +50,7 @@ void update_text_pool(text_ui_pool *pool, game_t *game) {
 }
 
 void update_object(object *obj, game_t *game) {
+    //SDL_Log("update_object function");
     Uint64 cur_time = game->state.time;
     Uint64 prev_time = game->state.time;
     Uint64 dt = (cur_time - prev_time) / 1000; //change this, var in game struct?
@@ -84,7 +85,9 @@ void update_object(object *obj, game_t *game) {
 
     }
     if (game->IO.current_key == SDL_BUTTON_LEFT) {
+        SDL_Log("input detected: object may be clicked");
         if (object_clicked(obj, game, true)) {
+            SDL_Log("object is clicked");
             object_click_action(obj);
         }
     }
@@ -137,6 +140,7 @@ void update_menu_buttons(game_t *game_ptr) { //not done
 
 
 void update_level_objects(game_t *game) {
+    //SDL_Log("update_level_objects function");
     update_object_pool(game->state.active_level->objects, game);
 }
 
@@ -145,6 +149,8 @@ void update_level_objects(game_t *game) {
 
 
 void update_level(game_t *game) {
+    //SDL_Log("update level function");
+
     if (game->state.active_level->objects) {
         update_level_objects(game);
     }

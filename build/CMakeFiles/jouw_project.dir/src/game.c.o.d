@@ -191,4 +191,5 @@ CMakeFiles/jouw_project.dir/src/game.c.o: /home/chakir/sdlGame/src/game.c \
  /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_locale.h \
  /usr/include/SDL2/SDL_misc.h /usr/include/SDL2/SDL_image.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_ttf.h \
- /home/chakir/sdlGame/src/levels.h /home/chakir/sdlGame/src/logic.h
+ /home/chakir/sdlGame/src/levels.h /home/chakir/sdlGame/src/logic.h \
+ /home/chakir/sdlGame/src/game.h

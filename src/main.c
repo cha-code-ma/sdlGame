@@ -8,8 +8,7 @@
 #include "SDL2/SDL.h"
 #include "game.h"
 #include "update.h"
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGTH 450
+
 int main(int argc, char *argv[]) {
 
 	SDL_SetHint(SDL_HINT_RENDER_DRIVER, "software");
@@ -27,20 +26,14 @@ int main(int argc, char *argv[]) {
 		);
 		return 1;
 	}
-	SDL_SetHint(SDL_HINT_RENDER_DRIVER, "software");
 	SDL_SetHint(SDL_HINT_TOUCH_MOUSE_EVENTS, "0");
 
-
-
-
-
-
-	SDL_Window* window = SDL_CreateWindow("Move Game",0, 0, SCREEN_WIDTH, SCREEN_HEIGTH, SDL_WINDOW_RESIZABLE);
+	SDL_Window* window = SDL_CreateWindow("Move Game",SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGTH, 0 );
 	if (!window) {
 		SDL_Quit();
 		return 1;
 	}
-	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if (!renderer) {
 		SDL_Log("accelerated renderer doesnt work");
 		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
@@ -51,12 +44,12 @@ int main(int argc, char *argv[]) {
 		SDL_Quit();
 		return 1;
 	}
+	SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGTH);
 
-	SDL_RenderSetLogicalSize(renderer, 800, 600);
 
 	if (IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG) == 0) {
-    printf("IMG_Init failed: %s\n", SDL_GetError());
-    return 1;
+		printf("IMG_Init failed: %s\n", SDL_GetError());
+		return 1;
 	}
 	int active_level = 1;
 	game_t *game = game_init(renderer, window, &active_level);
@@ -65,7 +58,7 @@ int main(int argc, char *argv[]) {
 		SDL_Quit();
 	}
 	//MAIN LOOP
-
+	//calc_viewport(game);
 	bool running = true;
 	SDL_Event event;
 	bool input;
@@ -75,28 +68,35 @@ int main(int argc, char *argv[]) {
 		input = false;
 		Uint64 current_time = SDL_GetTicks();
 		game_set_time(game, current_time, last_time);
+		//calc_viewport(game);
 		while (SDL_PollEvent(&event)) {
-			input = true;
+
 			switch (event.type) {
 				case SDL_QUIT:
 					running = false;
 					break;
 				case SDL_MOUSEBUTTONDOWN:
 					if (event.button.button == SDL_BUTTON_LEFT) {
-						game_set_input(game, event.button.button, event.button.x, event.button.y, true);
+						input = true;
+						game_set_input(game, SDL_BUTTON_LEFT, event.button.x, event.button.y, true);
 					}
 					if (event.button.button == SDL_BUTTON_RIGHT) {
 
 					}
 					break;
 				case SDL_FINGERDOWN:
+					input = true;
 					float x = event.tfinger.x * SCREEN_WIDTH;
 					float y = event.tfinger.y * SCREEN_HEIGTH;
-					game_set_input(game, event.button.button, x, y, true);
+					game_set_input(game, SDL_BUTTON_LEFT ,x, y, true);
 				break;
-				default:
-					game_set_input(game, 0, 0, 0, false);
+				case SDL_WINDOWEVENT:
+					if (event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED ||
+						event.window.event == SDL_WINDOWEVENT_RESIZED) {
+							//calc_viewport(game);
+					}
 				break;
+
 			}
 
 
@@ -105,9 +105,13 @@ int main(int argc, char *argv[]) {
 			break;
 		}
 		if (!input) game_set_input(game, 0, 0, 0, false);
-		update_level(game);
-		SDL_Log("update succesfull");
+		game_update_active_level(game);
+		//clear everything, including border
+
+		SDL_SetRenderDrawColor(renderer, 30, 30, 60, 225);
 		SDL_RenderClear(renderer);
+		//backgroundcolor renderportion.
+
 		show_active_level(game);
 		SDL_RenderPresent(renderer);
 		SDL_Delay(16);

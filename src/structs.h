@@ -8,9 +8,8 @@
 #include "SDL2/SDL_image.h"
 #include "SDL2/SDL_ttf.h"
 
-#define ABOSOLUTE_WINDOW_HEIGTH 800
-#define ABSOLUTE_WINDOW_WIDTH 450
-
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGTH 600
 
 
 typedef enum {
@@ -433,6 +432,7 @@ struct game_textures {
 
 
 
+
 struct game_t {
     game_const_values const_values;
     game_state state;
@@ -448,7 +448,6 @@ struct game_t {
     game_fonts fonts;
     game_IO IO;
 };
-
 
 
 

@@ -65,6 +65,11 @@ sub_object* sub_obj_init(
 	sub_obj->type = type;
 	sub_obj->offset = offset;
 	sub_obj->size_info.size = size;
+	if (abs_pixel_size) {
+		sub_obj->size_info.size_type = SIZE_TYPE_ABS_SIZE;
+	} else {
+		sub_obj->size_info.size_type = SIZE_TYPE_SCALE;
+	}
 
 	sub_obj->size_info.future_size = size;
 	sub_obj->state = IDLE;

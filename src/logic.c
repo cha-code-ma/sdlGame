@@ -22,6 +22,7 @@ vec2 calc_future_center(object* obj) {
 }
 
 SDL_Rect calc_rect(object* obj, sub_object *sub_obj) {
+		SDL_Log("In function calc_rect");
 		float x;
 		float y;
 		float h;
@@ -29,6 +30,7 @@ SDL_Rect calc_rect(object* obj, sub_object *sub_obj) {
 	if (sub_obj->size_info.size_type == SIZE_TYPE_SCALE) {
 		h = sub_obj->size_info.future_size.y * obj->transform.future_size.y;
 		w = sub_obj->size_info.future_size.x * obj->transform.future_size.x;
+
 	} else if (sub_obj->size_info.size_type == SIZE_TYPE_ABS_SIZE) {
 		h = sub_obj->size_info.future_size.y;
 		w = sub_obj->size_info.future_size.x;
@@ -50,16 +52,29 @@ SDL_Rect calc_rect(object* obj, sub_object *sub_obj) {
 }
 
 void show_sub_object(object* obj,sub_object *sub_obj, SDL_Renderer *renderer) {
+	SDL_Log("show_sub_object function");
 	SDL_Rect *rect = malloc(sizeof(SDL_Rect));
 	if (!rect) return;
 	*rect = calc_rect(obj, sub_obj);
-	SDL_Log("position is calculated");
+	SDL_Log("sub_obj rect: h: %d, w: %d, x: %d, y: %d", rect->h, rect->w, rect->x, rect->y);
+	//SDL_Log("position is calculated");
     if (!sub_obj->texture) {
-		SDL_Log("show rectangle");
+		//SDL_Log("show rectangle");
         SDL_SetRenderDrawColor(renderer, sub_obj->color.r, sub_obj->color.g, sub_obj->color.b, sub_obj->color.a);
+		if (!rect) {
+			SDL_Log("rect is NULL!");
+			return;
+		}
+		if (rect->w <= 0 || rect->h <= 0) {
+			SDL_Log("rect has invalid size: %dx%d", rect->w, rect->h);
+			return;
+		}
+		int debug = SDL_RenderFillRect(renderer, rect);
+		if (!debug) {
+			SDL_Log("cant show sub_obj: %s", SDL_GetError());
+			return;
+		}
 
-		SDL_RenderFillRect(renderer, rect);
-		return;
     }
     else  {
 		if (!sub_obj->texture) return;
@@ -70,12 +85,12 @@ void show_sub_object(object* obj,sub_object *sub_obj, SDL_Renderer *renderer) {
 }
 
 void show_object(object *obj, SDL_Renderer *renderer) {
-
+	//SDL_Log("show_object function");
 	for (int i = 0; i < obj->sub_objects->capacity; i++) {
-		if (!values_in_list_int(obj->sub_objects->free_list, i, obj->sub_objects->free_count)) {
-			SDL_Log("sub_object found");
+		if (obj->sub_objects->objects[i]) {
+			//SDL_Log("sub_object found");
 			if (obj->sub_objects->objects[i]->visible) {
-				SDL_Log("sub object visible");
+				//SDL_Log("sub object visible");
 				show_sub_object(obj, obj->sub_objects->objects[i], renderer);
 			}
 		}
@@ -83,10 +98,10 @@ void show_object(object *obj, SDL_Renderer *renderer) {
 }
 
 void show_obj_pool(object_pool *obj_p, SDL_Renderer *renderer) {
-	SDL_Log("show_object_pool function started");
+	//SDL_Log("show_object_pool function started");
 	for (int i = 0; i < obj_p->capacity; i++) {
-		if (!values_in_list_int(obj_p->free_list, i, obj_p->free_count)) {
-			SDL_Log("valid object found");
+		if (obj_p->objects[i]) {
+			//SDL_Log("valid object found");
 			show_object(obj_p->objects[i], renderer);
 		}
 	}

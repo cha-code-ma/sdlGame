@@ -4,5 +4,5 @@
 
 void update_object_pool(object_pool *pool, game_t *game);
 void update_level(game_t *game);
-
+void game_update_active_level(game_t *game);
 #endif

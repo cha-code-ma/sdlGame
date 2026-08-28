@@ -245,6 +245,7 @@ void free_button_pool(button_pool *pool, bool is_pointer) {
 
 bool pool_get_objects(void *pool, void ***return_objects , pool_types type, int *length) { //dont malloc return_objects
     int index;
+    SDL_Log("pool_get_objects function");
     switch (type) {
         case POOL_TYPES_BUTTON:
             button_pool *b_pool = (button_pool *)pool;
