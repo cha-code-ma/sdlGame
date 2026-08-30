@@ -142,7 +142,6 @@ bool pool_get_free_index(void *pool, pool_types type, int *value) {
                 if (values_in_list_int(s_pool->free_list, i, s_pool->free_count)) {
                     s_pool->free_list = remove_value_list_int(s_pool->free_list, i, &s_pool->free_count, &s_pool->count);
                     *value = i;
-                    SDL_Log("index: %d", i);
                     return true;
                 }
             }
@@ -186,20 +185,19 @@ bool pool_add(void *pool, void *insert_object, pool_types type) {
             return true;
 
         case POOL_TYPES_SUB_OBJECT:
-            SDL_Log("pool add started");
             sub_object_pool *s_pool = (sub_object_pool *)pool;
             sub_object *sub_obj = (sub_object *)insert_object;
             if (s_pool->capacity == 0) return false;
             free_index= 0;
             possible = pool_get_free_index(s_pool, POOL_TYPES_SUB_OBJECT, &free_index);
             if (!possible) return false;
-            SDL_Log("arrived here");
+
             if (free_index >= s_pool->capacity) {
-                SDL_Log("free_index out of bounds: %d", free_index);
+
                 return false;
             }
             s_pool->objects[free_index] = sub_obj;
-            SDL_Log("done with pool_add");
+
             return true;
 
         case POOL_TYPES_TEXT_UI:
@@ -245,7 +243,7 @@ void free_button_pool(button_pool *pool, bool is_pointer) {
 
 bool pool_get_objects(void *pool, void ***return_objects , pool_types type, int *length) { //dont malloc return_objects
     int index;
-    SDL_Log("pool_get_objects function");
+
     switch (type) {
         case POOL_TYPES_BUTTON:
             button_pool *b_pool = (button_pool *)pool;

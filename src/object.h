@@ -6,25 +6,21 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 #include "structs.h"
-
-
-
+void **object_create_lists(float *x_list, float *y_list, Uint64 *t_list, int length);
+Uint64 *create_list_float_to_Uint64(int count, ...);
+float *create_list_float(int count, ...);
 object *object_init(object_type type, behaviour_type behaviour, vec2 position,
     vec2 size, float visible_time, bool time_started,
     char *text, int length,
     int text_capacity,
     sub_object_pool* sub_objects,
     int sub_objects_count,
-    int fixed_size_length,
-    int fixed_pos_length,
 	bool fixed_size_bool,
-	float *fixed_size_list_x,
-	float *fixed_size_list_y,
-	float *time_list_size,
+    int fixed_size_length,
+    void **size_values_list,
 	bool fixed_positions_bool,
-	float *fixed_position_list_x,
-	float *fixed_position_list_y,
-	float *time_list_position
+    int fixed_pos_length,
+	void **pos_values_list
 );
 
 void free_object(object *obj);

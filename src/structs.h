@@ -420,7 +420,7 @@ struct game_state {
     level *active_level;
     level **all_levels;
     menu menu;
-    float dt;
+    Uint64 dt; //ms
     Uint64 time;
 };
 

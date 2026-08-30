@@ -105,7 +105,7 @@ int main(int argc, char *argv[]) {
 			break;
 		}
 		if (!input) game_set_input(game, 0, 0, 0, false);
-		game_update_active_level(game);
+		update_active_level(game);
 		//clear everything, including border
 
 		SDL_SetRenderDrawColor(renderer, 30, 30, 60, 225);
@@ -114,6 +114,7 @@ int main(int argc, char *argv[]) {
 
 		show_active_level(game);
 		SDL_RenderPresent(renderer);
+		last_time = current_time;
 		SDL_Delay(16);
 	}
 

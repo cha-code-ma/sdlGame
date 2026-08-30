@@ -213,7 +213,8 @@ bool load_settings(game_t *game_p) {
 void game_set_time(game_t *game, Uint64 cur_time, Uint64 prev_time) {
     if (!game) return;
     game->state.time = cur_time;
-    game->state.dt = (float)(cur_time - prev_time);
+    game->state.dt = cur_time-prev_time;
+    SDL_Log("dt in game set time function: %lu", game->state.dt);
 }
 
 void game_set_input(game_t *game, int button, float x, float y, bool input) {
@@ -325,7 +326,6 @@ void show_active_level(game_t *game) {
         SDL_Log("there is no active level");
         return;
     }
-    SDL_Log("show active level");
     show_obj_pool(game->state.active_level->objects, game->renderer);
 }
 

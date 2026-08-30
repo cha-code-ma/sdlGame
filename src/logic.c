@@ -22,7 +22,7 @@ vec2 calc_future_center(object* obj) {
 }
 
 SDL_Rect calc_rect(object* obj, sub_object *sub_obj) {
-		SDL_Log("In function calc_rect");
+
 		float x;
 		float y;
 		float h;
@@ -52,11 +52,11 @@ SDL_Rect calc_rect(object* obj, sub_object *sub_obj) {
 }
 
 void show_sub_object(object* obj,sub_object *sub_obj, SDL_Renderer *renderer) {
-	SDL_Log("show_sub_object function");
+
 	SDL_Rect *rect = malloc(sizeof(SDL_Rect));
 	if (!rect) return;
 	*rect = calc_rect(obj, sub_obj);
-	SDL_Log("sub_obj rect: h: %d, w: %d, x: %d, y: %d", rect->h, rect->w, rect->x, rect->y);
+	//SDL_Log("sub_obj rect: h: %d, w: %d, x: %d, y: %d", rect->h, rect->w, rect->x, rect->y);
 	//SDL_Log("position is calculated");
     if (!sub_obj->texture) {
 		//SDL_Log("show rectangle");
@@ -71,7 +71,6 @@ void show_sub_object(object* obj,sub_object *sub_obj, SDL_Renderer *renderer) {
 		}
 		int debug = SDL_RenderFillRect(renderer, rect);
 		if (!debug) {
-			SDL_Log("cant show sub_obj: %s", SDL_GetError());
 			return;
 		}
 
@@ -86,6 +85,11 @@ void show_sub_object(object* obj,sub_object *sub_obj, SDL_Renderer *renderer) {
 
 void show_object(object *obj, SDL_Renderer *renderer) {
 	//SDL_Log("show_object function");
+	/*SDL_Log("object rect: h: %f, w: %f, x: %f, y: %f",
+		obj->transform.future_size.y,
+		obj->transform.future_size.x,
+		obj->transform.future_position.x,
+		obj->transform.future_position.x); */
 	for (int i = 0; i < obj->sub_objects->capacity; i++) {
 		if (obj->sub_objects->objects[i]) {
 			//SDL_Log("sub_object found");
