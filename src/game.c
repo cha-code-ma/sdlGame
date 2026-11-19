@@ -243,14 +243,14 @@ void game_set_input(game_t *game, int button, float x, float y, bool input) {
 
 game_t *game_init(SDL_Renderer *renderer, SDL_Window *window, int *active_level) {
     //SDL_Log("game_init: start");
-    
+
     game_t *game_p = calloc(1, sizeof(game_t));
     if (!game_p) {
         //SDL_Log("game_init: calloc failed");
         return NULL;
     }
     //SDL_Log("game_init: calloc OK");
-    
+
     game_p->renderer = renderer;
     game_p->window = window;
     //SDL_Log("game_init: renderer and window set");

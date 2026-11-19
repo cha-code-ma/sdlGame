@@ -109,7 +109,18 @@ void *pool_init(int capacity, pool_types type) {
             }
             return t_pool;
 
-
+        case POOL_TYPES_ACTION:
+            action_pool *a_pool = calloc(1, sizeof(action_pool));
+            if (!a_pool) return NULL;
+            a_pool->actions = calloc(capacity, sizeof(text_ui*));
+            if (!a_pool->actions) return NULL;
+            a_pool->capacity = capacity;
+            a_pool->free_count = capacity;
+            a_pool->free_list = malloc(sizeof(int) * capacity);
+            for (int i = 1; i < a_pool->capacity + 1; i++) {
+                a_pool->free_list[i-1] = i;
+            }
+            return a_pool;
     }
 }
 
@@ -151,6 +162,15 @@ bool pool_get_free_index(void *pool, pool_types type, int *value) {
             for (int i = 0; i < t_pool->capacity; i++) {
                 if (values_in_list_int(t_pool->free_list, i, t_pool->free_count)) {
                     t_pool->free_list = remove_value_list_int(t_pool->free_list, i, &t_pool->free_count, &t_pool->count);
+                    *value = i;
+                    return true;
+                }
+            }
+        case POOL_TYPES_ACTION:
+            action_pool *a_pool = (action_pool *)pool;
+            for (int i = 0; i < a_pool->capacity; i++) {
+                if (values_in_list_int(a_pool->free_list, i, a_pool->free_count)) {
+                    a_pool->free_list = remove_value_list_int(a_pool->free_list, i, &a_pool->free_count, &t_pool->count);
                     *value = i;
                     return true;
                 }
@@ -209,6 +229,15 @@ bool pool_add(void *pool, void *insert_object, pool_types type) {
             if (!possible) return false;
             t_pool->strings[free_index] = ui_text;
             return true;
+        case POOL_TYPES_ACTION:
+            action_pool *a_pool = (action_pool *)pool;
+            group_action *action = (group_action *)insert_object;
+            if (a_pool->capacity == 0) return false;
+            free_index= 0;
+            possible = pool_get_free_index(a_pool, POOL_TYPES_ACTION, &free_index);
+            if (!possible) return false;
+            a_pool->actions[free_index] = action;
+            return true;
     }
 
 }
@@ -240,8 +269,16 @@ void free_button_pool(button_pool *pool, bool is_pointer) {
 
 }
 
+/*
+    type decids input and output:
+    -POOL_TYPES_BUTTON -> button **
+    -POOL_TYPES_OBJECT -> object **
+    -POOL_TYPES_SUB_OBJECT -> sub_object **
+    -POOL_TYPES_TEXT_UI -> text_ui **
 
-bool pool_get_objects(void *pool, void ***return_objects , pool_types type, int *length) { //dont malloc return_objects
+    dont malloc return_objects
+*/
+bool pool_get_objects(void *pool, void ***return_objects , pool_types type, int *length) {
     int index;
 
     switch (type) {

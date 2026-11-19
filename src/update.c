@@ -56,34 +56,80 @@ void update_object(object *obj, game_t *game) {
     Uint64 dt = game->state.dt;
     if (obj->fixed_transform_lists) {
         Uint64 extra_time;
-        if (obj->fixed_transform_lists->pos) {
+         if (obj->fixed_transform_lists->pos && obj->fixed_transform_lists->pos->active) {
             fixed_tempelate_list *pos = obj->fixed_transform_lists->pos;
-            if (pos->time_left <= dt) {
-                extra_time = dt - pos->time_left;
-                pos->index = (pos->index + 1) % pos->length;
-                pos->time_left = pos->time_list[pos->index] - extra_time;
-                obj->transform.future_position.x = pos->fixed_list.x[pos->index];
-                obj->transform.future_position.y = pos->fixed_list.y[pos->index];
-            } else {
-                pos->time_left -= dt;
+            if (obj->fixed_transform_lists->pos->smooth) {
+                if (pos->time_left <= dt) {
+                    extra_time = dt - pos->time_left;
+                    pos->index = (pos->index + 1) % pos->length;
+                    pos->time_left = pos->time_list[pos->index]- extra_time;
+                    obj->transform.future_position.x = pos->fixed_list.x[pos->index];
+                    obj->transform.future_position.y = pos->fixed_list.y[pos->index];
 
-                extra_time = 0;
-            }
-        }
-        if (obj->fixed_transform_lists->size) {
-            fixed_tempelate_list *size = obj->fixed_transform_lists->size;
-            if (size->time_left <= dt) {
-                extra_time = dt - size->time_left;
-                size->index = (size->index + 1) % size->length;
-                size->time_left = size->time_list[size->index]- extra_time;
-                obj->transform.future_size.x = size->fixed_list.x[size->index];
-                obj->transform.future_size.y = size->fixed_list.y[size->index];
+                    obj->fixed_transform_lists->pos->initial_distance =(vec2){
+                        obj->fixed_transform_lists->pos->fixed_list.x[(pos->index + 1) % pos->length] - obj->fixed_transform_lists->pos->fixed_list.x[pos->index],
+                        obj->fixed_transform_lists->pos->fixed_list.x[(pos->index + 1) % pos->length] - obj->fixed_transform_lists->pos->fixed_list.x[pos->index]
+                    };
+                } else {
+                    pos->time_left -= dt;
+                }
+
+
+                float step = (double)dt / (double)pos->time_list[pos->index];
+                obj->transform.future_position.x += step * obj->fixed_transform_lists->pos->initial_distance.x;
+                obj->transform.future_position.y += step * obj->fixed_transform_lists->pos->initial_distance.y;
+
+
             } else {
-                size->time_left -= dt;
-                SDL_Log("time_left size: %lu", size->time_left);
-                SDL_Log("index: %d", size->index);
-                extra_time = 0;
+                if (pos->time_left <= dt) {
+                    extra_time = dt - pos->time_left;
+                    pos->index = (pos->index + 1) % pos->length;
+                    pos->time_left = pos->time_list[pos->index]- extra_time;
+                    obj->transform.future_position.x = pos->fixed_list.x[pos->index];
+                    obj->transform.future_position.y = pos->fixed_list.y[pos->index];
+                } else {
+                    pos->time_left -= dt;
+                    extra_time = 0;
+                }
             }
+
+        }
+        if (obj->fixed_transform_lists->size && obj->fixed_transform_lists->size->active) {
+            fixed_tempelate_list *size = obj->fixed_transform_lists->size;
+            if (obj->fixed_transform_lists->size->smooth) {
+                if (size->time_left <= dt) {
+                    extra_time = dt - size->time_left;
+                    size->index = (size->index + 1) % size->length;
+                    size->time_left = size->time_list[size->index]- extra_time;
+                    obj->transform.future_size.x = size->fixed_list.x[size->index];
+                    obj->transform.future_size.y = size->fixed_list.y[size->index];
+
+                    obj->fixed_transform_lists->size->initial_distance =(vec2){
+                        obj->fixed_transform_lists->size->fixed_list.x[(size->index + 1) % size->length] - obj->fixed_transform_lists->size->fixed_list.x[size->index],
+                        obj->fixed_transform_lists->size->fixed_list.x[(size->index + 1) % size->length] - obj->fixed_transform_lists->size->fixed_list.x[size->index]
+                    };
+                } else {
+                    size->time_left -= dt;
+                }
+
+                float step = (double)dt / (double)size->time_list[size->index];
+                obj->transform.future_size.x += step*obj->fixed_transform_lists->size->initial_distance.y;
+                obj->transform.future_size.y += step*obj->fixed_transform_lists->size->initial_distance.y;
+
+
+            } else {
+                if (size->time_left <= dt) {
+                    extra_time = dt - size->time_left;
+                    size->index = (size->index + 1) % size->length;
+                    size->time_left = size->time_list[size->index]- extra_time;
+                    obj->transform.future_size.x = size->fixed_list.x[size->index];
+                    obj->transform.future_size.y = size->fixed_list.y[size->index];
+                } else {
+                    size->time_left -= dt;
+                    extra_time = 0;
+                }
+            }
+
         }
 
     }

@@ -1,8 +1,7 @@
 #ifndef STRUCT_H
 #define STRUCT_H
 
-#include <stdio.h>
-#include <stdlib.h>
+
 #include <stdbool.h>
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
@@ -39,7 +38,8 @@ typedef enum {
     POOL_TYPES_BUTTON,
     POOL_TYPES_OBJECT,
     POOL_TYPES_SUB_OBJECT,
-    POOL_TYPES_TEXT_UI
+    POOL_TYPES_TEXT_UI,
+    POOL_TYPES_ACTION
 } pool_types;
 
 typedef enum {
@@ -100,6 +100,14 @@ typedef enum {
     MASK_BULLET  = LAYER_BULLET,
 } mask;
 
+typedef enum {
+    TRIGGER_ALWAYS_ACTIVE,
+    TRIGGER_REPEAT_ACTIVE_TIMEFRAME,
+    TRIGGER_ONE_FRAME,
+    TRIGGER_NOT_ACTIVE,
+    TRIGGER_KEY_ACTIVATE_PER_FRAME,
+    TRIIGER_KEY_ACTIVATE_PER_TIME_UNIT
+} group_trigger;
 
 
 typedef struct vec2 vec2;
@@ -118,6 +126,7 @@ typedef struct ui_t ui_t;
 typedef struct text_ui text_ui;
 typedef struct text_ui_pool text_ui_pool;
 typedef struct button_pool button_pool;
+typedef struct action_pool action_pool;
 typedef struct menu menu;
 typedef struct level level;
 typedef struct game_state game_state;
@@ -138,6 +147,7 @@ typedef struct animation_data animation_data;
 typedef struct texture_info texture_info;
 typedef struct size_info size_info;
 typedef struct vec2_float_list vec2_float_list;
+
 
 
 
@@ -171,6 +181,9 @@ struct fixed_tempelate_list {
     int length;
     int index;
     Uint64 time_left;
+    bool active;
+    bool smooth;
+    vec2 initial_distance;
 };
 
 struct values_list {
@@ -291,6 +304,8 @@ struct group_action {
     action_type action;
     bool is_active;
     void (*custom_action)(group_t *group);
+    group_trigger trigger;
+    void *trigger_information;
 };
 
 struct button_action_info {
@@ -350,6 +365,14 @@ struct object_pool {
     int free_count;
 };
 
+struct action_pool {
+    group_action **actions;
+    int *free_list;
+    int count;
+    int capacity;
+    int free_count;
+};
+
 
 struct sub_object {
     sub_object_type type;
@@ -397,6 +420,7 @@ struct menu {
 struct level {
     object_pool *objects;
     object_pool *sprites;
+    action_pool *actions;
     ui_t *UI;
     group_t *groups;
     float time_duration;

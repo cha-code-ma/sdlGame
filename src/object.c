@@ -72,9 +72,13 @@ object *object_init(object_type type, behaviour_type behaviour, vec2 position,
     sub_object_pool* sub_objects,
     int sub_objects_count,
 	bool fixed_size_bool,
+    bool active_size_change_on_init,
+    bool size_smooth,
     int fixed_size_length,
     void **size_values_list,
 	bool fixed_positions_bool,
+    bool active_position_change_on_init,
+    bool position_smooth,
     int fixed_pos_length,
 	void **pos_values_list
 ) {
@@ -125,14 +129,13 @@ object *object_init(object_type type, behaviour_type behaviour, vec2 position,
         memcpy(obj->fixed_transform_lists->size->time_list, (Uint64 *)size_values_list[2], sizeof(Uint64) * fixed_size_length);
 
         obj->fixed_transform_lists->size->index = 0;
-
         obj->fixed_transform_lists->size->time_left = obj->fixed_transform_lists->size->time_list[0];
-        SDL_Log("time_left set");
         obj->fixed_transform_lists->size->length = fixed_size_length;
-        SDL_Log("size length set");
         obj->transform.size = (vec2){obj->fixed_transform_lists->size->fixed_list.x[0],
         obj->fixed_transform_lists->size->fixed_list.y[0]};
-        SDL_Log("fixed_size set finished");
+        obj->fixed_transform_lists->size->smooth = size_smooth;
+        obj->fixed_transform_lists->size->active = active_size_change_on_init;
+
     }
     if (fixed_positions_bool) {
         if (fixed_pos_length <= 0) {
@@ -160,7 +163,13 @@ object *object_init(object_type type, behaviour_type behaviour, vec2 position,
         obj->fixed_transform_lists->pos->length = fixed_pos_length;
         obj->transform.position = (vec2){obj->fixed_transform_lists->pos->fixed_list.x[0],
         obj->fixed_transform_lists->pos->fixed_list.y[0]};
+        obj->fixed_transform_lists->pos->smooth = position_smooth;
+        obj->fixed_transform_lists->pos->active = active_position_change_on_init;
 
+        obj->fixed_transform_lists->pos->initial_distance =(vec2){
+            obj->fixed_transform_lists->pos->fixed_list.x[1] - obj->fixed_transform_lists->pos->fixed_list.x[1],
+            obj->fixed_transform_lists->pos->fixed_list.x[1] - obj->fixed_transform_lists->pos->fixed_list.x[0]
+        };
     }
     SDL_Log("object_init finsihed");
 

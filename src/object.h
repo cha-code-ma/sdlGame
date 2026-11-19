@@ -16,9 +16,13 @@ object *object_init(object_type type, behaviour_type behaviour, vec2 position,
     sub_object_pool* sub_objects,
     int sub_objects_count,
 	bool fixed_size_bool,
+    bool active_size_change_on_init, //wether the change of size should start at init
+    bool size_smooth, //size changes smoothly
     int fixed_size_length,
     void **size_values_list,
 	bool fixed_positions_bool,
+    bool active_position_change_on_init, //wether the change of position should start at init
+    bool position_smooth, //position changes smoothly
     int fixed_pos_length,
 	void **pos_values_list
 );

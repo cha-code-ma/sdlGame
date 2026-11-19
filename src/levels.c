@@ -17,11 +17,11 @@ level *init_level_1(void) {
     if (!o_pool) return NULL;
     object *obj1 = object_init(SQUARE, BEHAVIOUR_TYPE_FIXED_TRANSFORM, (vec2){500, 500}, (vec2){30, 30},
      5, false, NULL, 0, 0, (sub_object_pool *)pool_init(2, POOL_TYPES_SUB_OBJECT), 1,
-     true, 3,
+     true, true, true, 3,
      object_create_lists(create_list_float(3, 5.0f, 50.0f, 30.0f),
      create_list_float(3, 50.0f, 30.0f, 10.0f),
     create_list_float_to_Uint64(3, 3.0f, 5.0f, 4.0f), 3),
-    true, 4,
+    true, true, true, 4,
      object_create_lists(create_list_float(4, 10.0f, 50.0f, 100.0f, 200.0f),
      create_list_float(4, 10.0f, 50.0f, 100.0f, 200.0f),
      create_list_float_to_Uint64(4, 3.0f, 5.0f, 4.0f, 2.0f), 4));
@@ -43,6 +43,12 @@ level *init_level_1(void) {
         SDL_Log("add object to object_pool");
     lvl->objects =  o_pool;
     SDL_Log("add objectpool to level object pool");
+
+    action_pool *a_pool = pool_init(10, POOL_TYPES_ACTION);
+    if (!a_pool) return NULL;
+    group_action *action1;
+    debug = pool_add(a_pool, action1, POOL_TYPES_ACTION);
+
     return lvl;
 }
 
