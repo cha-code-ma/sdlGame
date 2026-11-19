@@ -275,8 +275,10 @@ void free_button_pool(button_pool *pool, bool is_pointer) {
     -POOL_TYPES_OBJECT -> object **
     -POOL_TYPES_SUB_OBJECT -> sub_object **
     -POOL_TYPES_TEXT_UI -> text_ui **
+    -POOL_TYPES_ACTION -> group_action **
 
     dont malloc return_objects
+    length gives amount of objects in return_objects.
 */
 bool pool_get_objects(void *pool, void ***return_objects , pool_types type, int *length) {
     int index;
@@ -342,6 +344,22 @@ bool pool_get_objects(void *pool, void ***return_objects , pool_types type, int 
                 }
             }
             *return_objects = (void **)ui_text;
+            *length = index;
+            return true;
+
+        case POOL_TYPES_ACTION:
+            action_pool *a_pool = (action_pool *)pool;
+            group_action **actions = malloc(sizeof(group_action *) * a_pool->count);
+            if (!actions) return false;
+
+            index = 0;
+            for (int i = 0; i < a_pool->capacity; i++) {
+                if (a_pool->actions[i]) {
+                    actions[index] = a_pool->actions[i];
+                    index++;
+                }
+            }
+            *return_objects = (void **)actions;
             *length = index;
             return true;
     }

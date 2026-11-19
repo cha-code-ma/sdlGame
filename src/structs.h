@@ -103,11 +103,13 @@ typedef enum {
 typedef enum {
     TRIGGER_ALWAYS_ACTIVE,
     TRIGGER_REPEAT_ACTIVE_TIMEFRAME,
-    TRIGGER_ONE_FRAME,
     TRIGGER_NOT_ACTIVE,
     TRIGGER_KEY_ACTIVATE_PER_FRAME,
-    TRIIGER_KEY_ACTIVATE_PER_TIME_UNIT
+    TRIGGER_ACTIVATE_PER_TIME_UNIT,
+    TRIGGER_KEY_ACTIVATE_WITH_COOLDOWN,
+    TRIGGER_KEY_ACTIVATE_ONCE
 } group_trigger;
+
 
 
 typedef struct vec2 vec2;
@@ -306,6 +308,7 @@ struct group_action {
     void (*custom_action)(group_t *group);
     group_trigger trigger;
     void *trigger_information;
+    void *trigger_information2;
 };
 
 struct button_action_info {
@@ -433,7 +436,7 @@ struct game_IO {
     vec2 mouse_pos;
     vec2 prev_mouse_pos;
     time_type cur_valid;
-    int current_key;
+    SDL_Scancode current_key;
     time_type prev_valid;
     int previous_key;
     float key_time;
